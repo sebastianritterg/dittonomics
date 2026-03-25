@@ -39,8 +39,16 @@ h1.title {
     linear-gradient(140deg, rgba(24, 34, 31, 0.96), rgba(13, 107, 97, 0.88));
 }
 
-.quarto-title-block .title,
+.quarto-title-block .title {
+  color: #18221f;
+}
+
 .quarto-title-block .subtitle {
+  color: rgba(24, 34, 31, 0.84);
+}
+
+.quarto-title-block .quarto-title-banner .title,
+.quarto-title-block .quarto-title-banner .subtitle {
   color: #f6f2ea;
 }
 

@@ -2,6 +2,10 @@
 
 Codex-Clo-Author is a public manual for running a Clo-Author-style empirical research workflow in Codex.
 
+> Caution
+>
+> This repository is under active construction and will change frequently. New skills, project-management workflows, and additional integration patterns will be added over time.
+
 The project keeps the upstream Clo-Author information architecture and workflow logic, but rewrites the active guidance for Codex:
 
 - `CLAUDE.md` becomes `AGENTS.md`, `AGENTS.override.md`, and repo-local skills

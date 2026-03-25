@@ -5,6 +5,12 @@ subtitle: "A Codex-native adaptation of the Clo-Author research workflow"
 
 Codex-Clo-Author documents how to run a Clo-Author-style empirical research architecture in Codex without pretending that Codex is Claude.
 
+::: {.callout-warning}
+## Under Active Construction
+
+This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, and broader Codex integrations.
+:::
+
 The goal is simple: preserve the workflow that makes Clo-Author useful for research, while translating every active instruction into Codex-native primitives:
 
 - `AGENTS.md` and `AGENTS.override.md` instead of `CLAUDE.md`
