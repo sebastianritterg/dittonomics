@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sebastianritterg.github.io/codex-clo-author/architecture.html</loc>
-    <lastmod>2026-03-25T22:22:22.621Z</lastmod>
-  </url>
-  <url>
     <loc>https://sebastianritterg.github.io/codex-clo-author/user-guide.html</loc>
-    <lastmod>2026-03-25T22:22:22.621Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sebastianritterg.github.io/codex-clo-author/reference.html</loc>
-    <lastmod>2026-03-25T22:22:22.621Z</lastmod>
+    <lastmod>2026-03-26T18:04:27.974Z</lastmod>
   </url>
   <url>
     <loc>https://sebastianritterg.github.io/codex-clo-author/index.html</loc>
-    <lastmod>2026-03-25T22:22:22.621Z</lastmod>
+    <lastmod>2026-03-26T18:04:27.925Z</lastmod>
   </url>
   <url>
-    <loc>https://sebastianritterg.github.io/codex-clo-author/customization.html</loc>
-    <lastmod>2026-03-25T22:22:22.621Z</lastmod>
+    <loc>https://sebastianritterg.github.io/codex-clo-author/architecture.html</loc>
+    <lastmod>2026-03-26T18:04:27.957Z</lastmod>
   </url>
   <url>
     <loc>https://sebastianritterg.github.io/codex-clo-author/agents.html</loc>
-    <lastmod>2026-03-25T22:22:22.621Z</lastmod>
+    <lastmod>2026-03-25T20:58:54.314Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastianritterg.github.io/codex-clo-author/customization.html</loc>
+    <lastmod>2026-03-26T18:04:27.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastianritterg.github.io/codex-clo-author/reference.html</loc>
+    <lastmod>2026-03-26T18:04:27.967Z</lastmod>
   </url>
 </urlset>

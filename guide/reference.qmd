@@ -35,7 +35,7 @@ subtitle: "Quick lookup for skills, layers, and the Codex migration map"
 
 This is the table that makes the upstream Clo-Author manual usable without constant mental translation.
 
-| If Clo-Author says | In Codex-Clo-Author use | Notes |
+| If Clo-Author says | In Dittonomics use | Notes |
 |---|---|---|
 | `CLAUDE.md` | `AGENTS.md` plus `AGENTS.override.md` | Keep the constitution lean and move detail outward |
 | `.claude/rules` | active workflow references plus repo overlays | Use source mirrors only when provenance matters |
@@ -72,7 +72,7 @@ Those examples are illustrative only. They are there to show how a concrete user
 
 # Exploration Workflow Mapping
 
-| Workflow need | Codex-Clo-Author rule |
+| Workflow need | Dittonomics rule |
 |---|---|
 | prototype estimation idea | create or use `explorations/[name]/` |
 | temporary side output | keep it inside the exploration until promoted |

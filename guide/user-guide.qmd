@@ -1,11 +1,11 @@
 ---
 title: "User Guide"
-subtitle: "How to operate the Codex-Clo-Author workflow in practice"
+subtitle: "How to operate the Dittonomics workflow in practice"
 ---
 
 # How It Works
 
-Codex-Clo-Author keeps the original research workflow logic:
+Dittonomics keeps the original research workflow logic:
 
 - the main Codex session acts as orchestrator
 - narrow subagents handle bounded specialist roles

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Dittonomics mascot</title>
+  <desc id="desc">A smiling purple blob inspired by Ditto.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef8cf"/>
+      <stop offset="55%" stop-color="#8edd8c"/>
+      <stop offset="100%" stop-color="#4aa667"/>
+    </linearGradient>
+    <linearGradient id="blob" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d88bd8"/>
+      <stop offset="100%" stop-color="#b46bc5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <ellipse cx="320" cy="555" rx="180" ry="42" fill="#5a9967" opacity="0.28"/>
+
+  <path
+    d="M207 145
+       C160 140 127 171 135 225
+       C107 255 111 306 146 337
+       C133 391 158 448 212 468
+       C241 510 302 523 351 511
+       C390 530 441 519 476 490
+       C533 482 558 430 535 379
+       C569 341 568 286 533 248
+       C545 193 516 144 462 134
+       C422 112 373 116 335 139
+       C295 117 244 115 207 145 Z"
+    fill="url(#blob)"
+    stroke="#8f4ea3"
+    stroke-width="8"
+  />
+
+  <ellipse cx="222" cy="184" rx="36" ry="18" fill="#f8d9ef" opacity="0.72" transform="rotate(-18 222 184)"/>
+  <ellipse cx="455" cy="212" rx="28" ry="14" fill="#f8d9ef" opacity="0.68" transform="rotate(16 455 212)"/>
+  <ellipse cx="448" cy="426" rx="44" ry="22" fill="#f8d9ef" opacity="0.74" transform="rotate(-22 448 426)"/>
+
+  <circle cx="268" cy="260" r="6.5" fill="#2f2440"/>
+  <circle cx="380" cy="260" r="6.5" fill="#2f2440"/>
+
+  <path
+    d="M235 334
+       C263 317 298 314 321 315
+       C361 315 396 320 415 334
+       C400 355 364 367 322 367
+       C280 367 247 355 235 334 Z"
+    fill="#b36a66"
+    stroke="#8c4f4c"
+    stroke-width="5"
+    stroke-linejoin="round"
+  />
+</svg>

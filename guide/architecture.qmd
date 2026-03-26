@@ -1,11 +1,11 @@
 ---
 title: "Architecture"
-subtitle: "How the Codex adaptation keeps the Clo-Author pipeline while changing the implementation layer"
+subtitle: "How Dittonomics keeps the upstream pipeline logic while changing the implementation layer"
 ---
 
 # System Overview
 
-The original Clo-Author architecture is powerful because it separates:
+The upstream architecture Dittonomics builds from is powerful because it separates:
 
 - project constitution
 - always-needed workflow rules

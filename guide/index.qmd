@@ -1,9 +1,19 @@
 ---
-title: "Codex-Clo-Author"
-subtitle: "A Codex-native adaptation of the Clo-Author research workflow"
+title: "Dittonomics"
+subtitle: "A remixed Codex research workflow built from multiple upstream repos"
 ---
 
-Codex-Clo-Author documents how to run a Clo-Author-style empirical research architecture in Codex without pretending that Codex is Claude.
+::: {.columns .ditto-hero-grid}
+::: {.column width="38%"}
+![](assets/ditto-mascot.svg){fig-alt="Dittonomics mascot: a smiling purple blob inspired by Ditto." .ditto-hero}
+:::
+
+::: {.column width="62%"}
+Dittonomics is a Codex-native research workflow that openly borrows from multiple upstream repos instead of pretending it was invented from scratch.
+
+The name is deliberate: like Ditto, this project copies useful traits, reshapes them, and turns them into one portable operating model for empirical work in Codex.
+:::
+:::
 
 ::: {.callout-warning}
 ## Under Active Construction
@@ -11,7 +21,19 @@ Codex-Clo-Author documents how to run a Clo-Author-style empirical research arch
 This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, and broader Codex integrations.
 :::
 
-The goal is simple: preserve the workflow that makes Clo-Author useful for research, while translating every active instruction into Codex-native primitives:
+::: {.source-blend}
+## Built From
+
+Dittonomics builds its architecture, workflow method, and prompting style from:
+
+- [Clo-Author](https://hsantanna.org/clo-author/) by Hugo Sant'Anna
+- [my_claude_skills](https://github.com/dariia-m/my_claude_skills) by Daria M.
+- [claudeblattman](https://github.com/chrisblattman/claudeblattman) by Chris Blattman
+
+This is a remix on purpose. The project is called Dittonomics because it copies patterns from different repos and adapts them into one Codex-facing research system.
+:::
+
+The goal is simple: preserve the workflow logic that makes the upstream systems useful for research, while translating the active instructions into Codex-native primitives:
 
 - `AGENTS.md` and `AGENTS.override.md` instead of `CLAUDE.md`
 - active workflow references instead of hidden `.claude` assumptions
@@ -25,7 +47,7 @@ The goal is simple: preserve the workflow that makes Clo-Author useful for resea
 - a five-phase research pipeline
 - worker-critic separation across the whole workflow
 - journal-aware peer review via editor plus blind referees
-- a Codex migration layer that makes the upstream Clo-Author manual readable without constant translation
+- a Codex migration layer that makes the upstream material readable without constant translation
 - an example overlay that shows how one concrete installation and research setup can adapt the generic workflow
 - a public `.codex/` starter kit that can be copied or adapted after forking
 
@@ -53,7 +75,7 @@ Repo-specific overrides still belong in:
 
 ### Step 2: Translate the upstream mental model
 
-If the upstream Clo-Author manual says:
+If the upstream manuals say:
 
 - `CLAUDE.md` -> read or create `AGENTS.md`
 - `.claude/rules` -> use active workflow references plus repo overlay guidance
@@ -114,12 +136,14 @@ R and Julia remain supported, but they are no longer the default recommendation 
 
 This site is not:
 
-- a literal Claude clone
+- a literal clone of any one upstream repo
 - a promise that Codex supports hidden `.claude` mechanics
 - a packaged installer for one exact workstation
 
-It is a public operating manual for a Codex-native port of the Clo-Author workflow.
+It is a public operating manual for a Codex-native remix of several upstream research-workflow systems.
 
 ## Attribution
 
-This project is adapted from the Claude-based [Clo-Author](https://hsantanna.org/clo-author/) by Hugo Sant'Anna. The aim here is adaptation, not duplication.
+Dittonomics is adapted from the Claude-based [Clo-Author](https://hsantanna.org/clo-author/) by Hugo Sant'Anna, plus ideas and patterns drawn from [my_claude_skills](https://github.com/dariia-m/my_claude_skills) and [claudeblattman](https://github.com/chrisblattman/claudeblattman).
+
+The aim here is adaptation, not concealment. The project works by being explicit about what it borrows and how it rewrites those pieces for Codex.

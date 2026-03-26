@@ -1,6 +1,6 @@
-﻿# `.codex` Starter Bundle
+# `.codex` Starter Bundle
 
-This folder is the public, forkable Codex-facing starter layer for Codex-Clo-Author.
+This folder is the public, forkable Codex-facing starter layer for Dittonomics.
 
 It is included in the repo so users can fork something structurally similar to the upstream `.claude/` distribution in Clo-Author, but adapted for Codex.
 

@@ -5,7 +5,7 @@ subtitle: "How to adapt the architecture to your own Codex setup"
 
 # Overview
 
-Codex-Clo-Author is designed to be customized without losing the architecture.
+Dittonomics is designed to be customized without losing the architecture.
 
 The main rule is:
 

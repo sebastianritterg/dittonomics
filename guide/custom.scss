@@ -52,6 +52,26 @@ h1.title {
   color: #f6f2ea;
 }
 
+.ditto-hero-grid {
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.ditto-hero {
+  display: block;
+  max-width: 18rem;
+  margin: 0 auto 1rem auto;
+  filter: drop-shadow(0 16px 30px rgba(104, 57, 126, 0.18));
+}
+
+.source-blend {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(104, 57, 126, 0.12);
+  border-radius: 18px;
+  padding: 1.15rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
 .callout {
   border-radius: 14px;
 }

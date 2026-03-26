@@ -3,7 +3,7 @@ project:
   output-dir: ../docs
 
 website:
-  title: "Codex-Clo-Author"
+  title: "Dittonomics"
   site-url: "https://sebastianritterg.github.io/codex-clo-author/"
   navbar:
     left:
@@ -23,8 +23,8 @@ website:
       - icon: github
         href: "https://github.com/sebastianritterg/codex-clo-author"
   page-footer:
-    left: "Codex-Clo-Author"
-    center: "Built with [Quarto](https://quarto.org). Adapted from the Claude-based [Clo-Author](https://hsantanna.org/clo-author/) project."
+    left: "Dittonomics"
+    center: "Built with [Quarto](https://quarto.org). Dittonomics builds from [Clo-Author](https://hsantanna.org/clo-author/), [my_claude_skills](https://github.com/dariia-m/my_claude_skills), and [claudeblattman](https://github.com/chrisblattman/claudeblattman)."
 
 format:
   html:
