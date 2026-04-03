@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sebastianritterg.github.io/dittonomics/user-guide.html</loc>
-    <lastmod>2026-04-03T12:43:56.697Z</lastmod>
+    <loc>https://sebastianritterg.github.io/dittonomics/customization.html</loc>
+    <lastmod>2026-04-03T13:05:57.387Z</lastmod>
   </url>
   <url>
-    <loc>https://sebastianritterg.github.io/dittonomics/index.html</loc>
-    <lastmod>2026-04-03T12:41:03.302Z</lastmod>
+    <loc>https://sebastianritterg.github.io/dittonomics/user-guide.html</loc>
+    <lastmod>2026-04-03T13:05:57.387Z</lastmod>
   </url>
   <url>
     <loc>https://sebastianritterg.github.io/dittonomics/architecture.html</loc>
-    <lastmod>2026-04-03T12:43:56.388Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sebastianritterg.github.io/dittonomics/agents.html</loc>
-    <lastmod>2026-03-25T20:58:54.314Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sebastianritterg.github.io/dittonomics/customization.html</loc>
-    <lastmod>2026-04-03T12:43:56.439Z</lastmod>
+    <lastmod>2026-04-03T13:05:57.387Z</lastmod>
   </url>
   <url>
     <loc>https://sebastianritterg.github.io/dittonomics/reference.html</loc>
-    <lastmod>2026-04-03T12:43:56.540Z</lastmod>
+    <lastmod>2026-04-03T13:05:57.387Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastianritterg.github.io/dittonomics/agents.html</loc>
+    <lastmod>2026-04-03T13:05:57.387Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sebastianritterg.github.io/dittonomics/index.html</loc>
+    <lastmod>2026-04-03T13:05:57.387Z</lastmod>
   </url>
 </urlset>
