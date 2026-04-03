@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f43aa2ac6a6dd6e2d45c657abbb927a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7520e97717722f1e57ac30a340c12738.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sebastianritterg/codex-clo-author"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/sebastianritterg/dittonomics"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -143,21 +143,19 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#system-overview" id="toc-system-overview" class="nav-link active" data-scroll-target="#system-overview">System Overview</a></li>
+  <li><a href="#the-kernel-update" id="toc-the-kernel-update" class="nav-link" data-scroll-target="#the-kernel-update">The Kernel Update</a>
+  <ul class="collapse">
+  <li><a href="#kernel-references" id="toc-kernel-references" class="nav-link" data-scroll-target="#kernel-references">Kernel references</a></li>
+  </ul></li>
   <li><a href="#agent-workflow-diagram" id="toc-agent-workflow-diagram" class="nav-link" data-scroll-target="#agent-workflow-diagram">Agent Workflow Diagram</a>
   <ul class="collapse">
   <li><a href="#agents-by-phase" id="toc-agents-by-phase" class="nav-link" data-scroll-target="#agents-by-phase">Agents by Phase</a></li>
   </ul></li>
   <li><a href="#the-orchestrator" id="toc-the-orchestrator" class="nav-link" data-scroll-target="#the-orchestrator">The Orchestrator</a></li>
+  <li><a href="#shared-task-packets" id="toc-shared-task-packets" class="nav-link" data-scroll-target="#shared-task-packets">Shared Task Packets</a></li>
   <li><a href="#the-worker-critic-loop" id="toc-the-worker-critic-loop" class="nav-link" data-scroll-target="#the-worker-critic-loop">The Worker-Critic Loop</a></li>
-  <li><a href="#plan-first-workflow" id="toc-plan-first-workflow" class="nav-link" data-scroll-target="#plan-first-workflow">Plan-First Workflow</a></li>
-  <li><a href="#parallel-agents" id="toc-parallel-agents" class="nav-link" data-scroll-target="#parallel-agents">Parallel Agents</a></li>
-  <li><a href="#scoring-protocol" id="toc-scoring-protocol" class="nav-link" data-scroll-target="#scoring-protocol">Scoring Protocol</a></li>
-  <li><a href="#additional-workflows" id="toc-additional-workflows" class="nav-link" data-scroll-target="#additional-workflows">Additional Workflows</a>
-  <ul class="collapse">
-  <li><a href="#talks" id="toc-talks" class="nav-link" data-scroll-target="#talks">Talks</a></li>
-  <li><a href="#replication-first-coding" id="toc-replication-first-coding" class="nav-link" data-scroll-target="#replication-first-coding">Replication-first coding</a></li>
-  <li><a href="#exploration-first-side-work" id="toc-exploration-first-side-work" class="nav-link" data-scroll-target="#exploration-first-side-work">Exploration-first side work</a></li>
-  </ul></li>
+  <li><a href="#voice-as-a-layer-not-a-hidden-habit" id="toc-voice-as-a-layer-not-a-hidden-habit" class="nav-link" data-scroll-target="#voice-as-a-layer-not-a-hidden-habit">Voice as a Layer, Not a Hidden Habit</a></li>
+  <li><a href="#exploration-and-file-promotion" id="toc-exploration-and-file-promotion" class="nav-link" data-scroll-target="#exploration-and-file-promotion">Exploration and File Promotion</a></li>
   <li><a href="#why-this-is-not-a-literal-clone" id="toc-why-this-is-not-a-literal-clone" class="nav-link" data-scroll-target="#why-this-is-not-a-literal-clone">Why This Is Not a Literal Clone</a></li>
   </ul>
 </nav>
@@ -242,6 +240,11 @@ ul.task-list li input[type="checkbox"] {
 <td>when the main session delegates</td>
 </tr>
 <tr class="odd">
+<td>Optional voice layer</td>
+<td><code>~/voice</code></td>
+<td>when writing or prose review needs it</td>
+</tr>
+<tr class="even">
 <td>Explicit utilities and config</td>
 <td>scripts, references, <code>config.toml</code></td>
 <td>when invoked</td>
@@ -249,11 +252,30 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>The important design difference is that Codex should not be documented as if hidden Claude hooks still exist. If behavior matters, it needs an explicit home.</p>
-<p>The public repo therefore carries two distinct layers:</p>
+</section>
+<section id="the-kernel-update" class="level1">
+<h1>The Kernel Update</h1>
+<p>The public starter now exposes a stronger workflow kernel than the first site draft.</p>
+<p>That kernel makes five things explicit:</p>
+<ol type="1">
+<li>phase dependencies</li>
+<li>artifact contracts</li>
+<li>agent families and creator-critic separation</li>
+<li>routing and path-resolution rules</li>
+<li>persistence ownership</li>
+</ol>
+<p>In practice, that means the parent orchestrator resolves paths first, hands named targets to agents, and owns report saving unless it explicitly delegates a write target.</p>
+<section id="kernel-references" class="level2">
+<h2 class="anchored" data-anchor-id="kernel-references">Kernel references</h2>
+<p>The public <code>clo-workflow</code> starter now centers these files:</p>
 <ul>
-<li>a forkable <code>.codex/</code> starter kit for users who want an upstream-style distribution folder</li>
-<li>repo-native <code>AGENTS.md</code>, <code>AGENTS.override.md</code>, and <code>.agents/skills/</code> patterns for actual project customization</li>
+<li><code>pipeline-contract.md</code></li>
+<li><code>artifact-contracts.md</code></li>
+<li><code>agent-registry.md</code></li>
+<li><code>routing-rules.md</code></li>
 </ul>
+<p>Those files are the closest thing Dittonomics has to a shared operating contract across the <code>clo-*</code> stack.</p>
+</section>
 </section>
 <section id="agent-workflow-diagram" class="level1">
 <h1>Agent Workflow Diagram</h1>
@@ -266,7 +288,8 @@ ul.task-list li input[type="checkbox"] {
     YOU((You)) --&gt; D(Discovery)
     D --&gt; S(Strategy)
     S --&gt; E(Execution)
-    E --&gt; R(Peer Review)
+    E --&gt; W(Write)
+    W --&gt; R(Peer Review)
     R --&gt;|score &gt;= 95| SUB(Submission)
     E -.-&gt; T(Talks)
     R -.-&gt;|missing lit| D
@@ -284,7 +307,8 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Discovery: librarian -&gt; librarian_critic, explorer -&gt; explorer_critic</li>
 <li>Strategy: strategist -&gt; strategist_critic</li>
-<li>Execution: data_engineer or coder or writer -&gt; paired critics</li>
+<li>Execution: data_engineer or coder -&gt; coder_critic</li>
+<li>Writing: writer -&gt; writer_critic</li>
 <li>Peer Review: editor plus two blind referees</li>
 <li>Submission: verifier as final gate</li>
 </ul>
@@ -297,10 +321,28 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>it reads repo guidance first</li>
 <li>it decides when to invoke a skill</li>
-<li>it delegates only bounded specialist work</li>
+<li>it dispatches subagents only for bounded work</li>
+<li>it resolves paths before delegation</li>
+<li>it owns persistence unless it deliberately hands off a named write target</li>
 <li>it integrates outputs and applies quality gates</li>
 </ul>
 <p>The architecture explicitly rejects the idea of installing a separate orchestrator agent when the main Codex session already has that responsibility.</p>
+</section>
+<section id="shared-task-packets" class="level1">
+<h1>Shared Task Packets</h1>
+<p>The updated public architecture now treats task packets as a first-class contract.</p>
+<p>A good packet includes at least:</p>
+<ul>
+<li>task type and mode</li>
+<li>target files</li>
+<li>required and optional artifacts</li>
+<li>repo overlays</li>
+<li>design metadata</li>
+<li>output expectations</li>
+<li>resolved target locations</li>
+<li>persistence owner</li>
+</ul>
+<p>This is one of the biggest practical upgrades to the public starter because it reduces ad hoc routing language between skills and subagents.</p>
 </section>
 <section id="the-worker-critic-loop" class="level1">
 <h1>The Worker-Critic Loop</h1>
@@ -310,9 +352,9 @@ ul.task-list li input[type="checkbox"] {
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-    W[Worker creates artifact] --&gt; C[Critic reviews]
+    W[Creator produces artifact] --&gt; C[Critic reviews]
     C --&gt;|score &gt;= 80| A[Approved]
-    C --&gt;|score &lt; 80| F[Worker revises]
+    C --&gt;|score &lt; 80| F[Creator revises]
     F --&gt; C2[Critic re-reviews]
     C2 --&gt;|pass| A
     C2 --&gt;|round 3 fail| U[Escalate]
@@ -324,59 +366,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>The point is not bureaucracy. It is to keep creation and evaluation separate long enough to expose weak arguments before they become expensive.</p>
 </section>
-<section id="plan-first-workflow" class="level1">
-<h1>Plan-First Workflow</h1>
-<p>The architecture still favors plan-first behavior when the task is consequential:</p>
-<ul>
-<li>inspect the repo</li>
-<li>identify the real artifact to produce</li>
-<li>choose the right workflow phase</li>
-<li>decide whether delegation helps</li>
-<li>verify before claiming done</li>
-</ul>
-<p>The Codex version should express this in <code>AGENTS.md</code>, skills, and repo overlays rather than assuming a Claude-only planning protocol exists in the background.</p>
+<section id="voice-as-a-layer-not-a-hidden-habit" class="level1">
+<h1>Voice as a Layer, Not a Hidden Habit</h1>
+<p>The live system now treats writing voice as a modular layer.</p>
+<p>That matters because it lets users keep prose style explicit without hardcoding a private writing voice into every generic starter file. In the public repo, the voice layer is optional and documented through templates rather than copied from any one installation.</p>
 </section>
-<section id="parallel-agents" class="level1">
-<h1>Parallel Agents</h1>
-<p>Parallel delegation still helps, but only when the work is:</p>
-<ul>
-<li>concrete</li>
-<li>bounded</li>
-<li>materially useful</li>
-<li>non-overlapping in write scope</li>
-</ul>
-<p>The parent session should keep urgent critical-path work local and push only sidecar specialist tasks outward.</p>
-</section>
-<section id="scoring-protocol" class="level1">
-<h1>Scoring Protocol</h1>
-<p>The quality ladder remains:</p>
-<ul>
-<li><code>80</code>: good enough to commit</li>
-<li><code>90</code>: good enough to merge</li>
-<li><code>95</code>: good enough to submit</li>
-</ul>
-<p>The numbers matter because they make “review” operational rather than rhetorical.</p>
-</section>
-<section id="additional-workflows" class="level1">
-<h1>Additional Workflows</h1>
-<section id="talks" class="level2">
-<h2 class="anchored" data-anchor-id="talks">Talks</h2>
-<p>Talk creation remains parallel to peer review, not a final afterthought.</p>
-</section>
-<section id="replication-first-coding" class="level2">
-<h2 class="anchored" data-anchor-id="replication-first-coding">Replication-first coding</h2>
-<p>The Codex adaptation should still encourage:</p>
-<ul>
-<li>stable file naming</li>
-<li>reproducible outputs</li>
-<li>explicit serialization of reusable intermediates</li>
-<li>review before promotion into manuscript assets</li>
-</ul>
-</section>
-<section id="exploration-first-side-work" class="level2">
-<h2 class="anchored" data-anchor-id="exploration-first-side-work">Exploration-first side work</h2>
-<p><code>explorations/</code> is part of the architecture, not a convenience folder. It gives prototype work an explicit home outside the canonical pipeline.</p>
-</section>
+<section id="exploration-and-file-promotion" class="level1">
+<h1>Exploration and File Promotion</h1>
+<p><code>explorations/</code> is still part of the architecture, not a convenience folder. Prototype work should start there and only move into canonical outputs once it stabilizes.</p>
+<p>Promotion decisions still belong to the orchestrator or the user, not to critics.</p>
 </section>
 <section id="why-this-is-not-a-literal-clone" class="level1">
 <h1>Why This Is Not a Literal Clone</h1>
@@ -459,7 +457,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/codex-clo-author\/");
+        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/dittonomics\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

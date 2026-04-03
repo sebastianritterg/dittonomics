@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f43aa2ac6a6dd6e2d45c657abbb927a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7520e97717722f1e57ac30a340c12738.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sebastianritterg/codex-clo-author"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/sebastianritterg/dittonomics"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#step-2-translate-the-upstream-mental-model" id="toc-step-2-translate-the-upstream-mental-model" class="nav-link" data-scroll-target="#step-2-translate-the-upstream-mental-model">Step 2: Translate the upstream mental model</a></li>
   <li><a href="#step-3-create-or-adapt-a-repo" id="toc-step-3-create-or-adapt-a-repo" class="nav-link" data-scroll-target="#step-3-create-or-adapt-a-repo">Step 3: Create or adapt a repo</a></li>
   <li><a href="#step-4-use-the-workflow-phases" id="toc-step-4-use-the-workflow-phases" class="nav-link" data-scroll-target="#step-4-use-the-workflow-phases">Step 4: Use the workflow phases</a></li>
-  <li><a href="#step-5-start-with-explicit-skills" id="toc-step-5-start-with-explicit-skills" class="nav-link" data-scroll-target="#step-5-start-with-explicit-skills">Step 5: Start with explicit skills</a></li>
+  <li><a href="#step-5-add-voice-only-if-you-want-it" id="toc-step-5-add-voice-only-if-you-want-it" class="nav-link" data-scroll-target="#step-5-add-voice-only-if-you-want-it">Step 5: Add voice only if you want it</a></li>
   </ul></li>
   <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
   <li><a href="#what-this-site-is-not" id="toc-what-this-site-is-not" class="nav-link" data-scroll-target="#what-this-site-is-not">What This Site Is Not</a></li>
@@ -179,9 +179,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="columns ditto-hero-grid">
-<div class="column" style="width:38%;">
+<div class="column" style="width:30%;">
 <p><img src="assets/ditto-mascot.svg" class="ditto-hero img-fluid" alt="Dittonomics mascot: a smiling purple blob inspired by Ditto."></p>
-</div><div class="column" style="width:62%;">
+</div><div class="column" style="width:70%;">
 <p>Dittonomics is a Codex-native research workflow that openly borrows from multiple upstream repos instead of pretending it was invented from scratch.</p>
 <p>The name is deliberate: like Ditto, this project copies useful traits, reshapes them, and turns them into one portable operating model for empirical work in Codex.</p>
 </div>
@@ -196,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, and broader Codex integrations.</p>
+<p>This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, writing voice layers, and broader Codex integrations.</p>
 </div>
 </div>
 <section id="built-from" class="level2 source-blend">
@@ -217,16 +217,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Codex custom subagents instead of Claude agent markdown files</li>
 <li>explicit exploration scaffolding instead of undocumented folder conventions</li>
 <li>a forkable <code>.codex/</code> starter bundle instead of asking every user to reconstruct the user-level layer from scratch</li>
+<li>an optional voice layer that keeps writing style explicit, modular, and user-owned</li>
 </ul>
 <section id="what-you-get" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-get">What You Get</h2>
 <ul>
 <li>a five-phase research pipeline</li>
 <li>worker-critic separation across the whole workflow</li>
+<li>a stronger orchestration contract: the parent resolves paths, owns persistence, and hands named targets to agents</li>
+<li>kernel references for artifacts, routing, and phase dependencies</li>
 <li>journal-aware peer review via editor plus blind referees</li>
-<li>a Codex migration layer that makes the upstream material readable without constant translation</li>
-<li>an example overlay that shows how one concrete installation and research setup can adapt the generic workflow</li>
 <li>a public <code>.codex/</code> starter kit that can be copied or adapted after forking</li>
+<li>optional <code>voice/</code> templates for users who want their prose workflow to preserve a recognizable style</li>
 </ul>
 </section>
 <section id="get-started-in-5-minutes" class="level2">
@@ -239,11 +241,13 @@ ul.task-list li input[type="checkbox"] {
 <li><code>agents/</code></li>
 <li><code>skills/</code></li>
 <li><code>WORKFLOW_QUICK_REF.md</code></li>
+<li><code>config.example.toml</code></li>
 </ul>
 <p>When you adopt it for your own machine, the main user-level Codex storage layers are:</p>
 <ul>
 <li>user skills in <code>~/.codex/skills</code></li>
 <li>custom subagents in <code>~/.codex/agents</code></li>
+<li>optional voice files in <code>~/voice</code></li>
 </ul>
 <p>Repo-specific overrides still belong in:</p>
 <ul>
@@ -286,18 +290,16 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>Talks can run in parallel with review.</p>
 </section>
-<section id="step-5-start-with-explicit-skills" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-start-with-explicit-skills">Step 5: Start with explicit skills</h3>
-<p>The safest Codex-native entry points are:</p>
+<section id="step-5-add-voice-only-if-you-want-it" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-add-voice-only-if-you-want-it">Step 5: Add voice only if you want it</h3>
+<p>The public starter now documents an optional writing-voice layer.</p>
+<p>Use it when you want:</p>
 <ul>
-<li><code>$clo-discover</code></li>
-<li><code>$clo-strategize</code></li>
-<li><code>$clo-analyze</code></li>
-<li><code>$clo-write</code></li>
-<li><code>$clo-review</code></li>
-<li><code>$clo-submit</code></li>
+<li>a stable prose register across writing sessions</li>
+<li>overlays for joint work or journal tightening</li>
+<li>an explicit place to store voice rules instead of re-explaining them every time</li>
 </ul>
-<p>The architecture page explains how these map to agents and quality gates.</p>
+<p>The setup guide lives in <a href="./customization.html">Customization</a> and the starter templates live in <code>voice/</code>.</p>
 </section>
 </section>
 <section id="prerequisites" class="level2">
@@ -332,16 +334,11 @@ ul.task-list li input[type="checkbox"] {
 <td>Use when the repo or replication target centers Stata</td>
 </tr>
 <tr class="even">
-<td>XeLaTeX</td>
-<td>Paper compilation</td>
-<td>Needed for LaTeX manuscripts and slides</td>
-</tr>
-<tr class="odd">
 <td>Git</td>
 <td>Versioning and review workflow</td>
 <td>Required for repo-based operation</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Quarto</td>
 <td>Docs site only</td>
 <td>Needed to render this manual locally</td>
@@ -357,6 +354,7 @@ ul.task-list li input[type="checkbox"] {
 <li>a literal clone of any one upstream repo</li>
 <li>a promise that Codex supports hidden <code>.claude</code> mechanics</li>
 <li>a packaged installer for one exact workstation</li>
+<li>a copy of one user’s private voice files or live home setup</li>
 </ul>
 <p>It is a public operating manual for a Codex-native remix of several upstream research-workflow systems.</p>
 </section>
@@ -442,7 +440,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/codex-clo-author\/");
+        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/dittonomics\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -1,8 +1,25 @@
-﻿# Example Codex config fragment.
+# Example Codex config fragment for Dittonomics.
 # Merge selectively into ~/.codex/config.toml instead of copying blindly.
 
+model = "gpt-5.4"
+model_reasoning_effort = "high"
+
+[features]
+multi_agent = true
+
 [agents]
+max_threads = 6
+max_depth = 1
+
+[plugins."github@openai-curated"]
 enabled = true
 
-# Add machine-specific settings below as needed.
+[plugins."notion@openai-curated"]
+enabled = true
 
+# Optional: keep a separate ~/voice directory for prose guidance.
+# The public Dittonomics starter expects writing workflows to look for files such as:
+# - ~/voice/core_voice.md
+# - ~/voice/voice_examples.md
+# - ~/voice/econ_paper_register.md
+# - ~/voice/style_hierarchy.md

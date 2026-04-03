@@ -10,6 +10,7 @@ It is included in the repo so users can fork something structurally similar to t
 - `agents/`: custom subagent templates
 - `skills/`: `clo-*` workflow skills and references
 - `WORKFLOW_QUICK_REF.md`: short workflow summary
+- `config.example.toml`: public-safe config fragment
 
 ## How To Use It
 
@@ -28,3 +29,4 @@ For project-specific behavior inside a research repo, still use:
 - `.agents/skills/`
 - `explorations/`
 
+For optional writing voice setup, use the public templates under `voice/` or keep your own private `~/voice` files.

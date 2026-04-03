@@ -1,133 +1,147 @@
-﻿---
+---
 name: clo-write
-description: Draft economics paper sections with review. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Orchestrate economics-paper drafting and revision with explicit section contracts, paragraph planning, design-aware language, and optional proofread handoff. Preserves econ-intro-writing as the governing skill for all front-end work.
 ---
 
 # Clo Write
 
-Adapt the Clo-Author workflow to Codex.
+Use this skill as the writing-phase orchestrator.
 
-1. Start by inspecting the repo's AGENTS files, README.md, and current folder layout.
-2. Use the repository's actual manuscript, output, and docs directories instead of assuming Clo-Author defaults.
-3. Use the main Codex session as the orchestrator. Delegate focused work to the matching Codex subagents when that improves quality or speed.
-4. Preserve worker-critic separation: creators produce artifacts, critics, editors, and referees review without editing.
-5. If a repo already has paper-specific rules or skills, treat them as higher-priority than the generic Clo-Author defaults.
-6. Read `references/source-skill.md` only when you need the original upstream command details or argument structure.
+## Kernel References
 
-## Codex Notes
+Read first:
 
-- Original slash commands are exposed here as explicit `$clo-*` skills.
-- Hidden hooks are not ported. Use explicit verification, snapshot, upgrade, and review steps instead.
-- Use the active `clo-workflow` references for domain and journal calibration: ~/.codex/skills/clo-workflow/references/domain-profile.md and ~/.codex/skills/clo-workflow/references/journal-profiles.md.
-- Treat `explorations/` as the repo-level sandbox for experimental work. If exploratory work is needed and the folder is missing, scaffold it from ~/.codex/skills/clo-workflow/references/explorations.md.
-- Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
-- For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
+1. `../clo-workflow/references/pipeline-contract.md`
+2. `../clo-workflow/references/artifact-contracts.md`
+3. `../clo-workflow/references/agent-registry.md`
+4. `../clo-workflow/references/routing-rules.md`
 
-## Source Workflow
+Then load the local references for writing:
 
-# Write
+5. `references/section-contracts.md`
+6. `references/writing-workflow.md`
 
-Draft paper sections or apply humanizer pass by dispatching the **Writer** agent.
+## Delegation Rule
 
-**Input:** `$ARGUMENTS` - section name or mode, optionally followed by file path.
+Invoking this skill counts as explicit permission to dispatch the named agents for the resolved writing mode.
 
----
+- front-end work routes through `econ-intro-writing`
+- non-front-end writing routes to `writer`
+- optional proofread handoff routes to `clo-review --proofread`
+- if subagent dispatch is unavailable, fall back to the main session only with an explicit note
 
-## Modes
+## Input
 
-### `$clo-write [section]` - Draft Paper Section
-Draft a specific section: `intro`, `strategy`, `results`, `conclusion`, `abstract`, or `full`.
+Recommended invocation:
 
-**Agent:** Writer
-**Output:** LaTeX section file in paper/sections/
+```text
+$clo-write [section] [--mode draft|revise|humanize] [--design did|rdd|iv|scm|generic] [--joint-paper] [--journal-tightening] [--current-draft] [file(optional)]
+```
 
-Workflow:
+Natural-language equivalents are also valid in the parent task packet:
+- `use joint-paper mode`
+- `tighten toward JDE benchmark`
+- `use the current draft state as calibration`
 
-#### 1. Context Gathering
+Supported sections:
 
-Before drafting, read all available context:
-1. Read existing paper draft in `paper/` (if it exists)
-2. Read `master_supporting_docs/` for notes, outlines, research specs
-3. Read most recent `quality_reports/research_spec_*.md` or `quality_reports/lit_review_*.md`
-4. Read `~/.codex/skills/clo-workflow/references/domain-profile.md ` for field conventions
-5. Check `Bibliography_base.bib` for available citations
-6. Scan `paper/tables/` and `paper/figures/` for generated output
-7. Read `quality_reports/results_summary.md` if it exists (from Coder)
+- `abstract`
+- `intro`
+- `context`
+- `literature`
+- `data`
+- `strategy`
+- `results`
+- `mechanisms`
+- `robustness`
+- `policy`
+- `conclusion`
+- `full`
+- `humanize`
 
-#### 2. Section Routing
+Accepted aliases:
 
-Based on `$ARGUMENTS`:
-- **`full`**: Draft all sections in sequence, pausing between major sections for user feedback
-- **`intro`**: Draft introduction (most common request)
-- **`strategy`**: Draft identification and estimation section
-- **`results`**: Draft results from available output
-- **`conclusion`**: Draft conclusion
-- **`abstract`**: Draft abstract (must have other sections first)
-- **No argument**: Ask user which section to draft
+- `intro`, `introduction` -> `intro`
+- `context`, `background` -> `context`
+- `literature`, `lit review`, `literature review` -> `literature`
+- `strategy`, `empirical strategy`, `methods` -> `strategy`
+- `results`, `main results` -> `results`
+- `mechanisms`, `channels` -> `mechanisms`
+- `robustness`, `checks` -> `robustness`
+- `conclusion`, `closing` -> `conclusion`
 
-#### 3. Dispatch Writer
+## Routing
 
-Dispatch Writer with section standards, notation protocol, and anti-hedging rules. Humanizer pass runs automatically before finalizing. Save to `paper/sections/[section].tex`.
+- `intro`, `context`, `literature`, and opening-stack work
+  route through `econ-intro-writing` as the governing skill, with repo overlays layered on top
+- all other section work
+  route to `writer`
+- optional proofread handoff
+  route to `clo-review --proofread`
 
-#### 4. Quality Self-Check
+## Required Inputs
 
-Before presenting the draft:
-- [ ] Every displayed equation is numbered (`\label{eq:...}`)
-- [ ] All `\cite{}` keys exist in `Bibliography_base.bib`
-- [ ] Introduction contribution paragraph names specific papers
-- [ ] Effect sizes stated with units
-- [ ] No banned hedging phrases
-- [ ] Notation consistent throughout
-- [ ] All tables/figures referenced actually exist in `paper/tables/` or `paper/figures/`
+Common inputs:
 
-#### 5. Present to User
+- repo-local overlays and path conventions
+- active manuscript and section targets
+- active bibliography and closest cited papers in the repo
+- relevant quality reports
 
-Present each section for feedback. Flag items that need attention:
-- **TBD items:** Where empirical results are needed but not yet available
-- **VERIFY items:** Citations that need user confirmation
-- **PLACEHOLDER items:** Effect sizes awaiting final estimates
+Section-specific inputs:
 
-### `$clo-write humanize [file]` - Humanizer Pass Only
-Strip AI writing patterns from existing text without rewriting content.
+- `strategy`
+  fresh `strategy_memo`
+- `results`, `mechanisms`, `robustness`, `policy`
+  fresh `results_summary` plus existing tables or figures
+- `abstract`
+  enough completed manuscript structure to state question, design, and findings
 
-**Agent:** Writer (humanizer mode)
-**Output:** Edited file with AI patterns removed
+## Drafting Workflow
 
-Strips 24 patterns across 4 categories:
-- Structural: forced narrative arcs, artificial progression
-- Lexical: "delve,leverage,nuanced,robust"
-- Rhetorical: rule-of-three, negative parallelisms, em dash overuse
-- Formatting: excessive bullet points, promotional language
+Unless the user explicitly asks for a lighter pass:
 
----
+1. resolve the target section and target file
+2. gather context from manuscript, notes, bibliography, and quality reports
+3. inspect active bibliography and closest cited papers first
+4. load section, method, and paper-model references only as needed
+5. create outline
+6. create paragraph plan
+7. draft or revise
+8. apply `humanizer`
+9. optionally hand off to proofread
 
-## Section Standards
+## Style Hierarchy
 
-| Section | Length | Key Requirements |
-|---------|--------|-----------------|
-| Introduction | 1000-1500 words | Hook -> question -> method -> finding -> contribution -> roadmap |
-| Strategy | 800-1200 words | Formal assumption, numbered equation, threats addressed |
-| Results | 800-1500 words | Main spec, effect sizes in economic terms, heterogeneity |
-| Conclusion | 500-700 words | Restate with effect size, policy, limitations, future |
-| Abstract | 100-150 words | Question, method, finding with magnitude, implication |
+Load and apply prose guidance in this order:
+1. `~/voice/core_voice.md`
+2. `~/voice/voice_examples.md`
+3. `~/voice/econ_paper_register.md`
+4. `~/voice/style_hierarchy.md`
 
----
+For `intro`, `context`, `literature`, and opening-stack work:
+- treat this hierarchy as a style layer only
+- keep `econ-intro-writing` in charge of structure, paragraph roles, and front-end logic
+- if there is any conflict, preserve the intro architecture and adjust wording within it
 
-## LaTeX Conventions
+Optional overlays:
+- load `~/voice/collaboration_register.md` only in `--joint-paper` mode
+- load `~/voice/journal_tightening_register.md` only in `--journal-tightening` mode
+- inspect nearby manuscript sections only in `--current-draft` mode
 
-- `\citet{}` for textual citations ("Smith (2024) shows...")
-- `\citep{}` for parenthetical citations ("...is well documented (Smith, 2024)")
-- `booktabs` rules (`\toprule`, `\midrule`, `\bottomrule`) - never `\hline`
-- Notation protocol: `Y_{it}`, `D_{it}`, `\gamma_i`, `\delta_t`, `\varepsilon_{it}`
+Current-draft calibration rules:
+- use the live draft only for local consistency, compression level, terminology, notation, and rhythm
+- do not inherit redundancy, weak transitions, stale phrasing, or padded sentences from the live draft
+- treat the live draft as a local calibration source, not a superior authority
+- if the live draft conflicts with the core voice, preserve the core voice
 
----
+## Global Writing Rules
 
-## Principles
-- **This is the user's paper, not Codex's.** Match their voice and style.
-- **Never fabricate results.** Use TBD placeholders.
-- **Citations must be verifiable.** Only cite confirmed papers.
-- **Humanizer is automatic.** Every draft gets de-AI-ified.
-
-
-
-
+- preserve `econ-intro-writing` as the authority for front-end work
+- use examples and paper models as scaffolding, never as copy-paste templates
+- treat co-author and JDE materials as overlays, never as replacement voices or literal templates
+- never fabricate results, citations, institutional facts, or checks
+- use explicit placeholders when evidence is missing
+- match causal language to design strength
+- use `claim -> support -> implication` paragraph architecture
+- keep the parent orchestrator responsible for proofread persistence and workflow transitions

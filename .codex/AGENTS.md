@@ -1,20 +1,22 @@
-﻿# Clo-Author for Codex
+# Dittonomics Starter for Codex
 
-This file is part of the public starter bundle in this repository. Copy or adapt `.codex/` into your own `~/.codex/` home if you want a user-level Codex-Clo-Author setup.
+This file is part of the public starter bundle in this repository. Copy or adapt `.codex/` into your own `~/.codex/` home if you want a user-level Dittonomics setup.
 
 ## Core Principles
 
 - The main Codex session is the orchestrator. Custom subagents are narrow specialists.
 - Preserve worker-critic separation: creators create, critics, editors, and referees review, verifier checks mechanics.
-- Respect repository-local guidance before generic Clo-Author defaults.
+- Respect repository-local guidance before generic defaults.
 - Treat paper, output, and code paths as repository-specific. Inspect the repo before assuming `paper/`, `figures/`, or `tables/`.
-- Use explicit skills and prompts instead of hidden hooks or slash-command assumptions.
+- Use explicit skills, artifacts, and prompts instead of hidden hooks or slash-command assumptions.
+- Let the parent orchestrator own persistence unless it explicitly delegates a named write target.
 
 ## Install Locations
 
 - User skills live in `~/.codex/skills`.
 - Custom subagents live in `~/.codex/agents`.
 - Repo-local skills live under `.agents/skills` inside each workspace.
+- Optional voice files live under `~/voice`.
 
 ## Active Roles
 
@@ -34,6 +36,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Use a repo-level `explorations/` sandbox for experiments and prototypes. If exploratory work is needed and the folder is missing, create `explorations/README.md` and `explorations/ARCHIVE/` first.
 - Peer review should include editor-led journal calibration when you invoke the review workflow in journal mode.
 - Submission workflows should not bypass verification or replication checks.
+- Writing voice is optional and should be treated as a style layer, not as a substitute for evidence or structure.
 
 ## Quality Gates
 
@@ -41,12 +44,20 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - `>= 90`: merge-ready
 - `>= 95` with no weak component: submission-ready
 
+## Voice Layer
+
+If you want a reusable prose layer, create `~/voice/` with files such as:
+
+- `core_voice.md`
+- `voice_examples.md`
+- `econ_paper_register.md`
+- `style_hierarchy.md`
+- optional overlays for collaboration or journal tightening
+
+Keep that layer explicit, optional, and user-owned.
+
 ## Hook Adaptation
 
 - Do not assume hidden file-protection or compaction hooks exist.
 - If context continuity matters, use the explicit snapshot utilities in `$clo-research-tools`.
 - If a repository needs stricter protected-path handling, express it in repo `AGENTS.override.md` or repo-local skills.
-
-
-
-

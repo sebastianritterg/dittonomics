@@ -1,4 +1,4 @@
-﻿# Workflow Quick Reference
+# Workflow Quick Reference
 
 Model: you direct, Codex orchestrates through skills and custom subagents.
 
@@ -15,7 +15,7 @@ $clo-strategize -> strategy memo
     ->
 $clo-analyze -> scripts + outputs
     ->
-$clo-write -> paper sections
+$clo-write -> section contracts + draft + humanizer
     ->
 $clo-review -> review score + peer review
     ->
@@ -37,6 +37,14 @@ Enter at any stage. Use `$clo-new-project` when you want the full pipeline.
 - `$clo-submit`
 - `$clo-research-tools`
 
+## Kernel Rules
+
+- the main Codex session is the orchestrator
+- skills resolve paths before dispatch
+- creator agents write only to named targets
+- critics, referees, editor, and verifier return reports to the parent orchestrator
+- the parent orchestrator owns persistence unless it explicitly delegates a named write target
+
 ## Quality Gates
 
 - `>= 80`: commit-ready
@@ -52,3 +60,10 @@ For prototypes and side investigations:
 - promote only after the idea stabilizes
 - archive abandoned lines under `explorations/ARCHIVE/`
 
+## Optional Voice Mode
+
+For writing-heavy workflows:
+
+- keep reusable prose guidance in `~/voice/`
+- treat voice as a style layer, not as evidence
+- use overlays only when needed

@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f43aa2ac6a6dd6e2d45c657abbb927a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7520e97717722f1e57ac30a340c12738.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sebastianritterg/codex-clo-author"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/sebastianritterg/dittonomics"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -145,18 +145,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#phase-1-discovery" id="toc-phase-1-discovery" class="nav-link" data-scroll-target="#phase-1-discovery">Phase 1: Discovery</a></li>
   <li><a href="#phase-2-strategy" id="toc-phase-2-strategy" class="nav-link" data-scroll-target="#phase-2-strategy">Phase 2: Strategy</a></li>
   <li><a href="#phase-3-execution" id="toc-phase-3-execution" class="nav-link" data-scroll-target="#phase-3-execution">Phase 3: Execution</a></li>
-  <li><a href="#phase-4-peer-review" id="toc-phase-4-peer-review" class="nav-link" data-scroll-target="#phase-4-peer-review">Phase 4: Peer Review</a></li>
-  <li><a href="#phase-5-submission" id="toc-phase-5-submission" class="nav-link" data-scroll-target="#phase-5-submission">Phase 5: Submission</a></li>
+  <li><a href="#phase-4-writing" id="toc-phase-4-writing" class="nav-link" data-scroll-target="#phase-4-writing">Phase 4: Writing</a></li>
+  <li><a href="#phase-5-peer-review" id="toc-phase-5-peer-review" class="nav-link" data-scroll-target="#phase-5-peer-review">Phase 5: Peer Review</a></li>
+  <li><a href="#phase-6-submission" id="toc-phase-6-submission" class="nav-link" data-scroll-target="#phase-6-submission">Phase 6: Submission</a></li>
   </ul></li>
+  <li><a href="#shared-contracts" id="toc-shared-contracts" class="nav-link" data-scroll-target="#shared-contracts">Shared Contracts</a></li>
   <li><a href="#quality-gates" id="toc-quality-gates" class="nav-link" data-scroll-target="#quality-gates">Quality Gates</a></li>
+  <li><a href="#voice-workflow" id="toc-voice-workflow" class="nav-link" data-scroll-target="#voice-workflow">Voice Workflow</a></li>
   <li><a href="#sec-exploration" id="toc-sec-exploration" class="nav-link" data-scroll-target="#sec-exploration">Exploration Workflow</a>
   <ul class="collapse">
   <li><a href="#minimum-rule" id="toc-minimum-rule" class="nav-link" data-scroll-target="#minimum-rule">Minimum rule</a></li>
   <li><a href="#graduation-rule" id="toc-graduation-rule" class="nav-link" data-scroll-target="#graduation-rule">Graduation rule</a></li>
   </ul></li>
-  <li><a href="#self-improvement" id="toc-self-improvement" class="nav-link" data-scroll-target="#self-improvement">Self-Improvement</a></li>
-  <li><a href="#customizing-for-your-domain" id="toc-customizing-for-your-domain" class="nav-link" data-scroll-target="#customizing-for-your-domain">Customizing for Your Domain</a></li>
-  <li><a href="#upgrading-the-port" id="toc-upgrading-the-port" class="nav-link" data-scroll-target="#upgrading-the-port">Upgrading the Port</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
   <ul class="collapse">
   <li><a href="#the-upstream-guide-says-claude.md" id="toc-the-upstream-guide-says-claude.md" class="nav-link" data-scroll-target="#the-upstream-guide-says-claude.md">The upstream guide says <code>CLAUDE.md</code></a></li>
@@ -202,9 +202,10 @@ ul.task-list li input[type="checkbox"] {
 <p>What changes is the implementation surface. Instead of relying on Claude-specific configuration layers, the Codex adaptation uses:</p>
 <ul>
 <li><code>AGENTS.md</code> and repo overlays</li>
-<li>Codex skills with <code>agents/openai.yaml</code></li>
+<li>Codex skills with explicit kernel references</li>
 <li>Codex custom subagents in TOML</li>
 <li>explicit workflow references</li>
+<li>optional voice files for prose-sensitive writing and review</li>
 </ul>
 </section>
 <section id="research-workflow" class="level1">
@@ -241,15 +242,13 @@ ul.task-list li input[type="checkbox"] {
 <li>cleaned data products</li>
 <li>analysis scripts</li>
 <li>tables and figures</li>
-<li>paper sections</li>
+<li>writer handoff artifacts</li>
 </ul>
 <p>The relevant roles are:</p>
 <ul>
 <li><code>data_engineer</code></li>
 <li><code>coder</code></li>
 <li><code>coder_critic</code></li>
-<li><code>writer</code></li>
-<li><code>writer_critic</code></li>
 </ul>
 <p>The active default language stance in this adaptation is:</p>
 <ul>
@@ -258,8 +257,26 @@ ul.task-list li input[type="checkbox"] {
 <li>R and Julia supported when the repo or the user explicitly centers them</li>
 </ul>
 </section>
-<section id="phase-4-peer-review" class="level2">
-<h2 class="anchored" data-anchor-id="phase-4-peer-review">Phase 4: Peer Review</h2>
+<section id="phase-4-writing" class="level2">
+<h2 class="anchored" data-anchor-id="phase-4-writing">Phase 4: Writing</h2>
+<p>Writing is now documented more explicitly as its own orchestrated layer.</p>
+<p>The relevant roles are:</p>
+<ul>
+<li><code>writer</code></li>
+<li><code>writer_critic</code></li>
+</ul>
+<p>The public writing stack now emphasizes:</p>
+<ul>
+<li>section contracts</li>
+<li>paragraph planning before drafting</li>
+<li>design-aware causal language</li>
+<li>humanizer after structure is sound</li>
+<li>optional voice hierarchy only when the user wants it</li>
+</ul>
+<p>The usual explicit entry point is <code>$clo-write</code>.</p>
+</section>
+<section id="phase-5-peer-review" class="level2">
+<h2 class="anchored" data-anchor-id="phase-5-peer-review">Phase 5: Peer Review</h2>
 <p>Peer review is not a grammar pass. It is where the workflow asks whether the project is credible, scoped correctly, journal-calibrated, and ready to move forward.</p>
 <p>The relevant roles are:</p>
 <ul>
@@ -269,8 +286,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>The usual explicit entry point is <code>$clo-review</code>.</p>
 </section>
-<section id="phase-5-submission" class="level2">
-<h2 class="anchored" data-anchor-id="phase-5-submission">Phase 5: Submission</h2>
+<section id="phase-6-submission" class="level2">
+<h2 class="anchored" data-anchor-id="phase-6-submission">Phase 6: Submission</h2>
 <p>Submission requires more than polished prose. The workflow should verify:</p>
 <ul>
 <li>replication readiness</li>
@@ -284,6 +301,17 @@ ul.task-list li input[type="checkbox"] {
 <p>The usual explicit entry point is <code>$clo-submit</code>.</p>
 </section>
 </section>
+<section id="shared-contracts" class="level1">
+<h1>Shared Contracts</h1>
+<p>The newer public starter assumes a stronger contract between the orchestrator and its skills.</p>
+<p>In practice that means:</p>
+<ul>
+<li>the orchestrator resolves target paths before dispatch</li>
+<li>agents receive a task packet instead of relying on loose prose instructions</li>
+<li>artifacts have names, roles, and freshness expectations</li>
+<li>critics and referees return reports to the parent instead of deciding where reports live</li>
+</ul>
+</section>
 <section id="quality-gates" class="level1">
 <h1>Quality Gates</h1>
 <p>The active scoring thresholds remain:</p>
@@ -293,6 +321,17 @@ ul.task-list li input[type="checkbox"] {
 <li><code>&gt;= 95</code> with no weak component: submission-ready</li>
 </ul>
 <p>These thresholds matter because the architecture assumes critique is operational, not decorative.</p>
+</section>
+<section id="voice-workflow" class="level1">
+<h1>Voice Workflow</h1>
+<p>Voice is optional. If you do not care about prose consistency beyond normal editing, you can ignore it entirely.</p>
+<p>If you do care, the public pattern is:</p>
+<ul>
+<li>keep voice files in <code>~/voice</code></li>
+<li>treat them as style guidance, not as truth about evidence</li>
+<li>keep structure, causality, and section logic governed by the relevant workflow skill</li>
+<li>use optional overlays for collaboration or journal tightening instead of rewriting the core voice every time</li>
+</ul>
 </section>
 <section id="sec-exploration" class="level1">
 <h1>Exploration Workflow</h1>
@@ -323,42 +362,6 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="graduation-rule">Graduation rule</h2>
 <p>Once an exploration becomes part of the real pipeline, promote the relevant outputs into the repo’s canonical code, output, docs, or manuscript paths and leave a short record of what graduated.</p>
 </section>
-</section>
-<section id="self-improvement" class="level1">
-<h1>Self-Improvement</h1>
-<p>The Codex adaptation treats self-improvement as explicit maintenance, not hidden behavior.</p>
-<p>Use:</p>
-<ul>
-<li>explicit upgrade workflows</li>
-<li>translation references</li>
-<li>repo-local overlays</li>
-<li>review loops that fix recurring failure modes</li>
-</ul>
-<p>Do not assume hidden hooks will save state, protect files, or restore context automatically.</p>
-</section>
-<section id="customizing-for-your-domain" class="level1">
-<h1>Customizing for Your Domain</h1>
-<p>The domain layer should define:</p>
-<ul>
-<li>journal tiers</li>
-<li>common data sources</li>
-<li>common identification strategies</li>
-<li>field conventions</li>
-<li>notation and referee expectations</li>
-</ul>
-<p>The active Codex adaptation keeps this calibration in the <code>clo-workflow</code> reference layer rather than requiring the user to memorize upstream <code>.claude</code> paths.</p>
-</section>
-<section id="upgrading-the-port" class="level1">
-<h1>Upgrading the Port</h1>
-<p>Upgrading means:</p>
-<ol type="1">
-<li>refresh upstream Clo-Author source material</li>
-<li>rerun the Codex port generator</li>
-<li>review generated skills, subagents, and references</li>
-<li>sync managed installs</li>
-<li>keep repo overlays separate from generic user-level defaults</li>
-</ol>
-<p>The critical rule is to preserve provenance mirrors while rewriting active guidance for Codex.</p>
 </section>
 <section id="troubleshooting" class="level1">
 <h1>Troubleshooting</h1>
@@ -466,7 +469,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/codex-clo-author\/");
+        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/dittonomics\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

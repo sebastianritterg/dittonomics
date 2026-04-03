@@ -4,11 +4,11 @@ subtitle: "A remixed Codex research workflow built from multiple upstream repos"
 ---
 
 ::: {.columns .ditto-hero-grid}
-::: {.column width="38%"}
+::: {.column width="30%"}
 ![](assets/ditto-mascot.svg){fig-alt="Dittonomics mascot: a smiling purple blob inspired by Ditto." .ditto-hero}
 :::
 
-::: {.column width="62%"}
+::: {.column width="70%"}
 Dittonomics is a Codex-native research workflow that openly borrows from multiple upstream repos instead of pretending it was invented from scratch.
 
 The name is deliberate: like Ditto, this project copies useful traits, reshapes them, and turns them into one portable operating model for empirical work in Codex.
@@ -18,7 +18,7 @@ The name is deliberate: like Ditto, this project copies useful traits, reshapes 
 ::: {.callout-warning}
 ## Under Active Construction
 
-This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, and broader Codex integrations.
+This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, writing voice layers, and broader Codex integrations.
 :::
 
 ::: {.source-blend}
@@ -41,15 +41,17 @@ The goal is simple: preserve the workflow logic that makes the upstream systems 
 - Codex custom subagents instead of Claude agent markdown files
 - explicit exploration scaffolding instead of undocumented folder conventions
 - a forkable `.codex/` starter bundle instead of asking every user to reconstruct the user-level layer from scratch
+- an optional voice layer that keeps writing style explicit, modular, and user-owned
 
 ## What You Get
 
 - a five-phase research pipeline
 - worker-critic separation across the whole workflow
+- a stronger orchestration contract: the parent resolves paths, owns persistence, and hands named targets to agents
+- kernel references for artifacts, routing, and phase dependencies
 - journal-aware peer review via editor plus blind referees
-- a Codex migration layer that makes the upstream material readable without constant translation
-- an example overlay that shows how one concrete installation and research setup can adapt the generic workflow
 - a public `.codex/` starter kit that can be copied or adapted after forking
+- optional `voice/` templates for users who want their prose workflow to preserve a recognizable style
 
 ## Get Started in 5 Minutes
 
@@ -61,11 +63,13 @@ This repo ships a forkable starter layer under `.codex/` with:
 - `agents/`
 - `skills/`
 - `WORKFLOW_QUICK_REF.md`
+- `config.example.toml`
 
 When you adopt it for your own machine, the main user-level Codex storage layers are:
 
 - user skills in `~/.codex/skills`
 - custom subagents in `~/.codex/agents`
+- optional voice files in `~/voice`
 
 Repo-specific overrides still belong in:
 
@@ -106,18 +110,17 @@ The workflow stays the same:
 
 Talks can run in parallel with review.
 
-### Step 5: Start with explicit skills
+### Step 5: Add voice only if you want it
 
-The safest Codex-native entry points are:
+The public starter now documents an optional writing-voice layer.
 
-- `$clo-discover`
-- `$clo-strategize`
-- `$clo-analyze`
-- `$clo-write`
-- `$clo-review`
-- `$clo-submit`
+Use it when you want:
 
-The architecture page explains how these map to agents and quality gates.
+- a stable prose register across writing sessions
+- overlays for joint work or journal tightening
+- an explicit place to store voice rules instead of re-explaining them every time
+
+The setup guide lives in [Customization](customization.qmd) and the starter templates live in `voice/`.
 
 ## Prerequisites
 
@@ -126,7 +129,6 @@ The architecture page explains how these map to agents and quality gates.
 | Codex | Main orchestrator | Desktop or terminal usage both fit the architecture |
 | Python | Default automation and analysis language | Primary default in this adaptation |
 | Stata | Econometric co-default | Use when the repo or replication target centers Stata |
-| XeLaTeX | Paper compilation | Needed for LaTeX manuscripts and slides |
 | Git | Versioning and review workflow | Required for repo-based operation |
 | Quarto | Docs site only | Needed to render this manual locally |
 
@@ -139,6 +141,7 @@ This site is not:
 - a literal clone of any one upstream repo
 - a promise that Codex supports hidden `.claude` mechanics
 - a packaged installer for one exact workstation
+- a copy of one user's private voice files or live home setup
 
 It is a public operating manual for a Codex-native remix of several upstream research-workflow systems.
 

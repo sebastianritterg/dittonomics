@@ -1,13 +1,13 @@
 ---
 title: "Reference"
-subtitle: "Quick lookup for skills, layers, and the Codex migration map"
+subtitle: "Quick lookup for skills, layers, and the Dittonomics migration map"
 ---
 
 # Quick Lookup
 
 ## Core workflow skills
 
-| Upstream intent | Codex-facing entry point |
+| Upstream intent | Dittonomics entry point |
 |---|---|
 | new project pipeline | `$clo-new-project` |
 | discovery | `$clo-discover` |
@@ -30,26 +30,48 @@ subtitle: "Quick lookup for skills, layers, and the Codex migration map"
 | repo-local skills | `.agents/skills/` |
 | session constitution | `AGENTS.md` |
 | repo overlay | `AGENTS.override.md` |
+| optional voice layer | `~/voice` |
 
-# Codex Migration Cheatsheet
+# Workflow Kernel Files
 
-This is the table that makes the upstream Clo-Author manual usable without constant mental translation.
+The public Dittonomics starter now treats these files as the core kernel references:
+
+- `pipeline-contract.md`
+- `artifact-contracts.md`
+- `agent-registry.md`
+- `routing-rules.md`
+
+# Voice Setup Files
+
+The public voice starter uses this recommended structure:
+
+- `core_voice.md`
+- `voice_examples.md`
+- `econ_paper_register.md`
+- `style_hierarchy.md`
+- `collaboration_register.md` optional
+- `journal_tightening_register.md` optional
+
+Voice is optional. The public templates document the structure without exposing one user's private prose system.
+
+# Dittonomics Migration Cheatsheet
 
 | If Clo-Author says | In Dittonomics use | Notes |
 |---|---|---|
 | `CLAUDE.md` | `AGENTS.md` plus `AGENTS.override.md` | Keep the constitution lean and move detail outward |
 | `.claude/rules` | active workflow references plus repo overlays | Use source mirrors only when provenance matters |
-| `.claude/references` | active `clo-workflow` references | Domain, journal, exploration, and migration guidance |
+| `.claude/references` | active `clo-workflow` references | Domain, journal, exploration, migration, and kernel guidance |
 | slash commands | explicit `$clo-*` skills | Preserve names, change invocation style |
 | `.claude/agents` | `~/.codex/agents` custom subagents | Main Codex session remains orchestrator |
-| distributable `.claude/` bundle in the repo | forkable `.codex/` starter folder in the repo | Public starter kit for AGENTS, skills, agents, and quick reference |
-| `.claude/settings.json` hooks | explicit utilities and config guidance | Avoid undocumented hidden behavior |
+| distributable `.claude/` bundle in the repo | forkable `.codex/` starter folder in the repo | Public starter kit for AGENTS, skills, agents, config, and quick reference |
+| settings and hidden behaviors | `config.toml`, `AGENTS.md`, and explicit utilities | Avoid undocumented hidden behavior |
+| implicit writing style | optional `~/voice` layer | Keep prose rules explicit and modular |
 | `.claude` exploration instructions | `explorations/` folder plus exploration reference | Create the folder when missing |
 | orchestrator agent | main Codex session | No separate orchestrator install needed |
 
 # Worker-Critic Map
 
-| Worker | Reviewer |
+| Creator | Reviewer |
 |---|---|
 | `librarian` | `librarian_critic` |
 | `explorer` | `explorer_critic` |
@@ -58,17 +80,14 @@ This is the table that makes the upstream Clo-Author manual usable without const
 | `writer` | `writer_critic` |
 | `storyteller` | `storyteller_critic` |
 
-# Journal Calibration Notes
+# Persistence Rule
 
-The public Codex adaptation should stay generic first. Any user can adapt the journal layer to their own field, target journals, and review culture.
+A core Dittonomics rule is now explicit:
 
-One example overlay may include:
-
-- `Journal of Development Economics`
-- `Regional Studies`
-- `Journal of Economic Geography`
-
-Those examples are illustrative only. They are there to show how a concrete user profile can customize the domain and journal reference layer, not to define the public default.
+- skills resolve paths first
+- creator agents write only to named targets
+- critics, referees, editor, and verifier return reports to the parent orchestrator
+- the parent orchestrator owns report saving, renaming, and promotion unless it explicitly delegates a write target
 
 # Exploration Workflow Mapping
 
@@ -79,16 +98,6 @@ Those examples are illustrative only. They are there to show how a concrete user
 | abandoned branch | archive under `explorations/ARCHIVE/` |
 | no exploration folder yet | create `explorations/README.md` and `explorations/ARCHIVE/` first |
 
-# Upgrade Workflow Mapping
-
-When upstream Clo-Author evolves, the Codex adaptation should:
-
-1. refresh the upstream source snapshot
-2. regenerate active Codex skills and subagents
-3. preserve source mirrors
-4. keep user-level defaults separate from repo overlays
-5. verify active docs no longer carry stale Claude-only instructions
-
 # Attribution and Scope
 
-This reference is intentionally compact. It is here to make the upstream Clo-Author manual readable to a Codex user, not to replace deeper architecture or customization material.
+This reference is intentionally compact. It is here to make the upstream Clo-Author manual readable to a Codex user and to surface the key Dittonomics contracts without forcing readers through the entire starter bundle.

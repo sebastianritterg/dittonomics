@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Dittonomics"
-  site-url: "https://sebastianritterg.github.io/codex-clo-author/"
+  site-url: "https://sebastianritterg.github.io/dittonomics/"
   navbar:
     left:
       - text: "Quick Start"
@@ -21,7 +21,7 @@ website:
         href: reference.qmd
     right:
       - icon: github
-        href: "https://github.com/sebastianritterg/codex-clo-author"
+        href: "https://github.com/sebastianritterg/dittonomics"
   page-footer:
     left: "Dittonomics"
     center: "Built with [Quarto](https://quarto.org). Dittonomics builds from [Clo-Author](https://hsantanna.org/clo-author/), [my_claude_skills](https://github.com/dariia-m/my_claude_skills), and [claudeblattman](https://github.com/chrisblattman/claudeblattman)."

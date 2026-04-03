@@ -1,1 +1,1 @@
-Sitemap: https://sebastianritterg.github.io/codex-clo-author/sitemap.xml
+Sitemap: https://sebastianritterg.github.io/dittonomics/sitemap.xml

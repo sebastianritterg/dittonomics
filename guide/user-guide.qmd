@@ -15,9 +15,10 @@ Dittonomics keeps the original research workflow logic:
 What changes is the implementation surface. Instead of relying on Claude-specific configuration layers, the Codex adaptation uses:
 
 - `AGENTS.md` and repo overlays
-- Codex skills with `agents/openai.yaml`
+- Codex skills with explicit kernel references
 - Codex custom subagents in TOML
 - explicit workflow references
+- optional voice files for prose-sensitive writing and review
 
 # Research Workflow
 
@@ -54,15 +55,13 @@ Execution translates the design into:
 - cleaned data products
 - analysis scripts
 - tables and figures
-- paper sections
+- writer handoff artifacts
 
 The relevant roles are:
 
 - `data_engineer`
 - `coder`
 - `coder_critic`
-- `writer`
-- `writer_critic`
 
 The active default language stance in this adaptation is:
 
@@ -70,7 +69,26 @@ The active default language stance in this adaptation is:
 - Stata co-default
 - R and Julia supported when the repo or the user explicitly centers them
 
-## Phase 4: Peer Review
+## Phase 4: Writing
+
+Writing is now documented more explicitly as its own orchestrated layer.
+
+The relevant roles are:
+
+- `writer`
+- `writer_critic`
+
+The public writing stack now emphasizes:
+
+- section contracts
+- paragraph planning before drafting
+- design-aware causal language
+- humanizer after structure is sound
+- optional voice hierarchy only when the user wants it
+
+The usual explicit entry point is `$clo-write`.
+
+## Phase 5: Peer Review
 
 Peer review is not a grammar pass. It is where the workflow asks whether the project is credible, scoped correctly, journal-calibrated, and ready to move forward.
 
@@ -82,7 +100,7 @@ The relevant roles are:
 
 The usual explicit entry point is `$clo-review`.
 
-## Phase 5: Submission
+## Phase 6: Submission
 
 Submission requires more than polished prose. The workflow should verify:
 
@@ -96,6 +114,17 @@ The relevant role is:
 
 The usual explicit entry point is `$clo-submit`.
 
+# Shared Contracts
+
+The newer public starter assumes a stronger contract between the orchestrator and its skills.
+
+In practice that means:
+
+- the orchestrator resolves target paths before dispatch
+- agents receive a task packet instead of relying on loose prose instructions
+- artifacts have names, roles, and freshness expectations
+- critics and referees return reports to the parent instead of deciding where reports live
+
 # Quality Gates
 
 The active scoring thresholds remain:
@@ -105,6 +134,17 @@ The active scoring thresholds remain:
 - `>= 95` with no weak component: submission-ready
 
 These thresholds matter because the architecture assumes critique is operational, not decorative.
+
+# Voice Workflow
+
+Voice is optional. If you do not care about prose consistency beyond normal editing, you can ignore it entirely.
+
+If you do care, the public pattern is:
+
+- keep voice files in `~/voice`
+- treat them as style guidance, not as truth about evidence
+- keep structure, causality, and section logic governed by the relevant workflow skill
+- use optional overlays for collaboration or journal tightening instead of rewriting the core voice every time
 
 # Exploration Workflow {#sec-exploration}
 
@@ -134,44 +174,7 @@ Then create a subfolder per exploration.
 
 ## Graduation rule
 
-Once an exploration becomes part of the real pipeline, promote the relevant outputs into the repo’s canonical code, output, docs, or manuscript paths and leave a short record of what graduated.
-
-# Self-Improvement
-
-The Codex adaptation treats self-improvement as explicit maintenance, not hidden behavior.
-
-Use:
-
-- explicit upgrade workflows
-- translation references
-- repo-local overlays
-- review loops that fix recurring failure modes
-
-Do not assume hidden hooks will save state, protect files, or restore context automatically.
-
-# Customizing for Your Domain
-
-The domain layer should define:
-
-- journal tiers
-- common data sources
-- common identification strategies
-- field conventions
-- notation and referee expectations
-
-The active Codex adaptation keeps this calibration in the `clo-workflow` reference layer rather than requiring the user to memorize upstream `.claude` paths.
-
-# Upgrading the Port
-
-Upgrading means:
-
-1. refresh upstream Clo-Author source material
-2. rerun the Codex port generator
-3. review generated skills, subagents, and references
-4. sync managed installs
-5. keep repo overlays separate from generic user-level defaults
-
-The critical rule is to preserve provenance mirrors while rewriting active guidance for Codex.
+Once an exploration becomes part of the real pipeline, promote the relevant outputs into the repo's canonical code, output, docs, or manuscript paths and leave a short record of what graduated.
 
 # Troubleshooting
 

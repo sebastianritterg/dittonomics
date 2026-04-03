@@ -24,14 +24,35 @@ The Codex adaptation keeps that shape, but translates the layers into Codex-nati
 | Forkable starter bundle | `.codex/` in this repo | when a user copies or adapts the public starter |
 | User skills | `~/.codex/skills` | on demand or implicit by policy |
 | Custom subagents | `~/.codex/agents` | when the main session delegates |
+| Optional voice layer | `~/voice` | when writing or prose review needs it |
 | Explicit utilities and config | scripts, references, `config.toml` | when invoked |
 
 The important design difference is that Codex should not be documented as if hidden Claude hooks still exist. If behavior matters, it needs an explicit home.
 
-The public repo therefore carries two distinct layers:
+# The Kernel Update
 
-- a forkable `.codex/` starter kit for users who want an upstream-style distribution folder
-- repo-native `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/` patterns for actual project customization
+The public starter now exposes a stronger workflow kernel than the first site draft.
+
+That kernel makes five things explicit:
+
+1. phase dependencies
+2. artifact contracts
+3. agent families and creator-critic separation
+4. routing and path-resolution rules
+5. persistence ownership
+
+In practice, that means the parent orchestrator resolves paths first, hands named targets to agents, and owns report saving unless it explicitly delegates a write target.
+
+## Kernel references
+
+The public `clo-workflow` starter now centers these files:
+
+- `pipeline-contract.md`
+- `artifact-contracts.md`
+- `agent-registry.md`
+- `routing-rules.md`
+
+Those files are the closest thing Dittonomics has to a shared operating contract across the `clo-*` stack.
 
 # Agent Workflow Diagram
 
@@ -40,7 +61,8 @@ flowchart LR
     YOU((You)) --> D(Discovery)
     D --> S(Strategy)
     S --> E(Execution)
-    E --> R(Peer Review)
+    E --> W(Write)
+    W --> R(Peer Review)
     R -->|score >= 95| SUB(Submission)
     E -.-> T(Talks)
     R -.->|missing lit| D
@@ -54,7 +76,8 @@ The structure remains worker -> critic:
 
 - Discovery: librarian -> librarian_critic, explorer -> explorer_critic
 - Strategy: strategist -> strategist_critic
-- Execution: data_engineer or coder or writer -> paired critics
+- Execution: data_engineer or coder -> coder_critic
+- Writing: writer -> writer_critic
 - Peer Review: editor plus two blind referees
 - Submission: verifier as final gate
 
@@ -66,18 +89,37 @@ That means:
 
 - it reads repo guidance first
 - it decides when to invoke a skill
-- it delegates only bounded specialist work
+- it dispatches subagents only for bounded work
+- it resolves paths before delegation
+- it owns persistence unless it deliberately hands off a named write target
 - it integrates outputs and applies quality gates
 
 The architecture explicitly rejects the idea of installing a separate orchestrator agent when the main Codex session already has that responsibility.
+
+# Shared Task Packets
+
+The updated public architecture now treats task packets as a first-class contract.
+
+A good packet includes at least:
+
+- task type and mode
+- target files
+- required and optional artifacts
+- repo overlays
+- design metadata
+- output expectations
+- resolved target locations
+- persistence owner
+
+This is one of the biggest practical upgrades to the public starter because it reduces ad hoc routing language between skills and subagents.
 
 # The Worker-Critic Loop
 
 ```{mermaid}
 flowchart TD
-    W[Worker creates artifact] --> C[Critic reviews]
+    W[Creator produces artifact] --> C[Critic reviews]
     C -->|score >= 80| A[Approved]
-    C -->|score < 80| F[Worker revises]
+    C -->|score < 80| F[Creator revises]
     F --> C2[Critic re-reviews]
     C2 -->|pass| A
     C2 -->|round 3 fail| U[Escalate]
@@ -85,57 +127,17 @@ flowchart TD
 
 The point is not bureaucracy. It is to keep creation and evaluation separate long enough to expose weak arguments before they become expensive.
 
-# Plan-First Workflow
+# Voice as a Layer, Not a Hidden Habit
 
-The architecture still favors plan-first behavior when the task is consequential:
+The live system now treats writing voice as a modular layer.
 
-- inspect the repo
-- identify the real artifact to produce
-- choose the right workflow phase
-- decide whether delegation helps
-- verify before claiming done
+That matters because it lets users keep prose style explicit without hardcoding a private writing voice into every generic starter file. In the public repo, the voice layer is optional and documented through templates rather than copied from any one installation.
 
-The Codex version should express this in `AGENTS.md`, skills, and repo overlays rather than assuming a Claude-only planning protocol exists in the background.
+# Exploration and File Promotion
 
-# Parallel Agents
+`explorations/` is still part of the architecture, not a convenience folder. Prototype work should start there and only move into canonical outputs once it stabilizes.
 
-Parallel delegation still helps, but only when the work is:
-
-- concrete
-- bounded
-- materially useful
-- non-overlapping in write scope
-
-The parent session should keep urgent critical-path work local and push only sidecar specialist tasks outward.
-
-# Scoring Protocol
-
-The quality ladder remains:
-
-- `80`: good enough to commit
-- `90`: good enough to merge
-- `95`: good enough to submit
-
-The numbers matter because they make “review” operational rather than rhetorical.
-
-# Additional Workflows
-
-## Talks
-
-Talk creation remains parallel to peer review, not a final afterthought.
-
-## Replication-first coding
-
-The Codex adaptation should still encourage:
-
-- stable file naming
-- reproducible outputs
-- explicit serialization of reusable intermediates
-- review before promotion into manuscript assets
-
-## Exploration-first side work
-
-`explorations/` is part of the architecture, not a convenience folder. It gives prototype work an explicit home outside the canonical pipeline.
+Promotion decisions still belong to the orchestrator or the user, not to critics.
 
 # Why This Is Not a Literal Clone
 

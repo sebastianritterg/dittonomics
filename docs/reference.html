@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f43aa2ac6a6dd6e2d45c657abbb927a2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7520e97717722f1e57ac30a340c12738.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/sebastianritterg/codex-clo-author"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/sebastianritterg/dittonomics"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -144,11 +144,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#core-workflow-skills" id="toc-core-workflow-skills" class="nav-link" data-scroll-target="#core-workflow-skills">Core workflow skills</a></li>
   <li><a href="#install-locations" id="toc-install-locations" class="nav-link" data-scroll-target="#install-locations">Install locations</a></li>
   </ul></li>
-  <li><a href="#codex-migration-cheatsheet" id="toc-codex-migration-cheatsheet" class="nav-link" data-scroll-target="#codex-migration-cheatsheet">Codex Migration Cheatsheet</a></li>
+  <li><a href="#workflow-kernel-files" id="toc-workflow-kernel-files" class="nav-link" data-scroll-target="#workflow-kernel-files">Workflow Kernel Files</a></li>
+  <li><a href="#voice-setup-files" id="toc-voice-setup-files" class="nav-link" data-scroll-target="#voice-setup-files">Voice Setup Files</a></li>
+  <li><a href="#dittonomics-migration-cheatsheet" id="toc-dittonomics-migration-cheatsheet" class="nav-link" data-scroll-target="#dittonomics-migration-cheatsheet">Dittonomics Migration Cheatsheet</a></li>
   <li><a href="#worker-critic-map" id="toc-worker-critic-map" class="nav-link" data-scroll-target="#worker-critic-map">Worker-Critic Map</a></li>
-  <li><a href="#journal-calibration-notes" id="toc-journal-calibration-notes" class="nav-link" data-scroll-target="#journal-calibration-notes">Journal Calibration Notes</a></li>
+  <li><a href="#persistence-rule" id="toc-persistence-rule" class="nav-link" data-scroll-target="#persistence-rule">Persistence Rule</a></li>
   <li><a href="#exploration-workflow-mapping" id="toc-exploration-workflow-mapping" class="nav-link" data-scroll-target="#exploration-workflow-mapping">Exploration Workflow Mapping</a></li>
-  <li><a href="#upgrade-workflow-mapping" id="toc-upgrade-workflow-mapping" class="nav-link" data-scroll-target="#upgrade-workflow-mapping">Upgrade Workflow Mapping</a></li>
   <li><a href="#attribution-and-scope" id="toc-attribution-and-scope" class="nav-link" data-scroll-target="#attribution-and-scope">Attribution and Scope</a></li>
   </ul>
 </nav>
@@ -159,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Reference</h1>
-<p class="subtitle lead">Quick lookup for skills, layers, and the Codex migration map</p>
+<p class="subtitle lead">Quick lookup for skills, layers, and the Dittonomics migration map</p>
 </div>
 
 
@@ -184,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th>Upstream intent</th>
-<th>Codex-facing entry point</th>
+<th>Dittonomics entry point</th>
 </tr>
 </thead>
 <tbody>
@@ -265,13 +266,39 @@ ul.task-list li input[type="checkbox"] {
 <td>repo overlay</td>
 <td><code>AGENTS.override.md</code></td>
 </tr>
+<tr class="odd">
+<td>optional voice layer</td>
+<td><code>~/voice</code></td>
+</tr>
 </tbody>
 </table>
 </section>
 </section>
-<section id="codex-migration-cheatsheet" class="level1">
-<h1>Codex Migration Cheatsheet</h1>
-<p>This is the table that makes the upstream Clo-Author manual usable without constant mental translation.</p>
+<section id="workflow-kernel-files" class="level1">
+<h1>Workflow Kernel Files</h1>
+<p>The public Dittonomics starter now treats these files as the core kernel references:</p>
+<ul>
+<li><code>pipeline-contract.md</code></li>
+<li><code>artifact-contracts.md</code></li>
+<li><code>agent-registry.md</code></li>
+<li><code>routing-rules.md</code></li>
+</ul>
+</section>
+<section id="voice-setup-files" class="level1">
+<h1>Voice Setup Files</h1>
+<p>The public voice starter uses this recommended structure:</p>
+<ul>
+<li><code>core_voice.md</code></li>
+<li><code>voice_examples.md</code></li>
+<li><code>econ_paper_register.md</code></li>
+<li><code>style_hierarchy.md</code></li>
+<li><code>collaboration_register.md</code> optional</li>
+<li><code>journal_tightening_register.md</code> optional</li>
+</ul>
+<p>Voice is optional. The public templates document the structure without exposing one user’s private prose system.</p>
+</section>
+<section id="dittonomics-migration-cheatsheet" class="level1">
+<h1>Dittonomics Migration Cheatsheet</h1>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -299,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><code>.claude/references</code></td>
 <td>active <code>clo-workflow</code> references</td>
-<td>Domain, journal, exploration, and migration guidance</td>
+<td>Domain, journal, exploration, migration, and kernel guidance</td>
 </tr>
 <tr class="even">
 <td>slash commands</td>
@@ -314,19 +341,24 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>distributable <code>.claude/</code> bundle in the repo</td>
 <td>forkable <code>.codex/</code> starter folder in the repo</td>
-<td>Public starter kit for AGENTS, skills, agents, and quick reference</td>
+<td>Public starter kit for AGENTS, skills, agents, config, and quick reference</td>
 </tr>
 <tr class="odd">
-<td><code>.claude/settings.json</code> hooks</td>
-<td>explicit utilities and config guidance</td>
+<td>settings and hidden behaviors</td>
+<td><code>config.toml</code>, <code>AGENTS.md</code>, and explicit utilities</td>
 <td>Avoid undocumented hidden behavior</td>
 </tr>
 <tr class="even">
+<td>implicit writing style</td>
+<td>optional <code>~/voice</code> layer</td>
+<td>Keep prose rules explicit and modular</td>
+</tr>
+<tr class="odd">
 <td><code>.claude</code> exploration instructions</td>
 <td><code>explorations/</code> folder plus exploration reference</td>
 <td>Create the folder when missing</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>orchestrator agent</td>
 <td>main Codex session</td>
 <td>No separate orchestrator install needed</td>
@@ -339,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Worker</th>
+<th>Creator</th>
 <th>Reviewer</th>
 </tr>
 </thead>
@@ -371,16 +403,15 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="journal-calibration-notes" class="level1">
-<h1>Journal Calibration Notes</h1>
-<p>The public Codex adaptation should stay generic first. Any user can adapt the journal layer to their own field, target journals, and review culture.</p>
-<p>One example overlay may include:</p>
+<section id="persistence-rule" class="level1">
+<h1>Persistence Rule</h1>
+<p>A core Dittonomics rule is now explicit:</p>
 <ul>
-<li><code>Journal of Development Economics</code></li>
-<li><code>Regional Studies</code></li>
-<li><code>Journal of Economic Geography</code></li>
+<li>skills resolve paths first</li>
+<li>creator agents write only to named targets</li>
+<li>critics, referees, editor, and verifier return reports to the parent orchestrator</li>
+<li>the parent orchestrator owns report saving, renaming, and promotion unless it explicitly delegates a write target</li>
 </ul>
-<p>Those examples are illustrative only. They are there to show how a concrete user profile can customize the domain and journal reference layer, not to define the public default.</p>
 </section>
 <section id="exploration-workflow-mapping" class="level1">
 <h1>Exploration Workflow Mapping</h1>
@@ -415,20 +446,9 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="upgrade-workflow-mapping" class="level1">
-<h1>Upgrade Workflow Mapping</h1>
-<p>When upstream Clo-Author evolves, the Codex adaptation should:</p>
-<ol type="1">
-<li>refresh the upstream source snapshot</li>
-<li>regenerate active Codex skills and subagents</li>
-<li>preserve source mirrors</li>
-<li>keep user-level defaults separate from repo overlays</li>
-<li>verify active docs no longer carry stale Claude-only instructions</li>
-</ol>
-</section>
 <section id="attribution-and-scope" class="level1">
 <h1>Attribution and Scope</h1>
-<p>This reference is intentionally compact. It is here to make the upstream Clo-Author manual readable to a Codex user, not to replace deeper architecture or customization material.</p>
+<p>This reference is intentionally compact. It is here to make the upstream Clo-Author manual readable to a Codex user and to surface the key Dittonomics contracts without forcing readers through the entire starter bundle.</p>
 
 
 </section>
@@ -507,7 +527,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/codex-clo-author\/");
+        var filterRegex = new RegExp("https:\/\/sebastianritterg\.github\.io\/dittonomics\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

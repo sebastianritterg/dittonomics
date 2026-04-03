@@ -53,15 +53,21 @@ h1.title {
 }
 
 .ditto-hero-grid {
-  align-items: center;
-  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  gap: clamp(1.6rem, 4vw, 3.25rem);
+  margin-bottom: 1.8rem;
 }
 
 .ditto-hero {
   display: block;
-  max-width: 18rem;
-  margin: 0 auto 1rem auto;
+  max-width: 15rem;
+  width: 100%;
+  margin: 0 auto 0 0;
   filter: drop-shadow(0 16px 30px rgba(104, 57, 126, 0.18));
+}
+
+.ditto-hero-grid .column:last-child {
+  min-width: 0;
 }
 
 .source-blend {
@@ -87,4 +93,11 @@ table {
 .sidebar nav[role="doc-toc"] {
   border-left: 2px solid rgba(13, 107, 97, 0.2);
   padding-left: 0.9rem;
+}
+
+@media (max-width: 991px) {
+  .ditto-hero {
+    max-width: 13rem;
+    margin: 0 auto 1.2rem auto;
+  }
 }
