@@ -15,12 +15,24 @@ The Ditto idea is intentional: this system keeps copying useful traits from upst
 :::
 :::
 
+::: {.ditto-fast-path}
+## Fork / Install / Customize
+
+Start here if you want to use Dittonomics yourself or roll it out for coauthors:
+
+- **Open the public manual**: [sebastianritterg.github.io/dittonomics](https://sebastianritterg.github.io/dittonomics/)
+- **Fork the GitHub repo**: [github.com/sebastianritterg/dittonomics](https://github.com/sebastianritterg/dittonomics)
+- **Install the starter locally**: copy the repo's `.codex/` into your own `~/.codex/`
+- **Add your own writing voice**: copy the `voice/` templates into `~/voice/` and adapt them privately
+- **Customize per project**: keep paper-specific rules in each repo's `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/`
+:::
+
 ::: {.callout-important}
 ## What This Manual Is For
 
 This site is written for two audiences:
 
-- you, as the person actively evolving the system
+- Me (Sebastian Ritter), as the person actively evolving the system and publishing the public manual
 - colleagues, coauthors, and future users who need a practical guide without reading every starter file by hand
 :::
 
