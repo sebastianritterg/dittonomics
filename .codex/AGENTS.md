@@ -10,6 +10,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Treat paper, output, and code paths as repository-specific. Inspect the repo before assuming `paper/`, `figures/`, or `tables/`.
 - Use explicit skills, artifacts, and prompts instead of hidden hooks or slash-command assumptions.
 - Let the parent orchestrator own persistence unless it explicitly delegates a named write target.
+- Treat paper libraries, examples, and references as guidance layers. For empirical questions, current web search may be needed because the frontier moves.
 
 ## Install Locations
 
@@ -60,4 +61,6 @@ Keep that layer explicit, optional, and user-owned.
 
 - Do not assume hidden file-protection or compaction hooks exist.
 - If context continuity matters, use the explicit snapshot utilities in `$clo-research-tools`.
+- Use `.codex-state/` as the default local checkpoint folder for end-of-day snapshots and resume-context files.
+- Prefer `$clo-research-tools checkpoint`, `$clo-research-tools resume-context`, and `$clo-research-tools verify-edit` over hidden background automation.
 - If a repository needs stricter protected-path handling, express it in repo `AGENTS.override.md` or repo-local skills.

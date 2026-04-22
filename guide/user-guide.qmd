@@ -1,203 +1,299 @@
 ---
 title: "User Guide"
-subtitle: "How to operate the Dittonomics workflow in practice"
+subtitle: "How to run Dittonomics day to day"
 ---
 
-# How It Works
+# The Core Mental Model
 
-Dittonomics keeps the original research workflow logic:
+Most of the time, you do **not** call agents directly.
 
-- the main Codex session acts as orchestrator
-- narrow subagents handle bounded specialist roles
-- creators create, critics review
-- the workflow advances only when artifacts clear their quality gates
+You usually call a **workflow skill**, and the main Codex session decides whether to:
 
-What changes is the implementation surface. Instead of relying on Claude-specific configuration layers, the Codex adaptation uses:
+- do the work itself
+- dispatch a specialist agent
+- dispatch a worker and then a critic
+- ask you for a decision at a real fork
 
-- `AGENTS.md` and repo overlays
-- Codex skills with explicit kernel references
-- Codex custom subagents in TOML
-- explicit workflow references
-- optional voice files for prose-sensitive writing and review
+That is the main operating idea:
 
-# Research Workflow
+- you call skills
+- Codex orchestrates
+- agents stay narrow
 
-## Phase 1: Discovery
+# The Daily Work Loop
 
-Discovery should produce:
+## Morning: resume cleanly
 
-- a research specification
-- a literature map
-- a data assessment
+Start with:
 
-The relevant roles are:
+```text
+Use $clo-research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.
+```
 
-- `librarian` and `librarian_critic`
-- `explorer` and `explorer_critic`
+What this is meant to do:
 
-The usual explicit entry point is `$clo-discover`.
+- read the latest checkpoint in `.codex-state/`
+- compare it to current git state
+- remind you what mattered yesterday
+- suggest the next action instead of making you rebuild context manually
 
-## Phase 2: Strategy
+## During the day: use the workflow skills
 
-Strategy locks the estimand, design, assumptions, falsification logic, and robustness plan before coding starts.
+Use the skill that matches the real task.
 
-The relevant roles are:
+### Discovery
 
-- `strategist`
-- `strategist_critic`
+```text
+Use $clo-discover lit on this topic and build the literature map first.
+```
 
-The usual explicit entry point is `$clo-strategize`.
+```text
+Use $clo-discover data and assess which datasets can support this question.
+```
 
-## Phase 3: Execution
+### Strategy
 
-Execution translates the design into:
+```text
+Use $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.
+```
 
-- cleaned data products
-- analysis scripts
-- tables and figures
-- writer handoff artifacts
+### Analysis
 
-The relevant roles are:
+```text
+Use $clo-analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.
+```
 
-- `data_engineer`
-- `coder`
-- `coder_critic`
+### Writing
 
-The active default language stance in this adaptation is:
+```text
+Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.
+```
 
-- Python primary
-- Stata co-default
-- R and Julia supported when the repo or the user explicitly centers them
+```text
+Use $clo-write results and narrate the main tables without overstating causality.
+```
 
-## Phase 4: Writing
+### Review
 
-Writing is now documented more explicitly as its own orchestrated layer.
+```text
+Use $clo-review on this draft and give me the highest-risk findings first.
+```
 
-The relevant roles are:
+### Revision
 
-- `writer`
-- `writer_critic`
+```text
+Use $clo-revise on this referee report and route each comment to the right workflow.
+```
 
-The public writing stack now emphasizes:
+### Talks and submission
 
-- section contracts
-- paragraph planning before drafting
-- design-aware causal language
-- humanizer after structure is sound
-- optional voice hierarchy only when the user wants it
+```text
+Use $clo-talk seminar to build the deck from the current paper.
+```
 
-The usual explicit entry point is `$clo-write`.
+```text
+Use $clo-submit and check whether this package is actually submission-ready.
+```
 
-## Phase 5: Peer Review
+## End of day: checkpoint intentionally
 
-Peer review is not a grammar pass. It is where the workflow asks whether the project is credible, scoped correctly, journal-calibrated, and ready to move forward.
+Use:
 
-The relevant roles are:
+```text
+Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.
+```
 
-- `editor`
-- `domain_referee`
-- `methods_referee`
+This is the recommended end-of-day ritual.
 
-The usual explicit entry point is `$clo-review`.
+# Explicit Skills vs Natural Language
 
-## Phase 6: Submission
+You can work in either style.
 
-Submission requires more than polished prose. The workflow should verify:
+## Explicit style
 
-- replication readiness
-- journal fit
-- final package completeness
+Best when:
 
-The relevant role is:
+- you want predictable routing
+- you are teaching a colleague
+- you want the website or starter kit to stay easy to follow
 
-- `verifier`
+Example:
 
-The usual explicit entry point is `$clo-submit`.
+```text
+Use $clo-review --peer on the latest draft.
+```
 
-# Shared Contracts
+## Natural-language style
 
-The newer public starter assumes a stronger contract between the orchestrator and its skills.
+Best when:
 
-In practice that means:
+- the task is obvious
+- you want a conversational workflow
+- you do not care about naming the exact skill
 
-- the orchestrator resolves target paths before dispatch
-- agents receive a task packet instead of relying on loose prose instructions
-- artifacts have names, roles, and freshness expectations
-- critics and referees return reports to the parent instead of deciding where reports live
+Example:
 
-# Quality Gates
+```text
+Please review the current paper draft like a journal referee and focus on identification and contribution.
+```
 
-The active scoring thresholds remain:
+## Recommendation
 
-- `>= 80`: commit-ready
-- `>= 90`: merge-ready
-- `>= 95` with no weak component: submission-ready
+For daily work with colleagues, prefer explicit `$clo-*` names.
 
-These thresholds matter because the architecture assumes critique is operational, not decorative.
+It makes:
 
-# Voice Workflow
+- the system easier to learn
+- the website cheat sheet easier to use
+- routing behavior easier to remember
 
-Voice is optional. If you do not care about prose consistency beyond normal editing, you can ignore it entirely.
+# How Agent Activation Works
 
-If you do care, the public pattern is:
+## What usually activates agents
 
-- keep voice files in `~/voice`
-- treat them as style guidance, not as truth about evidence
-- keep structure, causality, and section logic governed by the relevant workflow skill
-- use optional overlays for collaboration or journal tightening instead of rewriting the core voice every time
+| What you ask for | Typical system response |
+|---|---|
+| literature review | `librarian` then `librarian_critic` |
+| data search | `explorer` then `explorer_critic` |
+| identification design | `strategist` then `strategist_critic` |
+| coding or data pipeline work | `coder` or `data_engineer`, then `coder_critic` |
+| paper drafting | `writer` |
+| front-end writing | `econ-intro-writing` governs structure, then writing follows that contract |
+| proofreading or writing review | `writer_critic` |
+| peer review | `editor`, `domain_referee`, `methods_referee` |
 
-# Exploration Workflow {#sec-exploration}
+## When to mention an agent directly
 
-`explorations/` remains part of the public workflow because exploratory work exists in real research and should have an explicit home.
+Do it when you want to steer the posture.
 
-Use `explorations/` for:
+Examples:
 
-- prototypes
-- side investigations
-- speculative identification checks
-- draft data or measurement experiments
+```text
+Use $clo-discover lit, but keep it repo-bibliography-first.
+```
 
-Do not use it for:
+```text
+Use $clo-review --peer and make the methods_referee especially tough on the event-study design.
+```
 
-- canonical cleaned data
-- manuscript-ready figures or tables
-- the final source of truth for analysis code
+Usually you still call the skill, not the raw agent.
 
-## Minimum rule
+# Checkpoint, Resume, And Verify-Edit
 
-If exploratory work is needed and `explorations/` does not exist, create:
+These three utilities are the new operational layer.
 
-- `explorations/README.md`
-- `explorations/ARCHIVE/`
+## Checkpoint
 
-Then create a subfolder per exploration.
+Purpose:
 
-## Graduation rule
+- save the state of a workday
+- leave structured notes for future you or a colleague
 
-Once an exploration becomes part of the real pipeline, promote the relevant outputs into the repo's canonical code, output, docs, or manuscript paths and leave a short record of what graduated.
+Default location:
 
-# Troubleshooting
+```text
+.codex-state/
+```
 
-## The upstream guide says `CLAUDE.md`
+Default files:
 
-Translate that to:
+```text
+.codex-state/
+  checkpoints/
+  latest.json
+  latest.md
+```
 
-- `AGENTS.md`
-- `AGENTS.override.md`
-- repo-local skills
+What gets stored:
 
-## The upstream guide mentions `.claude/rules`
+- goal
+- summary
+- blockers
+- open questions
+- important files
+- next step
+- git branch and recent commits
+- directory snapshot
 
-Translate that to:
+## Resume-context
 
-- active workflow references
-- source-rule mirrors when provenance matters
-- repo overlays for truly always-on repo behavior
+Purpose:
 
-## The workflow feels too implicit
+- pick back up quickly the next day
+- avoid spending the first 10 to 20 minutes reconstructing context
 
-Use explicit skill mentions such as `$clo-review` or `$clo-discover` instead of relying on automatic inference.
+Typical use:
 
-## The repo lacks an exploration sandbox
+```text
+Use $clo-research-tools resume-context for this repo and tell me what I most likely need to do next.
+```
 
-Create `explorations/README.md` and `explorations/ARCHIVE/` before running prototype work.
+## Verify-edit
+
+Purpose:
+
+- run a manual post-edit safety pass
+- use this instead of hidden background lint hooks
+
+Typical use:
+
+```text
+Use $clo-research-tools verify-edit 03_code/src/estimate.py
+```
+
+Use it after:
+
+- editing Python, R, or Julia scripts
+- changing a manuscript build file
+- touching a critical config file
+
+# A Good Team Workflow
+
+For a shared research team:
+
+1. keep the public starter generic
+2. keep private voice files out of the public repo
+3. use repo-local `AGENTS.md` for project rules
+4. use checkpoints at real stopping points
+5. keep the website open as the daily cheat sheet
+
+# A Good End-Of-Day Prompt
+
+```text
+Use $clo-research-tools checkpoint for this repo.
+
+Goal: finish the event-study pipeline and prepare the writing handoff.
+Summary: built the cleaned panel, updated the estimation script, and confirmed the main figure compiles.
+Blocker: the placebo design still needs one decision.
+Important file: 03_code/src/event_study.py
+Important file: 04_outputs/figures/main_event_study.pdf
+Next step: decide the placebo window and rerun the robustness block before writing.
+```
+
+# A Good Next-Morning Prompt
+
+```text
+Use $clo-research-tools resume-context for this repo and reconstruct where we left off yesterday, the key files, blockers, and the best next step.
+```
+
+# Common Mistakes
+
+## Calling the wrong layer
+
+Do not call `writer` directly unless you have a very specific reason.
+Usually call `$clo-write`.
+
+## Treating voice as structure
+
+Voice files shape prose.
+They do not replace identification logic, evidence discipline, or intro architecture.
+
+## Forgetting the checkpoint
+
+If you stop work without one, the next session becomes unnecessarily expensive.
+
+## Treating references as sole truth
+
+Repo bibliography comes first.
+Current web or working-paper checks can supplement fast-moving empirical frontiers.
+Neither should be treated as the only truth source.

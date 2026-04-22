@@ -1,134 +1,159 @@
-﻿---
+---
 name: clo-research-tools
-description: Run clo-author utility and maintenance workflows. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Utility toolbox for maintenance, compilation, validation, checkpoint or resume, edit verification, upgrade, and project administration. Not a pipeline phase.
 ---
 
 # Clo Research Tools
 
-Adapt the Clo-Author workflow to Codex.
+Use this skill for utilities and maintenance, not for a research phase.
 
-1. Start by inspecting the repo's AGENTS files, README.md, and current folder layout.
-2. Use the repository's actual manuscript, output, and docs directories instead of assuming Clo-Author defaults.
-3. Use the main Codex session as the orchestrator. Delegate focused work to the matching Codex subagents when that improves quality or speed.
-4. Preserve worker-critic separation: creators produce artifacts, critics, editors, and referees review without editing.
-5. If a repo already has paper-specific rules or skills, treat them as higher-priority than the generic Clo-Author defaults.
-6. Read `references/source-skill.md` only when you need the original upstream command details or argument structure.
+## Kernel References
 
-## Codex Notes
+Read:
 
-- Original slash commands are exposed here as explicit `$clo-*` skills.
-- Hidden hooks are not ported. Use explicit verification, snapshot, upgrade, and review steps instead.
-- Use the active `clo-workflow` references for domain and journal calibration: ~/.codex/skills/clo-workflow/references/domain-profile.md and ~/.codex/skills/clo-workflow/references/journal-profiles.md.
-- Treat `explorations/` as the repo-level sandbox for experimental work. If exploratory work is needed and the folder is missing, scaffold it from ~/.codex/skills/clo-workflow/references/explorations.md.
-- Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
-- For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
+1. `../clo-workflow/references/routing-rules.md` when path resolution or persistence policy matters
+2. `references/maintenance-operations.md` when the task involves checkpointing, recovery, edit verification, or upstream hook provenance
 
-## Source Workflow
+## Toolbox Role
 
-# Tools
+This skill does not own discovery, strategy, analysis, writing, review, or submission logic.
 
-Utility subcommands for project maintenance and infrastructure.
+It provides lightweight support commands such as:
 
-**Input:** `$ARGUMENTS` - subcommand followed by any arguments.
+- `commit [message]`
+- `compile [file]`
+- `validate-bib`
+- `journal`
+- `context`
+- `checkpoint [scope(optional)]`
+- `resume-context [scope(optional)]`
+- `verify-edit [path(optional)]`
+- `deploy`
+- `learn`
+- `upgrade`
 
----
+## Subcommand Notes
 
-## Subcommands
+- `checkpoint`
+  creates an explicit state snapshot under `.codex-state/` and is the end-of-day or handoff command
+- `resume-context`
+  reconstructs working context from the latest checkpoint plus current repo state
+- `verify-edit`
+  runs an explicit advisory post-edit verification pass instead of hidden lint hooks
+- `context`
+  reports session health and likely relevant artifacts without mutating files
+- `upgrade`
+  updates workflow infrastructure while preserving repo content and local customizations
+
+## File Format And Scripts
+
+The default local state folder is:
+
+```text
+.codex-state/
+  checkpoints/
+    2026-04-22T18-30-00Z_end-of-day.json
+    2026-04-22T18-30-00Z_end-of-day.md
+  latest.json
+  latest.md
+  resume-context.md
+```
+
+The bundled helper scripts are:
+
+- `scripts/checkpoint_context.py`
+- `scripts/resume_context.py`
+- `scripts/snapshot_research_state.py`
+- `scripts/draft_learning_prompt.py`
+
+The JSON files are the durable machine-readable layer.
+The Markdown files are the human-readable layer.
 
 ### `$clo-research-tools commit [message]` - Git Commit
+
 Stage changes, create commit, optionally create PR and merge.
+
 - Run git status to identify changes
-- Stage relevant files (never stage.env or credentials)
-- Create commit with descriptive message
-- If quality score available and >= 80, note in commit
+- Stage relevant files, never staging secrets or credentials
+- Create a descriptive message
+- If a quality score exists and is `>= 80`, note it in the commit body if useful
 
 ### `$clo-research-tools compile [file]` - LaTeX Compilation
-3-pass XeLaTeX + bibtex compilation.
 
-For papers:
-```bash
-cd Paper && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode [file]
-BIBINPUTS=..:$BIBINPUTS bibtex [file_base]
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode [file]
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode [file]
-```
-
-For talks:
-```bash
-cd Talks && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode [file]
-```
+3-pass XeLaTeX plus BibTeX compilation for papers or talks.
 
 ### `$clo-research-tools validate-bib` - Bibliography Validation
-Cross-reference all \cite{} keys in paper and talk files against Bibliography_base.bib.
-Report: missing entries, unused entries, duplicate keys.
+
+Cross-reference all `\cite{}` keys in paper and talk files against the active bibliography.
+Report missing entries, duplicate keys, or unused entries.
 
 ### `$clo-research-tools journal` - Research Journal
-Regenerate the research journal timeline from quality reports and git history.
-Shows chronological record of agent actions, phase transitions, scores, decisions.
+
+Regenerate or summarize the research journal timeline from quality reports and git history.
 
 ### `$clo-research-tools context` - Context Status
-Show current context status and session health.
-Check context usage, whether auto-compact is approaching, what state will be preserved.
+
+Show current session health without mutating files.
+Check the branch, likely relevant artifacts, and what the latest checkpoint captured.
+
+### `$clo-research-tools checkpoint [scope]` - End-Of-Day Or Handoff Snapshot
+
+Create an explicit checkpoint before stopping work, compacting context, or handing work to a collaborator.
+
+Typical captured fields:
+
+- current goal
+- summary of work completed
+- blockers
+- open questions
+- important files
+- best next step
+- git branch and recent commits
+- key project directories
+
+Recommended usage:
+
+```text
+Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step.
+```
+
+### `$clo-research-tools resume-context [scope]` - Reconstruct Working Context
+
+Read the most recent checkpoint and combine it with current repo state so the next session starts with a clear brief.
+
+Recommended usage:
+
+```text
+Use $clo-research-tools resume-context for this repo. Reconstruct where we left off, what matters now, and the best next action.
+```
+
+### `$clo-research-tools verify-edit [path]` - Advisory Post-Edit Check
+
+Run a lightweight, explicit post-edit safety pass.
+
+Typical checks:
+
+- lint touched R, Python, or Julia files when applicable
+- verify edited paths still resolve
+- run lightweight compile or syntax checks when appropriate
+- report issues advisory-first instead of mutating automatically
 
 ### `$clo-research-tools deploy` - Deploy Guide Site
-Render Quarto guide site and publish to GitHub Pages.
-```bash
-cd guide && quarto publish gh-pages --no-browser
-```
+
+Render the Quarto guide site and publish to GitHub Pages when the repo uses Quarto docs.
 
 ### `$clo-research-tools learn` - Extract Learnings
-Extract reusable knowledge from the current session. Auto-memory handles corrections automatically; this is for multi-step workflows worth turning into a full skill.
 
-### `$clo-research-tools upgrade` - Upgrade Clo-Author Codex Infrastructure
-Upgrade an existing Codex port to the latest clo-author source architecture.
+Draft reusable learning prompts for patterns worth saving into project or personal memory.
 
-**What it does:**
-1. Clone the latest clo-author release into a temp directory
-2. Refresh the upstream Clo-Author source snapshot used by the Codex port generator
-3. Regenerate the managed Codex skills and subagents
-4. Replace managed `clo-*` skills under `~/.agents/skills`, mirror them to `~/.codex/skills`, and refresh managed subagents under `~/.codex/agents`
-5. Preserve repo-local overlays such as `.agents/skills`, `AGENTS.override.md`, `~/.codex/AGENTS.md`, and `~/.codex/config.toml`
-6. Report what changed
+### `$clo-research-tools upgrade` - Upgrade Dittonomics Or Clo-Author Infrastructure
 
-**Workflow:**
-```text
-Step 1: DOWNLOAD
-  - Clone latest clo-author into a temp directory
-
-Step 2: PRESERVE LOCAL CUSTOMIZATIONS
-  - Keep repo-local `.agents/skills` customizations
-  - Keep `AGENTS.override.md`
-  - Keep `~/.codex/AGENTS.md` and `~/.codex/config.toml`
-  - Keep non-clo skills and non-managed custom agents
-
-Step 3: REGENERATE
-  - Refresh the upstream source snapshot
-  - Run the Codex port generator
-  - Review the staged output for new agents, skills, and references
-
-Step 4: SYNC MANAGED INSTALLS
-  - Replace managed `clo-*` skills in `~/.agents/skills`
-  - Mirror those skills to `~/.codex/skills`
-  - Replace managed custom subagents in `~/.codex/agents`
-
-Step 5: DO NOT TOUCH
-  - paper, scripts, data, notes, and other repo content
-  - repo-specific overlays outside the managed Clo-Author Codex port
-
-Step 6: REPORT
-  - List what was updated
-  - List what was preserved
-  - Clean up temp files
-```
-
----
+Update workflow infrastructure while preserving repo content and local customizations.
 
 ## Principles
+
 - **Each subcommand is lightweight.** No multi-agent orchestration needed.
-- **Compile always uses 3-pass.** Ensures references and citations resolve.
-- **validate-bib catches drift.** Run before commits to catch broken citations.
-- **Upgrade preserves content.** Infrastructure changes, your paper doesn't.
-
-
-
-
+- **Compile stays explicit.** Build or lint only when it helps the current task.
+- **validate-bib catches drift.** Run it before commits or submission.
+- **Checkpoint and resume are explicit.** Do not rely on hidden automation for context continuity.
+- **Upgrade preserves content.** Infrastructure changes, your paper does not.

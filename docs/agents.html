@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3ec40a5b318c3f5e576f4b083394b62a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dd08bc3ce32ad73fdbb8c76727ba26f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,6 +71,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -139,40 +142,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-agents-work" id="toc-how-agents-work" class="nav-link active" data-scroll-target="#how-agents-work">How Agents Work</a></li>
-  <li><a href="#the-researchers-discovery-phase" id="toc-the-researchers-discovery-phase" class="nav-link" data-scroll-target="#the-researchers-discovery-phase">The Researchers (Discovery Phase)</a>
+  <li><a href="#how-agents-fit-into-daily-use" id="toc-how-agents-fit-into-daily-use" class="nav-link active" data-scroll-target="#how-agents-fit-into-daily-use">How Agents Fit Into Daily Use</a></li>
+  <li><a href="#the-main-agent-families" id="toc-the-main-agent-families" class="nav-link" data-scroll-target="#the-main-agent-families">The Main Agent Families</a>
   <ul class="collapse">
-  <li><a href="#librarian" id="toc-librarian" class="nav-link" data-scroll-target="#librarian">Librarian</a></li>
-  <li><a href="#librarian-critic" id="toc-librarian-critic" class="nav-link" data-scroll-target="#librarian-critic">Librarian Critic</a></li>
-  <li><a href="#explorer" id="toc-explorer" class="nav-link" data-scroll-target="#explorer">Explorer</a></li>
-  <li><a href="#explorer-critic" id="toc-explorer-critic" class="nav-link" data-scroll-target="#explorer-critic">Explorer Critic</a></li>
+  <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">Discovery</a></li>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  <li><a href="#execution" id="toc-execution" class="nav-link" data-scroll-target="#execution">Execution</a></li>
+  <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing">Writing</a></li>
+  <li><a href="#review-and-submission" id="toc-review-and-submission" class="nav-link" data-scroll-target="#review-and-submission">Review And Submission</a></li>
+  <li><a href="#talks" id="toc-talks" class="nav-link" data-scroll-target="#talks">Talks</a></li>
   </ul></li>
-  <li><a href="#the-strategists-strategy-phase" id="toc-the-strategists-strategy-phase" class="nav-link" data-scroll-target="#the-strategists-strategy-phase">The Strategists (Strategy Phase)</a>
+  <li><a href="#what-you-should-usually-call-instead" id="toc-what-you-should-usually-call-instead" class="nav-link" data-scroll-target="#what-you-should-usually-call-instead">What You Should Usually Call Instead</a>
   <ul class="collapse">
-  <li><a href="#strategist" id="toc-strategist" class="nav-link" data-scroll-target="#strategist">Strategist</a></li>
-  <li><a href="#strategist-critic" id="toc-strategist-critic" class="nav-link" data-scroll-target="#strategist-critic">Strategist Critic</a></li>
+  <li><a href="#instead-of-calling-agents-directly-call-skills" id="toc-instead-of-calling-agents-directly-call-skills" class="nav-link" data-scroll-target="#instead-of-calling-agents-directly-call-skills">Instead of calling agents directly, call skills</a></li>
   </ul></li>
-  <li><a href="#the-builders-execution-phase" id="toc-the-builders-execution-phase" class="nav-link" data-scroll-target="#the-builders-execution-phase">The Builders (Execution Phase)</a>
-  <ul class="collapse">
-  <li><a href="#data-engineer" id="toc-data-engineer" class="nav-link" data-scroll-target="#data-engineer">Data Engineer</a></li>
-  <li><a href="#coder" id="toc-coder" class="nav-link" data-scroll-target="#coder">Coder</a></li>
-  <li><a href="#coder-critic" id="toc-coder-critic" class="nav-link" data-scroll-target="#coder-critic">Coder Critic</a></li>
-  <li><a href="#writer" id="toc-writer" class="nav-link" data-scroll-target="#writer">Writer</a></li>
-  <li><a href="#writer-critic" id="toc-writer-critic" class="nav-link" data-scroll-target="#writer-critic">Writer Critic</a></li>
-  </ul></li>
-  <li><a href="#the-reviewers-peer-review-phase" id="toc-the-reviewers-peer-review-phase" class="nav-link" data-scroll-target="#the-reviewers-peer-review-phase">The Reviewers (Peer Review Phase)</a>
-  <ul class="collapse">
-  <li><a href="#editor" id="toc-editor" class="nav-link" data-scroll-target="#editor">Editor</a></li>
-  <li><a href="#domain-referee" id="toc-domain-referee" class="nav-link" data-scroll-target="#domain-referee">Domain Referee</a></li>
-  <li><a href="#methods-referee" id="toc-methods-referee" class="nav-link" data-scroll-target="#methods-referee">Methods Referee</a></li>
-  </ul></li>
-  <li><a href="#the-infrastructure" id="toc-the-infrastructure" class="nav-link" data-scroll-target="#the-infrastructure">The Infrastructure</a>
-  <ul class="collapse">
-  <li><a href="#storyteller-and-storyteller-critic" id="toc-storyteller-and-storyteller-critic" class="nav-link" data-scroll-target="#storyteller-and-storyteller-critic">Storyteller and Storyteller Critic</a></li>
-  <li><a href="#verifier" id="toc-verifier" class="nav-link" data-scroll-target="#verifier">Verifier</a></li>
-  </ul></li>
-  <li><a href="#agent-catalog" id="toc-agent-catalog" class="nav-link" data-scroll-target="#agent-catalog">Quick Catalog</a></li>
-  <li><a href="#codex-specific-notes" id="toc-codex-specific-notes" class="nav-link" data-scroll-target="#codex-specific-notes">Codex-Specific Notes</a></li>
+  <li><a href="#when-to-mention-an-agent-anyway" id="toc-when-to-mention-an-agent-anyway" class="nav-link" data-scroll-target="#when-to-mention-an-agent-anyway">When To Mention An Agent Anyway</a></li>
+  <li><a href="#worker-critic-logic" id="toc-worker-critic-logic" class="nav-link" data-scroll-target="#worker-critic-logic">Worker-Critic Logic</a></li>
+  <li><a href="#agent-cheat-sheet" id="toc-agent-cheat-sheet" class="nav-link" data-scroll-target="#agent-cheat-sheet">Agent Cheat Sheet</a></li>
+  <li><a href="#the-colleague-rule" id="toc-the-colleague-rule" class="nav-link" data-scroll-target="#the-colleague-rule">The Colleague Rule</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Agents</h1>
-<p class="subtitle lead">How the specialist roles map into Codex custom subagents</p>
+<p class="subtitle lead">Who does what, when they run, and what you should ask them for</p>
 </div>
 
 
@@ -199,245 +186,397 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="how-agents-work" class="level1">
-<h1>How Agents Work</h1>
-<p>The Codex adaptation keeps the Clo-Author specialist structure, but the implementation format changes:</p>
+<section id="how-agents-fit-into-daily-use" class="level1">
+<h1>How Agents Fit Into Daily Use</h1>
+<p>Dittonomics uses agents to keep specialist work narrow.</p>
+<p>The important rule is:</p>
 <ul>
-<li>upstream markdown agent definitions become Codex custom subagents</li>
-<li>the main Codex session remains the orchestrator</li>
-<li>skills decide when to dispatch roles</li>
+<li>creators create</li>
+<li>critics critique</li>
+<li>the main Codex session orchestrates</li>
 </ul>
-<p>Each role should stay narrow. The architecture works because workers do the making and critics do the checking.</p>
+<p>In normal use, you call a skill such as <code>$clo-discover</code> or <code>$clo-write</code>. The skill then decides which agent or worker-critic pair should run.</p>
 </section>
-<section id="the-researchers-discovery-phase" class="level1">
-<h1>The Researchers (Discovery Phase)</h1>
-<section id="librarian" class="level2">
-<h2 class="anchored" data-anchor-id="librarian">Librarian</h2>
-<p>Creates:</p>
-<ul>
-<li>literature maps</li>
-<li>annotated bibliographies</li>
-<li>frontier summaries</li>
-</ul>
-</section>
-<section id="librarian-critic" class="level2">
-<h2 class="anchored" data-anchor-id="librarian-critic">Librarian Critic</h2>
-<p>Checks:</p>
-<ul>
-<li>coverage gaps</li>
-<li>recency</li>
-<li>scope discipline</li>
-<li>journal relevance</li>
-</ul>
-</section>
-<section id="explorer" class="level2">
-<h2 class="anchored" data-anchor-id="explorer">Explorer</h2>
-<p>Creates:</p>
-<ul>
-<li>data source lists</li>
-<li>feasibility rankings</li>
-<li>variable-coverage assessments</li>
-</ul>
-</section>
-<section id="explorer-critic" class="level2">
-<h2 class="anchored" data-anchor-id="explorer-critic">Explorer Critic</h2>
-<p>Checks:</p>
-<ul>
-<li>measurement validity</li>
-<li>sample selection</li>
-<li>external validity</li>
-<li>design compatibility</li>
-</ul>
-</section>
-</section>
-<section id="the-strategists-strategy-phase" class="level1">
-<h1>The Strategists (Strategy Phase)</h1>
-<section id="strategist" class="level2">
-<h2 class="anchored" data-anchor-id="strategist">Strategist</h2>
-<p>Designs:</p>
-<ul>
-<li>estimand</li>
-<li>identification strategy</li>
-<li>robustness plan</li>
-<li>falsification tests</li>
-</ul>
-</section>
-<section id="strategist-critic" class="level2">
-<h2 class="anchored" data-anchor-id="strategist-critic">Strategist Critic</h2>
-<p>Checks:</p>
-<ul>
-<li>design validity</li>
-<li>assumptions</li>
-<li>inference logic</li>
-<li>failure modes</li>
-</ul>
-</section>
-</section>
-<section id="the-builders-execution-phase" class="level1">
-<h1>The Builders (Execution Phase)</h1>
-<section id="data-engineer" class="level2">
-<h2 class="anchored" data-anchor-id="data-engineer">Data Engineer</h2>
-<p>Handles:</p>
-<ul>
-<li>cleaning</li>
-<li>wrangling</li>
-<li>figure data preparation</li>
-<li>reproducible output structure</li>
-</ul>
-</section>
-<section id="coder" class="level2">
-<h2 class="anchored" data-anchor-id="coder">Coder</h2>
-<p>Handles:</p>
-<ul>
-<li>estimation scripts</li>
-<li>table generation</li>
-<li>analysis orchestration</li>
-</ul>
-</section>
-<section id="coder-critic" class="level2">
-<h2 class="anchored" data-anchor-id="coder-critic">Coder Critic</h2>
-<p>Checks:</p>
-<ul>
-<li>strategy alignment</li>
-<li>reproducibility</li>
-<li>code quality</li>
-<li>output readiness</li>
-</ul>
-</section>
-<section id="writer" class="level2">
-<h2 class="anchored" data-anchor-id="writer">Writer</h2>
-<p>Handles:</p>
-<ul>
-<li>paper sections</li>
-<li>notation discipline</li>
-<li>claims-and-evidence alignment</li>
-</ul>
-</section>
-<section id="writer-critic" class="level2">
-<h2 class="anchored" data-anchor-id="writer-critic">Writer Critic</h2>
-<p>Checks:</p>
-<ul>
-<li>hedging</li>
-<li>notation drift</li>
-<li>claim inflation</li>
-<li>style consistency</li>
-</ul>
-</section>
-</section>
-<section id="the-reviewers-peer-review-phase" class="level1">
-<h1>The Reviewers (Peer Review Phase)</h1>
-<section id="editor" class="level2">
-<h2 class="anchored" data-anchor-id="editor">Editor</h2>
-<p>The editor does not simply summarize. The editor:</p>
-<ul>
-<li>calibrates scope</li>
-<li>decides whether the paper is appropriately targeted</li>
-<li>assigns the referee posture</li>
-<li>synthesizes the decision after reports come back</li>
-</ul>
-</section>
-<section id="domain-referee" class="level2">
-<h2 class="anchored" data-anchor-id="domain-referee">Domain Referee</h2>
-<p>Checks:</p>
-<ul>
-<li>contribution</li>
-<li>literature positioning</li>
-<li>external validity</li>
-<li>field expectations</li>
-</ul>
-</section>
-<section id="methods-referee" class="level2">
-<h2 class="anchored" data-anchor-id="methods-referee">Methods Referee</h2>
-<p>Checks:</p>
-<ul>
-<li>identification</li>
-<li>estimation</li>
-<li>inference</li>
-<li>robustness sufficiency</li>
-</ul>
-</section>
-</section>
-<section id="the-infrastructure" class="level1">
-<h1>The Infrastructure</h1>
-<section id="storyteller-and-storyteller-critic" class="level2">
-<h2 class="anchored" data-anchor-id="storyteller-and-storyteller-critic">Storyteller and Storyteller Critic</h2>
-<p>These roles run in the presentation workflow and focus on:</p>
-<ul>
-<li>deck structure</li>
-<li>narrative arc</li>
-<li>figure fidelity</li>
-<li>talk format quality</li>
-</ul>
-</section>
-<section id="verifier" class="level2">
-<h2 class="anchored" data-anchor-id="verifier">Verifier</h2>
-<p>The verifier is the final mechanical gatekeeper:</p>
-<ul>
-<li>runability</li>
-<li>package completeness</li>
-<li>replication readiness</li>
-<li>output freshness</li>
-</ul>
-</section>
-</section>
-<section id="agent-catalog" class="level1">
-<h1>Quick Catalog</h1>
+<section id="the-main-agent-families" class="level1">
+<h1>The Main Agent Families</h1>
+<section id="discovery" class="level2">
+<h2 class="anchored" data-anchor-id="discovery">Discovery</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Phase</th>
-<th>Worker roles</th>
-<th>Critic or referee roles</th>
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Discovery</td>
-<td><code>librarian</code>, <code>explorer</code></td>
-<td><code>librarian_critic</code>, <code>explorer_critic</code></td>
+<td><code>librarian</code></td>
+<td>finds and organizes literature</td>
+<td>literature map, annotated bibliography</td>
+<td><code>$clo-discover lit</code></td>
 </tr>
 <tr class="even">
-<td>Strategy</td>
-<td><code>strategist</code></td>
-<td><code>strategist_critic</code></td>
+<td><code>librarian_critic</code></td>
+<td>checks literature quality</td>
+<td>coverage and recency critique</td>
+<td>after librarian</td>
 </tr>
 <tr class="odd">
-<td>Execution</td>
-<td><code>data_engineer</code>, <code>coder</code>, <code>writer</code></td>
-<td><code>coder_critic</code>, <code>writer_critic</code></td>
+<td><code>explorer</code></td>
+<td>finds and assesses data</td>
+<td>data source list, feasibility memo</td>
+<td><code>$clo-discover data</code></td>
 </tr>
 <tr class="even">
-<td>Peer Review</td>
-<td><code>editor</code></td>
-<td><code>domain_referee</code>, <code>methods_referee</code></td>
-</tr>
-<tr class="odd">
-<td>Submission</td>
-<td><code>verifier</code></td>
-<td>binary pass/fail gate</td>
-</tr>
-<tr class="even">
-<td>Talks</td>
-<td><code>storyteller</code></td>
-<td><code>storyteller_critic</code></td>
+<td><code>explorer_critic</code></td>
+<td>checks data fit</td>
+<td>measurement and validity critique</td>
+<td>after explorer</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="codex-specific-notes" class="level1">
-<h1>Codex-Specific Notes</h1>
-<p>In Codex, these roles typically live as TOML custom subagents under <code>~/.codex/agents</code>.</p>
-<p>The public architecture assumes:</p>
+<section id="strategy" class="level2">
+<h2 class="anchored" data-anchor-id="strategy">Strategy</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>strategist</code></td>
+<td>proposes identification designs</td>
+<td>strategy memo</td>
+<td><code>$clo-strategize</code></td>
+</tr>
+<tr class="even">
+<td><code>strategist_critic</code></td>
+<td>pressure-tests the design</td>
+<td>strategy review report</td>
+<td>after strategist</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="execution" class="level2">
+<h2 class="anchored" data-anchor-id="execution">Execution</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data_engineer</code></td>
+<td>cleans, wrangles, prepares figures</td>
+<td>cleaned data products, figure inputs</td>
+<td><code>$clo-analyze</code></td>
+</tr>
+<tr class="even">
+<td><code>coder</code></td>
+<td>implements analysis scripts</td>
+<td>estimation pipeline, outputs</td>
+<td><code>$clo-analyze</code></td>
+</tr>
+<tr class="odd">
+<td><code>coder_critic</code></td>
+<td>checks execution quality</td>
+<td>code review, strategy alignment</td>
+<td>after coder or data_engineer</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="writing" class="level2">
+<h2 class="anchored" data-anchor-id="writing">Writing</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>writer</code></td>
+<td>drafts or revises sections</td>
+<td>outline, paragraph plan, draft</td>
+<td><code>$clo-write</code></td>
+</tr>
+<tr class="even">
+<td><code>writer_critic</code></td>
+<td>critiques writing quality</td>
+<td>writing review findings</td>
+<td>proofread or writing review</td>
+</tr>
+<tr class="odd">
+<td><code>econ-intro-writing</code></td>
+<td>governs front-end structure</td>
+<td>intro architecture guidance</td>
+<td>intro, context, literature, opening stack</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="review-and-submission" class="level2">
+<h2 class="anchored" data-anchor-id="review-and-submission">Review And Submission</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>editor</code></td>
+<td>calibrates journal posture</td>
+<td>editorial synthesis</td>
+<td>peer review mode</td>
+</tr>
+<tr class="even">
+<td><code>domain_referee</code></td>
+<td>checks contribution and literature positioning</td>
+<td>domain report</td>
+<td>peer review mode</td>
+</tr>
+<tr class="odd">
+<td><code>methods_referee</code></td>
+<td>checks design and inference</td>
+<td>methods report</td>
+<td>peer review mode</td>
+</tr>
+<tr class="even">
+<td><code>verifier</code></td>
+<td>checks mechanics and package readiness</td>
+<td>verification pass or fail</td>
+<td>submission or compile checks</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="talks" class="level2">
+<h2 class="anchored" data-anchor-id="talks">Talks</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>storyteller</code></td>
+<td>builds presentations</td>
+<td>talk deck</td>
+<td><code>$clo-talk</code></td>
+</tr>
+<tr class="even">
+<td><code>storyteller_critic</code></td>
+<td>checks talk quality</td>
+<td>talk review report</td>
+<td>after storyteller</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="what-you-should-usually-call-instead" class="level1">
+<h1>What You Should Usually Call Instead</h1>
+<section id="instead-of-calling-agents-directly-call-skills" class="level2">
+<h2 class="anchored" data-anchor-id="instead-of-calling-agents-directly-call-skills">Instead of calling agents directly, call skills</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>If you want</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>literature work</td>
+<td><code>$clo-discover lit</code></td>
+</tr>
+<tr class="even">
+<td>data search</td>
+<td><code>$clo-discover data</code></td>
+</tr>
+<tr class="odd">
+<td>research design</td>
+<td><code>$clo-strategize</code></td>
+</tr>
+<tr class="even">
+<td>coding or output pipeline</td>
+<td><code>$clo-analyze</code></td>
+</tr>
+<tr class="odd">
+<td>writing</td>
+<td><code>$clo-write</code></td>
+</tr>
+<tr class="even">
+<td>review</td>
+<td><code>$clo-review</code></td>
+</tr>
+<tr class="odd">
+<td>utilities and state management</td>
+<td><code>$clo-research-tools</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="when-to-mention-an-agent-anyway" class="level1">
+<h1>When To Mention An Agent Anyway</h1>
+<p>Direct mention is useful when you want to shape the posture.</p>
+<p>Examples:</p>
+<pre class="text"><code>Use $clo-review, but make the methods_referee especially strict on the DiD assumptions.</code></pre>
+<pre class="text"><code>Use $clo-write intro and keep econ-intro-writing firmly in charge of structure.</code></pre>
+<pre class="text"><code>Use $clo-discover lit and make the librarian repo-bibliography-first before broad search.</code></pre>
+</section>
+<section id="worker-critic-logic" class="level1">
+<h1>Worker-Critic Logic</h1>
+<p>The system is intentionally not one-agent-does-everything.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  A[Worker creates artifact] --&gt; B[Critic reviews artifact]
+  B --&gt;|Pass| C[Artifact moves forward]
+  B --&gt;|Needs work| D[Worker revises]
+  D --&gt; B
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Why this matters:</p>
 <ul>
-<li>the main Codex session stays in charge</li>
-<li>custom subagents do not become mini-orchestrators</li>
-<li>the repo overlay may override generic defaults</li>
+<li>it exposes weak logic before it gets expensive</li>
+<li>it prevents self-grading</li>
+<li>it keeps quality review operational</li>
 </ul>
+</section>
+<section id="agent-cheat-sheet" class="level1">
+<h1>Agent Cheat Sheet</h1>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Ask for this</th>
+<th>Do not ask for this</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>librarian</code></td>
+<td>literature mapping</td>
+<td>final identification strategy</td>
+</tr>
+<tr class="even">
+<td><code>explorer</code></td>
+<td>data source search</td>
+<td>final causal claims</td>
+</tr>
+<tr class="odd">
+<td><code>strategist</code></td>
+<td>estimand and design</td>
+<td>code implementation</td>
+</tr>
+<tr class="even">
+<td><code>coder</code></td>
+<td>scripts and outputs</td>
+<td>literature review</td>
+</tr>
+<tr class="odd">
+<td><code>writer</code></td>
+<td>manuscript sections</td>
+<td>referee scoring</td>
+</tr>
+<tr class="even">
+<td><code>writer_critic</code></td>
+<td>writing review</td>
+<td>drafting from scratch</td>
+</tr>
+<tr class="odd">
+<td><code>domain_referee</code></td>
+<td>field-facing peer review</td>
+<td>code fixes</td>
+</tr>
+<tr class="even">
+<td><code>methods_referee</code></td>
+<td>methods peer review</td>
+<td>contribution rewriting</td>
+</tr>
+<tr class="odd">
+<td><code>verifier</code></td>
+<td>mechanics and replication checks</td>
+<td>substantive redesign</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-colleague-rule" class="level1">
+<h1>The Colleague Rule</h1>
+<p>If a colleague is new to the system, teach them this sentence first:</p>
+<blockquote class="blockquote">
+<p>Call the workflow skill you need. Let Codex decide whether an agent should be dispatched.</p>
+</blockquote>
 
 
 </section>

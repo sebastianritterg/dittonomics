@@ -1,144 +1,170 @@
 ---
 title: "Architecture"
-subtitle: "How Dittonomics keeps the upstream pipeline logic while changing the implementation layer"
+subtitle: "How the local install, starter bundle, checkpoints, and website fit together"
 ---
 
-# System Overview
+# System Layers
 
-The upstream architecture Dittonomics builds from is powerful because it separates:
+Dittonomics has four layers that matter in practice.
 
-- project constitution
-- always-needed workflow rules
-- on-demand references
-- on-demand workflows
-- specialist agents
-- infrastructure behavior
-
-The Codex adaptation keeps that shape, but translates the layers into Codex-native surfaces.
-
-| Layer | Codex-native location | Loaded when |
+| Layer | Where it lives | What it does |
 |---|---|---|
-| Session constitution | `AGENTS.md` | every session in the repo |
-| Repo overlay | `AGENTS.override.md` | every session when present |
-| Repo-local skills | `.agents/skills/` | on demand or by explicit mention |
-| Forkable starter bundle | `.codex/` in this repo | when a user copies or adapts the public starter |
-| User skills | `~/.codex/skills` | on demand or implicit by policy |
-| Custom subagents | `~/.codex/agents` | when the main session delegates |
-| Optional voice layer | `~/voice` | when writing or prose review needs it |
-| Explicit utilities and config | scripts, references, `config.toml` | when invoked |
+| Website manual | `guide/` and `docs/` | teaches humans how the system works |
+| Public starter bundle | `.codex/` in this repo | gives a generic forkable install |
+| Live local install | `~/.codex/`, `~/.agents/skills`, `~/voice/` | runs your actual working system |
+| Project repo overlay | `AGENTS.md`, `AGENTS.override.md`, `.agents/skills/` | makes behavior repo-specific |
 
-The important design difference is that Codex should not be documented as if hidden Claude hooks still exist. If behavior matters, it needs an explicit home.
+The public website explains the system.
+The starter bundle ships the generic version.
+Your local install is the live machine.
+The repo overlay makes each project real.
 
-# The Kernel Update
-
-The public starter now exposes a stronger workflow kernel than the first site draft.
-
-That kernel makes five things explicit:
-
-1. phase dependencies
-2. artifact contracts
-3. agent families and creator-critic separation
-4. routing and path-resolution rules
-5. persistence ownership
-
-In practice, that means the parent orchestrator resolves paths first, hands named targets to agents, and owns report saving unless it explicitly delegates a write target.
-
-## Kernel references
-
-The public `clo-workflow` starter now centers these files:
-
-- `pipeline-contract.md`
-- `artifact-contracts.md`
-- `agent-registry.md`
-- `routing-rules.md`
-
-Those files are the closest thing Dittonomics has to a shared operating contract across the `clo-*` stack.
-
-# Agent Workflow Diagram
-
-```{mermaid}
-flowchart LR
-    YOU((You)) --> D(Discovery)
-    D --> S(Strategy)
-    S --> E(Execution)
-    E --> W(Write)
-    W --> R(Peer Review)
-    R -->|score >= 95| SUB(Submission)
-    E -.-> T(Talks)
-    R -.->|missing lit| D
-    R -.->|flawed design| S
-    R -.->|more checks| E
-```
-
-## Agents by Phase
-
-The structure remains worker -> critic:
-
-- Discovery: librarian -> librarian_critic, explorer -> explorer_critic
-- Strategy: strategist -> strategist_critic
-- Execution: data_engineer or coder -> coder_critic
-- Writing: writer -> writer_critic
-- Peer Review: editor plus two blind referees
-- Submission: verifier as final gate
-
-# The Orchestrator
+# The Orchestrator Contract
 
 The main Codex session is the orchestrator.
 
-That means:
+That means it:
 
-- it reads repo guidance first
-- it decides when to invoke a skill
-- it dispatches subagents only for bounded work
-- it resolves paths before delegation
-- it owns persistence unless it deliberately hands off a named write target
-- it integrates outputs and applies quality gates
+- reads repo guidance first
+- decides which skill to invoke
+- dispatches subagents only for bounded specialist work
+- resolves paths before delegation
+- owns persistence unless it explicitly delegates a write target
 
-The architecture explicitly rejects the idea of installing a separate orchestrator agent when the main Codex session already has that responsibility.
+This is why Dittonomics does **not** install a separate orchestrator agent.
 
-# Shared Task Packets
+# Worker-Critic Architecture
 
-The updated public architecture now treats task packets as a first-class contract.
+The system keeps creation and evaluation separate.
 
-A good packet includes at least:
+| Mode | Creation layer | Review layer |
+|---|---|---|
+| discovery | librarian or explorer | paired critic |
+| strategy | strategist | strategist_critic |
+| execution | coder or data_engineer | coder_critic |
+| writing | writer | writer_critic |
+| peer review | editor and referees | blind review posture |
+| submission | verifier | final mechanical gate |
 
-- task type and mode
-- target files
-- required and optional artifacts
-- repo overlays
-- design metadata
-- output expectations
-- resolved target locations
-- persistence owner
+This separation is the main reason the workflow scales beyond one-off prompting.
 
-This is one of the biggest practical upgrades to the public starter because it reduces ad hoc routing language between skills and subagents.
+# Explicit Skills Instead Of Hidden Hooks
 
-# The Worker-Critic Loop
+Upstream Clo-Author uses hidden Claude mechanics in some places.
+Dittonomics converts those ideas into explicit, visible surfaces.
 
-```{mermaid}
-flowchart TD
-    W[Creator produces artifact] --> C[Critic reviews]
-    C -->|score >= 80| A[Approved]
-    C -->|score < 80| F[Creator revises]
-    F --> C2[Critic re-reviews]
-    C2 -->|pass| A
-    C2 -->|round 3 fail| U[Escalate]
+| Hidden upstream behavior | Dittonomics surface |
+|---|---|
+| slash commands | `$clo-*` skills |
+| hidden hooks | explicit research tools |
+| implicit context survival | `checkpoint` and `resume-context` |
+| buried writing habits | explicit `~/voice` files |
+
+The rule is simple:
+
+> if behavior matters, it should have a visible home
+
+# Local State And Checkpoints
+
+The new state layer lives in:
+
+```text
+.codex-state/
 ```
 
-The point is not bureaucracy. It is to keep creation and evaluation separate long enough to expose weak arguments before they become expensive.
+It is local repo memory, not canonical research output.
 
-# Voice as a Layer, Not a Hidden Habit
+## Default structure
 
-The live system now treats writing voice as a modular layer.
+```text
+.codex-state/
+  checkpoints/
+    2026-04-22T18-30-00Z_end-of-day.json
+    2026-04-22T18-30-00Z_end-of-day.md
+  latest.json
+  latest.md
+  resume-context.md
+```
 
-That matters because it lets users keep prose style explicit without hardcoding a private writing voice into every generic starter file. In the public repo, the voice layer is optional and documented through templates rather than copied from any one installation.
+## Why both JSON and Markdown exist
 
-# Exploration and File Promotion
+The JSON files are:
 
-`explorations/` is still part of the architecture, not a convenience folder. Prototype work should start there and only move into canonical outputs once it stabilizes.
+- stable
+- machine-readable
+- good for scripted recovery later
 
-Promotion decisions still belong to the orchestrator or the user, not to critics.
+The Markdown files are:
 
-# Why This Is Not a Literal Clone
+- easy to read
+- easy to share with a colleague
+- good for quick manual inspection
 
-The site is intentionally similar to Clo-Author at the workflow level, but not at the implementation label level. The manual should help a Codex user operate the system correctly, not cosmetically.
+## Recommended policy
+
+For working research repos:
+
+- keep `.codex-state/` local
+- add it to `.gitignore` unless you explicitly want to share checkpoints
+- treat it as operational memory
+
+# How Resume Works
+
+Resume is not magic memory.
+It is a disciplined reconstruction step.
+
+It combines:
+
+- the latest checkpoint
+- current git state
+- recent commits
+- current file existence
+
+That is enough to restart a session cleanly without pretending the system has silent hidden memory.
+
+# Voice As A Layer
+
+The voice layer is modular and optional.
+
+It lives in `~/voice/` and sits **below** repo guidance and front-end structure rules.
+
+That means:
+
+- voice shapes prose
+- voice does not replace evidence
+- voice does not replace intro architecture
+- voice does not outrank repo-specific rules
+
+# Public Repo, Local Install, And Website
+
+This repo is intentionally both:
+
+- a manual
+- a starter kit
+
+That matters for colleagues.
+
+Someone can:
+
+1. read the website
+2. copy the starter bundle
+3. install it locally
+4. add a repo overlay
+5. start using the same workflow with minimal guesswork
+
+# The Ditto Expansion Rule
+
+As you add more capabilities later, keep the architecture extensible.
+
+Good additions:
+
+- new skills with clear boundaries
+- new utilities with explicit names
+- new public docs sections
+- new optional overlays
+
+Bad additions:
+
+- hidden behavior nobody can explain
+- one-off hacks that bypass the skill system
+- private defaults silently turning into public starter rules

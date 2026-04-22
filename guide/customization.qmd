@@ -1,155 +1,214 @@
 ---
 title: "Customization"
-subtitle: "How to adapt Dittonomics to your own Codex setup"
+subtitle: "How to install Dittonomics, set up your own voice, and adapt it for a team"
 ---
 
-# Overview
+# What To Customize
 
-Dittonomics is designed to be customized without losing the architecture.
+There are four customization layers:
 
-The main rule is:
+| Layer | Customize this when | Where |
+|---|---|---|
+| public starter | you want to change what colleagues copy by default | repo `.codex/` |
+| local install | you want your own always-on user setup | `~/.codex/`, `~/.agents/skills` |
+| project repo | one project needs special rules | `AGENTS.md`, `AGENTS.override.md`, `.agents/skills/` |
+| voice | you want prose continuity across sessions | `~/voice/` |
 
-- keep generic user-level defaults generic
-- keep project-specific behavior in repo overlays
-- keep provenance available but separate from active operating guidance
-- keep writing voice optional and explicit rather than buried in prompts
+# Recommended Install Pattern
 
-# Codex Configuration Layers
+## Fork-first option
 
-| Layer | Use |
-|---|---|
-| `.codex/` in this repo | forkable starter bundle for the user-level Codex layer |
-| `AGENTS.md` | session constitution and stable working rules |
-| `AGENTS.override.md` | repo-specific overlay |
-| `.agents/skills/` | repo-local extensions and domain skills |
-| `~/.codex/skills` | user-level workflow skills |
-| `~/.codex/agents` | custom subagents |
-| `~/voice` | optional prose-style hierarchy for writing and review |
-| workflow references | active domain, journal, migration, and exploration guidance |
+If you want your own maintained version of Dittonomics for yourself or your team, start by forking the public repo:
 
-# Constitution Layer
+- [https://sebastianritterg.github.io/dittonomics/](https://sebastianritterg.github.io/dittonomics/)
 
-In the Codex adaptation, the constitution layer should stay lean.
+Then:
 
-Good material for `AGENTS.md`:
+1. fork the GitHub repository
+2. clone your fork
+3. adapt the public `.codex/` starter bundle
+4. publish your own docs site if you want a team-specific manual
 
-- role philosophy
-- repo path conventions
-- language defaults
-- verification expectations
-- escalation rules
-- high-level voice policy if the repo wants one
+Use this route when you want to:
 
-Bad material for `AGENTS.md`:
+- keep extending the system over time
+- document your team's conventions
+- maintain your own website or starter defaults
 
-- long tables of journal profiles
-- full templates
-- provenance dumps
-- detailed tutorials that belong in separate references
-- private voice examples that should stay personal
+If you only want the local tooling and do not need your own public variant, you can skip the fork and just copy the starter bundle into `~/.codex/`.
 
-# Workflow Kernel Setup
+## 1. Start from the public starter
 
-The public starter now includes a stronger `clo-workflow` kernel.
-
-The recommended minimal public-safe setup is:
-
-- `~/.codex/AGENTS.md`
-- `~/.codex/config.toml`
-- `~/.codex/skills/clo-workflow/`
-- `~/.codex/skills/clo-write/`
-- `~/.codex/agents/`
-
-## Example config fragment
-
-```toml
-model = "gpt-5.4"
-model_reasoning_effort = "high"
-
-[features]
-multi_agent = true
-
-[agents]
-max_threads = 6
-max_depth = 1
-
-[plugins."github@openai-curated"]
-enabled = true
-
-[plugins."notion@openai-curated"]
-enabled = true
-```
-
-Treat this as a starting point, not a mandatory preset. Your own machine-specific MCP servers, plugins, and sandbox preferences belong in your local config.
-
-# Voice Setup
-
-Voice is optional. Use it only if you want writing workflows to preserve a recognizable prose register across sessions.
-
-## Recommended public structure
+Copy or adapt:
 
 ```text
-~/voice/
-  core_voice.md
-  voice_examples.md
-  econ_paper_register.md
-  style_hierarchy.md
-  collaboration_register.md          (optional)
-  journal_tightening_register.md     (optional)
+.codex/
 ```
+
+into:
+
+```text
+~/.codex/
+```
+
+Minimum pieces:
+
+- `AGENTS.md`
+- `skills/`
+- `agents/`
+- workflow references
+- utility scripts
+
+## 2. Keep machine-specific config local
+
+Your own local machine settings belong in:
+
+```text
+~/.codex/config.toml
+```
+
+Examples:
+
+- MCP servers
+- plugin preferences
+- trust settings
+- sandbox preferences
+
+## 3. Keep project-specific rules in the repo
+
+Use:
+
+- `AGENTS.md`
+- `AGENTS.override.md`
+- `.agents/skills/`
+
+Do not overload the user-level install with rules that only belong to one paper.
+
+# How To Build Your Own Voice
+
+The public repo includes templates in [voice](C:\projects\codex-clo-author\voice).
+
+## Copy the templates privately
+
+Copy these into `~/voice/`:
+
+- `core_voice.template.md`
+- `voice_examples.template.md`
+- `econ_paper_register.template.md`
+- `style_hierarchy.template.md`
+
+Optional:
+
+- `collaboration_register.template.md`
+- `journal_tightening_register.template.md`
+
+Then rename them without `.template`.
 
 ## What each file does
 
-- `core_voice.md`: non-negotiable prose traits
-- `voice_examples.md`: short examples of good sentences or paragraph moves
-- `econ_paper_register.md`: field-appropriate norms for evidence, restraint, and cadence
-- `style_hierarchy.md`: precedence rules when files disagree
-- optional overlays: collaboration or journal-specific tightening layers
+| File | Purpose |
+|---|---|
+| `core_voice.md` | your non-negotiable prose traits |
+| `voice_examples.md` | examples of sentences, paragraph moves, cadence |
+| `econ_paper_register.md` | field-appropriate restraint and evidence norms |
+| `style_hierarchy.md` | precedence rules when files conflict |
+| `collaboration_register.md` | optional overlay for joint-paper mode |
+| `journal_tightening_register.md` | optional overlay for tighter journal-facing prose |
 
-## Public-safe rule
+## The voice rule
 
-The public repo should document the structure and precedence, but should not publish a personal private voice file verbatim unless you want that voice to become part of the starter itself.
+Your voice layer should shape:
 
-That is why Dittonomics ships templates in `voice/` rather than your live private files.
+- diction
+- cadence
+- paragraph texture
+- compression level
 
-# Skills Layer
+It should not override:
 
-Codex skills should expose workflows explicitly and use clear reference loading rules.
+- evidence discipline
+- causal restraint
+- intro architecture
+- repo-local terminology rules
 
-The updated public stack now makes these points clearer:
+## A good minimal voice setup
 
-- `clo-workflow` is the kernel
-- other `clo-*` skills route through that kernel rather than redefining it
-- creators create and critics critique
-- the parent orchestrator owns persistence unless it explicitly delegates a write target
+If you want the smallest useful version, start with:
 
-# Writing Layer
+- `core_voice.md`
+- `voice_examples.md`
+- `style_hierarchy.md`
 
-The public `clo-write` starter now reflects a more mature writing workflow:
+You can add the others later.
 
-- front-end work can be governed by a specialist intro skill
-- writing uses section contracts and paragraph planning
-- voice is treated as a style layer
-- proofread persistence belongs to the parent orchestrator
+# Team Setup
 
-# Repo Overlay Pattern
+If colleagues will use Dittonomics too, use this split:
 
-For a project repo:
+## Public or shared
 
-- put stable repo rules in `AGENTS.md`
-- put project-specific deviations in `AGENTS.override.md`
-- put repo-only skills in `.agents/skills/`
-- create `explorations/` when the project needs a prototype sandbox
-- keep repo-local writing voice rules local if they should not become public defaults
+- website manual
+- public starter bundle
+- project `AGENTS.md`
+- generic workflow rules
 
-# Practical Customization Strategy
+## Private
 
-Start with:
+- personal voice files
+- machine-specific config
+- private examples you do not want to publish
 
-1. a lean `AGENTS.md`
-2. a small repo overlay
-3. a stable skill naming convention
-4. only the subagents you actively use
-5. an optional voice layer only if writing consistency is a real need
+## Project-specific but shared
 
-Add more structure only when it prevents repeated failure, not because the upstream project had another file.
+- repo-local overlays
+- project terminology rules
+- team conventions for directories and outputs
+
+# Recommended Repo Additions
+
+For working research repos, I recommend:
+
+```text
+AGENTS.md
+AGENTS.override.md            (optional)
+.agents/skills/               (optional)
+explorations/
+.codex-state/                 (local, usually gitignored)
+```
+
+Also add:
+
+```text
+.codex-state/
+```
+
+to `.gitignore` unless you explicitly want checkpoint files committed.
+
+# How To Extend Dittonomics Later
+
+Because this is a Ditto-style system, you should assume it will grow.
+
+Good ways to extend it:
+
+- add a new skill when a workflow recurs
+- add a new utility when a maintenance action repeats
+- add a repo-local skill when only one project needs it
+- add a new website section when colleagues keep asking the same question
+
+Bad ways to extend it:
+
+- embedding private voice directly into the public starter
+- adding machine-specific paths to public files
+- hiding important behavior in undocumented scripts
+
+# Colleague Onboarding Checklist
+
+1. read **Quick Start**
+2. read **User Guide**
+3. bookmark **Reference**
+4. copy the public starter into `~/.codex/`
+5. optionally set up `~/voice/`
+6. learn the daily loop:
+   - `resume-context`
+   - workflow skill
+   - `checkpoint`

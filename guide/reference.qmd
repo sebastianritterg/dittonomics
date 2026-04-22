@@ -1,103 +1,162 @@
 ---
 title: "Reference"
-subtitle: "Quick lookup for skills, layers, and the Dittonomics migration map"
+subtitle: "The cheat sheet for skills, utilities, folders, and recurring prompts"
 ---
 
-# Quick Lookup
+# Daily Cheat Sheet
 
-## Core workflow skills
+## Start the day
 
-| Upstream intent | Dittonomics entry point |
-|---|---|
-| new project pipeline | `$clo-new-project` |
-| discovery | `$clo-discover` |
-| identification strategy | `$clo-strategize` |
-| analysis and outputs | `$clo-analyze` |
-| drafting | `$clo-write` |
-| review and peer review | `$clo-review` |
-| revision cycle | `$clo-revise` |
-| talks | `$clo-talk` |
-| submission package | `$clo-submit` |
-| maintenance and upgrade | `$clo-research-tools` |
+```text
+Use $clo-research-tools resume-context for this repo.
+```
 
-## Install locations
+## End the day
 
-| Item | Generic location |
-|---|---|
-| public starter bundle | `.codex/` in this repo |
-| user skills | `~/.codex/skills` |
-| custom subagents | `~/.codex/agents` |
-| repo-local skills | `.agents/skills/` |
-| session constitution | `AGENTS.md` |
-| repo overlay | `AGENTS.override.md` |
-| optional voice layer | `~/voice` |
+```text
+Use $clo-research-tools checkpoint for this repo.
+```
 
-# Workflow Kernel Files
+## After a risky edit
 
-The public Dittonomics starter now treats these files as the core kernel references:
+```text
+Use $clo-research-tools verify-edit 03_code/src/estimate.py
+```
 
-- `pipeline-contract.md`
-- `artifact-contracts.md`
-- `agent-registry.md`
-- `routing-rules.md`
+# Workflow Skills
 
-# Voice Setup Files
-
-The public voice starter uses this recommended structure:
-
-- `core_voice.md`
-- `voice_examples.md`
-- `econ_paper_register.md`
-- `style_hierarchy.md`
-- `collaboration_register.md` optional
-- `journal_tightening_register.md` optional
-
-Voice is optional. The public templates document the structure without exposing one user's private prose system.
-
-# Dittonomics Migration Cheatsheet
-
-| If Clo-Author says | In Dittonomics use | Notes |
+| Skill | Use it for | Example |
 |---|---|---|
-| `CLAUDE.md` | `AGENTS.md` plus `AGENTS.override.md` | Keep the constitution lean and move detail outward |
-| `.claude/rules` | active workflow references plus repo overlays | Use source mirrors only when provenance matters |
-| `.claude/references` | active `clo-workflow` references | Domain, journal, exploration, migration, and kernel guidance |
-| slash commands | explicit `$clo-*` skills | Preserve names, change invocation style |
-| `.claude/agents` | `~/.codex/agents` custom subagents | Main Codex session remains orchestrator |
-| distributable `.claude/` bundle in the repo | forkable `.codex/` starter folder in the repo | Public starter kit for AGENTS, skills, agents, config, and quick reference |
-| settings and hidden behaviors | `config.toml`, `AGENTS.md`, and explicit utilities | Avoid undocumented hidden behavior |
-| implicit writing style | optional `~/voice` layer | Keep prose rules explicit and modular |
-| `.claude` exploration instructions | `explorations/` folder plus exploration reference | Create the folder when missing |
-| orchestrator agent | main Codex session | No separate orchestrator install needed |
+| `$clo-new-project` | launch a whole project workflow | `Use $clo-new-project on this topic and scaffold the pipeline.` |
+| `$clo-discover` | interview, literature, or data discovery | `Use $clo-discover lit on school assignment and teacher quality.` |
+| `$clo-strategize` | identification design and PAPs | `Use $clo-strategize on this question and rank the causal designs.` |
+| `$clo-analyze` | coding, outputs, cleaning, estimation | `Use $clo-analyze and build the estimation pipeline plus output handoff.` |
+| `$clo-write` | manuscript drafting, revising, humanizing, style-guide work | `Use $clo-write intro with current-draft mode.` |
+| `$clo-review` | writing review, peer review, or critic workflows | `Use $clo-review --peer on the current paper draft.` |
+| `$clo-revise` | response-to-referees and revision routing | `Use $clo-revise on this referee report.` |
+| `$clo-talk` | deck building | `Use $clo-talk seminar from the current paper.` |
+| `$clo-submit` | final submission checks | `Use $clo-submit and tell me if this is actually submission-ready.` |
+| `$clo-research-tools` | utilities and maintenance | `Use $clo-research-tools checkpoint for this repo.` |
 
-# Worker-Critic Map
+# Research Tools Cheat Sheet
 
-| Creator | Reviewer |
+| Utility | What it does | Typical use |
+|---|---|---|
+| `checkpoint` | saves end-of-day or handoff state | when stopping work |
+| `resume-context` | reconstructs last known working context | when reopening a project |
+| `verify-edit` | manual post-edit safety pass | after touching code or build files |
+| `context` | quick session-status summary | when you feel lost mid-session |
+| `compile` | build paper or talk outputs | after manuscript edits |
+| `validate-bib` | catch citation drift | before review or submission |
+| `journal` | summarize research log | when documenting progress |
+| `learn` | draft reusable learning prompts | when a workflow pattern is worth saving |
+| `upgrade` | update infrastructure, not research content | when syncing the starter or user install |
+
+# Agent Cheat Sheet
+
+| Agent | Best for | Usually triggered by |
+|---|---|---|
+| `librarian` | literature collection | `$clo-discover lit` |
+| `explorer` | data search | `$clo-discover data` |
+| `strategist` | causal design | `$clo-strategize` |
+| `data_engineer` | cleaning and wrangling | `$clo-analyze` |
+| `coder` | scripts and outputs | `$clo-analyze` |
+| `writer` | drafting sections | `$clo-write` |
+| `writer_critic` | writing review | `$clo-review` or proofread mode |
+| `editor` | peer review synthesis | `$clo-review --peer` |
+| `domain_referee` | contribution and literature review | `$clo-review --peer` |
+| `methods_referee` | methods review | `$clo-review --peer` |
+| `verifier` | mechanics and replication checks | `$clo-submit` |
+
+# Voice Cheat Sheet
+
+| File | Why it exists |
 |---|---|
-| `librarian` | `librarian_critic` |
-| `explorer` | `explorer_critic` |
-| `strategist` | `strategist_critic` |
-| `coder` | `coder_critic` |
-| `writer` | `writer_critic` |
-| `storyteller` | `storyteller_critic` |
+| `core_voice.md` | the top prose authority |
+| `voice_examples.md` | examples of your preferred sentence and paragraph behavior |
+| `econ_paper_register.md` | field-appropriate restraint and register |
+| `style_hierarchy.md` | tells the system what wins when voice files conflict |
+| `collaboration_register.md` | optional overlay for joint work |
+| `journal_tightening_register.md` | optional overlay for tighter journal-facing prose |
 
-# Persistence Rule
+# Folder Cheat Sheet
 
-A core Dittonomics rule is now explicit:
-
-- skills resolve paths first
-- creator agents write only to named targets
-- critics, referees, editor, and verifier return reports to the parent orchestrator
-- the parent orchestrator owns report saving, renaming, and promotion unless it explicitly delegates a write target
-
-# Exploration Workflow Mapping
-
-| Workflow need | Dittonomics rule |
+| Folder or file | Role |
 |---|---|
-| prototype estimation idea | create or use `explorations/[name]/` |
-| temporary side output | keep it inside the exploration until promoted |
-| abandoned branch | archive under `explorations/ARCHIVE/` |
-| no exploration folder yet | create `explorations/README.md` and `explorations/ARCHIVE/` first |
+| `.codex/` | public starter bundle in this repo |
+| `~/.codex/` | live local install |
+| `~/.agents/skills/` | user-level canonical skill install when you use that layer |
+| `~/voice/` | optional private voice files |
+| `AGENTS.md` | repo constitution |
+| `AGENTS.override.md` | repo-specific overlay |
+| `.agents/skills/` | repo-local skill extensions |
+| `explorations/` | sandbox for prototypes |
+| `.codex-state/` | local checkpoints and resume files |
 
-# Attribution and Scope
+# Checkpoint File Format
 
-This reference is intentionally compact. It is here to make the upstream Clo-Author manual readable to a Codex user and to surface the key Dittonomics contracts without forcing readers through the entire starter bundle.
+Default structure:
+
+```text
+.codex-state/
+  checkpoints/
+    2026-04-22T18-30-00Z_end-of-day.json
+    2026-04-22T18-30-00Z_end-of-day.md
+  latest.json
+  latest.md
+  resume-context.md
+```
+
+Use `.json` as the durable machine-readable layer and `.md` as the readable handoff layer.
+
+# Recurring Prompt Patterns
+
+## Discovery
+
+```text
+Use $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving.
+```
+
+## Strategy
+
+```text
+Use $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan.
+```
+
+## Writing
+
+```text
+Use $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode.
+```
+
+## Review
+
+```text
+Use $clo-review on the latest draft and give findings first.
+```
+
+## End-of-day
+
+```text
+Use $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step.
+```
+
+## Next morning
+
+```text
+Use $clo-research-tools resume-context for this repo and tell me where we left off and what to do next.
+```
+
+# Migration Cheat Sheet
+
+| If upstream Clo-Author says | In Dittonomics use |
+|---|---|
+| `CLAUDE.md` | `AGENTS.md` and `AGENTS.override.md` |
+| `.claude/rules` | active workflow references and repo overlays |
+| slash commands | explicit `$clo-*` skills |
+| `.claude/agents` | Codex custom agents |
+| hidden hooks | explicit `checkpoint`, `resume-context`, and `verify-edit` |
+
+# One Sentence To Remember
+
+> Call the workflow skill you need, let Codex orchestrate the agent layer, and use the website as the working cheat sheet.

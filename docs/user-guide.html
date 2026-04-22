@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3ec40a5b318c3f5e576f4b083394b62a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dd08bc3ce32ad73fdbb8c76727ba26f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,30 +139,48 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link active" data-scroll-target="#how-it-works">How It Works</a></li>
-  <li><a href="#research-workflow" id="toc-research-workflow" class="nav-link" data-scroll-target="#research-workflow">Research Workflow</a>
+  <li><a href="#the-core-mental-model" id="toc-the-core-mental-model" class="nav-link active" data-scroll-target="#the-core-mental-model">The Core Mental Model</a></li>
+  <li><a href="#the-daily-work-loop" id="toc-the-daily-work-loop" class="nav-link" data-scroll-target="#the-daily-work-loop">The Daily Work Loop</a>
   <ul class="collapse">
-  <li><a href="#phase-1-discovery" id="toc-phase-1-discovery" class="nav-link" data-scroll-target="#phase-1-discovery">Phase 1: Discovery</a></li>
-  <li><a href="#phase-2-strategy" id="toc-phase-2-strategy" class="nav-link" data-scroll-target="#phase-2-strategy">Phase 2: Strategy</a></li>
-  <li><a href="#phase-3-execution" id="toc-phase-3-execution" class="nav-link" data-scroll-target="#phase-3-execution">Phase 3: Execution</a></li>
-  <li><a href="#phase-4-writing" id="toc-phase-4-writing" class="nav-link" data-scroll-target="#phase-4-writing">Phase 4: Writing</a></li>
-  <li><a href="#phase-5-peer-review" id="toc-phase-5-peer-review" class="nav-link" data-scroll-target="#phase-5-peer-review">Phase 5: Peer Review</a></li>
-  <li><a href="#phase-6-submission" id="toc-phase-6-submission" class="nav-link" data-scroll-target="#phase-6-submission">Phase 6: Submission</a></li>
+  <li><a href="#morning-resume-cleanly" id="toc-morning-resume-cleanly" class="nav-link" data-scroll-target="#morning-resume-cleanly">Morning: resume cleanly</a></li>
+  <li><a href="#during-the-day-use-the-workflow-skills" id="toc-during-the-day-use-the-workflow-skills" class="nav-link" data-scroll-target="#during-the-day-use-the-workflow-skills">During the day: use the workflow skills</a>
+  <ul class="collapse">
+  <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">Discovery</a></li>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing">Writing</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision">Revision</a></li>
+  <li><a href="#talks-and-submission" id="toc-talks-and-submission" class="nav-link" data-scroll-target="#talks-and-submission">Talks and submission</a></li>
   </ul></li>
-  <li><a href="#shared-contracts" id="toc-shared-contracts" class="nav-link" data-scroll-target="#shared-contracts">Shared Contracts</a></li>
-  <li><a href="#quality-gates" id="toc-quality-gates" class="nav-link" data-scroll-target="#quality-gates">Quality Gates</a></li>
-  <li><a href="#voice-workflow" id="toc-voice-workflow" class="nav-link" data-scroll-target="#voice-workflow">Voice Workflow</a></li>
-  <li><a href="#sec-exploration" id="toc-sec-exploration" class="nav-link" data-scroll-target="#sec-exploration">Exploration Workflow</a>
-  <ul class="collapse">
-  <li><a href="#minimum-rule" id="toc-minimum-rule" class="nav-link" data-scroll-target="#minimum-rule">Minimum rule</a></li>
-  <li><a href="#graduation-rule" id="toc-graduation-rule" class="nav-link" data-scroll-target="#graduation-rule">Graduation rule</a></li>
+  <li><a href="#end-of-day-checkpoint-intentionally" id="toc-end-of-day-checkpoint-intentionally" class="nav-link" data-scroll-target="#end-of-day-checkpoint-intentionally">End of day: checkpoint intentionally</a></li>
   </ul></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a>
+  <li><a href="#explicit-skills-vs-natural-language" id="toc-explicit-skills-vs-natural-language" class="nav-link" data-scroll-target="#explicit-skills-vs-natural-language">Explicit Skills vs Natural Language</a>
   <ul class="collapse">
-  <li><a href="#the-upstream-guide-says-claude.md" id="toc-the-upstream-guide-says-claude.md" class="nav-link" data-scroll-target="#the-upstream-guide-says-claude.md">The upstream guide says <code>CLAUDE.md</code></a></li>
-  <li><a href="#the-upstream-guide-mentions-.clauderules" id="toc-the-upstream-guide-mentions-.clauderules" class="nav-link" data-scroll-target="#the-upstream-guide-mentions-.clauderules">The upstream guide mentions <code>.claude/rules</code></a></li>
-  <li><a href="#the-workflow-feels-too-implicit" id="toc-the-workflow-feels-too-implicit" class="nav-link" data-scroll-target="#the-workflow-feels-too-implicit">The workflow feels too implicit</a></li>
-  <li><a href="#the-repo-lacks-an-exploration-sandbox" id="toc-the-repo-lacks-an-exploration-sandbox" class="nav-link" data-scroll-target="#the-repo-lacks-an-exploration-sandbox">The repo lacks an exploration sandbox</a></li>
+  <li><a href="#explicit-style" id="toc-explicit-style" class="nav-link" data-scroll-target="#explicit-style">Explicit style</a></li>
+  <li><a href="#natural-language-style" id="toc-natural-language-style" class="nav-link" data-scroll-target="#natural-language-style">Natural-language style</a></li>
+  <li><a href="#recommendation" id="toc-recommendation" class="nav-link" data-scroll-target="#recommendation">Recommendation</a></li>
+  </ul></li>
+  <li><a href="#how-agent-activation-works" id="toc-how-agent-activation-works" class="nav-link" data-scroll-target="#how-agent-activation-works">How Agent Activation Works</a>
+  <ul class="collapse">
+  <li><a href="#what-usually-activates-agents" id="toc-what-usually-activates-agents" class="nav-link" data-scroll-target="#what-usually-activates-agents">What usually activates agents</a></li>
+  <li><a href="#when-to-mention-an-agent-directly" id="toc-when-to-mention-an-agent-directly" class="nav-link" data-scroll-target="#when-to-mention-an-agent-directly">When to mention an agent directly</a></li>
+  </ul></li>
+  <li><a href="#checkpoint-resume-and-verify-edit" id="toc-checkpoint-resume-and-verify-edit" class="nav-link" data-scroll-target="#checkpoint-resume-and-verify-edit">Checkpoint, Resume, And Verify-Edit</a>
+  <ul class="collapse">
+  <li><a href="#checkpoint" id="toc-checkpoint" class="nav-link" data-scroll-target="#checkpoint">Checkpoint</a></li>
+  <li><a href="#resume-context" id="toc-resume-context" class="nav-link" data-scroll-target="#resume-context">Resume-context</a></li>
+  <li><a href="#verify-edit" id="toc-verify-edit" class="nav-link" data-scroll-target="#verify-edit">Verify-edit</a></li>
+  </ul></li>
+  <li><a href="#a-good-team-workflow" id="toc-a-good-team-workflow" class="nav-link" data-scroll-target="#a-good-team-workflow">A Good Team Workflow</a></li>
+  <li><a href="#a-good-end-of-day-prompt" id="toc-a-good-end-of-day-prompt" class="nav-link" data-scroll-target="#a-good-end-of-day-prompt">A Good End-Of-Day Prompt</a></li>
+  <li><a href="#a-good-next-morning-prompt" id="toc-a-good-next-morning-prompt" class="nav-link" data-scroll-target="#a-good-next-morning-prompt">A Good Next-Morning Prompt</a></li>
+  <li><a href="#common-mistakes" id="toc-common-mistakes" class="nav-link" data-scroll-target="#common-mistakes">Common Mistakes</a>
+  <ul class="collapse">
+  <li><a href="#calling-the-wrong-layer" id="toc-calling-the-wrong-layer" class="nav-link" data-scroll-target="#calling-the-wrong-layer">Calling the wrong layer</a></li>
+  <li><a href="#treating-voice-as-structure" id="toc-treating-voice-as-structure" class="nav-link" data-scroll-target="#treating-voice-as-structure">Treating voice as structure</a></li>
+  <li><a href="#forgetting-the-checkpoint" id="toc-forgetting-the-checkpoint" class="nav-link" data-scroll-target="#forgetting-the-checkpoint">Forgetting the checkpoint</a></li>
+  <li><a href="#treating-references-as-sole-truth" id="toc-treating-references-as-sole-truth" class="nav-link" data-scroll-target="#treating-references-as-sole-truth">Treating references as sole truth</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -173,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">User Guide</h1>
-<p class="subtitle lead">How to operate the Dittonomics workflow in practice</p>
+<p class="subtitle lead">How to run Dittonomics day to day</p>
 </div>
 
 
@@ -190,206 +208,274 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="how-it-works" class="level1">
-<h1>How It Works</h1>
-<p>Dittonomics keeps the original research workflow logic:</p>
+<section id="the-core-mental-model" class="level1">
+<h1>The Core Mental Model</h1>
+<p>Most of the time, you do <strong>not</strong> call agents directly.</p>
+<p>You usually call a <strong>workflow skill</strong>, and the main Codex session decides whether to:</p>
 <ul>
-<li>the main Codex session acts as orchestrator</li>
-<li>narrow subagents handle bounded specialist roles</li>
-<li>creators create, critics review</li>
-<li>the workflow advances only when artifacts clear their quality gates</li>
+<li>do the work itself</li>
+<li>dispatch a specialist agent</li>
+<li>dispatch a worker and then a critic</li>
+<li>ask you for a decision at a real fork</li>
 </ul>
-<p>What changes is the implementation surface. Instead of relying on Claude-specific configuration layers, the Codex adaptation uses:</p>
+<p>That is the main operating idea:</p>
 <ul>
-<li><code>AGENTS.md</code> and repo overlays</li>
-<li>Codex skills with explicit kernel references</li>
-<li>Codex custom subagents in TOML</li>
-<li>explicit workflow references</li>
-<li>optional voice files for prose-sensitive writing and review</li>
-</ul>
-</section>
-<section id="research-workflow" class="level1">
-<h1>Research Workflow</h1>
-<section id="phase-1-discovery" class="level2">
-<h2 class="anchored" data-anchor-id="phase-1-discovery">Phase 1: Discovery</h2>
-<p>Discovery should produce:</p>
-<ul>
-<li>a research specification</li>
-<li>a literature map</li>
-<li>a data assessment</li>
-</ul>
-<p>The relevant roles are:</p>
-<ul>
-<li><code>librarian</code> and <code>librarian_critic</code></li>
-<li><code>explorer</code> and <code>explorer_critic</code></li>
-</ul>
-<p>The usual explicit entry point is <code>$clo-discover</code>.</p>
-</section>
-<section id="phase-2-strategy" class="level2">
-<h2 class="anchored" data-anchor-id="phase-2-strategy">Phase 2: Strategy</h2>
-<p>Strategy locks the estimand, design, assumptions, falsification logic, and robustness plan before coding starts.</p>
-<p>The relevant roles are:</p>
-<ul>
-<li><code>strategist</code></li>
-<li><code>strategist_critic</code></li>
-</ul>
-<p>The usual explicit entry point is <code>$clo-strategize</code>.</p>
-</section>
-<section id="phase-3-execution" class="level2">
-<h2 class="anchored" data-anchor-id="phase-3-execution">Phase 3: Execution</h2>
-<p>Execution translates the design into:</p>
-<ul>
-<li>cleaned data products</li>
-<li>analysis scripts</li>
-<li>tables and figures</li>
-<li>writer handoff artifacts</li>
-</ul>
-<p>The relevant roles are:</p>
-<ul>
-<li><code>data_engineer</code></li>
-<li><code>coder</code></li>
-<li><code>coder_critic</code></li>
-</ul>
-<p>The active default language stance in this adaptation is:</p>
-<ul>
-<li>Python primary</li>
-<li>Stata co-default</li>
-<li>R and Julia supported when the repo or the user explicitly centers them</li>
+<li>you call skills</li>
+<li>Codex orchestrates</li>
+<li>agents stay narrow</li>
 </ul>
 </section>
-<section id="phase-4-writing" class="level2">
-<h2 class="anchored" data-anchor-id="phase-4-writing">Phase 4: Writing</h2>
-<p>Writing is now documented more explicitly as its own orchestrated layer.</p>
-<p>The relevant roles are:</p>
+<section id="the-daily-work-loop" class="level1">
+<h1>The Daily Work Loop</h1>
+<section id="morning-resume-cleanly" class="level2">
+<h2 class="anchored" data-anchor-id="morning-resume-cleanly">Morning: resume cleanly</h2>
+<p>Start with:</p>
+<pre class="text"><code>Use $clo-research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.</code></pre>
+<p>What this is meant to do:</p>
 <ul>
-<li><code>writer</code></li>
-<li><code>writer_critic</code></li>
-</ul>
-<p>The public writing stack now emphasizes:</p>
-<ul>
-<li>section contracts</li>
-<li>paragraph planning before drafting</li>
-<li>design-aware causal language</li>
-<li>humanizer after structure is sound</li>
-<li>optional voice hierarchy only when the user wants it</li>
-</ul>
-<p>The usual explicit entry point is <code>$clo-write</code>.</p>
-</section>
-<section id="phase-5-peer-review" class="level2">
-<h2 class="anchored" data-anchor-id="phase-5-peer-review">Phase 5: Peer Review</h2>
-<p>Peer review is not a grammar pass. It is where the workflow asks whether the project is credible, scoped correctly, journal-calibrated, and ready to move forward.</p>
-<p>The relevant roles are:</p>
-<ul>
-<li><code>editor</code></li>
-<li><code>domain_referee</code></li>
-<li><code>methods_referee</code></li>
-</ul>
-<p>The usual explicit entry point is <code>$clo-review</code>.</p>
-</section>
-<section id="phase-6-submission" class="level2">
-<h2 class="anchored" data-anchor-id="phase-6-submission">Phase 6: Submission</h2>
-<p>Submission requires more than polished prose. The workflow should verify:</p>
-<ul>
-<li>replication readiness</li>
-<li>journal fit</li>
-<li>final package completeness</li>
-</ul>
-<p>The relevant role is:</p>
-<ul>
-<li><code>verifier</code></li>
-</ul>
-<p>The usual explicit entry point is <code>$clo-submit</code>.</p>
-</section>
-</section>
-<section id="shared-contracts" class="level1">
-<h1>Shared Contracts</h1>
-<p>The newer public starter assumes a stronger contract between the orchestrator and its skills.</p>
-<p>In practice that means:</p>
-<ul>
-<li>the orchestrator resolves target paths before dispatch</li>
-<li>agents receive a task packet instead of relying on loose prose instructions</li>
-<li>artifacts have names, roles, and freshness expectations</li>
-<li>critics and referees return reports to the parent instead of deciding where reports live</li>
+<li>read the latest checkpoint in <code>.codex-state/</code></li>
+<li>compare it to current git state</li>
+<li>remind you what mattered yesterday</li>
+<li>suggest the next action instead of making you rebuild context manually</li>
 </ul>
 </section>
-<section id="quality-gates" class="level1">
-<h1>Quality Gates</h1>
-<p>The active scoring thresholds remain:</p>
+<section id="during-the-day-use-the-workflow-skills" class="level2">
+<h2 class="anchored" data-anchor-id="during-the-day-use-the-workflow-skills">During the day: use the workflow skills</h2>
+<p>Use the skill that matches the real task.</p>
+<section id="discovery" class="level3">
+<h3 class="anchored" data-anchor-id="discovery">Discovery</h3>
+<pre class="text"><code>Use $clo-discover lit on this topic and build the literature map first.</code></pre>
+<pre class="text"><code>Use $clo-discover data and assess which datasets can support this question.</code></pre>
+</section>
+<section id="strategy" class="level3">
+<h3 class="anchored" data-anchor-id="strategy">Strategy</h3>
+<pre class="text"><code>Use $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.</code></pre>
+</section>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+<pre class="text"><code>Use $clo-analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.</code></pre>
+</section>
+<section id="writing" class="level3">
+<h3 class="anchored" data-anchor-id="writing">Writing</h3>
+<pre class="text"><code>Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.</code></pre>
+<pre class="text"><code>Use $clo-write results and narrate the main tables without overstating causality.</code></pre>
+</section>
+<section id="review" class="level3">
+<h3 class="anchored" data-anchor-id="review">Review</h3>
+<pre class="text"><code>Use $clo-review on this draft and give me the highest-risk findings first.</code></pre>
+</section>
+<section id="revision" class="level3">
+<h3 class="anchored" data-anchor-id="revision">Revision</h3>
+<pre class="text"><code>Use $clo-revise on this referee report and route each comment to the right workflow.</code></pre>
+</section>
+<section id="talks-and-submission" class="level3">
+<h3 class="anchored" data-anchor-id="talks-and-submission">Talks and submission</h3>
+<pre class="text"><code>Use $clo-talk seminar to build the deck from the current paper.</code></pre>
+<pre class="text"><code>Use $clo-submit and check whether this package is actually submission-ready.</code></pre>
+</section>
+</section>
+<section id="end-of-day-checkpoint-intentionally" class="level2">
+<h2 class="anchored" data-anchor-id="end-of-day-checkpoint-intentionally">End of day: checkpoint intentionally</h2>
+<p>Use:</p>
+<pre class="text"><code>Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.</code></pre>
+<p>This is the recommended end-of-day ritual.</p>
+</section>
+</section>
+<section id="explicit-skills-vs-natural-language" class="level1">
+<h1>Explicit Skills vs Natural Language</h1>
+<p>You can work in either style.</p>
+<section id="explicit-style" class="level2">
+<h2 class="anchored" data-anchor-id="explicit-style">Explicit style</h2>
+<p>Best when:</p>
 <ul>
-<li><code>&gt;= 80</code>: commit-ready</li>
-<li><code>&gt;= 90</code>: merge-ready</li>
-<li><code>&gt;= 95</code> with no weak component: submission-ready</li>
+<li>you want predictable routing</li>
+<li>you are teaching a colleague</li>
+<li>you want the website or starter kit to stay easy to follow</li>
 </ul>
-<p>These thresholds matter because the architecture assumes critique is operational, not decorative.</p>
+<p>Example:</p>
+<pre class="text"><code>Use $clo-review --peer on the latest draft.</code></pre>
 </section>
-<section id="voice-workflow" class="level1">
-<h1>Voice Workflow</h1>
-<p>Voice is optional. If you do not care about prose consistency beyond normal editing, you can ignore it entirely.</p>
-<p>If you do care, the public pattern is:</p>
+<section id="natural-language-style" class="level2">
+<h2 class="anchored" data-anchor-id="natural-language-style">Natural-language style</h2>
+<p>Best when:</p>
 <ul>
-<li>keep voice files in <code>~/voice</code></li>
-<li>treat them as style guidance, not as truth about evidence</li>
-<li>keep structure, causality, and section logic governed by the relevant workflow skill</li>
-<li>use optional overlays for collaboration or journal tightening instead of rewriting the core voice every time</li>
+<li>the task is obvious</li>
+<li>you want a conversational workflow</li>
+<li>you do not care about naming the exact skill</li>
 </ul>
+<p>Example:</p>
+<pre class="text"><code>Please review the current paper draft like a journal referee and focus on identification and contribution.</code></pre>
 </section>
-<section id="sec-exploration" class="level1">
-<h1>Exploration Workflow</h1>
-<p><code>explorations/</code> remains part of the public workflow because exploratory work exists in real research and should have an explicit home.</p>
-<p>Use <code>explorations/</code> for:</p>
+<section id="recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="recommendation">Recommendation</h2>
+<p>For daily work with colleagues, prefer explicit <code>$clo-*</code> names.</p>
+<p>It makes:</p>
 <ul>
-<li>prototypes</li>
-<li>side investigations</li>
-<li>speculative identification checks</li>
-<li>draft data or measurement experiments</li>
+<li>the system easier to learn</li>
+<li>the website cheat sheet easier to use</li>
+<li>routing behavior easier to remember</li>
 </ul>
-<p>Do not use it for:</p>
+</section>
+</section>
+<section id="how-agent-activation-works" class="level1">
+<h1>How Agent Activation Works</h1>
+<section id="what-usually-activates-agents" class="level2">
+<h2 class="anchored" data-anchor-id="what-usually-activates-agents">What usually activates agents</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What you ask for</th>
+<th>Typical system response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>literature review</td>
+<td><code>librarian</code> then <code>librarian_critic</code></td>
+</tr>
+<tr class="even">
+<td>data search</td>
+<td><code>explorer</code> then <code>explorer_critic</code></td>
+</tr>
+<tr class="odd">
+<td>identification design</td>
+<td><code>strategist</code> then <code>strategist_critic</code></td>
+</tr>
+<tr class="even">
+<td>coding or data pipeline work</td>
+<td><code>coder</code> or <code>data_engineer</code>, then <code>coder_critic</code></td>
+</tr>
+<tr class="odd">
+<td>paper drafting</td>
+<td><code>writer</code></td>
+</tr>
+<tr class="even">
+<td>front-end writing</td>
+<td><code>econ-intro-writing</code> governs structure, then writing follows that contract</td>
+</tr>
+<tr class="odd">
+<td>proofreading or writing review</td>
+<td><code>writer_critic</code></td>
+</tr>
+<tr class="even">
+<td>peer review</td>
+<td><code>editor</code>, <code>domain_referee</code>, <code>methods_referee</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="when-to-mention-an-agent-directly" class="level2">
+<h2 class="anchored" data-anchor-id="when-to-mention-an-agent-directly">When to mention an agent directly</h2>
+<p>Do it when you want to steer the posture.</p>
+<p>Examples:</p>
+<pre class="text"><code>Use $clo-discover lit, but keep it repo-bibliography-first.</code></pre>
+<pre class="text"><code>Use $clo-review --peer and make the methods_referee especially tough on the event-study design.</code></pre>
+<p>Usually you still call the skill, not the raw agent.</p>
+</section>
+</section>
+<section id="checkpoint-resume-and-verify-edit" class="level1">
+<h1>Checkpoint, Resume, And Verify-Edit</h1>
+<p>These three utilities are the new operational layer.</p>
+<section id="checkpoint" class="level2">
+<h2 class="anchored" data-anchor-id="checkpoint">Checkpoint</h2>
+<p>Purpose:</p>
 <ul>
-<li>canonical cleaned data</li>
-<li>manuscript-ready figures or tables</li>
-<li>the final source of truth for analysis code</li>
+<li>save the state of a workday</li>
+<li>leave structured notes for future you or a colleague</li>
 </ul>
-<section id="minimum-rule" class="level2">
-<h2 class="anchored" data-anchor-id="minimum-rule">Minimum rule</h2>
-<p>If exploratory work is needed and <code>explorations/</code> does not exist, create:</p>
+<p>Default location:</p>
+<pre class="text"><code>.codex-state/</code></pre>
+<p>Default files:</p>
+<pre class="text"><code>.codex-state/
+  checkpoints/
+  latest.json
+  latest.md</code></pre>
+<p>What gets stored:</p>
 <ul>
-<li><code>explorations/README.md</code></li>
-<li><code>explorations/ARCHIVE/</code></li>
+<li>goal</li>
+<li>summary</li>
+<li>blockers</li>
+<li>open questions</li>
+<li>important files</li>
+<li>next step</li>
+<li>git branch and recent commits</li>
+<li>directory snapshot</li>
 </ul>
-<p>Then create a subfolder per exploration.</p>
 </section>
-<section id="graduation-rule" class="level2">
-<h2 class="anchored" data-anchor-id="graduation-rule">Graduation rule</h2>
-<p>Once an exploration becomes part of the real pipeline, promote the relevant outputs into the repo’s canonical code, output, docs, or manuscript paths and leave a short record of what graduated.</p>
-</section>
-</section>
-<section id="troubleshooting" class="level1">
-<h1>Troubleshooting</h1>
-<section id="the-upstream-guide-says-claude.md" class="level2">
-<h2 class="anchored" data-anchor-id="the-upstream-guide-says-claude.md">The upstream guide says <code>CLAUDE.md</code></h2>
-<p>Translate that to:</p>
+<section id="resume-context" class="level2">
+<h2 class="anchored" data-anchor-id="resume-context">Resume-context</h2>
+<p>Purpose:</p>
 <ul>
-<li><code>AGENTS.md</code></li>
-<li><code>AGENTS.override.md</code></li>
-<li>repo-local skills</li>
+<li>pick back up quickly the next day</li>
+<li>avoid spending the first 10 to 20 minutes reconstructing context</li>
 </ul>
+<p>Typical use:</p>
+<pre class="text"><code>Use $clo-research-tools resume-context for this repo and tell me what I most likely need to do next.</code></pre>
 </section>
-<section id="the-upstream-guide-mentions-.clauderules" class="level2">
-<h2 class="anchored" data-anchor-id="the-upstream-guide-mentions-.clauderules">The upstream guide mentions <code>.claude/rules</code></h2>
-<p>Translate that to:</p>
+<section id="verify-edit" class="level2">
+<h2 class="anchored" data-anchor-id="verify-edit">Verify-edit</h2>
+<p>Purpose:</p>
 <ul>
-<li>active workflow references</li>
-<li>source-rule mirrors when provenance matters</li>
-<li>repo overlays for truly always-on repo behavior</li>
+<li>run a manual post-edit safety pass</li>
+<li>use this instead of hidden background lint hooks</li>
+</ul>
+<p>Typical use:</p>
+<pre class="text"><code>Use $clo-research-tools verify-edit 03_code/src/estimate.py</code></pre>
+<p>Use it after:</p>
+<ul>
+<li>editing Python, R, or Julia scripts</li>
+<li>changing a manuscript build file</li>
+<li>touching a critical config file</li>
 </ul>
 </section>
-<section id="the-workflow-feels-too-implicit" class="level2">
-<h2 class="anchored" data-anchor-id="the-workflow-feels-too-implicit">The workflow feels too implicit</h2>
-<p>Use explicit skill mentions such as <code>$clo-review</code> or <code>$clo-discover</code> instead of relying on automatic inference.</p>
 </section>
-<section id="the-repo-lacks-an-exploration-sandbox" class="level2">
-<h2 class="anchored" data-anchor-id="the-repo-lacks-an-exploration-sandbox">The repo lacks an exploration sandbox</h2>
-<p>Create <code>explorations/README.md</code> and <code>explorations/ARCHIVE/</code> before running prototype work.</p>
+<section id="a-good-team-workflow" class="level1">
+<h1>A Good Team Workflow</h1>
+<p>For a shared research team:</p>
+<ol type="1">
+<li>keep the public starter generic</li>
+<li>keep private voice files out of the public repo</li>
+<li>use repo-local <code>AGENTS.md</code> for project rules</li>
+<li>use checkpoints at real stopping points</li>
+<li>keep the website open as the daily cheat sheet</li>
+</ol>
+</section>
+<section id="a-good-end-of-day-prompt" class="level1">
+<h1>A Good End-Of-Day Prompt</h1>
+<pre class="text"><code>Use $clo-research-tools checkpoint for this repo.
+
+Goal: finish the event-study pipeline and prepare the writing handoff.
+Summary: built the cleaned panel, updated the estimation script, and confirmed the main figure compiles.
+Blocker: the placebo design still needs one decision.
+Important file: 03_code/src/event_study.py
+Important file: 04_outputs/figures/main_event_study.pdf
+Next step: decide the placebo window and rerun the robustness block before writing.</code></pre>
+</section>
+<section id="a-good-next-morning-prompt" class="level1">
+<h1>A Good Next-Morning Prompt</h1>
+<pre class="text"><code>Use $clo-research-tools resume-context for this repo and reconstruct where we left off yesterday, the key files, blockers, and the best next step.</code></pre>
+</section>
+<section id="common-mistakes" class="level1">
+<h1>Common Mistakes</h1>
+<section id="calling-the-wrong-layer" class="level2">
+<h2 class="anchored" data-anchor-id="calling-the-wrong-layer">Calling the wrong layer</h2>
+<p>Do not call <code>writer</code> directly unless you have a very specific reason. Usually call <code>$clo-write</code>.</p>
+</section>
+<section id="treating-voice-as-structure" class="level2">
+<h2 class="anchored" data-anchor-id="treating-voice-as-structure">Treating voice as structure</h2>
+<p>Voice files shape prose. They do not replace identification logic, evidence discipline, or intro architecture.</p>
+</section>
+<section id="forgetting-the-checkpoint" class="level2">
+<h2 class="anchored" data-anchor-id="forgetting-the-checkpoint">Forgetting the checkpoint</h2>
+<p>If you stop work without one, the next session becomes unnecessarily expensive.</p>
+</section>
+<section id="treating-references-as-sole-truth" class="level2">
+<h2 class="anchored" data-anchor-id="treating-references-as-sole-truth">Treating references as sole truth</h2>
+<p>Repo bibliography comes first. Current web or working-paper checks can supplement fast-moving empirical frontiers. Neither should be treated as the only truth source.</p>
 
 
 </section>

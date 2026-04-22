@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3ec40a5b318c3f5e576f4b083394b62a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dd08bc3ce32ad73fdbb8c76727ba26f2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,9 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -142,21 +139,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#system-overview" id="toc-system-overview" class="nav-link active" data-scroll-target="#system-overview">System Overview</a></li>
-  <li><a href="#the-kernel-update" id="toc-the-kernel-update" class="nav-link" data-scroll-target="#the-kernel-update">The Kernel Update</a>
+  <li><a href="#system-layers" id="toc-system-layers" class="nav-link active" data-scroll-target="#system-layers">System Layers</a></li>
+  <li><a href="#the-orchestrator-contract" id="toc-the-orchestrator-contract" class="nav-link" data-scroll-target="#the-orchestrator-contract">The Orchestrator Contract</a></li>
+  <li><a href="#worker-critic-architecture" id="toc-worker-critic-architecture" class="nav-link" data-scroll-target="#worker-critic-architecture">Worker-Critic Architecture</a></li>
+  <li><a href="#explicit-skills-instead-of-hidden-hooks" id="toc-explicit-skills-instead-of-hidden-hooks" class="nav-link" data-scroll-target="#explicit-skills-instead-of-hidden-hooks">Explicit Skills Instead Of Hidden Hooks</a></li>
+  <li><a href="#local-state-and-checkpoints" id="toc-local-state-and-checkpoints" class="nav-link" data-scroll-target="#local-state-and-checkpoints">Local State And Checkpoints</a>
   <ul class="collapse">
-  <li><a href="#kernel-references" id="toc-kernel-references" class="nav-link" data-scroll-target="#kernel-references">Kernel references</a></li>
+  <li><a href="#default-structure" id="toc-default-structure" class="nav-link" data-scroll-target="#default-structure">Default structure</a></li>
+  <li><a href="#why-both-json-and-markdown-exist" id="toc-why-both-json-and-markdown-exist" class="nav-link" data-scroll-target="#why-both-json-and-markdown-exist">Why both JSON and Markdown exist</a></li>
+  <li><a href="#recommended-policy" id="toc-recommended-policy" class="nav-link" data-scroll-target="#recommended-policy">Recommended policy</a></li>
   </ul></li>
-  <li><a href="#agent-workflow-diagram" id="toc-agent-workflow-diagram" class="nav-link" data-scroll-target="#agent-workflow-diagram">Agent Workflow Diagram</a>
-  <ul class="collapse">
-  <li><a href="#agents-by-phase" id="toc-agents-by-phase" class="nav-link" data-scroll-target="#agents-by-phase">Agents by Phase</a></li>
-  </ul></li>
-  <li><a href="#the-orchestrator" id="toc-the-orchestrator" class="nav-link" data-scroll-target="#the-orchestrator">The Orchestrator</a></li>
-  <li><a href="#shared-task-packets" id="toc-shared-task-packets" class="nav-link" data-scroll-target="#shared-task-packets">Shared Task Packets</a></li>
-  <li><a href="#the-worker-critic-loop" id="toc-the-worker-critic-loop" class="nav-link" data-scroll-target="#the-worker-critic-loop">The Worker-Critic Loop</a></li>
-  <li><a href="#voice-as-a-layer-not-a-hidden-habit" id="toc-voice-as-a-layer-not-a-hidden-habit" class="nav-link" data-scroll-target="#voice-as-a-layer-not-a-hidden-habit">Voice as a Layer, Not a Hidden Habit</a></li>
-  <li><a href="#exploration-and-file-promotion" id="toc-exploration-and-file-promotion" class="nav-link" data-scroll-target="#exploration-and-file-promotion">Exploration and File Promotion</a></li>
-  <li><a href="#why-this-is-not-a-literal-clone" id="toc-why-this-is-not-a-literal-clone" class="nav-link" data-scroll-target="#why-this-is-not-a-literal-clone">Why This Is Not a Literal Clone</a></li>
+  <li><a href="#how-resume-works" id="toc-how-resume-works" class="nav-link" data-scroll-target="#how-resume-works">How Resume Works</a></li>
+  <li><a href="#voice-as-a-layer" id="toc-voice-as-a-layer" class="nav-link" data-scroll-target="#voice-as-a-layer">Voice As A Layer</a></li>
+  <li><a href="#public-repo-local-install-and-website" id="toc-public-repo-local-install-and-website" class="nav-link" data-scroll-target="#public-repo-local-install-and-website">Public Repo, Local Install, And Website</a></li>
+  <li><a href="#the-ditto-expansion-rule" id="toc-the-ditto-expansion-rule" class="nav-link" data-scroll-target="#the-ditto-expansion-rule">The Ditto Expansion Rule</a></li>
   </ul>
 </nav>
     </div>
@@ -166,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Architecture</h1>
-<p class="subtitle lead">How Dittonomics keeps the upstream pipeline logic while changing the implementation layer</p>
+<p class="subtitle lead">How the local install, starter bundle, checkpoints, and website fit together</p>
 </div>
 
 
@@ -183,18 +179,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="system-overview" class="level1">
-<h1>System Overview</h1>
-<p>The upstream architecture Dittonomics builds from is powerful because it separates:</p>
-<ul>
-<li>project constitution</li>
-<li>always-needed workflow rules</li>
-<li>on-demand references</li>
-<li>on-demand workflows</li>
-<li>specialist agents</li>
-<li>infrastructure behavior</li>
-</ul>
-<p>The Codex adaptation keeps that shape, but translates the layers into Codex-native surfaces.</p>
+<section id="system-layers" class="level1">
+<h1>System Layers</h1>
+<p>Dittonomics has four layers that matter in practice.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -204,181 +191,225 @@ ul.task-list li input[type="checkbox"] {
 <thead>
 <tr class="header">
 <th>Layer</th>
-<th>Codex-native location</th>
-<th>Loaded when</th>
+<th>Where it lives</th>
+<th>What it does</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Session constitution</td>
-<td><code>AGENTS.md</code></td>
-<td>every session in the repo</td>
+<td>Website manual</td>
+<td><code>guide/</code> and <code>docs/</code></td>
+<td>teaches humans how the system works</td>
 </tr>
 <tr class="even">
-<td>Repo overlay</td>
-<td><code>AGENTS.override.md</code></td>
-<td>every session when present</td>
-</tr>
-<tr class="odd">
-<td>Repo-local skills</td>
-<td><code>.agents/skills/</code></td>
-<td>on demand or by explicit mention</td>
-</tr>
-<tr class="even">
-<td>Forkable starter bundle</td>
+<td>Public starter bundle</td>
 <td><code>.codex/</code> in this repo</td>
-<td>when a user copies or adapts the public starter</td>
+<td>gives a generic forkable install</td>
 </tr>
 <tr class="odd">
-<td>User skills</td>
-<td><code>~/.codex/skills</code></td>
-<td>on demand or implicit by policy</td>
+<td>Live local install</td>
+<td><code>~/.codex/</code>, <code>~/.agents/skills</code>, <code>~/voice/</code></td>
+<td>runs your actual working system</td>
 </tr>
 <tr class="even">
-<td>Custom subagents</td>
-<td><code>~/.codex/agents</code></td>
-<td>when the main session delegates</td>
-</tr>
-<tr class="odd">
-<td>Optional voice layer</td>
-<td><code>~/voice</code></td>
-<td>when writing or prose review needs it</td>
-</tr>
-<tr class="even">
-<td>Explicit utilities and config</td>
-<td>scripts, references, <code>config.toml</code></td>
-<td>when invoked</td>
+<td>Project repo overlay</td>
+<td><code>AGENTS.md</code>, <code>AGENTS.override.md</code>, <code>.agents/skills/</code></td>
+<td>makes behavior repo-specific</td>
 </tr>
 </tbody>
 </table>
-<p>The important design difference is that Codex should not be documented as if hidden Claude hooks still exist. If behavior matters, it needs an explicit home.</p>
+<p>The public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real.</p>
 </section>
-<section id="the-kernel-update" class="level1">
-<h1>The Kernel Update</h1>
-<p>The public starter now exposes a stronger workflow kernel than the first site draft.</p>
-<p>That kernel makes five things explicit:</p>
-<ol type="1">
-<li>phase dependencies</li>
-<li>artifact contracts</li>
-<li>agent families and creator-critic separation</li>
-<li>routing and path-resolution rules</li>
-<li>persistence ownership</li>
-</ol>
-<p>In practice, that means the parent orchestrator resolves paths first, hands named targets to agents, and owns report saving unless it explicitly delegates a write target.</p>
-<section id="kernel-references" class="level2">
-<h2 class="anchored" data-anchor-id="kernel-references">Kernel references</h2>
-<p>The public <code>clo-workflow</code> starter now centers these files:</p>
-<ul>
-<li><code>pipeline-contract.md</code></li>
-<li><code>artifact-contracts.md</code></li>
-<li><code>agent-registry.md</code></li>
-<li><code>routing-rules.md</code></li>
-</ul>
-<p>Those files are the closest thing Dittonomics has to a shared operating contract across the <code>clo-*</code> stack.</p>
-</section>
-</section>
-<section id="agent-workflow-diagram" class="level1">
-<h1>Agent Workflow Diagram</h1>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    YOU((You)) --&gt; D(Discovery)
-    D --&gt; S(Strategy)
-    S --&gt; E(Execution)
-    E --&gt; W(Write)
-    W --&gt; R(Peer Review)
-    R --&gt;|score &gt;= 95| SUB(Submission)
-    E -.-&gt; T(Talks)
-    R -.-&gt;|missing lit| D
-    R -.-&gt;|flawed design| S
-    R -.-&gt;|more checks| E
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<section id="agents-by-phase" class="level2">
-<h2 class="anchored" data-anchor-id="agents-by-phase">Agents by Phase</h2>
-<p>The structure remains worker -&gt; critic:</p>
-<ul>
-<li>Discovery: librarian -&gt; librarian_critic, explorer -&gt; explorer_critic</li>
-<li>Strategy: strategist -&gt; strategist_critic</li>
-<li>Execution: data_engineer or coder -&gt; coder_critic</li>
-<li>Writing: writer -&gt; writer_critic</li>
-<li>Peer Review: editor plus two blind referees</li>
-<li>Submission: verifier as final gate</li>
-</ul>
-</section>
-</section>
-<section id="the-orchestrator" class="level1">
-<h1>The Orchestrator</h1>
+<section id="the-orchestrator-contract" class="level1">
+<h1>The Orchestrator Contract</h1>
 <p>The main Codex session is the orchestrator.</p>
+<p>That means it:</p>
+<ul>
+<li>reads repo guidance first</li>
+<li>decides which skill to invoke</li>
+<li>dispatches subagents only for bounded specialist work</li>
+<li>resolves paths before delegation</li>
+<li>owns persistence unless it explicitly delegates a write target</li>
+</ul>
+<p>This is why Dittonomics does <strong>not</strong> install a separate orchestrator agent.</p>
+</section>
+<section id="worker-critic-architecture" class="level1">
+<h1>Worker-Critic Architecture</h1>
+<p>The system keeps creation and evaluation separate.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Creation layer</th>
+<th>Review layer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>discovery</td>
+<td>librarian or explorer</td>
+<td>paired critic</td>
+</tr>
+<tr class="even">
+<td>strategy</td>
+<td>strategist</td>
+<td>strategist_critic</td>
+</tr>
+<tr class="odd">
+<td>execution</td>
+<td>coder or data_engineer</td>
+<td>coder_critic</td>
+</tr>
+<tr class="even">
+<td>writing</td>
+<td>writer</td>
+<td>writer_critic</td>
+</tr>
+<tr class="odd">
+<td>peer review</td>
+<td>editor and referees</td>
+<td>blind review posture</td>
+</tr>
+<tr class="even">
+<td>submission</td>
+<td>verifier</td>
+<td>final mechanical gate</td>
+</tr>
+</tbody>
+</table>
+<p>This separation is the main reason the workflow scales beyond one-off prompting.</p>
+</section>
+<section id="explicit-skills-instead-of-hidden-hooks" class="level1">
+<h1>Explicit Skills Instead Of Hidden Hooks</h1>
+<p>Upstream Clo-Author uses hidden Claude mechanics in some places. Dittonomics converts those ideas into explicit, visible surfaces.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Hidden upstream behavior</th>
+<th>Dittonomics surface</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>slash commands</td>
+<td><code>$clo-*</code> skills</td>
+</tr>
+<tr class="even">
+<td>hidden hooks</td>
+<td>explicit research tools</td>
+</tr>
+<tr class="odd">
+<td>implicit context survival</td>
+<td><code>checkpoint</code> and <code>resume-context</code></td>
+</tr>
+<tr class="even">
+<td>buried writing habits</td>
+<td>explicit <code>~/voice</code> files</td>
+</tr>
+</tbody>
+</table>
+<p>The rule is simple:</p>
+<blockquote class="blockquote">
+<p>if behavior matters, it should have a visible home</p>
+</blockquote>
+</section>
+<section id="local-state-and-checkpoints" class="level1">
+<h1>Local State And Checkpoints</h1>
+<p>The new state layer lives in:</p>
+<pre class="text"><code>.codex-state/</code></pre>
+<p>It is local repo memory, not canonical research output.</p>
+<section id="default-structure" class="level2">
+<h2 class="anchored" data-anchor-id="default-structure">Default structure</h2>
+<pre class="text"><code>.codex-state/
+  checkpoints/
+    2026-04-22T18-30-00Z_end-of-day.json
+    2026-04-22T18-30-00Z_end-of-day.md
+  latest.json
+  latest.md
+  resume-context.md</code></pre>
+</section>
+<section id="why-both-json-and-markdown-exist" class="level2">
+<h2 class="anchored" data-anchor-id="why-both-json-and-markdown-exist">Why both JSON and Markdown exist</h2>
+<p>The JSON files are:</p>
+<ul>
+<li>stable</li>
+<li>machine-readable</li>
+<li>good for scripted recovery later</li>
+</ul>
+<p>The Markdown files are:</p>
+<ul>
+<li>easy to read</li>
+<li>easy to share with a colleague</li>
+<li>good for quick manual inspection</li>
+</ul>
+</section>
+<section id="recommended-policy" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-policy">Recommended policy</h2>
+<p>For working research repos:</p>
+<ul>
+<li>keep <code>.codex-state/</code> local</li>
+<li>add it to <code>.gitignore</code> unless you explicitly want to share checkpoints</li>
+<li>treat it as operational memory</li>
+</ul>
+</section>
+</section>
+<section id="how-resume-works" class="level1">
+<h1>How Resume Works</h1>
+<p>Resume is not magic memory. It is a disciplined reconstruction step.</p>
+<p>It combines:</p>
+<ul>
+<li>the latest checkpoint</li>
+<li>current git state</li>
+<li>recent commits</li>
+<li>current file existence</li>
+</ul>
+<p>That is enough to restart a session cleanly without pretending the system has silent hidden memory.</p>
+</section>
+<section id="voice-as-a-layer" class="level1">
+<h1>Voice As A Layer</h1>
+<p>The voice layer is modular and optional.</p>
+<p>It lives in <code>~/voice/</code> and sits <strong>below</strong> repo guidance and front-end structure rules.</p>
 <p>That means:</p>
 <ul>
-<li>it reads repo guidance first</li>
-<li>it decides when to invoke a skill</li>
-<li>it dispatches subagents only for bounded work</li>
-<li>it resolves paths before delegation</li>
-<li>it owns persistence unless it deliberately hands off a named write target</li>
-<li>it integrates outputs and applies quality gates</li>
+<li>voice shapes prose</li>
+<li>voice does not replace evidence</li>
+<li>voice does not replace intro architecture</li>
+<li>voice does not outrank repo-specific rules</li>
 </ul>
-<p>The architecture explicitly rejects the idea of installing a separate orchestrator agent when the main Codex session already has that responsibility.</p>
 </section>
-<section id="shared-task-packets" class="level1">
-<h1>Shared Task Packets</h1>
-<p>The updated public architecture now treats task packets as a first-class contract.</p>
-<p>A good packet includes at least:</p>
+<section id="public-repo-local-install-and-website" class="level1">
+<h1>Public Repo, Local Install, And Website</h1>
+<p>This repo is intentionally both:</p>
 <ul>
-<li>task type and mode</li>
-<li>target files</li>
-<li>required and optional artifacts</li>
-<li>repo overlays</li>
-<li>design metadata</li>
-<li>output expectations</li>
-<li>resolved target locations</li>
-<li>persistence owner</li>
+<li>a manual</li>
+<li>a starter kit</li>
 </ul>
-<p>This is one of the biggest practical upgrades to the public starter because it reduces ad hoc routing language between skills and subagents.</p>
+<p>That matters for colleagues.</p>
+<p>Someone can:</p>
+<ol type="1">
+<li>read the website</li>
+<li>copy the starter bundle</li>
+<li>install it locally</li>
+<li>add a repo overlay</li>
+<li>start using the same workflow with minimal guesswork</li>
+</ol>
 </section>
-<section id="the-worker-critic-loop" class="level1">
-<h1>The Worker-Critic Loop</h1>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-    W[Creator produces artifact] --&gt; C[Critic reviews]
-    C --&gt;|score &gt;= 80| A[Approved]
-    C --&gt;|score &lt; 80| F[Creator revises]
-    F --&gt; C2[Critic re-reviews]
-    C2 --&gt;|pass| A
-    C2 --&gt;|round 3 fail| U[Escalate]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>The point is not bureaucracy. It is to keep creation and evaluation separate long enough to expose weak arguments before they become expensive.</p>
-</section>
-<section id="voice-as-a-layer-not-a-hidden-habit" class="level1">
-<h1>Voice as a Layer, Not a Hidden Habit</h1>
-<p>The live system now treats writing voice as a modular layer.</p>
-<p>That matters because it lets users keep prose style explicit without hardcoding a private writing voice into every generic starter file. In the public repo, the voice layer is optional and documented through templates rather than copied from any one installation.</p>
-</section>
-<section id="exploration-and-file-promotion" class="level1">
-<h1>Exploration and File Promotion</h1>
-<p><code>explorations/</code> is still part of the architecture, not a convenience folder. Prototype work should start there and only move into canonical outputs once it stabilizes.</p>
-<p>Promotion decisions still belong to the orchestrator or the user, not to critics.</p>
-</section>
-<section id="why-this-is-not-a-literal-clone" class="level1">
-<h1>Why This Is Not a Literal Clone</h1>
-<p>The site is intentionally similar to Clo-Author at the workflow level, but not at the implementation label level. The manual should help a Codex user operate the system correctly, not cosmetically.</p>
+<section id="the-ditto-expansion-rule" class="level1">
+<h1>The Ditto Expansion Rule</h1>
+<p>As you add more capabilities later, keep the architecture extensible.</p>
+<p>Good additions:</p>
+<ul>
+<li>new skills with clear boundaries</li>
+<li>new utilities with explicit names</li>
+<li>new public docs sections</li>
+<li>new optional overlays</li>
+</ul>
+<p>Bad additions:</p>
+<ul>
+<li>hidden behavior nobody can explain</li>
+<li>one-off hacks that bypass the skill system</li>
+<li>private defaults silently turning into public starter rules</li>
+</ul>
 
 
 </section>

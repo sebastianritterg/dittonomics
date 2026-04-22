@@ -1,6 +1,6 @@
 ---
 title: "Dittonomics"
-subtitle: "A remixed Codex research workflow built from multiple upstream repos"
+subtitle: "A Ditto-style Codex research system that keeps copying useful traits"
 ---
 
 ::: {.columns .ditto-hero-grid}
@@ -8,145 +8,159 @@ subtitle: "A remixed Codex research workflow built from multiple upstream repos"
 ![](assets/ditto-mascot.svg){fig-alt="Dittonomics mascot: a smiling purple blob inspired by Ditto." .ditto-hero}
 :::
 
-::: {.column width="70%"}
-Dittonomics is a Codex-native research workflow that openly borrows from multiple upstream repos instead of pretending it was invented from scratch.
+::: {.column .ditto-hero-copy width="70%"}
+Dittonomics is a Codex-native research operating system for empirical work.
 
-The name is deliberate: like Ditto, this project copies useful traits, reshapes them, and turns them into one portable operating model for empirical work in Codex.
+The Ditto idea is intentional: this system keeps copying useful traits from upstream workflows, then reorganizes them into one portable setup you can keep extending over time. The website is the public manual. The repo is the starter kit. Your local install is the live working system.
 :::
 :::
 
-::: {.callout-warning}
-## Under Active Construction
+::: {.callout-important}
+## What This Manual Is For
 
-This manual and site are being updated actively. Expect changes, expansions, and new sections, especially around project-management skills, workflow options, writing voice layers, and broader Codex integrations.
+This site is written for two audiences:
+
+- you, as the person actively evolving the system
+- colleagues, coauthors, and future users who need a practical guide without reading every starter file by hand
 :::
 
-::: {.source-blend}
-## Built From
+## What Dittonomics Gives You
 
-Dittonomics builds its architecture, workflow method, and prompting style from:
+- a research pipeline with explicit phases
+- worker-critic separation across the stack
+- Codex-native skills instead of Claude slash-command assumptions
+- a forkable public `.codex/` starter bundle
+- optional voice files for writing-sensitive workflows
+- explicit maintenance tools such as `checkpoint`, `resume-context`, and `verify-edit`
+- a website manual and cheat sheet you can keep open while you work
 
-- [Clo-Author](https://hsantanna.org/clo-author/) by Hugo Sant'Anna
-- [my_claude_skills](https://github.com/dariia-m/my_claude_skills) by Daria M.
-- [claudeblattman](https://github.com/chrisblattman/claudeblattman) by Chris Blattman
+## Start In 20 Minutes
 
-This is a remix on purpose. The project is called Dittonomics because it copies patterns from different repos and adapts them into one Codex-facing research system.
-:::
+### 1. Fork or clone the repo
 
-The goal is simple: preserve the workflow logic that makes the upstream systems useful for research, while translating the active instructions into Codex-native primitives:
+The public repo contains three things you will reuse repeatedly:
 
-- `AGENTS.md` and `AGENTS.override.md` instead of `CLAUDE.md`
-- active workflow references instead of hidden `.claude` assumptions
-- explicit `$clo-*` skills instead of slash-command dependence
-- Codex custom subagents instead of Claude agent markdown files
-- explicit exploration scaffolding instead of undocumented folder conventions
-- a forkable `.codex/` starter bundle instead of asking every user to reconstruct the user-level layer from scratch
-- an optional voice layer that keeps writing style explicit, modular, and user-owned
+- the website manual in `guide/` and `docs/`
+- the public starter bundle in `.codex/`
+- the public voice templates in `voice/`
 
-## What You Get
+### 2. Install the starter bundle locally
 
-- a five-phase research pipeline
-- worker-critic separation across the whole workflow
-- a stronger orchestration contract: the parent resolves paths, owns persistence, and hands named targets to agents
-- kernel references for artifacts, routing, and phase dependencies
-- journal-aware peer review via editor plus blind referees
-- a public `.codex/` starter kit that can be copied or adapted after forking
-- optional `voice/` templates for users who want their prose workflow to preserve a recognizable style
+Copy or adapt the repo's `.codex/` into your own `~/.codex/`.
 
-## Get Started in 5 Minutes
-
-### Step 1: Understand the starter model
-
-This repo ships a forkable starter layer under `.codex/` with:
+That gives you:
 
 - `AGENTS.md`
-- `agents/`
 - `skills/`
-- `WORKFLOW_QUICK_REF.md`
-- `config.example.toml`
+- `agents/`
+- workflow references
+- utility scripts
 
-When you adopt it for your own machine, the main user-level Codex storage layers are:
+### 3. Add an optional voice layer
 
-- user skills in `~/.codex/skills`
-- custom subagents in `~/.codex/agents`
-- optional voice files in `~/voice`
+If you want writing to preserve your own prose register, copy the files in `voice/` into `~/voice/` and fill them in privately.
 
-Repo-specific overrides still belong in:
+If you do not need a voice layer, skip it.
+
+### 4. Open a research repo with Codex
+
+In a working project repo, add:
 
 - `AGENTS.md`
-- `AGENTS.override.md`
-- `.agents/skills/`
-
-### Step 2: Translate the upstream mental model
-
-If the upstream manuals say:
-
-- `CLAUDE.md` -> read or create `AGENTS.md`
-- `.claude/rules` -> use active workflow references plus repo overlay guidance
-- `/discover` -> use `$clo-discover`
-- `.claude/agents` -> use Codex custom subagents
-
-The public migration cheatsheet lives in [Reference](reference.qmd).
-
-### Step 3: Create or adapt a repo
-
-For a new research repo, the minimum Codex-facing structure is:
-
-- root `AGENTS.md`
 - optional `AGENTS.override.md`
-- repo-local skills in `.agents/skills/`
-- canonical manuscript, code, output, and docs directories
-- `explorations/` when the project needs a sandbox for prototypes
+- optional repo-local skills in `.agents/skills/`
+- `explorations/` when you need a prototype sandbox
 
-### Step 4: Use the workflow phases
+### 5. Use the daily loop
 
-The workflow stays the same:
+Morning:
 
-1. Discovery
-2. Strategy
-3. Execution
-4. Peer Review
-5. Submission
+- `use $clo-research-tools resume-context`
 
-Talks can run in parallel with review.
+During work:
 
-### Step 5: Add voice only if you want it
+- call the workflow skill that matches the task
 
-The public starter now documents an optional writing-voice layer.
+End of day:
 
-Use it when you want:
+- `use $clo-research-tools checkpoint`
 
-- a stable prose register across writing sessions
-- overlays for joint work or journal tightening
-- an explicit place to store voice rules instead of re-explaining them every time
+## First Prompts To Try
 
-The setup guide lives in [Customization](customization.qmd) and the starter templates live in `voice/`.
+```text
+Use $clo-discover lit to map the literature on teacher value-added and school assignment.
+```
 
-## Prerequisites
+```text
+Use $clo-strategize on this research question and propose the main design plus the referee-proof robustness plan.
+```
 
-| Tool | Why it matters | Notes |
-|---|---|---|
-| Codex | Main orchestrator | Desktop or terminal usage both fit the architecture |
-| Python | Default automation and analysis language | Primary default in this adaptation |
-| Stata | Econometric co-default | Use when the repo or replication target centers Stata |
-| Git | Versioning and review workflow | Required for repo-based operation |
-| Quarto | Docs site only | Needed to render this manual locally |
+```text
+Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.
+```
 
-R and Julia remain supported, but they are no longer the default recommendation in the active Codex adaptation.
+```text
+Use $clo-review --peer on the current draft and tell me the highest-risk issues first.
+```
 
-## What This Site Is Not
+```text
+Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step.
+```
 
-This site is not:
+## How The Site Is Organized
 
-- a literal clone of any one upstream repo
-- a promise that Codex supports hidden `.claude` mechanics
-- a packaged installer for one exact workstation
-- a copy of one user's private voice files or live home setup
+- **Quick Start**: what Dittonomics is and how to get running quickly
+- **User Guide**: daily usage, examples, checkpoint or resume workflow, and how to call skills
+- **Agents**: who does what and when the system dispatches each role
+- **Architecture**: how the local install, repo overlays, website, and state files fit together
+- **Customization**: how to install your own stack, set up voice, and onboard colleagues
+- **Reference**: the cheat sheet for skills, utilities, agents, folders, and recurring prompts
 
-It is a public operating manual for a Codex-native remix of several upstream research-workflow systems.
+## Public Home
 
-## Attribution
+The public website is:
 
-Dittonomics is adapted from the Claude-based [Clo-Author](https://hsantanna.org/clo-author/) by Hugo Sant'Anna, plus ideas and patterns drawn from [my_claude_skills](https://github.com/dariia-m/my_claude_skills) and [claudeblattman](https://github.com/chrisblattman/claudeblattman).
+- [https://sebastianritterg.github.io/dittonomics/](https://sebastianritterg.github.io/dittonomics/)
 
-The aim here is adaptation, not concealment. The project works by being explicit about what it borrows and how it rewrites those pieces for Codex.
+Keep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system.
+
+## How To Fork Dittonomics
+
+If you want your own version of the system:
+
+1. fork the repo on GitHub
+2. clone your fork locally
+3. copy or adapt the repo's `.codex/` starter bundle into your own `~/.codex/`
+4. optionally copy the `voice/` templates into your private `~/voice/`
+5. keep repo-specific rules in each project's `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/`
+6. use this website as the shared manual for your own adaptation
+
+The practical split is:
+
+- fork the repo when you want your own public or shared Dittonomics variant
+- copy the starter bundle when you want the user-level install on your machine
+- use repo overlays when a specific paper or project needs local rules
+
+## Public Repo vs Local Install
+
+| Layer | Role |
+|---|---|
+| `guide/` | source for the website manual |
+| `docs/` | rendered site for GitHub Pages |
+| `.codex/` in this repo | public starter bundle |
+| `~/.codex/` | your live local user-level install |
+| `~/voice/` | your private voice layer |
+| project repo `AGENTS.md` | repo constitution and working rules |
+| project repo `.codex-state/` | local checkpoint and resume files |
+
+## The Ditto Rule
+
+Keep the system open to future additions.
+
+That means:
+
+- do not freeze the workflow as if this is the final shape
+- document new traits as they get added
+- keep the public starter generic
+- keep private voice and machine-specific behavior separate
+- let the website become the shared memory for the team

@@ -17,6 +17,7 @@ The public repo keeps the upstream workflow architecture, but rewrites the activ
 - hidden hook behavior becomes explicit utilities, references, and config guidance
 - `explorations/` stays a repo-level sandbox and should be created when missing
 - writing voice becomes an explicit optional layer instead of an undocumented personal habit
+- end-of-day state and next-day recovery now use explicit `checkpoint` and `resume-context` utilities instead of hidden session hooks
 
 This repository is documentation-first, but it also includes a forkable `.codex/` starter layer. It explains the architecture, customization patterns, migration layer, optional voice setup, and ships a reusable Codex-facing template bundle.
 
@@ -38,6 +39,12 @@ This repository is documentation-first, but it also includes a forkable `.codex/
 - Architecture
 - Customization
 - Reference
+
+The website is intended to stay open while you work. It now functions as:
+
+- the onboarding guide for colleagues
+- the tutorial for installing and customizing the system
+- the cheat sheet for skills, agents, utilities, and common prompts
 
 ## Core Defaults Reflected Here
 
@@ -72,6 +79,16 @@ quarto render guide
 ```
 
 That renders the site into `docs/`.
+
+## The Daily Operational Loop
+
+Recommended daily usage:
+
+1. `use $clo-research-tools resume-context`
+2. run the workflow skill that matches the task
+3. `use $clo-research-tools checkpoint`
+
+Checkpoint files live in `.codex-state/` inside working repos and are meant to be local operational memory rather than canonical research outputs.
 
 ## Publishing
 

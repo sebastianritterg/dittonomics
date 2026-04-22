@@ -1,185 +1,137 @@
 ---
 title: "Agents"
-subtitle: "How the specialist roles map into Codex custom subagents"
+subtitle: "Who does what, when they run, and what you should ask them for"
 ---
 
-# How Agents Work
+# How Agents Fit Into Daily Use
 
-The Codex adaptation keeps the Clo-Author specialist structure, but the implementation format changes:
+Dittonomics uses agents to keep specialist work narrow.
 
-- upstream markdown agent definitions become Codex custom subagents
-- the main Codex session remains the orchestrator
-- skills decide when to dispatch roles
+The important rule is:
 
-Each role should stay narrow. The architecture works because workers do the making and critics do the checking.
+- creators create
+- critics critique
+- the main Codex session orchestrates
 
-# The Researchers (Discovery Phase)
+In normal use, you call a skill such as `$clo-discover` or `$clo-write`.
+The skill then decides which agent or worker-critic pair should run.
 
-## Librarian
+# The Main Agent Families
 
-Creates:
+## Discovery
 
-- literature maps
-- annotated bibliographies
-- frontier summaries
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `librarian` | finds and organizes literature | literature map, annotated bibliography | `$clo-discover lit` |
+| `librarian_critic` | checks literature quality | coverage and recency critique | after librarian |
+| `explorer` | finds and assesses data | data source list, feasibility memo | `$clo-discover data` |
+| `explorer_critic` | checks data fit | measurement and validity critique | after explorer |
 
-## Librarian Critic
+## Strategy
 
-Checks:
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `strategist` | proposes identification designs | strategy memo | `$clo-strategize` |
+| `strategist_critic` | pressure-tests the design | strategy review report | after strategist |
 
-- coverage gaps
-- recency
-- scope discipline
-- journal relevance
+## Execution
 
-## Explorer
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `data_engineer` | cleans, wrangles, prepares figures | cleaned data products, figure inputs | `$clo-analyze` |
+| `coder` | implements analysis scripts | estimation pipeline, outputs | `$clo-analyze` |
+| `coder_critic` | checks execution quality | code review, strategy alignment | after coder or data_engineer |
 
-Creates:
+## Writing
 
-- data source lists
-- feasibility rankings
-- variable-coverage assessments
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `writer` | drafts or revises sections | outline, paragraph plan, draft | `$clo-write` |
+| `writer_critic` | critiques writing quality | writing review findings | proofread or writing review |
+| `econ-intro-writing` | governs front-end structure | intro architecture guidance | intro, context, literature, opening stack |
 
-## Explorer Critic
+## Review And Submission
 
-Checks:
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `editor` | calibrates journal posture | editorial synthesis | peer review mode |
+| `domain_referee` | checks contribution and literature positioning | domain report | peer review mode |
+| `methods_referee` | checks design and inference | methods report | peer review mode |
+| `verifier` | checks mechanics and package readiness | verification pass or fail | submission or compile checks |
 
-- measurement validity
-- sample selection
-- external validity
-- design compatibility
+## Talks
 
-# The Strategists (Strategy Phase)
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `storyteller` | builds presentations | talk deck | `$clo-talk` |
+| `storyteller_critic` | checks talk quality | talk review report | after storyteller |
 
-## Strategist
+# What You Should Usually Call Instead
 
-Designs:
+## Instead of calling agents directly, call skills
 
-- estimand
-- identification strategy
-- robustness plan
-- falsification tests
+| If you want | Use |
+|---|---|
+| literature work | `$clo-discover lit` |
+| data search | `$clo-discover data` |
+| research design | `$clo-strategize` |
+| coding or output pipeline | `$clo-analyze` |
+| writing | `$clo-write` |
+| review | `$clo-review` |
+| utilities and state management | `$clo-research-tools` |
 
-## Strategist Critic
+# When To Mention An Agent Anyway
 
-Checks:
+Direct mention is useful when you want to shape the posture.
 
-- design validity
-- assumptions
-- inference logic
-- failure modes
+Examples:
 
-# The Builders (Execution Phase)
+```text
+Use $clo-review, but make the methods_referee especially strict on the DiD assumptions.
+```
 
-## Data Engineer
+```text
+Use $clo-write intro and keep econ-intro-writing firmly in charge of structure.
+```
 
-Handles:
+```text
+Use $clo-discover lit and make the librarian repo-bibliography-first before broad search.
+```
 
-- cleaning
-- wrangling
-- figure data preparation
-- reproducible output structure
+# Worker-Critic Logic
 
-## Coder
+The system is intentionally not one-agent-does-everything.
 
-Handles:
+```{mermaid}
+flowchart TD
+  A[Worker creates artifact] --> B[Critic reviews artifact]
+  B -->|Pass| C[Artifact moves forward]
+  B -->|Needs work| D[Worker revises]
+  D --> B
+```
 
-- estimation scripts
-- table generation
-- analysis orchestration
+Why this matters:
 
-## Coder Critic
+- it exposes weak logic before it gets expensive
+- it prevents self-grading
+- it keeps quality review operational
 
-Checks:
+# Agent Cheat Sheet
 
-- strategy alignment
-- reproducibility
-- code quality
-- output readiness
-
-## Writer
-
-Handles:
-
-- paper sections
-- notation discipline
-- claims-and-evidence alignment
-
-## Writer Critic
-
-Checks:
-
-- hedging
-- notation drift
-- claim inflation
-- style consistency
-
-# The Reviewers (Peer Review Phase)
-
-## Editor
-
-The editor does not simply summarize. The editor:
-
-- calibrates scope
-- decides whether the paper is appropriately targeted
-- assigns the referee posture
-- synthesizes the decision after reports come back
-
-## Domain Referee
-
-Checks:
-
-- contribution
-- literature positioning
-- external validity
-- field expectations
-
-## Methods Referee
-
-Checks:
-
-- identification
-- estimation
-- inference
-- robustness sufficiency
-
-# The Infrastructure
-
-## Storyteller and Storyteller Critic
-
-These roles run in the presentation workflow and focus on:
-
-- deck structure
-- narrative arc
-- figure fidelity
-- talk format quality
-
-## Verifier
-
-The verifier is the final mechanical gatekeeper:
-
-- runability
-- package completeness
-- replication readiness
-- output freshness
-
-# Quick Catalog {#agent-catalog}
-
-| Phase | Worker roles | Critic or referee roles |
+| Agent | Ask for this | Do not ask for this |
 |---|---|---|
-| Discovery | `librarian`, `explorer` | `librarian_critic`, `explorer_critic` |
-| Strategy | `strategist` | `strategist_critic` |
-| Execution | `data_engineer`, `coder`, `writer` | `coder_critic`, `writer_critic` |
-| Peer Review | `editor` | `domain_referee`, `methods_referee` |
-| Submission | `verifier` | binary pass/fail gate |
-| Talks | `storyteller` | `storyteller_critic` |
+| `librarian` | literature mapping | final identification strategy |
+| `explorer` | data source search | final causal claims |
+| `strategist` | estimand and design | code implementation |
+| `coder` | scripts and outputs | literature review |
+| `writer` | manuscript sections | referee scoring |
+| `writer_critic` | writing review | drafting from scratch |
+| `domain_referee` | field-facing peer review | code fixes |
+| `methods_referee` | methods peer review | contribution rewriting |
+| `verifier` | mechanics and replication checks | substantive redesign |
 
-# Codex-Specific Notes
+# The Colleague Rule
 
-In Codex, these roles typically live as TOML custom subagents under `~/.codex/agents`.
+If a colleague is new to the system, teach them this sentence first:
 
-The public architecture assumes:
-
-- the main Codex session stays in charge
-- custom subagents do not become mini-orchestrators
-- the repo overlay may override generic defaults
+> Call the workflow skill you need. Let Codex decide whether an agent should be dispatched.

@@ -1,11 +1,7 @@
-﻿interface:
+interface:
   display_name: "Clo Write"
-  short_description: "Draft economics paper sections with review"
-  default_prompt: "Use $clo-write to draft or revise a paper section in an economics working-paper style."
+  short_description: "Draft economics paper sections with explicit contracts, design-aware routing, and an optional style-guide helper"
+  default_prompt: "Use $clo-write to outline, paragraph-plan, and draft or revise a paper section in an economics working-paper style. Preserve econ-intro-writing for all front-end work; optional style-guide help stays below the voice hierarchy."
 
 policy:
   allow_implicit_invocation: true
-
-
-
-

@@ -70,6 +70,10 @@ h1.title {
   min-width: 0;
 }
 
+.ditto-hero-copy {
+  padding-left: clamp(0.45rem, 1.8vw, 1.4rem);
+}
+
 .source-blend {
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(104, 57, 126, 0.12);
@@ -99,5 +103,9 @@ table {
   .ditto-hero {
     max-width: 13rem;
     margin: 0 auto 1.2rem auto;
+  }
+
+  .ditto-hero-copy {
+    padding-left: 0;
   }
 }
