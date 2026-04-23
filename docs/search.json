@@ -1,5 +1,383 @@
 [
   {
+    "objectID": "reference.html",
+    "href": "reference.html",
+    "title": "Reference",
+    "section": "",
+    "text": "If you are unsure where to start, use this quick map:\n\n\n\n\n\n\n\nIf you are here\nUse this\n\n\n\n\n“I only have a rough idea”\n$clo-ideate\n\n\n“I think the question is real, but I need the literature or data map”\n$clo-discover\n\n\n“I need the design before I code”\n$clo-strategize\n\n\n“I need the empirical pipeline and outputs”\n$clo-analyze\n\n\n“I need to draft or revise the paper”\n$clo-write\n\n\n“I need tough criticism”\n$clo-review\n\n\n“I got referee reports back”\n$clo-revise roadmap\n\n\n“I am stopping for the day”\n$clo-research-tools checkpoint\n\n\n“I am reopening the project”\n$clo-research-tools resume-context"
+  },
+  {
+    "objectID": "reference.html#start-the-day",
+    "href": "reference.html#start-the-day",
+    "title": "Reference",
+    "section": "Start the day",
+    "text": "Start the day\nUse $clo-research-tools resume-context for this repo."
+  },
+  {
+    "objectID": "reference.html#end-the-day",
+    "href": "reference.html#end-the-day",
+    "title": "Reference",
+    "section": "End the day",
+    "text": "End the day\nUse $clo-research-tools checkpoint for this repo."
+  },
+  {
+    "objectID": "reference.html#after-a-risky-edit",
+    "href": "reference.html#after-a-risky-edit",
+    "title": "Reference",
+    "section": "After a risky edit",
+    "text": "After a risky edit\nUse $clo-research-tools verify-edit 03_code/src/estimate.py"
+  },
+  {
+    "objectID": "reference.html#ideation",
+    "href": "reference.html#ideation",
+    "title": "Reference",
+    "section": "Ideation",
+    "text": "Ideation\nUse $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it."
+  },
+  {
+    "objectID": "reference.html#discovery",
+    "href": "reference.html#discovery",
+    "title": "Reference",
+    "section": "Discovery",
+    "text": "Discovery\nUse $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving."
+  },
+  {
+    "objectID": "reference.html#strategy",
+    "href": "reference.html#strategy",
+    "title": "Reference",
+    "section": "Strategy",
+    "text": "Strategy\nUse $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan."
+  },
+  {
+    "objectID": "reference.html#writing",
+    "href": "reference.html#writing",
+    "title": "Reference",
+    "section": "Writing",
+    "text": "Writing\nUse $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode."
+  },
+  {
+    "objectID": "reference.html#review",
+    "href": "reference.html#review",
+    "title": "Reference",
+    "section": "Review",
+    "text": "Review\nUse $clo-review on the latest draft and give findings first."
+  },
+  {
+    "objectID": "reference.html#revision-roadmap",
+    "href": "reference.html#revision-roadmap",
+    "title": "Reference",
+    "section": "Revision Roadmap",
+    "text": "Revision Roadmap\nUse $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks."
+  },
+  {
+    "objectID": "reference.html#revision-validation",
+    "href": "reference.html#revision-validation",
+    "title": "Reference",
+    "section": "Revision Validation",
+    "text": "Revision Validation\nUse $clo-revise validate [revision_task_graph.json]"
+  },
+  {
+    "objectID": "reference.html#revision-execution",
+    "href": "reference.html#revision-execution",
+    "title": "Reference",
+    "section": "Revision Execution",
+    "text": "Revision Execution\nUse $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review."
+  },
+  {
+    "objectID": "reference.html#end-of-day",
+    "href": "reference.html#end-of-day",
+    "title": "Reference",
+    "section": "End-of-day",
+    "text": "End-of-day\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step."
+  },
+  {
+    "objectID": "reference.html#next-morning",
+    "href": "reference.html#next-morning",
+    "title": "Reference",
+    "section": "Next morning",
+    "text": "Next morning\nUse $clo-research-tools resume-context for this repo and tell me where we left off and what to do next."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dittonomics",
+    "section": "",
+    "text": "Dittonomics is my public operating manual for doing economics research with Codex.\nThe Ditto idea is intentional: this system keeps copying useful traits from upstream workflows, then reorganizes them into one portable setup that I can keep extending over time and that colleagues can learn without digging through every starter file. The website is the public manual. The repo is the starter kit. Your local install is the live working system."
+  },
+  {
+    "objectID": "index.html#fork-install-customize",
+    "href": "index.html#fork-install-customize",
+    "title": "Dittonomics",
+    "section": "Fork / Install / Customize",
+    "text": "Fork / Install / Customize\nStart here if you want to use Dittonomics yourself or roll it out for coauthors:\n\nOpen the public manual: sebastianritterg.github.io/dittonomics\nFork the GitHub repo: github.com/sebastianritterg/dittonomics\nInstall the starter locally: copy the repo’s .codex/ into your own ~/.codex/\nAdd your own writing voice: copy the voice/ templates into ~/voice/ and adapt them privately\nCustomize per project: keep paper-specific rules in each repo’s AGENTS.md, AGENTS.override.md, and .agents/skills/"
+  },
+  {
+    "objectID": "index.html#what-dittonomics-gives-you",
+    "href": "index.html#what-dittonomics-gives-you",
+    "title": "Dittonomics",
+    "section": "What Dittonomics Gives You",
+    "text": "What Dittonomics Gives You\n\nan explicit ideation phase before discovery\na research pipeline with explicit phases\nworker-critic separation across the stack\nCodex-native skills instead of Claude slash-command assumptions\na forkable public .codex/ starter bundle\noptional voice files for writing-sensitive workflows\na strategic post-submission revision workflow with roadmap planning and DAG validation\nexplicit maintenance tools such as checkpoint, resume-context, and verify-edit\na website manual and cheat sheet you can keep open while you work"
+  },
+  {
+    "objectID": "index.html#use-this-site-like-a-roadmap",
+    "href": "index.html#use-this-site-like-a-roadmap",
+    "title": "Dittonomics",
+    "section": "Use This Site Like A Roadmap",
+    "text": "Use This Site Like A Roadmap\nThis site is meant to help you use the system correctly, not just understand that it exists.\nUse the pages in this order:\n\nQuick Start when you need the big picture and the install split\nUser Guide when you want the practical step-by-step workflow from idea to submission\nReference when you just need the right skill, utility, or prompt quickly\nAgents when you want to know who gets activated and why\nCustomization when you want to fork the system, add voice, or onboard colleagues\nArchitecture when you want to understand how the layers fit together under the hood\n\nIf you only keep one page open during the day, keep Reference open. If you only read one page before using the system properly, read User Guide."
+  },
+  {
+    "objectID": "index.html#research-roadmap-at-a-glance",
+    "href": "index.html#research-roadmap-at-a-glance",
+    "title": "Dittonomics",
+    "section": "Research Roadmap At A Glance",
+    "text": "Research Roadmap At A Glance\n\n\n1. Ideate\nUse $clo-ideate\nTurn a topic, mechanism, or dataset hunch into real research questions.\n\n\n2. Discover\nUse $clo-discover\nMap the literature, data, and framing once a candidate question exists.\n\n\n3. Strategize\nUse $clo-strategize\nLock in the estimand, design, threats, and robustness logic before coding.\n\n\n4. Analyze\nUse $clo-analyze\nBuild the empirical pipeline, outputs, and handoff artifacts.\n\n\n5. Write\nUse $clo-write\nDraft the paper once the evidence and design are stable enough to narrate.\n\n\n6. Review\nUse $clo-review\nPressure-test the draft before treating it as ready.\n\n\n7. Revise\nUse $clo-revise\nWhen reports arrive, build the roadmap first and edit second.\n\n\n8. Submit / Talk\nUse $clo-submit or $clo-talk\nClose the loop with verification or convert the paper into a presentation."
+  },
+  {
+    "objectID": "index.html#research-roadmap-in-words",
+    "href": "index.html#research-roadmap-in-words",
+    "title": "Dittonomics",
+    "section": "Research Roadmap In Words",
+    "text": "Research Roadmap In Words\nThis is the recommended order of use for most economics projects:\n\nIdeate with $clo-ideate when the idea is still vague\nDiscover with $clo-discover once you have a candidate question\nStrategize with $clo-strategize before writing serious code\nAnalyze with $clo-analyze to build the empirical pipeline\nWrite with $clo-write once the outputs and design are stable enough\nReview with $clo-review before treating the draft as real\nRevise with $clo-revise when editor or referee reports arrive\nSubmit with $clo-submit when the package is close to done\nTalk with $clo-talk when the paper needs a presentation version\n\nThat is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it."
+  },
+  {
+    "objectID": "index.html#start-in-20-minutes",
+    "href": "index.html#start-in-20-minutes",
+    "title": "Dittonomics",
+    "section": "Start In 20 Minutes",
+    "text": "Start In 20 Minutes\n\n1. Fork or clone the repo\nThe public repo contains three things you will reuse repeatedly:\n\nthe website manual in guide/ and docs/\nthe public starter bundle in .codex/\nthe public voice templates in voice/\n\n\n\n2. Install the starter bundle locally\nCopy or adapt the repo’s .codex/ into your own ~/.codex/.\nThat gives you:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts\n\n\n\n3. Add an optional voice layer\nIf you want writing to preserve your own prose register, copy the files in voice/ into ~/voice/ and fill them in privately.\nIf you do not need a voice layer, skip it.\n\n\n4. Open a research repo with Codex\nIn a working project repo, add:\n\nAGENTS.md\noptional AGENTS.override.md\noptional repo-local skills in .agents/skills/\nexplorations/ when you need a prototype sandbox\n\n\n\n5. Start with ideation when the question is still fuzzy\nBefore discovery, use:\n\nuse $clo-ideate session\n\nThat step helps you:\n\nturn a topic or dataset hunch into candidate research questions\ncheck the closest-paper threat early\ndecide whether to pursue, refine, park, or kill the idea\n\n\n\n6. Use the daily loop\nMorning:\n\nuse $clo-research-tools resume-context\n\nDuring work:\n\ncall the workflow skill that matches the task\n\nEnd of day:\n\nuse $clo-research-tools checkpoint"
+  },
+  {
+    "objectID": "index.html#first-prompts-to-try",
+    "href": "index.html#first-prompts-to-try",
+    "title": "Dittonomics",
+    "section": "First Prompts To Try",
+    "text": "First Prompts To Try\nUse $clo-ideate session on this policy idea and turn it into ranked research questions before discovery.\nUse $clo-discover lit to map the literature on teacher value-added and school assignment.\nUse $clo-strategize on this research question and propose the main design plus the referee-proof robustness plan.\nUse $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.\nUse $clo-review --peer on the current draft and tell me the highest-risk issues first.\nUse $clo-revise roadmap on these referee reports and the submitted paper. Build the execution blocks before we start editing.\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step."
+  },
+  {
+    "objectID": "index.html#how-the-site-is-organized",
+    "href": "index.html#how-the-site-is-organized",
+    "title": "Dittonomics",
+    "section": "How The Site Is Organized",
+    "text": "How The Site Is Organized\n\nQuick Start: what Dittonomics is and how to get running quickly\nUser Guide: the practical roadmap for how to use the system of skills and agents properly for economics research\nAgents: who does what and when the system dispatches each role\nArchitecture: how the website, starter bundle, local install, repo overlays, and state files fit together\nCustomization: how to install your own stack, set up voice, and onboard colleagues\nReference: the cheat sheet for skills, utilities, agents, folders, and recurring prompts"
+  },
+  {
+    "objectID": "index.html#what-dittonomics-builds-on",
+    "href": "index.html#what-dittonomics-builds-on",
+    "title": "Dittonomics",
+    "section": "What Dittonomics Builds On",
+    "text": "What Dittonomics Builds On\nDittonomics is a remix, not a one-source clone.\nThe current public system draws especially from:\n\nClo-Author for the overall research-workflow architecture\nmy_claude_skills for explicit skill patterns and reusable operational helpers\nclaudeblattman for economics-facing workflow instincts and practical researcher ergonomics\nstrategic-revision for post-submission revision planning, task decomposition, and dependency logic\nresearch-companion for research-stage orchestration ideas that fit both Codex and Claude Code settings\nidea-evaluation-pipeline for screening seed ideas and turning them into sharper research questions\n\nThe Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages."
+  },
+  {
+    "objectID": "index.html#public-home",
+    "href": "index.html#public-home",
+    "title": "Dittonomics",
+    "section": "Public Home",
+    "text": "Public Home\nThe public website is:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nKeep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system, especially when you or a colleague forget which skill to call next."
+  },
+  {
+    "objectID": "index.html#how-to-fork-dittonomics",
+    "href": "index.html#how-to-fork-dittonomics",
+    "title": "Dittonomics",
+    "section": "How To Fork Dittonomics",
+    "text": "How To Fork Dittonomics\nIf you want your own version of the system:\n\nfork the repo on GitHub\nclone your fork locally\ncopy or adapt the repo’s .codex/ starter bundle into your own ~/.codex/\noptionally copy the voice/ templates into your private ~/voice/\nkeep repo-specific rules in each project’s AGENTS.md, AGENTS.override.md, and .agents/skills/\nuse this website as the shared manual for your own adaptation\n\nThe practical split is:\n\nfork the repo when you want your own public or shared Dittonomics variant\ncopy the starter bundle when you want the user-level install on your machine\nuse repo overlays when a specific paper or project needs local rules"
+  },
+  {
+    "objectID": "index.html#public-repo-vs-local-install",
+    "href": "index.html#public-repo-vs-local-install",
+    "title": "Dittonomics",
+    "section": "Public Repo vs Local Install",
+    "text": "Public Repo vs Local Install\n\n\n\nLayer\nRole\n\n\n\n\nguide/\nsource for the website manual\n\n\ndocs/\nrendered site for GitHub Pages\n\n\n.codex/ in this repo\npublic starter bundle\n\n\n~/.codex/\nyour live local user-level install\n\n\n~/voice/\nyour private voice layer\n\n\nproject repo AGENTS.md\nrepo constitution and working rules\n\n\nproject repo .codex-state/\nlocal checkpoint and resume files"
+  },
+  {
+    "objectID": "index.html#the-ditto-rule",
+    "href": "index.html#the-ditto-rule",
+    "title": "Dittonomics",
+    "section": "The Ditto Rule",
+    "text": "The Ditto Rule\nKeep the system open to future additions.\nThat means:\n\ndo not freeze the workflow as if this is the final shape\ndocument new traits as they get added\nkeep the public starter generic\nkeep private voice and machine-specific behavior separate\nlet the website become the shared memory for the team"
+  },
+  {
+    "objectID": "customization.html",
+    "href": "customization.html",
+    "title": "Customization",
+    "section": "",
+    "text": "This page is for the moment when the system stops being just mine and starts becoming usable for a team, a lab, or a set of recurring coauthors."
+  },
+  {
+    "objectID": "customization.html#fork-first-option",
+    "href": "customization.html#fork-first-option",
+    "title": "Customization",
+    "section": "Fork-first option",
+    "text": "Fork-first option\nIf you want your own maintained version of Dittonomics for yourself or your team, start by forking the public repo:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nThen:\n\nfork the GitHub repository\nclone your fork\nadapt the public .codex/ starter bundle\npublish your own docs site if you want a team-specific manual\n\nUse this route when you want to:\n\nkeep extending the system over time\ndocument your team’s conventions\nmaintain your own website or starter defaults\n\nIf you only want the local tooling and do not need your own public variant, you can skip the fork and just copy the starter bundle into ~/.codex/."
+  },
+  {
+    "objectID": "customization.html#start-from-the-public-starter",
+    "href": "customization.html#start-from-the-public-starter",
+    "title": "Customization",
+    "section": "1. Start from the public starter",
+    "text": "1. Start from the public starter\nCopy or adapt:\n.codex/\ninto:\n~/.codex/\nMinimum pieces:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts"
+  },
+  {
+    "objectID": "customization.html#keep-machine-specific-config-local",
+    "href": "customization.html#keep-machine-specific-config-local",
+    "title": "Customization",
+    "section": "2. Keep machine-specific config local",
+    "text": "2. Keep machine-specific config local\nYour own local machine settings belong in:\n~/.codex/config.toml\nExamples:\n\nMCP servers\nplugin preferences\ntrust settings\nsandbox preferences"
+  },
+  {
+    "objectID": "customization.html#keep-project-specific-rules-in-the-repo",
+    "href": "customization.html#keep-project-specific-rules-in-the-repo",
+    "title": "Customization",
+    "section": "3. Keep project-specific rules in the repo",
+    "text": "3. Keep project-specific rules in the repo\nUse:\n\nAGENTS.md\nAGENTS.override.md\n.agents/skills/\n\nDo not overload the user-level install with rules that only belong to one paper."
+  },
+  {
+    "objectID": "customization.html#copy-the-templates-privately",
+    "href": "customization.html#copy-the-templates-privately",
+    "title": "Customization",
+    "section": "Copy the templates privately",
+    "text": "Copy the templates privately\nCopy these into ~/voice/:\n\ncore_voice.template.md\nvoice_examples.template.md\necon_paper_register.template.md\nstyle_hierarchy.template.md\n\nOptional:\n\ncollaboration_register.template.md\njournal_tightening_register.template.md\n\nThen rename them without .template."
+  },
+  {
+    "objectID": "customization.html#what-each-file-does",
+    "href": "customization.html#what-each-file-does",
+    "title": "Customization",
+    "section": "What each file does",
+    "text": "What each file does\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\ncore_voice.md\nyour non-negotiable prose traits\n\n\nvoice_examples.md\nexamples of sentences, paragraph moves, cadence\n\n\necon_paper_register.md\nfield-appropriate restraint and evidence norms\n\n\nstyle_hierarchy.md\nprecedence rules when files conflict\n\n\ncollaboration_register.md\noptional overlay for joint-paper mode\n\n\njournal_tightening_register.md\noptional overlay for tighter journal-facing prose"
+  },
+  {
+    "objectID": "customization.html#the-voice-rule",
+    "href": "customization.html#the-voice-rule",
+    "title": "Customization",
+    "section": "The voice rule",
+    "text": "The voice rule\nYour voice layer should shape:\n\ndiction\ncadence\nparagraph texture\ncompression level\n\nIt should not override:\n\nevidence discipline\ncausal restraint\nintro architecture\nrepo-local terminology rules"
+  },
+  {
+    "objectID": "customization.html#a-good-minimal-voice-setup",
+    "href": "customization.html#a-good-minimal-voice-setup",
+    "title": "Customization",
+    "section": "A good minimal voice setup",
+    "text": "A good minimal voice setup\nIf you want the smallest useful version, start with:\n\ncore_voice.md\nvoice_examples.md\nstyle_hierarchy.md\n\nYou can add the others later."
+  },
+  {
+    "objectID": "customization.html#public-or-shared",
+    "href": "customization.html#public-or-shared",
+    "title": "Customization",
+    "section": "Public or shared",
+    "text": "Public or shared\n\nwebsite manual\npublic starter bundle\nproject AGENTS.md\ngeneric workflow rules"
+  },
+  {
+    "objectID": "customization.html#private",
+    "href": "customization.html#private",
+    "title": "Customization",
+    "section": "Private",
+    "text": "Private\n\npersonal voice files\nmachine-specific config\nprivate examples you do not want to publish"
+  },
+  {
+    "objectID": "customization.html#project-specific-but-shared",
+    "href": "customization.html#project-specific-but-shared",
+    "title": "Customization",
+    "section": "Project-specific but shared",
+    "text": "Project-specific but shared\n\nrepo-local overlays\nproject terminology rules\nteam conventions for directories and outputs"
+  },
+  {
+    "objectID": "architecture.html",
+    "href": "architecture.html",
+    "title": "Architecture",
+    "section": "",
+    "text": "Dittonomics has four layers that matter in practice.\n\n\n\n\n\n\n\n\nLayer\nWhere it lives\nWhat it does\n\n\n\n\nWebsite manual\nguide/ and docs/\nteaches humans how the system works\n\n\nPublic starter bundle\n.codex/ in this repo\ngives a generic forkable install\n\n\nLive local install\n~/.codex/, ~/.agents/skills, ~/voice/\nruns your actual working system\n\n\nProject repo overlay\nAGENTS.md, AGENTS.override.md, .agents/skills/\nmakes behavior repo-specific\n\n\n\nThe public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real."
+  },
+  {
+    "objectID": "architecture.html#default-structure",
+    "href": "architecture.html#default-structure",
+    "title": "Architecture",
+    "section": "Default structure",
+    "text": "Default structure\n.codex-state/\n  checkpoints/\n    2026-04-22T18-30-00Z_end-of-day.json\n    2026-04-22T18-30-00Z_end-of-day.md\n  latest.json\n  latest.md\n  resume-context.md"
+  },
+  {
+    "objectID": "architecture.html#why-both-json-and-markdown-exist",
+    "href": "architecture.html#why-both-json-and-markdown-exist",
+    "title": "Architecture",
+    "section": "Why both JSON and Markdown exist",
+    "text": "Why both JSON and Markdown exist\nThe JSON files are:\n\nstable\nmachine-readable\ngood for scripted recovery later\n\nThe Markdown files are:\n\neasy to read\neasy to share with a colleague\ngood for quick manual inspection"
+  },
+  {
+    "objectID": "architecture.html#recommended-policy",
+    "href": "architecture.html#recommended-policy",
+    "title": "Architecture",
+    "section": "Recommended policy",
+    "text": "Recommended policy\nFor working research repos:\n\nkeep .codex-state/ local\nadd it to .gitignore unless you explicitly want to share checkpoints\ntreat it as operational memory"
+  },
+  {
+    "objectID": "agents.html",
+    "href": "agents.html",
+    "title": "Agents",
+    "section": "",
+    "text": "This page is a lookup guide, not the best first page for learning the workflow. In most cases, start from a workflow skill and let Codex decide whether an agent should run."
+  },
+  {
+    "objectID": "agents.html#ideation",
+    "href": "agents.html#ideation",
+    "title": "Agents",
+    "section": "Ideation",
+    "text": "Ideation\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nideator\nturns rough ideas into candidate research questions\nidea brief, ranked question shortlist\n$clo-ideate\n\n\nideator_critic\npressure-tests early-stage ideas\npursue/refine/park/kill screen\nafter ideator"
+  },
+  {
+    "objectID": "agents.html#discovery",
+    "href": "agents.html#discovery",
+    "title": "Agents",
+    "section": "Discovery",
+    "text": "Discovery\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nlibrarian\nfinds and organizes literature\nliterature map, annotated bibliography\n$clo-discover lit\n\n\nlibrarian_critic\nchecks literature quality\ncoverage and recency critique\nafter librarian\n\n\nexplorer\nfinds and assesses data\ndata source list, feasibility memo\n$clo-discover data\n\n\nexplorer_critic\nchecks data fit\nmeasurement and validity critique\nafter explorer"
+  },
+  {
+    "objectID": "agents.html#strategy",
+    "href": "agents.html#strategy",
+    "title": "Agents",
+    "section": "Strategy",
+    "text": "Strategy\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstrategist\nproposes identification designs\nstrategy memo\n$clo-strategize\n\n\nstrategist_critic\npressure-tests the design\nstrategy review report\nafter strategist"
+  },
+  {
+    "objectID": "agents.html#revision",
+    "href": "agents.html#revision",
+    "title": "Agents",
+    "section": "Revision",
+    "text": "Revision\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nrevision_planner\nturns real review reports into a strategic roadmap\ntask graph, roadmap, decision log\n$clo-revise roadmap\n\n\nrevision_planner_critic\nchecks roadmap completeness and sequencing\nrevision-planning critique\nafter revision_planner"
+  },
+  {
+    "objectID": "agents.html#execution",
+    "href": "agents.html#execution",
+    "title": "Agents",
+    "section": "Execution",
+    "text": "Execution\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\ndata_engineer\ncleans, wrangles, prepares figures\ncleaned data products, figure inputs\n$clo-analyze\n\n\ncoder\nimplements analysis scripts\nestimation pipeline, outputs\n$clo-analyze\n\n\ncoder_critic\nchecks execution quality\ncode review, strategy alignment\nafter coder or data_engineer"
+  },
+  {
+    "objectID": "agents.html#writing",
+    "href": "agents.html#writing",
+    "title": "Agents",
+    "section": "Writing",
+    "text": "Writing\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nwriter\ndrafts or revises sections\noutline, paragraph plan, draft\n$clo-write\n\n\nwriter_critic\ncritiques writing quality\nwriting review findings\nproofread or writing review\n\n\necon-intro-writing\ngoverns front-end structure\nintro architecture guidance\nintro, context, literature, opening stack"
+  },
+  {
+    "objectID": "agents.html#review-and-submission",
+    "href": "agents.html#review-and-submission",
+    "title": "Agents",
+    "section": "Review And Submission",
+    "text": "Review And Submission\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\neditor\ncalibrates journal posture\neditorial synthesis\npeer review mode\n\n\ndomain_referee\nchecks contribution and literature positioning\ndomain report\npeer review mode\n\n\nmethods_referee\nchecks design and inference\nmethods report\npeer review mode\n\n\nverifier\nchecks mechanics and package readiness\nverification pass or fail\nsubmission or compile checks"
+  },
+  {
+    "objectID": "agents.html#talks",
+    "href": "agents.html#talks",
+    "title": "Agents",
+    "section": "Talks",
+    "text": "Talks\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstoryteller\nbuilds presentations\ntalk deck\n$clo-talk\n\n\nstoryteller_critic\nchecks talk quality\ntalk review report\nafter storyteller"
+  },
+  {
+    "objectID": "agents.html#instead-of-calling-agents-directly-call-skills",
+    "href": "agents.html#instead-of-calling-agents-directly-call-skills",
+    "title": "Agents",
+    "section": "Instead of calling agents directly, call skills",
+    "text": "Instead of calling agents directly, call skills\n\n\n\nIf you want\nUse\n\n\n\n\nearly idea screening or question generation\n$clo-ideate\n\n\nliterature work\n$clo-discover lit\n\n\ndata search\n$clo-discover data\n\n\nresearch design\n$clo-strategize\n\n\npost-submission revision planning\n$clo-revise roadmap\n\n\ncoding or output pipeline\n$clo-analyze\n\n\nwriting\n$clo-write\n\n\nreview\n$clo-review\n\n\nutilities and state management\n$clo-research-tools"
+  },
+  {
     "objectID": "user-guide.html",
     "href": "user-guide.html",
     "title": "User Guide",
@@ -124,383 +502,5 @@
     "title": "User Guide",
     "section": "Jumping into edits before building the revision roadmap",
     "text": "Jumping into edits before building the revision roadmap\nWhen real referee reports arrive, start with $clo-revise roadmap before rewriting sections or running ad hoc analyses.\nThat step is what:\n\nextracts atomic reviewer tasks\nshows which requests actually block others\nflags disagreement and go/no-go decisions early"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dittonomics",
-    "section": "",
-    "text": "Dittonomics is my public operating manual for doing economics research with Codex.\nThe Ditto idea is intentional: this system keeps copying useful traits from upstream workflows, then reorganizes them into one portable setup that I can keep extending over time and that colleagues can learn without digging through every starter file. The website is the public manual. The repo is the starter kit. Your local install is the live working system."
-  },
-  {
-    "objectID": "index.html#fork-install-customize",
-    "href": "index.html#fork-install-customize",
-    "title": "Dittonomics",
-    "section": "Fork / Install / Customize",
-    "text": "Fork / Install / Customize\nStart here if you want to use Dittonomics yourself or roll it out for coauthors:\n\nOpen the public manual: sebastianritterg.github.io/dittonomics\nFork the GitHub repo: github.com/sebastianritterg/dittonomics\nInstall the starter locally: copy the repo’s .codex/ into your own ~/.codex/\nAdd your own writing voice: copy the voice/ templates into ~/voice/ and adapt them privately\nCustomize per project: keep paper-specific rules in each repo’s AGENTS.md, AGENTS.override.md, and .agents/skills/"
-  },
-  {
-    "objectID": "index.html#what-dittonomics-gives-you",
-    "href": "index.html#what-dittonomics-gives-you",
-    "title": "Dittonomics",
-    "section": "What Dittonomics Gives You",
-    "text": "What Dittonomics Gives You\n\nan explicit ideation phase before discovery\na research pipeline with explicit phases\nworker-critic separation across the stack\nCodex-native skills instead of Claude slash-command assumptions\na forkable public .codex/ starter bundle\noptional voice files for writing-sensitive workflows\na strategic post-submission revision workflow with roadmap planning and DAG validation\nexplicit maintenance tools such as checkpoint, resume-context, and verify-edit\na website manual and cheat sheet you can keep open while you work"
-  },
-  {
-    "objectID": "index.html#use-this-site-like-a-roadmap",
-    "href": "index.html#use-this-site-like-a-roadmap",
-    "title": "Dittonomics",
-    "section": "Use This Site Like A Roadmap",
-    "text": "Use This Site Like A Roadmap\nThis site is meant to help you use the system correctly, not just understand that it exists.\nUse the pages in this order:\n\nQuick Start when you need the big picture and the install split\nUser Guide when you want the practical step-by-step workflow from idea to submission\nReference when you just need the right skill, utility, or prompt quickly\nAgents when you want to know who gets activated and why\nCustomization when you want to fork the system, add voice, or onboard colleagues\nArchitecture when you want to understand how the layers fit together under the hood\n\nIf you only keep one page open during the day, keep Reference open. If you only read one page before using the system properly, read User Guide."
-  },
-  {
-    "objectID": "index.html#research-roadmap-at-a-glance",
-    "href": "index.html#research-roadmap-at-a-glance",
-    "title": "Dittonomics",
-    "section": "Research Roadmap At A Glance",
-    "text": "Research Roadmap At A Glance\n\n\n1. Ideate\nUse $clo-ideate\nTurn a topic, mechanism, or dataset hunch into real research questions.\n\n\n2. Discover\nUse $clo-discover\nMap the literature, data, and framing once a candidate question exists.\n\n\n3. Strategize\nUse $clo-strategize\nLock in the estimand, design, threats, and robustness logic before coding.\n\n\n4. Analyze\nUse $clo-analyze\nBuild the empirical pipeline, outputs, and handoff artifacts.\n\n\n5. Write\nUse $clo-write\nDraft the paper once the evidence and design are stable enough to narrate.\n\n\n6. Review\nUse $clo-review\nPressure-test the draft before treating it as ready.\n\n\n7. Revise\nUse $clo-revise\nWhen reports arrive, build the roadmap first and edit second.\n\n\n8. Submit / Talk\nUse $clo-submit or $clo-talk\nClose the loop with verification or convert the paper into a presentation."
-  },
-  {
-    "objectID": "index.html#research-roadmap-in-words",
-    "href": "index.html#research-roadmap-in-words",
-    "title": "Dittonomics",
-    "section": "Research Roadmap In Words",
-    "text": "Research Roadmap In Words\nThis is the recommended order of use for most economics projects:\n\nIdeate with $clo-ideate when the idea is still vague\nDiscover with $clo-discover once you have a candidate question\nStrategize with $clo-strategize before writing serious code\nAnalyze with $clo-analyze to build the empirical pipeline\nWrite with $clo-write once the outputs and design are stable enough\nReview with $clo-review before treating the draft as real\nRevise with $clo-revise when editor or referee reports arrive\nSubmit with $clo-submit when the package is close to done\nTalk with $clo-talk when the paper needs a presentation version\n\nThat is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it."
-  },
-  {
-    "objectID": "index.html#start-in-20-minutes",
-    "href": "index.html#start-in-20-minutes",
-    "title": "Dittonomics",
-    "section": "Start In 20 Minutes",
-    "text": "Start In 20 Minutes\n\n1. Fork or clone the repo\nThe public repo contains three things you will reuse repeatedly:\n\nthe website manual in guide/ and docs/\nthe public starter bundle in .codex/\nthe public voice templates in voice/\n\n\n\n2. Install the starter bundle locally\nCopy or adapt the repo’s .codex/ into your own ~/.codex/.\nThat gives you:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts\n\n\n\n3. Add an optional voice layer\nIf you want writing to preserve your own prose register, copy the files in voice/ into ~/voice/ and fill them in privately.\nIf you do not need a voice layer, skip it.\n\n\n4. Open a research repo with Codex\nIn a working project repo, add:\n\nAGENTS.md\noptional AGENTS.override.md\noptional repo-local skills in .agents/skills/\nexplorations/ when you need a prototype sandbox\n\n\n\n5. Start with ideation when the question is still fuzzy\nBefore discovery, use:\n\nuse $clo-ideate session\n\nThat step helps you:\n\nturn a topic or dataset hunch into candidate research questions\ncheck the closest-paper threat early\ndecide whether to pursue, refine, park, or kill the idea\n\n\n\n6. Use the daily loop\nMorning:\n\nuse $clo-research-tools resume-context\n\nDuring work:\n\ncall the workflow skill that matches the task\n\nEnd of day:\n\nuse $clo-research-tools checkpoint"
-  },
-  {
-    "objectID": "index.html#first-prompts-to-try",
-    "href": "index.html#first-prompts-to-try",
-    "title": "Dittonomics",
-    "section": "First Prompts To Try",
-    "text": "First Prompts To Try\nUse $clo-ideate session on this policy idea and turn it into ranked research questions before discovery.\nUse $clo-discover lit to map the literature on teacher value-added and school assignment.\nUse $clo-strategize on this research question and propose the main design plus the referee-proof robustness plan.\nUse $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.\nUse $clo-review --peer on the current draft and tell me the highest-risk issues first.\nUse $clo-revise roadmap on these referee reports and the submitted paper. Build the execution blocks before we start editing.\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step."
-  },
-  {
-    "objectID": "index.html#how-the-site-is-organized",
-    "href": "index.html#how-the-site-is-organized",
-    "title": "Dittonomics",
-    "section": "How The Site Is Organized",
-    "text": "How The Site Is Organized\n\nQuick Start: what Dittonomics is and how to get running quickly\nUser Guide: the practical roadmap for how to use the system of skills and agents properly for economics research\nAgents: who does what and when the system dispatches each role\nArchitecture: how the website, starter bundle, local install, repo overlays, and state files fit together\nCustomization: how to install your own stack, set up voice, and onboard colleagues\nReference: the cheat sheet for skills, utilities, agents, folders, and recurring prompts"
-  },
-  {
-    "objectID": "index.html#what-dittonomics-builds-on",
-    "href": "index.html#what-dittonomics-builds-on",
-    "title": "Dittonomics",
-    "section": "What Dittonomics Builds On",
-    "text": "What Dittonomics Builds On\nDittonomics is a remix, not a one-source clone.\nThe current public system draws especially from:\n\nClo-Author for the overall research-workflow architecture\nmy_claude_skills for explicit skill patterns and reusable operational helpers\nclaudeblattman for economics-facing workflow instincts and practical researcher ergonomics\nstrategic-revision for post-submission revision planning, task decomposition, and dependency logic\nresearch-companion for research-stage orchestration ideas that fit both Codex and Claude Code settings\nidea-evaluation-pipeline for screening seed ideas and turning them into sharper research questions\n\nThe Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages."
-  },
-  {
-    "objectID": "index.html#public-home",
-    "href": "index.html#public-home",
-    "title": "Dittonomics",
-    "section": "Public Home",
-    "text": "Public Home\nThe public website is:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nKeep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system, especially when you or a colleague forget which skill to call next."
-  },
-  {
-    "objectID": "index.html#how-to-fork-dittonomics",
-    "href": "index.html#how-to-fork-dittonomics",
-    "title": "Dittonomics",
-    "section": "How To Fork Dittonomics",
-    "text": "How To Fork Dittonomics\nIf you want your own version of the system:\n\nfork the repo on GitHub\nclone your fork locally\ncopy or adapt the repo’s .codex/ starter bundle into your own ~/.codex/\noptionally copy the voice/ templates into your private ~/voice/\nkeep repo-specific rules in each project’s AGENTS.md, AGENTS.override.md, and .agents/skills/\nuse this website as the shared manual for your own adaptation\n\nThe practical split is:\n\nfork the repo when you want your own public or shared Dittonomics variant\ncopy the starter bundle when you want the user-level install on your machine\nuse repo overlays when a specific paper or project needs local rules"
-  },
-  {
-    "objectID": "index.html#public-repo-vs-local-install",
-    "href": "index.html#public-repo-vs-local-install",
-    "title": "Dittonomics",
-    "section": "Public Repo vs Local Install",
-    "text": "Public Repo vs Local Install\n\n\n\nLayer\nRole\n\n\n\n\nguide/\nsource for the website manual\n\n\ndocs/\nrendered site for GitHub Pages\n\n\n.codex/ in this repo\npublic starter bundle\n\n\n~/.codex/\nyour live local user-level install\n\n\n~/voice/\nyour private voice layer\n\n\nproject repo AGENTS.md\nrepo constitution and working rules\n\n\nproject repo .codex-state/\nlocal checkpoint and resume files"
-  },
-  {
-    "objectID": "index.html#the-ditto-rule",
-    "href": "index.html#the-ditto-rule",
-    "title": "Dittonomics",
-    "section": "The Ditto Rule",
-    "text": "The Ditto Rule\nKeep the system open to future additions.\nThat means:\n\ndo not freeze the workflow as if this is the final shape\ndocument new traits as they get added\nkeep the public starter generic\nkeep private voice and machine-specific behavior separate\nlet the website become the shared memory for the team"
-  },
-  {
-    "objectID": "architecture.html",
-    "href": "architecture.html",
-    "title": "Architecture",
-    "section": "",
-    "text": "Dittonomics has four layers that matter in practice.\n\n\n\n\n\n\n\n\nLayer\nWhere it lives\nWhat it does\n\n\n\n\nWebsite manual\nguide/ and docs/\nteaches humans how the system works\n\n\nPublic starter bundle\n.codex/ in this repo\ngives a generic forkable install\n\n\nLive local install\n~/.codex/, ~/.agents/skills, ~/voice/\nruns your actual working system\n\n\nProject repo overlay\nAGENTS.md, AGENTS.override.md, .agents/skills/\nmakes behavior repo-specific\n\n\n\nThe public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real."
-  },
-  {
-    "objectID": "architecture.html#default-structure",
-    "href": "architecture.html#default-structure",
-    "title": "Architecture",
-    "section": "Default structure",
-    "text": "Default structure\n.codex-state/\n  checkpoints/\n    2026-04-22T18-30-00Z_end-of-day.json\n    2026-04-22T18-30-00Z_end-of-day.md\n  latest.json\n  latest.md\n  resume-context.md"
-  },
-  {
-    "objectID": "architecture.html#why-both-json-and-markdown-exist",
-    "href": "architecture.html#why-both-json-and-markdown-exist",
-    "title": "Architecture",
-    "section": "Why both JSON and Markdown exist",
-    "text": "Why both JSON and Markdown exist\nThe JSON files are:\n\nstable\nmachine-readable\ngood for scripted recovery later\n\nThe Markdown files are:\n\neasy to read\neasy to share with a colleague\ngood for quick manual inspection"
-  },
-  {
-    "objectID": "architecture.html#recommended-policy",
-    "href": "architecture.html#recommended-policy",
-    "title": "Architecture",
-    "section": "Recommended policy",
-    "text": "Recommended policy\nFor working research repos:\n\nkeep .codex-state/ local\nadd it to .gitignore unless you explicitly want to share checkpoints\ntreat it as operational memory"
-  },
-  {
-    "objectID": "agents.html",
-    "href": "agents.html",
-    "title": "Agents",
-    "section": "",
-    "text": "This page is a lookup guide, not the best first page for learning the workflow. In most cases, start from a workflow skill and let Codex decide whether an agent should run."
-  },
-  {
-    "objectID": "agents.html#ideation",
-    "href": "agents.html#ideation",
-    "title": "Agents",
-    "section": "Ideation",
-    "text": "Ideation\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nideator\nturns rough ideas into candidate research questions\nidea brief, ranked question shortlist\n$clo-ideate\n\n\nideator_critic\npressure-tests early-stage ideas\npursue/refine/park/kill screen\nafter ideator"
-  },
-  {
-    "objectID": "agents.html#discovery",
-    "href": "agents.html#discovery",
-    "title": "Agents",
-    "section": "Discovery",
-    "text": "Discovery\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nlibrarian\nfinds and organizes literature\nliterature map, annotated bibliography\n$clo-discover lit\n\n\nlibrarian_critic\nchecks literature quality\ncoverage and recency critique\nafter librarian\n\n\nexplorer\nfinds and assesses data\ndata source list, feasibility memo\n$clo-discover data\n\n\nexplorer_critic\nchecks data fit\nmeasurement and validity critique\nafter explorer"
-  },
-  {
-    "objectID": "agents.html#strategy",
-    "href": "agents.html#strategy",
-    "title": "Agents",
-    "section": "Strategy",
-    "text": "Strategy\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstrategist\nproposes identification designs\nstrategy memo\n$clo-strategize\n\n\nstrategist_critic\npressure-tests the design\nstrategy review report\nafter strategist"
-  },
-  {
-    "objectID": "agents.html#revision",
-    "href": "agents.html#revision",
-    "title": "Agents",
-    "section": "Revision",
-    "text": "Revision\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nrevision_planner\nturns real review reports into a strategic roadmap\ntask graph, roadmap, decision log\n$clo-revise roadmap\n\n\nrevision_planner_critic\nchecks roadmap completeness and sequencing\nrevision-planning critique\nafter revision_planner"
-  },
-  {
-    "objectID": "agents.html#execution",
-    "href": "agents.html#execution",
-    "title": "Agents",
-    "section": "Execution",
-    "text": "Execution\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\ndata_engineer\ncleans, wrangles, prepares figures\ncleaned data products, figure inputs\n$clo-analyze\n\n\ncoder\nimplements analysis scripts\nestimation pipeline, outputs\n$clo-analyze\n\n\ncoder_critic\nchecks execution quality\ncode review, strategy alignment\nafter coder or data_engineer"
-  },
-  {
-    "objectID": "agents.html#writing",
-    "href": "agents.html#writing",
-    "title": "Agents",
-    "section": "Writing",
-    "text": "Writing\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nwriter\ndrafts or revises sections\noutline, paragraph plan, draft\n$clo-write\n\n\nwriter_critic\ncritiques writing quality\nwriting review findings\nproofread or writing review\n\n\necon-intro-writing\ngoverns front-end structure\nintro architecture guidance\nintro, context, literature, opening stack"
-  },
-  {
-    "objectID": "agents.html#review-and-submission",
-    "href": "agents.html#review-and-submission",
-    "title": "Agents",
-    "section": "Review And Submission",
-    "text": "Review And Submission\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\neditor\ncalibrates journal posture\neditorial synthesis\npeer review mode\n\n\ndomain_referee\nchecks contribution and literature positioning\ndomain report\npeer review mode\n\n\nmethods_referee\nchecks design and inference\nmethods report\npeer review mode\n\n\nverifier\nchecks mechanics and package readiness\nverification pass or fail\nsubmission or compile checks"
-  },
-  {
-    "objectID": "agents.html#talks",
-    "href": "agents.html#talks",
-    "title": "Agents",
-    "section": "Talks",
-    "text": "Talks\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstoryteller\nbuilds presentations\ntalk deck\n$clo-talk\n\n\nstoryteller_critic\nchecks talk quality\ntalk review report\nafter storyteller"
-  },
-  {
-    "objectID": "agents.html#instead-of-calling-agents-directly-call-skills",
-    "href": "agents.html#instead-of-calling-agents-directly-call-skills",
-    "title": "Agents",
-    "section": "Instead of calling agents directly, call skills",
-    "text": "Instead of calling agents directly, call skills\n\n\n\nIf you want\nUse\n\n\n\n\nearly idea screening or question generation\n$clo-ideate\n\n\nliterature work\n$clo-discover lit\n\n\ndata search\n$clo-discover data\n\n\nresearch design\n$clo-strategize\n\n\npost-submission revision planning\n$clo-revise roadmap\n\n\ncoding or output pipeline\n$clo-analyze\n\n\nwriting\n$clo-write\n\n\nreview\n$clo-review\n\n\nutilities and state management\n$clo-research-tools"
-  },
-  {
-    "objectID": "customization.html",
-    "href": "customization.html",
-    "title": "Customization",
-    "section": "",
-    "text": "This page is for the moment when the system stops being just mine and starts becoming usable for a team, a lab, or a set of recurring coauthors."
-  },
-  {
-    "objectID": "customization.html#fork-first-option",
-    "href": "customization.html#fork-first-option",
-    "title": "Customization",
-    "section": "Fork-first option",
-    "text": "Fork-first option\nIf you want your own maintained version of Dittonomics for yourself or your team, start by forking the public repo:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nThen:\n\nfork the GitHub repository\nclone your fork\nadapt the public .codex/ starter bundle\npublish your own docs site if you want a team-specific manual\n\nUse this route when you want to:\n\nkeep extending the system over time\ndocument your team’s conventions\nmaintain your own website or starter defaults\n\nIf you only want the local tooling and do not need your own public variant, you can skip the fork and just copy the starter bundle into ~/.codex/."
-  },
-  {
-    "objectID": "customization.html#start-from-the-public-starter",
-    "href": "customization.html#start-from-the-public-starter",
-    "title": "Customization",
-    "section": "1. Start from the public starter",
-    "text": "1. Start from the public starter\nCopy or adapt:\n.codex/\ninto:\n~/.codex/\nMinimum pieces:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts"
-  },
-  {
-    "objectID": "customization.html#keep-machine-specific-config-local",
-    "href": "customization.html#keep-machine-specific-config-local",
-    "title": "Customization",
-    "section": "2. Keep machine-specific config local",
-    "text": "2. Keep machine-specific config local\nYour own local machine settings belong in:\n~/.codex/config.toml\nExamples:\n\nMCP servers\nplugin preferences\ntrust settings\nsandbox preferences"
-  },
-  {
-    "objectID": "customization.html#keep-project-specific-rules-in-the-repo",
-    "href": "customization.html#keep-project-specific-rules-in-the-repo",
-    "title": "Customization",
-    "section": "3. Keep project-specific rules in the repo",
-    "text": "3. Keep project-specific rules in the repo\nUse:\n\nAGENTS.md\nAGENTS.override.md\n.agents/skills/\n\nDo not overload the user-level install with rules that only belong to one paper."
-  },
-  {
-    "objectID": "customization.html#copy-the-templates-privately",
-    "href": "customization.html#copy-the-templates-privately",
-    "title": "Customization",
-    "section": "Copy the templates privately",
-    "text": "Copy the templates privately\nCopy these into ~/voice/:\n\ncore_voice.template.md\nvoice_examples.template.md\necon_paper_register.template.md\nstyle_hierarchy.template.md\n\nOptional:\n\ncollaboration_register.template.md\njournal_tightening_register.template.md\n\nThen rename them without .template."
-  },
-  {
-    "objectID": "customization.html#what-each-file-does",
-    "href": "customization.html#what-each-file-does",
-    "title": "Customization",
-    "section": "What each file does",
-    "text": "What each file does\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\ncore_voice.md\nyour non-negotiable prose traits\n\n\nvoice_examples.md\nexamples of sentences, paragraph moves, cadence\n\n\necon_paper_register.md\nfield-appropriate restraint and evidence norms\n\n\nstyle_hierarchy.md\nprecedence rules when files conflict\n\n\ncollaboration_register.md\noptional overlay for joint-paper mode\n\n\njournal_tightening_register.md\noptional overlay for tighter journal-facing prose"
-  },
-  {
-    "objectID": "customization.html#the-voice-rule",
-    "href": "customization.html#the-voice-rule",
-    "title": "Customization",
-    "section": "The voice rule",
-    "text": "The voice rule\nYour voice layer should shape:\n\ndiction\ncadence\nparagraph texture\ncompression level\n\nIt should not override:\n\nevidence discipline\ncausal restraint\nintro architecture\nrepo-local terminology rules"
-  },
-  {
-    "objectID": "customization.html#a-good-minimal-voice-setup",
-    "href": "customization.html#a-good-minimal-voice-setup",
-    "title": "Customization",
-    "section": "A good minimal voice setup",
-    "text": "A good minimal voice setup\nIf you want the smallest useful version, start with:\n\ncore_voice.md\nvoice_examples.md\nstyle_hierarchy.md\n\nYou can add the others later."
-  },
-  {
-    "objectID": "customization.html#public-or-shared",
-    "href": "customization.html#public-or-shared",
-    "title": "Customization",
-    "section": "Public or shared",
-    "text": "Public or shared\n\nwebsite manual\npublic starter bundle\nproject AGENTS.md\ngeneric workflow rules"
-  },
-  {
-    "objectID": "customization.html#private",
-    "href": "customization.html#private",
-    "title": "Customization",
-    "section": "Private",
-    "text": "Private\n\npersonal voice files\nmachine-specific config\nprivate examples you do not want to publish"
-  },
-  {
-    "objectID": "customization.html#project-specific-but-shared",
-    "href": "customization.html#project-specific-but-shared",
-    "title": "Customization",
-    "section": "Project-specific but shared",
-    "text": "Project-specific but shared\n\nrepo-local overlays\nproject terminology rules\nteam conventions for directories and outputs"
-  },
-  {
-    "objectID": "reference.html",
-    "href": "reference.html",
-    "title": "Reference",
-    "section": "",
-    "text": "If you are unsure where to start, use this quick map:\n\n\n\n\n\n\n\nIf you are here\nUse this\n\n\n\n\n“I only have a rough idea”\n$clo-ideate\n\n\n“I think the question is real, but I need the literature or data map”\n$clo-discover\n\n\n“I need the design before I code”\n$clo-strategize\n\n\n“I need the empirical pipeline and outputs”\n$clo-analyze\n\n\n“I need to draft or revise the paper”\n$clo-write\n\n\n“I need tough criticism”\n$clo-review\n\n\n“I got referee reports back”\n$clo-revise roadmap\n\n\n“I am stopping for the day”\n$clo-research-tools checkpoint\n\n\n“I am reopening the project”\n$clo-research-tools resume-context"
-  },
-  {
-    "objectID": "reference.html#start-the-day",
-    "href": "reference.html#start-the-day",
-    "title": "Reference",
-    "section": "Start the day",
-    "text": "Start the day\nUse $clo-research-tools resume-context for this repo."
-  },
-  {
-    "objectID": "reference.html#end-the-day",
-    "href": "reference.html#end-the-day",
-    "title": "Reference",
-    "section": "End the day",
-    "text": "End the day\nUse $clo-research-tools checkpoint for this repo."
-  },
-  {
-    "objectID": "reference.html#after-a-risky-edit",
-    "href": "reference.html#after-a-risky-edit",
-    "title": "Reference",
-    "section": "After a risky edit",
-    "text": "After a risky edit\nUse $clo-research-tools verify-edit 03_code/src/estimate.py"
-  },
-  {
-    "objectID": "reference.html#ideation",
-    "href": "reference.html#ideation",
-    "title": "Reference",
-    "section": "Ideation",
-    "text": "Ideation\nUse $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it."
-  },
-  {
-    "objectID": "reference.html#discovery",
-    "href": "reference.html#discovery",
-    "title": "Reference",
-    "section": "Discovery",
-    "text": "Discovery\nUse $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving."
-  },
-  {
-    "objectID": "reference.html#strategy",
-    "href": "reference.html#strategy",
-    "title": "Reference",
-    "section": "Strategy",
-    "text": "Strategy\nUse $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan."
-  },
-  {
-    "objectID": "reference.html#writing",
-    "href": "reference.html#writing",
-    "title": "Reference",
-    "section": "Writing",
-    "text": "Writing\nUse $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode."
-  },
-  {
-    "objectID": "reference.html#review",
-    "href": "reference.html#review",
-    "title": "Reference",
-    "section": "Review",
-    "text": "Review\nUse $clo-review on the latest draft and give findings first."
-  },
-  {
-    "objectID": "reference.html#revision-roadmap",
-    "href": "reference.html#revision-roadmap",
-    "title": "Reference",
-    "section": "Revision Roadmap",
-    "text": "Revision Roadmap\nUse $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks."
-  },
-  {
-    "objectID": "reference.html#revision-validation",
-    "href": "reference.html#revision-validation",
-    "title": "Reference",
-    "section": "Revision Validation",
-    "text": "Revision Validation\nUse $clo-revise validate [revision_task_graph.json]"
-  },
-  {
-    "objectID": "reference.html#revision-execution",
-    "href": "reference.html#revision-execution",
-    "title": "Reference",
-    "section": "Revision Execution",
-    "text": "Revision Execution\nUse $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review."
-  },
-  {
-    "objectID": "reference.html#end-of-day",
-    "href": "reference.html#end-of-day",
-    "title": "Reference",
-    "section": "End-of-day",
-    "text": "End-of-day\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step."
-  },
-  {
-    "objectID": "reference.html#next-morning",
-    "href": "reference.html#next-morning",
-    "title": "Reference",
-    "section": "Next morning",
-    "text": "Next morning\nUse $clo-research-tools resume-context for this repo and tell me where we left off and what to do next."
   }
 ]
