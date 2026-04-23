@@ -157,17 +157,9 @@ Workflow:
 |---------|---------------------|---------------|
 | [Name]  | [explorer-critic's finding] | [Yes/No] |
 
-### `$clo-discover ideate [topic]` - Research Ideation
-Generate structured research questions and hypotheses from a topic or dataset.
-
-**Agents:** Direct generation (no agent dispatch)
-**Output:** Research questions with empirical strategies
-
-Generate:
-1. 3-5 research questions with clear hypotheses
-2. For each: potential identification strategy, data requirements, expected contribution
-3. Rank by feasibility and novelty
-4. Save to `quality_reports/research_ideas_[topic].md`
+### Legacy ideation alias
+If the user asks for `$clo-discover ideate`, treat it as a backward-compatible redirect to `$clo-ideate`.
+Do not bury ideation inside discovery now that Dittonomics treats it as a first-class phase.
 
 ---
 

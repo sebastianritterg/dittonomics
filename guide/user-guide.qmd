@@ -41,6 +41,23 @@ What this is meant to do:
 
 Use the skill that matches the real task.
 
+### Ideation
+
+Use this before discovery when the project is still just:
+
+- a topic
+- a cool dataset
+- a mechanism hunch
+- a policy area without a sharp question yet
+
+```text
+Use $clo-ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.
+```
+
+```text
+Use $clo-ideate rq from this dataset idea and give me the best candidate empirical questions.
+```
+
 ### Discovery
 
 ```text
@@ -153,6 +170,7 @@ It makes:
 
 | What you ask for | Typical system response |
 |---|---|
+| idea screening or research-question generation | `ideator` then `ideator_critic` |
 | literature review | `librarian` then `librarian_critic` |
 | data search | `explorer` then `explorer_critic` |
 | identification design | `strategist` then `strategist_critic` |
@@ -297,3 +315,10 @@ If you stop work without one, the next session becomes unnecessarily expensive.
 Repo bibliography comes first.
 Current web or working-paper checks can supplement fast-moving empirical frontiers.
 Neither should be treated as the only truth source.
+
+## Skipping ideation when the question is still vague
+
+Discovery is for formalizing and searching.
+Ideation is for deciding whether the question deserves that investment.
+
+If the project still sounds more like a direction than a question, start with `$clo-ideate`.

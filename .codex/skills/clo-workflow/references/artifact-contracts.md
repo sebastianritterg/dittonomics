@@ -4,9 +4,47 @@ This file standardizes the intermediate artifacts shared across the `clo-*` stac
 
 ## Core Artifacts
 
+### `idea_brief`
+- Purpose: canonical seed memo for the pre-discovery ideation phase
+- Typical producer: `clo-ideate seed` or `clo-ideate session`
+- Typical consumers: `clo-ideate`, `clo-new-project`, `clo-discover`
+- Suggested filename: `quality_reports/idea_brief_[topic].md`
+- Minimum contents:
+  - problem or phenomenon of interest
+  - one-sentence nugget
+  - why-now motivation
+  - current constraints or comparative advantage
+  - closest-paper threat notes
+  - fast-fail test
+
+### `rq_shortlist`
+- Purpose: ranked candidate research questions with empirical hooks
+- Typical producer: `clo-ideate brainstorm`, `clo-ideate rq`, or `clo-ideate session`
+- Typical consumers: `clo-ideate evaluate`, `clo-discover interview`, `clo-discover lit`, `clo-discover data`
+- Suggested filename: `quality_reports/rq_shortlist_[topic].md`
+- Minimum contents:
+  - 3-5 candidate research questions
+  - testable hypothesis for each
+  - identification sketch for each
+  - data sketch for each
+  - contribution or positioning hook
+  - ranking rationale
+
+### `idea_screen`
+- Purpose: explicit ideation verdict before discovery work gets expensive
+- Typical producer: `clo-ideate evaluate`, `clo-ideate decide`, or `clo-ideate session`
+- Typical consumers: user, `clo-new-project`, `clo-discover`
+- Suggested filename: `quality_reports/idea_screen_[topic].md`
+- Minimum contents:
+  - seven-dimension evaluation
+  - pursue/refine/park/kill verdict
+  - strongest objection
+  - best pivot if the first version fails
+  - recommended next discovery step
+
 ### `research_spec`
 - Purpose: canonical research question, motivation, hypothesis, data sketch, and open issues
-- Typical producer: `clo-discover interview` or `clo-discover ideate`
+- Typical producer: `clo-discover interview`; `clo-ideate` may seed it when the idea is already mature
 - Typical consumers: `clo-strategize`, `clo-discover lit`, `clo-discover data`
 - Suggested filename: `quality_reports/research_spec_[topic].md`
 - Minimum contents:

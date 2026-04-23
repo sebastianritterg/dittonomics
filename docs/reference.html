@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -153,6 +153,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#checkpoint-file-format" id="toc-checkpoint-file-format" class="nav-link" data-scroll-target="#checkpoint-file-format">Checkpoint File Format</a></li>
   <li><a href="#recurring-prompt-patterns" id="toc-recurring-prompt-patterns" class="nav-link" data-scroll-target="#recurring-prompt-patterns">Recurring Prompt Patterns</a>
   <ul class="collapse">
+  <li><a href="#ideation" id="toc-ideation" class="nav-link" data-scroll-target="#ideation">Ideation</a></li>
   <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">Discovery</a></li>
   <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
   <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing">Writing</a></li>
@@ -220,51 +221,56 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
+<td><code>$clo-ideate</code></td>
+<td>screen ideas, generate research questions, and decide what is worth pursuing</td>
+<td><code>Use $clo-ideate session on this dataset idea and rank the best research questions.</code></td>
+</tr>
+<tr class="even">
 <td><code>$clo-new-project</code></td>
 <td>launch a whole project workflow</td>
 <td><code>Use $clo-new-project on this topic and scaffold the pipeline.</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$clo-discover</code></td>
 <td>interview, literature, or data discovery</td>
 <td><code>Use $clo-discover lit on school assignment and teacher quality.</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$clo-strategize</code></td>
 <td>identification design and PAPs</td>
 <td><code>Use $clo-strategize on this question and rank the causal designs.</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$clo-analyze</code></td>
 <td>coding, outputs, cleaning, estimation</td>
 <td><code>Use $clo-analyze and build the estimation pipeline plus output handoff.</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$clo-write</code></td>
 <td>manuscript drafting, revising, humanizing, style-guide work</td>
 <td><code>Use $clo-write intro with current-draft mode.</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$clo-review</code></td>
 <td>writing review, peer review, or critic workflows</td>
 <td><code>Use $clo-review --peer on the current paper draft.</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$clo-revise</code></td>
 <td>response-to-referees and revision routing</td>
 <td><code>Use $clo-revise on this referee report.</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$clo-talk</code></td>
 <td>deck building</td>
 <td><code>Use $clo-talk seminar from the current paper.</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$clo-submit</code></td>
 <td>final submission checks</td>
 <td><code>Use $clo-submit and tell me if this is actually submission-ready.</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$clo-research-tools</code></td>
 <td>utilities and maintenance</td>
 <td><code>Use $clo-research-tools checkpoint for this repo.</code></td>
@@ -352,6 +358,16 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td><code>ideator</code></td>
+<td>question generation and early screening</td>
+<td><code>$clo-ideate</code></td>
+</tr>
+<tr class="even">
+<td><code>ideator_critic</code></td>
+<td>early-stage go or no-go review</td>
+<td>after <code>$clo-ideate</code> creator pass</td>
+</tr>
 <tr class="odd">
 <td><code>librarian</code></td>
 <td>literature collection</td>
@@ -518,6 +534,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="recurring-prompt-patterns" class="level1">
 <h1>Recurring Prompt Patterns</h1>
+<section id="ideation" class="level2">
+<h2 class="anchored" data-anchor-id="ideation">Ideation</h2>
+<pre class="text"><code>Use $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it.</code></pre>
+</section>
 <section id="discovery" class="level2">
 <h2 class="anchored" data-anchor-id="discovery">Discovery</h2>
 <pre class="text"><code>Use $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving.</code></pre>

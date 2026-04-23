@@ -53,6 +53,7 @@ When literature or writing quality depends on exemplars:
 3. use the global library only as fallback
 
 This rule applies at minimum to `writer`, `librarian`, `strategist`, `domain_referee`, and `methods_referee`.
+Apply the same repo-first policy to `ideator` and `ideator_critic` when they inspect closest papers, notes, or examples.
 
 ## Persistence Policy
 
@@ -71,8 +72,10 @@ When a phase skill names a creator/critic or referee pairing, that routing is no
 
 ## Skill Routing Summary
 
+- `clo-ideate`
+  routes to `ideator` and `ideator_critic` for pre-discovery idea generation and screening
 - `clo-discover`
-  routes to `librarian` and `explorer` families or runs interview/ideation directly
+  routes to `librarian` and `explorer` families or runs interview directly; legacy ideation requests should redirect to `clo-ideate`
 - `clo-strategize`
   routes to `strategist` and `strategist_critic`
 - `clo-analyze`

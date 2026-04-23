@@ -1,0 +1,7 @@
+interface:
+  display_name: "Clo Ideate"
+  short_description: "Assess ideas, generate research questions, and decide what is worth pursuing"
+  default_prompt: "Use $clo-ideate to turn a seed idea into ranked research questions, screen them, and decide whether to pursue them."
+
+policy:
+  allow_implicit_invocation: true

@@ -27,6 +27,7 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 
 | Skill | Use it for | Example |
 |---|---|---|
+| `$clo-ideate` | screen ideas, generate research questions, and decide what is worth pursuing | `Use $clo-ideate session on this dataset idea and rank the best research questions.` |
 | `$clo-new-project` | launch a whole project workflow | `Use $clo-new-project on this topic and scaffold the pipeline.` |
 | `$clo-discover` | interview, literature, or data discovery | `Use $clo-discover lit on school assignment and teacher quality.` |
 | `$clo-strategize` | identification design and PAPs | `Use $clo-strategize on this question and rank the causal designs.` |
@@ -56,6 +57,8 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 
 | Agent | Best for | Usually triggered by |
 |---|---|---|
+| `ideator` | question generation and early screening | `$clo-ideate` |
+| `ideator_critic` | early-stage go or no-go review | after `$clo-ideate` creator pass |
 | `librarian` | literature collection | `$clo-discover lit` |
 | `explorer` | data search | `$clo-discover data` |
 | `strategist` | causal design | `$clo-strategize` |
@@ -110,6 +113,12 @@ Default structure:
 Use `.json` as the durable machine-readable layer and `.md` as the readable handoff layer.
 
 # Recurring Prompt Patterns
+
+## Ideation
+
+```text
+Use $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it.
+```
 
 ## Discovery
 

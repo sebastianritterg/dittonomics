@@ -4,6 +4,12 @@ This file is the canonical role map for the installed agents.
 
 ## Families
 
+### Ideation
+- `ideator`
+  Turns vague topics, hunches, or datasets into ranked research questions and discovery-ready idea packets.
+- `ideator_critic`
+  Stress-tests ideation outputs for novelty, empirical traction, and whether the idea should move forward.
+
 ### Discovery
 - `librarian`
   Creates literature collections and structured research landscapes.

@@ -38,6 +38,7 @@ This site is written for two audiences:
 
 ## What Dittonomics Gives You
 
+- an explicit ideation phase before discovery
 - a research pipeline with explicit phases
 - worker-critic separation across the stack
 - Codex-native skills instead of Claude slash-command assumptions
@@ -83,7 +84,19 @@ In a working project repo, add:
 - optional repo-local skills in `.agents/skills/`
 - `explorations/` when you need a prototype sandbox
 
-### 5. Use the daily loop
+### 5. Start with ideation when the question is still fuzzy
+
+Before discovery, use:
+
+- `use $clo-ideate session`
+
+That step helps you:
+
+- turn a topic or dataset hunch into candidate research questions
+- check the closest-paper threat early
+- decide whether to pursue, refine, park, or kill the idea
+
+### 6. Use the daily loop
 
 Morning:
 
@@ -98,6 +111,10 @@ End of day:
 - `use $clo-research-tools checkpoint`
 
 ## First Prompts To Try
+
+```text
+Use $clo-ideate session on this policy idea and turn it into ranked research questions before discovery.
+```
 
 ```text
 Use $clo-discover lit to map the literature on teacher value-added and school assignment.
@@ -122,7 +139,7 @@ Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we 
 ## How The Site Is Organized
 
 - **Quick Start**: what Dittonomics is and how to get running quickly
-- **User Guide**: daily usage, examples, checkpoint or resume workflow, and how to call skills
+- **User Guide**: daily usage, ideation-to-submission examples, checkpoint or resume workflow, and how to call skills
 - **Agents**: who does what and when the system dispatches each role
 - **Architecture**: how the local install, repo overlays, website, and state files fit together
 - **Customization**: how to install your own stack, set up voice, and onboard colleagues

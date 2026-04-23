@@ -21,6 +21,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 
 ## Active Roles
 
+- Ideation: `ideator`, `ideator_critic`
 - Discovery: `librarian`, `librarian_critic`, `explorer`, `explorer_critic`
 - Strategy: `strategist`, `strategist_critic`
 - Execution: `coder`, `coder_critic`, `data_engineer`
@@ -31,6 +32,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 
 ## Workflow Expectations
 
+- Ideation should screen a seed idea, convert it into ranked research questions, and record a pursue/refine/park/kill decision before discovery when the question is still fluid.
 - Discovery should produce a research spec, literature map, and data assessment before strategy work.
 - Strategy should define the estimand, design, assumptions, robustness plan, and falsification tests before coding.
 - Analysis defaults to Python first and Stata second unless repo guidance says otherwise. R and Julia remain supported.

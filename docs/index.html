@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -147,7 +147,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#install-the-starter-bundle-locally" id="toc-install-the-starter-bundle-locally" class="nav-link" data-scroll-target="#install-the-starter-bundle-locally">2. Install the starter bundle locally</a></li>
   <li><a href="#add-an-optional-voice-layer" id="toc-add-an-optional-voice-layer" class="nav-link" data-scroll-target="#add-an-optional-voice-layer">3. Add an optional voice layer</a></li>
   <li><a href="#open-a-research-repo-with-codex" id="toc-open-a-research-repo-with-codex" class="nav-link" data-scroll-target="#open-a-research-repo-with-codex">4. Open a research repo with Codex</a></li>
-  <li><a href="#use-the-daily-loop" id="toc-use-the-daily-loop" class="nav-link" data-scroll-target="#use-the-daily-loop">5. Use the daily loop</a></li>
+  <li><a href="#start-with-ideation-when-the-question-is-still-fuzzy" id="toc-start-with-ideation-when-the-question-is-still-fuzzy" class="nav-link" data-scroll-target="#start-with-ideation-when-the-question-is-still-fuzzy">5. Start with ideation when the question is still fuzzy</a></li>
+  <li><a href="#use-the-daily-loop" id="toc-use-the-daily-loop" class="nav-link" data-scroll-target="#use-the-daily-loop">6. Use the daily loop</a></li>
   </ul></li>
   <li><a href="#first-prompts-to-try" id="toc-first-prompts-to-try" class="nav-link" data-scroll-target="#first-prompts-to-try">First Prompts To Try</a></li>
   <li><a href="#how-the-site-is-organized" id="toc-how-the-site-is-organized" class="nav-link" data-scroll-target="#how-the-site-is-organized">How The Site Is Organized</a></li>
@@ -220,6 +221,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-dittonomics-gives-you" class="level2">
 <h2 class="anchored" data-anchor-id="what-dittonomics-gives-you">What Dittonomics Gives You</h2>
 <ul>
+<li>an explicit ideation phase before discovery</li>
 <li>a research pipeline with explicit phases</li>
 <li>worker-critic separation across the stack</li>
 <li>Codex-native skills instead of Claude slash-command assumptions</li>
@@ -267,8 +269,21 @@ ul.task-list li input[type="checkbox"] {
 <li><code>explorations/</code> when you need a prototype sandbox</li>
 </ul>
 </section>
+<section id="start-with-ideation-when-the-question-is-still-fuzzy" class="level3">
+<h3 class="anchored" data-anchor-id="start-with-ideation-when-the-question-is-still-fuzzy">5. Start with ideation when the question is still fuzzy</h3>
+<p>Before discovery, use:</p>
+<ul>
+<li><code>use $clo-ideate session</code></li>
+</ul>
+<p>That step helps you:</p>
+<ul>
+<li>turn a topic or dataset hunch into candidate research questions</li>
+<li>check the closest-paper threat early</li>
+<li>decide whether to pursue, refine, park, or kill the idea</li>
+</ul>
+</section>
 <section id="use-the-daily-loop" class="level3">
-<h3 class="anchored" data-anchor-id="use-the-daily-loop">5. Use the daily loop</h3>
+<h3 class="anchored" data-anchor-id="use-the-daily-loop">6. Use the daily loop</h3>
 <p>Morning:</p>
 <ul>
 <li><code>use $clo-research-tools resume-context</code></li>
@@ -285,6 +300,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="first-prompts-to-try" class="level2">
 <h2 class="anchored" data-anchor-id="first-prompts-to-try">First Prompts To Try</h2>
+<pre class="text"><code>Use $clo-ideate session on this policy idea and turn it into ranked research questions before discovery.</code></pre>
 <pre class="text"><code>Use $clo-discover lit to map the literature on teacher value-added and school assignment.</code></pre>
 <pre class="text"><code>Use $clo-strategize on this research question and propose the main design plus the referee-proof robustness plan.</code></pre>
 <pre class="text"><code>Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.</code></pre>
@@ -295,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="how-the-site-is-organized">How The Site Is Organized</h2>
 <ul>
 <li><strong>Quick Start</strong>: what Dittonomics is and how to get running quickly</li>
-<li><strong>User Guide</strong>: daily usage, examples, checkpoint or resume workflow, and how to call skills</li>
+<li><strong>User Guide</strong>: daily usage, ideation-to-submission examples, checkpoint or resume workflow, and how to call skills</li>
 <li><strong>Agents</strong>: who does what and when the system dispatches each role</li>
 <li><strong>Architecture</strong>: how the local install, repo overlays, website, and state files fit together</li>
 <li><strong>Customization</strong>: how to install your own stack, set up voice, and onboard colleagues</li>

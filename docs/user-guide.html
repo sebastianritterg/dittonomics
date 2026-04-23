@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -145,6 +145,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#morning-resume-cleanly" id="toc-morning-resume-cleanly" class="nav-link" data-scroll-target="#morning-resume-cleanly">Morning: resume cleanly</a></li>
   <li><a href="#during-the-day-use-the-workflow-skills" id="toc-during-the-day-use-the-workflow-skills" class="nav-link" data-scroll-target="#during-the-day-use-the-workflow-skills">During the day: use the workflow skills</a>
   <ul class="collapse">
+  <li><a href="#ideation" id="toc-ideation" class="nav-link" data-scroll-target="#ideation">Ideation</a></li>
   <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">Discovery</a></li>
   <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
@@ -181,6 +182,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#treating-voice-as-structure" id="toc-treating-voice-as-structure" class="nav-link" data-scroll-target="#treating-voice-as-structure">Treating voice as structure</a></li>
   <li><a href="#forgetting-the-checkpoint" id="toc-forgetting-the-checkpoint" class="nav-link" data-scroll-target="#forgetting-the-checkpoint">Forgetting the checkpoint</a></li>
   <li><a href="#treating-references-as-sole-truth" id="toc-treating-references-as-sole-truth" class="nav-link" data-scroll-target="#treating-references-as-sole-truth">Treating references as sole truth</a></li>
+  <li><a href="#skipping-ideation-when-the-question-is-still-vague" id="toc-skipping-ideation-when-the-question-is-still-vague" class="nav-link" data-scroll-target="#skipping-ideation-when-the-question-is-still-vague">Skipping ideation when the question is still vague</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -242,6 +244,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="during-the-day-use-the-workflow-skills" class="level2">
 <h2 class="anchored" data-anchor-id="during-the-day-use-the-workflow-skills">During the day: use the workflow skills</h2>
 <p>Use the skill that matches the real task.</p>
+<section id="ideation" class="level3">
+<h3 class="anchored" data-anchor-id="ideation">Ideation</h3>
+<p>Use this before discovery when the project is still just:</p>
+<ul>
+<li>a topic</li>
+<li>a cool dataset</li>
+<li>a mechanism hunch</li>
+<li>a policy area without a sharp question yet</li>
+</ul>
+<pre class="text"><code>Use $clo-ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.</code></pre>
+<pre class="text"><code>Use $clo-ideate rq from this dataset idea and give me the best candidate empirical questions.</code></pre>
+</section>
 <section id="discovery" class="level3">
 <h3 class="anchored" data-anchor-id="discovery">Discovery</h3>
 <pre class="text"><code>Use $clo-discover lit on this topic and build the literature map first.</code></pre>
@@ -334,34 +348,38 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
+<td>idea screening or research-question generation</td>
+<td><code>ideator</code> then <code>ideator_critic</code></td>
+</tr>
+<tr class="even">
 <td>literature review</td>
 <td><code>librarian</code> then <code>librarian_critic</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>data search</td>
 <td><code>explorer</code> then <code>explorer_critic</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>identification design</td>
 <td><code>strategist</code> then <code>strategist_critic</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>coding or data pipeline work</td>
 <td><code>coder</code> or <code>data_engineer</code>, then <code>coder_critic</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>paper drafting</td>
 <td><code>writer</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>front-end writing</td>
 <td><code>econ-intro-writing</code> governs structure, then writing follows that contract</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>proofreading or writing review</td>
 <td><code>writer_critic</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>peer review</td>
 <td><code>editor</code>, <code>domain_referee</code>, <code>methods_referee</code></td>
 </tr>
@@ -476,6 +494,11 @@ Next step: decide the placebo window and rerun the robustness block before writi
 <section id="treating-references-as-sole-truth" class="level2">
 <h2 class="anchored" data-anchor-id="treating-references-as-sole-truth">Treating references as sole truth</h2>
 <p>Repo bibliography comes first. Current web or working-paper checks can supplement fast-moving empirical frontiers. Neither should be treated as the only truth source.</p>
+</section>
+<section id="skipping-ideation-when-the-question-is-still-vague" class="level2">
+<h2 class="anchored" data-anchor-id="skipping-ideation-when-the-question-is-still-vague">Skipping ideation when the question is still vague</h2>
+<p>Discovery is for formalizing and searching. Ideation is for deciding whether the question deserves that investment.</p>
+<p>If the project still sounds more like a direction than a question, start with <code>$clo-ideate</code>.</p>
 
 
 </section>

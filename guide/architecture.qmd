@@ -39,6 +39,7 @@ The system keeps creation and evaluation separate.
 
 | Mode | Creation layer | Review layer |
 |---|---|---|
+| ideation | ideator | ideator_critic |
 | discovery | librarian or explorer | paired critic |
 | strategy | strategist | strategist_critic |
 | execution | coder or data_engineer | coder_critic |
@@ -149,8 +150,9 @@ Someone can:
 1. read the website
 2. copy the starter bundle
 3. install it locally
-4. add a repo overlay
-5. start using the same workflow with minimal guesswork
+4. start from ideation or discovery depending on question maturity
+5. add a repo overlay
+6. start using the same workflow with minimal guesswork
 
 # The Ditto Expansion Rule
 

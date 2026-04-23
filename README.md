@@ -4,6 +4,8 @@ Dittonomics is a public manual and starter kit for a deliberately remixed Codex 
 
 The name is literal: like Ditto, the project copies useful traits from multiple upstream repos and reshapes them into one portable system for empirical work in Codex.
 
+The active workflow now starts with an explicit ideation phase before discovery, so a vague topic or dataset hunch can be screened, turned into research questions, and evaluated before the heavier Clo architecture spins up.
+
 > Caution
 >
 > This repository is under active construction and will keep changing as the public starter and docs catch up with the live system.
@@ -85,8 +87,9 @@ That renders the site into `docs/`.
 Recommended daily usage:
 
 1. `use $clo-research-tools resume-context`
-2. run the workflow skill that matches the task
-3. `use $clo-research-tools checkpoint`
+2. if the question is still fuzzy, start with `use $clo-ideate session`
+3. run the workflow skill that matches the task
+4. `use $clo-research-tools checkpoint`
 
 Checkpoint files live in `.codex-state/` inside working repos and are meant to be local operational memory rather than canonical research outputs.
 

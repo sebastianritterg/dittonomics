@@ -4,17 +4,19 @@ This file is the canonical phase graph for the `clo-*` stack.
 
 ## Phase Graph
 
-1. `discover`
-   Produces the initial question framing, literature landscape, and data feasibility view.
-2. `strategize`
+1. `ideate`
+   Screens seed ideas, converts them into candidate research questions, and records whether they should be pursued, refined, parked, or dropped.
+2. `discover`
+   Produces the formal research specification, literature landscape, and data feasibility view for the chosen question.
+3. `strategize`
    Converts the research idea into an estimand, design, assumptions, robustness plan, and falsification logic.
-3. `analyze`
+4. `analyze`
    Implements the approved design in code, creates analysis outputs, and produces the writer handoff artifacts.
-4. `write`
+5. `write`
    Drafts or revises manuscript sections from approved evidence and section contracts.
-5. `review`
+6. `review`
    Runs critic, referee, editor, and verifier workflows without editing source artifacts.
-6. `submit`
+7. `submit`
    Performs journal targeting, replication-package preparation, and final submission checks.
 
 Supporting workflows:
@@ -32,7 +34,8 @@ Supporting workflows:
 
 | Phase | Minimum required upstream artifacts |
 |-------|-------------------------------------|
-| discover | none |
+| ideate | none |
+| discover | none; `idea_brief`, `rq_shortlist`, and `idea_screen` when available |
 | strategize | `research_spec`, `lit_review`; `data_assessment` when available |
 | analyze | `strategy_memo` |
 | write | `strategy_memo`, `results_summary` for results-based sections |
@@ -47,6 +50,8 @@ Supporting workflows:
 
 Recommended transition gates:
 
+- `ideate -> discover`
+  the active question is selected, the main risks are named, and the ideation verdict is at least `pursue` or `refine`
 - `discover -> strategize`
   `research_spec` and `lit_review` exist and are current enough for the active question.
 - `strategize -> analyze`
@@ -64,6 +69,7 @@ An artifact is stale when any core upstream input changed materially after the a
 
 Examples:
 
+- an `idea_screen` becomes stale if the closest-paper landscape, target question, or core data constraint changes materially
 - a `strategy_memo` becomes stale if the research question, main sample, or data source changes
 - a `results_summary` becomes stale if the estimation script or the manuscript-ready outputs changed
 - a `proofread_report` becomes stale if the reviewed section changed after the report

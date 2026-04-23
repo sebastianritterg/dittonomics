@@ -18,6 +18,13 @@ The skill then decides which agent or worker-critic pair should run.
 
 # The Main Agent Families
 
+## Ideation
+
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `ideator` | turns rough ideas into candidate research questions | idea brief, ranked question shortlist | `$clo-ideate` |
+| `ideator_critic` | pressure-tests early-stage ideas | pursue/refine/park/kill screen | after ideator |
+
 ## Discovery
 
 | Agent | Role | Typical output | When it runs |
@@ -72,6 +79,7 @@ The skill then decides which agent or worker-critic pair should run.
 
 | If you want | Use |
 |---|---|
+| early idea screening or question generation | `$clo-ideate` |
 | literature work | `$clo-discover lit` |
 | data search | `$clo-discover data` |
 | research design | `$clo-strategize` |
@@ -120,6 +128,8 @@ Why this matters:
 
 | Agent | Ask for this | Do not ask for this |
 |---|---|---|
+| `ideator` | early question generation | final strategy memo |
+| `ideator_critic` | early idea screening | drafting the original idea from scratch |
 | `librarian` | literature mapping | final identification strategy |
 | `explorer` | data source search | final causal claims |
 | `strategist` | estimand and design | code implementation |
