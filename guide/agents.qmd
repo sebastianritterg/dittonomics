@@ -41,6 +41,13 @@ The skill then decides which agent or worker-critic pair should run.
 | `strategist` | proposes identification designs | strategy memo | `$clo-strategize` |
 | `strategist_critic` | pressure-tests the design | strategy review report | after strategist |
 
+## Revision
+
+| Agent | Role | Typical output | When it runs |
+|---|---|---|---|
+| `revision_planner` | turns real review reports into a strategic roadmap | task graph, roadmap, decision log | `$clo-revise roadmap` |
+| `revision_planner_critic` | checks roadmap completeness and sequencing | revision-planning critique | after revision_planner |
+
 ## Execution
 
 | Agent | Role | Typical output | When it runs |
@@ -83,6 +90,7 @@ The skill then decides which agent or worker-critic pair should run.
 | literature work | `$clo-discover lit` |
 | data search | `$clo-discover data` |
 | research design | `$clo-strategize` |
+| post-submission revision planning | `$clo-revise roadmap` |
 | coding or output pipeline | `$clo-analyze` |
 | writing | `$clo-write` |
 | review | `$clo-review` |
@@ -133,6 +141,8 @@ Why this matters:
 | `librarian` | literature mapping | final identification strategy |
 | `explorer` | data source search | final causal claims |
 | `strategist` | estimand and design | code implementation |
+| `revision_planner` | roadmap and task graph | final empirical execution |
+| `revision_planner_critic` | roadmap critique | writing the original plan |
 | `coder` | scripts and outputs | literature review |
 | `writer` | manuscript sections | referee scoring |
 | `writer_critic` | writing review | drafting from scratch |

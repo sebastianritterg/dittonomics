@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -148,6 +148,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ideation" id="toc-ideation" class="nav-link" data-scroll-target="#ideation">Ideation</a></li>
   <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">Discovery</a></li>
   <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  <li><a href="#revision" id="toc-revision" class="nav-link" data-scroll-target="#revision">Revision</a></li>
   <li><a href="#execution" id="toc-execution" class="nav-link" data-scroll-target="#execution">Execution</a></li>
   <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing">Writing</a></li>
   <li><a href="#review-and-submission" id="toc-review-and-submission" class="nav-link" data-scroll-target="#review-and-submission">Review And Submission</a></li>
@@ -307,6 +308,39 @@ ul.task-list li input[type="checkbox"] {
 <td>pressure-tests the design</td>
 <td>strategy review report</td>
 <td>after strategist</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="revision" class="level2">
+<h2 class="anchored" data-anchor-id="revision">Revision</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>Role</th>
+<th>Typical output</th>
+<th>When it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>revision_planner</code></td>
+<td>turns real review reports into a strategic roadmap</td>
+<td>task graph, roadmap, decision log</td>
+<td><code>$clo-revise roadmap</code></td>
+</tr>
+<tr class="even">
+<td><code>revision_planner_critic</code></td>
+<td>checks roadmap completeness and sequencing</td>
+<td>revision-planning critique</td>
+<td>after revision_planner</td>
 </tr>
 </tbody>
 </table>
@@ -497,18 +531,22 @@ ul.task-list li input[type="checkbox"] {
 <td><code>$clo-strategize</code></td>
 </tr>
 <tr class="odd">
+<td>post-submission revision planning</td>
+<td><code>$clo-revise roadmap</code></td>
+</tr>
+<tr class="even">
 <td>coding or output pipeline</td>
 <td><code>$clo-analyze</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>writing</td>
 <td><code>$clo-write</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>review</td>
 <td><code>$clo-review</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>utilities and state management</td>
 <td><code>$clo-research-tools</code></td>
 </tr>
@@ -590,6 +628,16 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategist</code></td>
 <td>estimand and design</td>
 <td>code implementation</td>
+</tr>
+<tr class="even">
+<td><code>revision_planner</code></td>
+<td>roadmap and task graph</td>
+<td>final empirical execution</td>
+</tr>
+<tr class="odd">
+<td><code>revision_planner_critic</code></td>
+<td>roadmap critique</td>
+<td>writing the original plan</td>
 </tr>
 <tr class="even">
 <td><code>coder</code></td>

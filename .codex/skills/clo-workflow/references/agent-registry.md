@@ -26,6 +26,12 @@ This file is the canonical role map for the installed agents.
 - `strategist_critic`
   Reviews causal design validity and inference logic.
 
+### Revision
+- `revision_planner`
+  Turns real referee or editor feedback into atomic tasks, dependency graphs, execution blocks, and a strategic revision roadmap.
+- `revision_planner_critic`
+  Reviews roadmap completeness, dependency logic, sequencing, and escalation choices before execution starts.
+
 ### Execution
 - `data_engineer`
   Cleans data, prepares figures, and documents data assets.

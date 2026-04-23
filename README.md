@@ -20,6 +20,7 @@ The public repo keeps the upstream workflow architecture, but rewrites the activ
 - `explorations/` stays a repo-level sandbox and should be created when missing
 - writing voice becomes an explicit optional layer instead of an undocumented personal habit
 - end-of-day state and next-day recovery now use explicit `checkpoint` and `resume-context` utilities instead of hidden session hooks
+- post-submission revision now includes a strategic roadmap layer inside `$clo-revise`, with task graphs, dependency validation, and execution blocks
 
 This repository is documentation-first, but it also includes a forkable `.codex/` starter layer. It explains the architecture, customization patterns, migration layer, optional voice setup, and ships a reusable Codex-facing template bundle.
 

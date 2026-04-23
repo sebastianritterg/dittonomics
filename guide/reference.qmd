@@ -34,7 +34,7 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 | `$clo-analyze` | coding, outputs, cleaning, estimation | `Use $clo-analyze and build the estimation pipeline plus output handoff.` |
 | `$clo-write` | manuscript drafting, revising, humanizing, style-guide work | `Use $clo-write intro with current-draft mode.` |
 | `$clo-review` | writing review, peer review, or critic workflows | `Use $clo-review --peer on the current paper draft.` |
-| `$clo-revise` | response-to-referees and revision routing | `Use $clo-revise on this referee report.` |
+| `$clo-revise` | strategic post-submission roadmap planning, validation, execution routing, and response drafting | `Use $clo-revise roadmap on these reports and the submitted paper.` |
 | `$clo-talk` | deck building | `Use $clo-talk seminar from the current paper.` |
 | `$clo-submit` | final submission checks | `Use $clo-submit and tell me if this is actually submission-ready.` |
 | `$clo-research-tools` | utilities and maintenance | `Use $clo-research-tools checkpoint for this repo.` |
@@ -62,6 +62,8 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 | `librarian` | literature collection | `$clo-discover lit` |
 | `explorer` | data search | `$clo-discover data` |
 | `strategist` | causal design | `$clo-strategize` |
+| `revision_planner` | revision roadmap planning | `$clo-revise roadmap` |
+| `revision_planner_critic` | roadmap critique and dependency sanity checks | after `$clo-revise roadmap` |
 | `data_engineer` | cleaning and wrangling | `$clo-analyze` |
 | `coder` | scripts and outputs | `$clo-analyze` |
 | `writer` | drafting sections | `$clo-write` |
@@ -142,6 +144,24 @@ Use $clo-write [section] with [current-draft/joint-paper/journal-tightening] mod
 
 ```text
 Use $clo-review on the latest draft and give findings first.
+```
+
+## Revision Roadmap
+
+```text
+Use $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks.
+```
+
+## Revision Validation
+
+```text
+Use $clo-revise validate [revision_task_graph.json]
+```
+
+## Revision Execution
+
+```text
+Use $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review.
 ```
 
 ## End-of-day

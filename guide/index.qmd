@@ -44,6 +44,7 @@ This site is written for two audiences:
 - Codex-native skills instead of Claude slash-command assumptions
 - a forkable public `.codex/` starter bundle
 - optional voice files for writing-sensitive workflows
+- a strategic post-submission revision workflow with roadmap planning and DAG validation
 - explicit maintenance tools such as `checkpoint`, `resume-context`, and `verify-edit`
 - a website manual and cheat sheet you can keep open while you work
 
@@ -130,6 +131,10 @@ Use $clo-write intro with current-draft mode and keep econ-intro-writing in char
 
 ```text
 Use $clo-review --peer on the current draft and tell me the highest-risk issues first.
+```
+
+```text
+Use $clo-revise roadmap on these referee reports and the submitted paper. Build the execution blocks before we start editing.
 ```
 
 ```text

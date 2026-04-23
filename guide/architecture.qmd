@@ -49,6 +49,12 @@ The system keeps creation and evaluation separate.
 
 This separation is the main reason the workflow scales beyond one-off prompting.
 
+Revision work uses the same separation:
+
+- `revision_planner` builds the roadmap
+- `revision_planner_critic` checks sequencing and escalation logic
+- execution then routes back into writer, coder, data_engineer, and review
+
 # Explicit Skills Instead Of Hidden Hooks
 
 Upstream Clo-Author uses hidden Claude mechanics in some places.
@@ -64,6 +70,18 @@ Dittonomics converts those ideas into explicit, visible surfaces.
 The rule is simple:
 
 > if behavior matters, it should have a visible home
+
+# Revision As A Loop
+
+Strategic revision is not a simple final box after submission.
+
+It is a loop that starts when real review reports arrive:
+
+1. build the roadmap with `$clo-revise roadmap`
+2. validate dependencies with `$clo-revise validate`
+3. execute approved blocks with `$clo-revise execute`
+4. draft the response package with `$clo-revise respond`
+5. send revised outputs back into review when needed
 
 # Local State And Checkpoints
 

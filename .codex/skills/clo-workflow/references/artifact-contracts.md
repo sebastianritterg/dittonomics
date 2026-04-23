@@ -124,6 +124,69 @@ This file standardizes the intermediate artifacts shared across the `clo-*` stac
   - concrete findings
   - unresolved compilation or citation issues
 
+### `revision_task_graph`
+- Purpose: machine-readable graph of atomic reviewer tasks, dependencies, and risk links
+- Producer: `clo-revise roadmap`
+- Consumers: `clo-revise validate`, `clo-revise execute`, user
+- Suggested filename: `quality_reports/revision_tasks_[journal_or_date].json`
+- Minimum contents:
+  - one task per reviewer request
+  - reviewer source and verbatim quote
+  - task category
+  - owner and status
+  - dependency list
+  - affected manuscript sections or outputs
+  - decision flag for disagreement or escalation
+
+### `revision_roadmap`
+- Purpose: human-readable strategic revision plan with execution blocks and decision points
+- Producer: `clo-revise roadmap`
+- Consumers: user, `clo-revise execute`
+- Suggested filename: `quality_reports/revision_roadmap_[journal_or_date].md`
+- Minimum contents:
+  - atomic task summary
+  - execution blocks
+  - critical path
+  - coauthor sync points
+  - go/no-go decisions
+  - process risks and conflict notes
+
+### `revision_decision_log`
+- Purpose: explicit record of disagree, partial concession, defer, or escalate decisions
+- Producer: `clo-revise roadmap` or `clo-revise execute`
+- Consumers: user, response-letter drafting, later revision rounds
+- Suggested filename: `quality_reports/revision_decision_log_[journal_or_date].md`
+- Minimum contents:
+  - affected reviewer comment
+  - chosen stance
+  - rationale
+  - owner
+  - follow-up requirement
+
+### `response_matrix`
+- Purpose: one-to-one mapping from reviewer quotes to manuscript actions or planned responses
+- Producer: `clo-revise roadmap` or `clo-revise respond`
+- Consumers: `clo-revise respond`, user
+- Suggested filename: `quality_reports/response_matrix_[journal_or_date].md`
+- Minimum contents:
+  - reviewer source
+  - verbatim quote
+  - linked task id
+  - action taken or planned
+  - manuscript location
+  - response stance
+
+### `response_letter`
+- Purpose: outward-facing response letter for the journal
+- Producer: `clo-revise respond`
+- Consumers: user, submission workflow
+- Suggested filename: `quality_reports/referee_response_[journal_or_date].tex`
+- Minimum contents:
+  - summary of major changes
+  - point-by-point responses
+  - exact reviewer references
+  - manuscript section or page references
+
 ### `peer_review_bundle`
 - Purpose: desk decision, referee reports, and editor synthesis
 - Producer: `clo-review --peer`

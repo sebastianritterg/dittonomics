@@ -24,7 +24,7 @@ Supporting workflows:
 - `new-project`
   Scheduler over the phase graph. It does not redefine phase logic.
 - `revise`
-  Orchestrates the response-to-reviews cycle using the same phase contracts.
+  Orchestrates the post-review and post-submission revision cycle. It plans the roadmap, then routes approved work back into analyze, write, and review.
 - `talk`
   Builds and audits presentations from paper artifacts.
 - `research-tools`
@@ -41,6 +41,23 @@ Supporting workflows:
 | write | `strategy_memo`, `results_summary` for results-based sections |
 | review | target manuscript, script, or talk artifacts already exist |
 | submit | recent review artifacts plus verifier-ready project structure |
+
+## Revision Loop
+
+`revise` is not a new terminal phase after `submit`.
+
+It is a loop-back workflow triggered by real editor or referee feedback. Depending on the roadmap, it may send work back to:
+
+- `analyze` for new empirical tasks
+- `write` for clarification, rewriting, and response prose
+- `review` for another internal quality pass before resubmission
+
+Minimum suggested upstream inputs for `revise`:
+
+- reviewer or editor reports
+- submitted manuscript
+- latest analysis outputs when empirical requests are present
+- recent review artifacts when available
 
 ## Quality Gates
 
@@ -70,6 +87,7 @@ An artifact is stale when any core upstream input changed materially after the a
 Examples:
 
 - an `idea_screen` becomes stale if the closest-paper landscape, target question, or core data constraint changes materially
+- a `revision_roadmap` becomes stale if reviewer priorities change, a major analysis result changes, or the disagreement strategy changes
 - a `strategy_memo` becomes stale if the research question, main sample, or data source changes
 - a `results_summary` becomes stale if the estimation script or the manuscript-ready outputs changed
 - a `proofread_report` becomes stale if the reviewed section changed after the report

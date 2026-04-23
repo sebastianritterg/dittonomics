@@ -54,6 +54,7 @@ When literature or writing quality depends on exemplars:
 
 This rule applies at minimum to `writer`, `librarian`, `strategist`, `domain_referee`, and `methods_referee`.
 Apply the same repo-first policy to `ideator` and `ideator_critic` when they inspect closest papers, notes, or examples.
+Apply the same repo-first policy to `revision_planner` and `revision_planner_critic` when they inspect the live manuscript, outputs, prior reviews, and bibliography.
 
 ## Persistence Policy
 
@@ -89,7 +90,7 @@ When a phase skill names a creator/critic or referee pairing, that routing is no
 - `clo-talk`
   routes to `storyteller` and `storyteller_critic`
 - `clo-revise`
-  routes comments into writer or coder tasks while leaving decisions with the user
+  routes `roadmap` through `revision_planner` and `revision_planner_critic`, then uses `execute` to send approved work into writer, coder, or data-engineer lanes while leaving high-stakes decisions with the user
 - `clo-new-project`
   schedules the phase graph; it does not redefine phase internals
 - `clo-research-tools`

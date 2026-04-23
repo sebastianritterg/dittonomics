@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -158,6 +158,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
   <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing">Writing</a></li>
   <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
+  <li><a href="#revision-roadmap" id="toc-revision-roadmap" class="nav-link" data-scroll-target="#revision-roadmap">Revision Roadmap</a></li>
+  <li><a href="#revision-validation" id="toc-revision-validation" class="nav-link" data-scroll-target="#revision-validation">Revision Validation</a></li>
+  <li><a href="#revision-execution" id="toc-revision-execution" class="nav-link" data-scroll-target="#revision-execution">Revision Execution</a></li>
   <li><a href="#end-of-day" id="toc-end-of-day" class="nav-link" data-scroll-target="#end-of-day">End-of-day</a></li>
   <li><a href="#next-morning" id="toc-next-morning" class="nav-link" data-scroll-target="#next-morning">Next morning</a></li>
   </ul></li>
@@ -257,8 +260,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><code>$clo-revise</code></td>
-<td>response-to-referees and revision routing</td>
-<td><code>Use $clo-revise on this referee report.</code></td>
+<td>strategic post-submission roadmap planning, validation, execution routing, and response drafting</td>
+<td><code>Use $clo-revise roadmap on these reports and the submitted paper.</code></td>
 </tr>
 <tr class="odd">
 <td><code>$clo-talk</code></td>
@@ -382,6 +385,16 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategist</code></td>
 <td>causal design</td>
 <td><code>$clo-strategize</code></td>
+</tr>
+<tr class="even">
+<td><code>revision_planner</code></td>
+<td>revision roadmap planning</td>
+<td><code>$clo-revise roadmap</code></td>
+</tr>
+<tr class="odd">
+<td><code>revision_planner_critic</code></td>
+<td>roadmap critique and dependency sanity checks</td>
+<td>after <code>$clo-revise roadmap</code></td>
 </tr>
 <tr class="even">
 <td><code>data_engineer</code></td>
@@ -553,6 +566,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="review" class="level2">
 <h2 class="anchored" data-anchor-id="review">Review</h2>
 <pre class="text"><code>Use $clo-review on the latest draft and give findings first.</code></pre>
+</section>
+<section id="revision-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="revision-roadmap">Revision Roadmap</h2>
+<pre class="text"><code>Use $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks.</code></pre>
+</section>
+<section id="revision-validation" class="level2">
+<h2 class="anchored" data-anchor-id="revision-validation">Revision Validation</h2>
+<pre class="text"><code>Use $clo-revise validate [revision_task_graph.json]</code></pre>
+</section>
+<section id="revision-execution" class="level2">
+<h2 class="anchored" data-anchor-id="revision-execution">Revision Execution</h2>
+<pre class="text"><code>Use $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review.</code></pre>
 </section>
 <section id="end-of-day" class="level2">
 <h2 class="anchored" data-anchor-id="end-of-day">End-of-day</h2>

@@ -9,6 +9,7 @@ This repository is the source of truth for the public Codex-Clo-Author manual an
 - Keep the information architecture aligned with Clo-Author: Quick Start, User Guide, Agents, Architecture, Customization, Reference.
 - Rewrite for Codex-native concepts. Do not leave Claude-only instructions in active documentation.
 - Preserve the worker-critic architecture, the six pipeline phases, and the exploration sandbox model.
+- Document `clo-revise` as a loop-back strategic workflow rather than a new linear pipeline phase.
 - Keep the public docs generic first. If you show a concrete install or field profile, label it as an example overlay rather than a personal default.
 
 ## Render Rule

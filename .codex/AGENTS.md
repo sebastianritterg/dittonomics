@@ -24,6 +24,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Ideation: `ideator`, `ideator_critic`
 - Discovery: `librarian`, `librarian_critic`, `explorer`, `explorer_critic`
 - Strategy: `strategist`, `strategist_critic`
+- Revision: `revision_planner`, `revision_planner_critic`
 - Execution: `coder`, `coder_critic`, `data_engineer`
 - Writing: `writer`, `writer_critic`
 - Peer review: `editor`, `domain_referee`, `methods_referee`
@@ -35,6 +36,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Ideation should screen a seed idea, convert it into ranked research questions, and record a pursue/refine/park/kill decision before discovery when the question is still fluid.
 - Discovery should produce a research spec, literature map, and data assessment before strategy work.
 - Strategy should define the estimand, design, assumptions, robustness plan, and falsification tests before coding.
+- Revision should start with a strategic roadmap that extracts atomic reviewer tasks, validates dependencies, and then routes approved work back into analysis, writing, and review.
 - Analysis defaults to Python first and Stata second unless repo guidance says otherwise. R and Julia remain supported.
 - Use a repo-level `explorations/` sandbox for experiments and prototypes. If exploratory work is needed and the folder is missing, create `explorations/README.md` and `explorations/ARCHIVE/` first.
 - Peer review should include editor-led journal calibration when you invoke the review workflow in journal mode.

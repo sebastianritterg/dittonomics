@@ -98,8 +98,22 @@ Use $clo-review on this draft and give me the highest-risk findings first.
 
 ### Revision
 
+Use this when real editor or referee reports already exist.
+
 ```text
-Use $clo-revise on this referee report and route each comment to the right workflow.
+Use $clo-revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.
+```
+
+```text
+Use $clo-revise validate quality_reports/revision_tasks_rr1.json
+```
+
+```text
+Use $clo-revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.
+```
+
+```text
+Use $clo-revise respond on these reports and the revised draft, using the response matrix and decision log.
 ```
 
 ### Talks and submission
@@ -174,6 +188,7 @@ It makes:
 | literature review | `librarian` then `librarian_critic` |
 | data search | `explorer` then `explorer_critic` |
 | identification design | `strategist` then `strategist_critic` |
+| strategic revision roadmap | `revision_planner` then `revision_planner_critic` |
 | coding or data pipeline work | `coder` or `data_engineer`, then `coder_critic` |
 | paper drafting | `writer` |
 | front-end writing | `econ-intro-writing` governs structure, then writing follows that contract |
@@ -322,3 +337,13 @@ Discovery is for formalizing and searching.
 Ideation is for deciding whether the question deserves that investment.
 
 If the project still sounds more like a direction than a question, start with `$clo-ideate`.
+
+## Jumping into edits before building the revision roadmap
+
+When real referee reports arrive, start with `$clo-revise roadmap` before rewriting sections or running ad hoc analyses.
+
+That step is what:
+
+- extracts atomic reviewer tasks
+- shows which requests actually block others
+- flags disagreement and go/no-go decisions early

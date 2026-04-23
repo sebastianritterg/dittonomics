@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -183,6 +183,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#forgetting-the-checkpoint" id="toc-forgetting-the-checkpoint" class="nav-link" data-scroll-target="#forgetting-the-checkpoint">Forgetting the checkpoint</a></li>
   <li><a href="#treating-references-as-sole-truth" id="toc-treating-references-as-sole-truth" class="nav-link" data-scroll-target="#treating-references-as-sole-truth">Treating references as sole truth</a></li>
   <li><a href="#skipping-ideation-when-the-question-is-still-vague" id="toc-skipping-ideation-when-the-question-is-still-vague" class="nav-link" data-scroll-target="#skipping-ideation-when-the-question-is-still-vague">Skipping ideation when the question is still vague</a></li>
+  <li><a href="#jumping-into-edits-before-building-the-revision-roadmap" id="toc-jumping-into-edits-before-building-the-revision-roadmap" class="nav-link" data-scroll-target="#jumping-into-edits-before-building-the-revision-roadmap">Jumping into edits before building the revision roadmap</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -280,7 +281,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="revision" class="level3">
 <h3 class="anchored" data-anchor-id="revision">Revision</h3>
-<pre class="text"><code>Use $clo-revise on this referee report and route each comment to the right workflow.</code></pre>
+<p>Use this when real editor or referee reports already exist.</p>
+<pre class="text"><code>Use $clo-revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.</code></pre>
+<pre class="text"><code>Use $clo-revise validate quality_reports/revision_tasks_rr1.json</code></pre>
+<pre class="text"><code>Use $clo-revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.</code></pre>
+<pre class="text"><code>Use $clo-revise respond on these reports and the revised draft, using the response matrix and decision log.</code></pre>
 </section>
 <section id="talks-and-submission" class="level3">
 <h3 class="anchored" data-anchor-id="talks-and-submission">Talks and submission</h3>
@@ -364,22 +369,26 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategist</code> then <code>strategist_critic</code></td>
 </tr>
 <tr class="odd">
+<td>strategic revision roadmap</td>
+<td><code>revision_planner</code> then <code>revision_planner_critic</code></td>
+</tr>
+<tr class="even">
 <td>coding or data pipeline work</td>
 <td><code>coder</code> or <code>data_engineer</code>, then <code>coder_critic</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>paper drafting</td>
 <td><code>writer</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>front-end writing</td>
 <td><code>econ-intro-writing</code> governs structure, then writing follows that contract</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>proofreading or writing review</td>
 <td><code>writer_critic</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>peer review</td>
 <td><code>editor</code>, <code>domain_referee</code>, <code>methods_referee</code></td>
 </tr>
@@ -499,6 +508,16 @@ Next step: decide the placebo window and rerun the robustness block before writi
 <h2 class="anchored" data-anchor-id="skipping-ideation-when-the-question-is-still-vague">Skipping ideation when the question is still vague</h2>
 <p>Discovery is for formalizing and searching. Ideation is for deciding whether the question deserves that investment.</p>
 <p>If the project still sounds more like a direction than a question, start with <code>$clo-ideate</code>.</p>
+</section>
+<section id="jumping-into-edits-before-building-the-revision-roadmap" class="level2">
+<h2 class="anchored" data-anchor-id="jumping-into-edits-before-building-the-revision-roadmap">Jumping into edits before building the revision roadmap</h2>
+<p>When real referee reports arrive, start with <code>$clo-revise roadmap</code> before rewriting sections or running ad hoc analyses.</p>
+<p>That step is what:</p>
+<ul>
+<li>extracts atomic reviewer tasks</li>
+<li>shows which requests actually block others</li>
+<li>flags disagreement and go/no-go decisions early</li>
+</ul>
 
 
 </section>
