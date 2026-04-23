@@ -1,6 +1,6 @@
 ---
 title: "Dittonomics"
-subtitle: "A Ditto-style Codex research system that keeps copying useful traits"
+subtitle: "A Ditto-style Codex research system and public operating manual for economics"
 ---
 
 ::: {.columns .ditto-hero-grid}
@@ -47,6 +47,37 @@ This site is written for two audiences:
 - a strategic post-submission revision workflow with roadmap planning and DAG validation
 - explicit maintenance tools such as `checkpoint`, `resume-context`, and `verify-edit`
 - a website manual and cheat sheet you can keep open while you work
+
+## Use This Site Like A Roadmap
+
+The site now matters less as a static architecture description and more as a working map for economic research.
+
+Use the pages in this order:
+
+1. **Quick Start** when you need the big picture and the install split
+2. **User Guide** when you want the practical step-by-step workflow from idea to submission
+3. **Reference** when you just need the right skill, utility, or prompt quickly
+4. **Agents** when you want to know who gets activated and why
+5. **Customization** when you want to fork the system, add voice, or onboard colleagues
+6. **Architecture** when you want to understand how the layers fit together under the hood
+
+If you only keep one page open during the day, keep **Reference** open. If you only read one page before using the system properly, read **User Guide**.
+
+## Research Roadmap
+
+This is the recommended order of use for most economics projects:
+
+1. `Ideate` with `$clo-ideate` when the idea is still vague
+2. `Discover` with `$clo-discover` once you have a candidate question
+3. `Strategize` with `$clo-strategize` before writing serious code
+4. `Analyze` with `$clo-analyze` to build the empirical pipeline
+5. `Write` with `$clo-write` once the outputs and design are stable enough
+6. `Review` with `$clo-review` before treating the draft as real
+7. `Revise` with `$clo-revise` when editor or referee reports arrive
+8. `Submit` with `$clo-submit` when the package is close to done
+9. `Talk` with `$clo-talk` when the paper needs a presentation version
+
+That is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it.
 
 ## Start In 20 Minutes
 
@@ -144,11 +175,26 @@ Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we 
 ## How The Site Is Organized
 
 - **Quick Start**: what Dittonomics is and how to get running quickly
-- **User Guide**: daily usage, ideation-to-submission examples, checkpoint or resume workflow, and how to call skills
+- **User Guide**: the practical roadmap for how to use the system of skills and agents properly for economics research
 - **Agents**: who does what and when the system dispatches each role
-- **Architecture**: how the local install, repo overlays, website, and state files fit together
+- **Architecture**: how the website, starter bundle, local install, repo overlays, and state files fit together
 - **Customization**: how to install your own stack, set up voice, and onboard colleagues
 - **Reference**: the cheat sheet for skills, utilities, agents, folders, and recurring prompts
+
+## What Dittonomics Builds On
+
+Dittonomics is a remix, not a one-source clone.
+
+The current public system draws especially from:
+
+- [Clo-Author](https://hsantanna.org/clo-author/) for the overall research-workflow architecture
+- [my_claude_skills](https://github.com/dariia-m/my_claude_skills) for explicit skill patterns and reusable operational helpers
+- [claudeblattman](https://github.com/chrisblattman/claudeblattman) for economics-facing workflow instincts and practical researcher ergonomics
+- [strategic-revision](https://github.com/jusi-aalto/strategic-revision) for post-submission revision planning, task decomposition, and dependency logic
+- [research-companion](https://github.com/andrehuang/research-companion/) for research-stage orchestration ideas that fit both Codex and Claude Code settings
+- [idea-evaluation-pipeline](https://github.com/alejandroll10/idea-evaluation-pipeline) for screening seed ideas and turning them into sharper research questions
+
+The Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages.
 
 ## Public Home
 

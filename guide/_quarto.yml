@@ -24,7 +24,7 @@ website:
         href: "https://github.com/sebastianritterg/dittonomics"
   page-footer:
     left: "Dittonomics"
-    center: "Built with [Quarto](https://quarto.org). Dittonomics builds from [Clo-Author](https://hsantanna.org/clo-author/), [my_claude_skills](https://github.com/dariia-m/my_claude_skills), and [claudeblattman](https://github.com/chrisblattman/claudeblattman)."
+    center: "Built with [Quarto](https://quarto.org). Dittonomics builds from [Clo-Author](https://hsantanna.org/clo-author/), [my_claude_skills](https://github.com/dariia-m/my_claude_skills), [claudeblattman](https://github.com/chrisblattman/claudeblattman), [strategic-revision](https://github.com/jusi-aalto/strategic-revision), [research-companion](https://github.com/andrehuang/research-companion/), and [idea-evaluation-pipeline](https://github.com/alejandroll10/idea-evaluation-pipeline)."
 
 format:
   html:

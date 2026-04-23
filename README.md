@@ -46,7 +46,7 @@ This repository is documentation-first, but it also includes a forkable `.codex/
 The website is intended to stay open while you work. It now functions as:
 
 - the onboarding guide for colleagues
-- the tutorial for installing and customizing the system
+- the tutorial and roadmap for using the skills and agents properly across an economics project
 - the cheat sheet for skills, agents, utilities, and common prompts
 
 ## Core Defaults Reflected Here
@@ -110,5 +110,8 @@ This manual is adapted from:
 - the Claude-based [Clo-Author](https://hsantanna.org/clo-author/) project and repo by Hugo Sant'Anna
 - [my_claude_skills](https://github.com/dariia-m/my_claude_skills) by Daria M.
 - [claudeblattman](https://github.com/chrisblattman/claudeblattman) by Chris Blattman
+- [strategic-revision](https://github.com/jusi-aalto/strategic-revision) for strategic post-submission revision logic
+- [research-companion](https://github.com/andrehuang/research-companion/) for research-stage orchestration ideas
+- [idea-evaluation-pipeline](https://github.com/alejandroll10/idea-evaluation-pipeline) for ideation and question-screening structure
 
 It does not attempt a literal clone of any one repo. The goal is to preserve the useful architecture and workflow patterns while making the instructions accurate and usable for Codex.

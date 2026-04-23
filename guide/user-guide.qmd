@@ -20,6 +20,23 @@ That is the main operating idea:
 - Codex orchestrates
 - agents stay narrow
 
+# The Practical Research Roadmap
+
+If you want the shortest correct way to use Dittonomics, use this sequence:
+
+| Research situation | Call this first | What you should get before moving on |
+|---|---|---|
+| you have a topic, mechanism, or dataset hunch | `$clo-ideate` | ranked research questions and a pursue/refine/park/kill screen |
+| you have a candidate question but need grounding | `$clo-discover` | literature map, data memo, and better framing |
+| you think the question is real | `$clo-strategize` | estimand, design, assumptions, robustness plan |
+| the design is ready to become code | `$clo-analyze` | cleaned pipeline, outputs, and reproducible handoff |
+| the evidence is ready to narrate | `$clo-write` | section drafts with proper structure and restraint |
+| the draft needs serious criticism | `$clo-review` | findings, referee-style risks, editor calibration |
+| real referee or editor reports arrive | `$clo-revise` | roadmap, validated task graph, execution blocks, response package |
+| the paper is nearly done | `$clo-submit` | verification and submission-readiness check |
+
+This is the main tutorial logic of the site. If a colleague asks, "What do I use now?", the answer should usually come from this table first.
+
 # The Daily Work Loop
 
 ## Morning: resume cleanly
@@ -40,6 +57,12 @@ What this is meant to do:
 ## During the day: use the workflow skills
 
 Use the skill that matches the real task.
+
+The easiest rule is:
+
+- if the question is still fuzzy, go left in the pipeline and use ideation
+- if you are already coding, writing, or revising, do not jump backward unless a real flaw forces it
+- if reports arrive from a journal, stop ad hoc edits and move into revision-roadmap mode first
 
 ### Ideation
 
@@ -289,6 +312,17 @@ For a shared research team:
 3. use repo-local `AGENTS.md` for project rules
 4. use checkpoints at real stopping points
 5. keep the website open as the daily cheat sheet
+
+# When Colleagues Ask "What Should I Open?"
+
+Recommend this order:
+
+1. **Quick Start** for the install split and system overview
+2. **User Guide** for the actual research roadmap
+3. **Reference** for daily command lookup
+4. **Customization** only when they are ready to fork or add a voice layer
+
+That order usually teaches the workflow faster than starting from architecture.
 
 # A Good End-Of-Day Prompt
 

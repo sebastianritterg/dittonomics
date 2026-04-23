@@ -3,6 +3,22 @@ title: "Reference"
 subtitle: "The cheat sheet for skills, utilities, folders, and recurring prompts"
 ---
 
+# Use The System In This Order
+
+If you are unsure where to start, use this quick map:
+
+| If you are here | Use this |
+|---|---|
+| "I only have a rough idea" | `$clo-ideate` |
+| "I think the question is real, but I need the literature or data map" | `$clo-discover` |
+| "I need the design before I code" | `$clo-strategize` |
+| "I need the empirical pipeline and outputs" | `$clo-analyze` |
+| "I need to draft or revise the paper" | `$clo-write` |
+| "I need tough criticism" | `$clo-review` |
+| "I got referee reports back" | `$clo-revise roadmap` |
+| "I am stopping for the day" | `$clo-research-tools checkpoint` |
+| "I am reopening the project" | `$clo-research-tools resume-context` |
+
 # Daily Cheat Sheet
 
 ## Start the day

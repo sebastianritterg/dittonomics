@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdc874c342e9b5b8a8ed1bdc1307a40e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-adc632309a2e4fa74aea7390e32c1761.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,10 +140,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#system-layers" id="toc-system-layers" class="nav-link active" data-scroll-target="#system-layers">System Layers</a></li>
+  <li><a href="#why-the-website-is-organized-this-way" id="toc-why-the-website-is-organized-this-way" class="nav-link" data-scroll-target="#why-the-website-is-organized-this-way">Why The Website Is Organized This Way</a></li>
   <li><a href="#the-orchestrator-contract" id="toc-the-orchestrator-contract" class="nav-link" data-scroll-target="#the-orchestrator-contract">The Orchestrator Contract</a></li>
   <li><a href="#worker-critic-architecture" id="toc-worker-critic-architecture" class="nav-link" data-scroll-target="#worker-critic-architecture">Worker-Critic Architecture</a></li>
   <li><a href="#explicit-skills-instead-of-hidden-hooks" id="toc-explicit-skills-instead-of-hidden-hooks" class="nav-link" data-scroll-target="#explicit-skills-instead-of-hidden-hooks">Explicit Skills Instead Of Hidden Hooks</a></li>
   <li><a href="#revision-as-a-loop" id="toc-revision-as-a-loop" class="nav-link" data-scroll-target="#revision-as-a-loop">Revision As A Loop</a></li>
+  <li><a href="#upstream-traits-and-how-they-enter-dittonomics" id="toc-upstream-traits-and-how-they-enter-dittonomics" class="nav-link" data-scroll-target="#upstream-traits-and-how-they-enter-dittonomics">Upstream Traits And How They Enter Dittonomics</a></li>
   <li><a href="#local-state-and-checkpoints" id="toc-local-state-and-checkpoints" class="nav-link" data-scroll-target="#local-state-and-checkpoints">Local State And Checkpoints</a>
   <ul class="collapse">
   <li><a href="#default-structure" id="toc-default-structure" class="nav-link" data-scroll-target="#default-structure">Default structure</a></li>
@@ -163,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Architecture</h1>
-<p class="subtitle lead">How the local install, starter bundle, checkpoints, and website fit together</p>
+<p class="subtitle lead">How the website, starter bundle, local install, and project overlays fit together</p>
 </div>
 
 
@@ -220,6 +222,23 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>The public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real.</p>
+</section>
+<section id="why-the-website-is-organized-this-way" class="level1">
+<h1>Why The Website Is Organized This Way</h1>
+<p>The website should not behave like a passive mirror of upstream Clo-Author docs.</p>
+<p>For Dittonomics, the priority order is:</p>
+<ol type="1">
+<li>teach the practical workflow for economics research</li>
+<li>give colleagues a command and cheat-sheet surface they can actually use</li>
+<li>explain the underlying architecture only after the working logic is clear</li>
+</ol>
+<p>That is why the most important pages are now:</p>
+<ul>
+<li><strong>User Guide</strong> for the roadmap</li>
+<li><strong>Reference</strong> for daily lookup</li>
+<li><strong>Quick Start</strong> for onboarding</li>
+</ul>
+<p>Architecture still matters, but it should support the tutorial, not compete with it.</p>
 </section>
 <section id="the-orchestrator-contract" class="level1">
 <h1>The Orchestrator Contract</h1>
@@ -336,6 +355,57 @@ ul.task-list li input[type="checkbox"] {
 <li>draft the response package with <code>$clo-revise respond</code></li>
 <li>send revised outputs back into review when needed</li>
 </ol>
+</section>
+<section id="upstream-traits-and-how-they-enter-dittonomics" class="level1">
+<h1>Upstream Traits And How They Enter Dittonomics</h1>
+<p>Dittonomics is intentionally assembled from multiple upstream repos, but each imported trait should land in a visible place.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Upstream project</th>
+<th>Main trait reused here</th>
+<th>Where it shows up</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Clo-Author</code></td>
+<td>overall multi-phase research architecture</td>
+<td>workflow kernel, skill naming, agent families</td>
+</tr>
+<tr class="even">
+<td><code>my_claude_skills</code></td>
+<td>explicit reusable skill surfaces</td>
+<td>public starter design and operational helpers</td>
+</tr>
+<tr class="odd">
+<td><code>claudeblattman</code></td>
+<td>economics-facing research ergonomics</td>
+<td>writing, review, and empirical workflow tone</td>
+</tr>
+<tr class="even">
+<td><code>idea-evaluation-pipeline</code></td>
+<td>idea screening before discovery</td>
+<td><code>$clo-ideate</code></td>
+</tr>
+<tr class="odd">
+<td><code>research-companion</code></td>
+<td>staged research orchestration patterns</td>
+<td>tutorial flow and ideation support</td>
+</tr>
+<tr class="even">
+<td><code>strategic-revision</code></td>
+<td>strategic R&amp;R decomposition and dependency logic</td>
+<td><code>$clo-revise roadmap</code> and validator support</td>
+</tr>
+</tbody>
+</table>
+<p>The architecture rule is: upstream influence is welcome, but it should become explicit documentation, skills, agents, or scripts rather than hidden lore.</p>
 </section>
 <section id="local-state-and-checkpoints" class="level1">
 <h1>Local State And Checkpoints</h1>
@@ -847,7 +917,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Dittonomics</p>
 </div>   
     <div class="nav-footer-center">
-<p>Built with <a href="https://quarto.org">Quarto</a>. Dittonomics builds from <a href="https://hsantanna.org/clo-author/">Clo-Author</a>, <a href="https://github.com/dariia-m/my_claude_skills">my_claude_skills</a>, and <a href="https://github.com/chrisblattman/claudeblattman">claudeblattman</a>.</p>
+<p>Built with <a href="https://quarto.org">Quarto</a>. Dittonomics builds from <a href="https://hsantanna.org/clo-author/">Clo-Author</a>, <a href="https://github.com/dariia-m/my_claude_skills">my_claude_skills</a>, <a href="https://github.com/chrisblattman/claudeblattman">claudeblattman</a>, <a href="https://github.com/jusi-aalto/strategic-revision">strategic-revision</a>, <a href="https://github.com/andrehuang/research-companion/">research-companion</a>, and <a href="https://github.com/alejandroll10/idea-evaluation-pipeline">idea-evaluation-pipeline</a>.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

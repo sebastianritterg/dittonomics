@@ -1,6 +1,6 @@
 ---
 title: "Architecture"
-subtitle: "How the local install, starter bundle, checkpoints, and website fit together"
+subtitle: "How the website, starter bundle, local install, and project overlays fit together"
 ---
 
 # System Layers
@@ -18,6 +18,24 @@ The public website explains the system.
 The starter bundle ships the generic version.
 Your local install is the live machine.
 The repo overlay makes each project real.
+
+# Why The Website Is Organized This Way
+
+The website should not behave like a passive mirror of upstream Clo-Author docs.
+
+For Dittonomics, the priority order is:
+
+1. teach the practical workflow for economics research
+2. give colleagues a command and cheat-sheet surface they can actually use
+3. explain the underlying architecture only after the working logic is clear
+
+That is why the most important pages are now:
+
+- **User Guide** for the roadmap
+- **Reference** for daily lookup
+- **Quick Start** for onboarding
+
+Architecture still matters, but it should support the tutorial, not compete with it.
 
 # The Orchestrator Contract
 
@@ -82,6 +100,21 @@ It is a loop that starts when real review reports arrive:
 3. execute approved blocks with `$clo-revise execute`
 4. draft the response package with `$clo-revise respond`
 5. send revised outputs back into review when needed
+
+# Upstream Traits And How They Enter Dittonomics
+
+Dittonomics is intentionally assembled from multiple upstream repos, but each imported trait should land in a visible place.
+
+| Upstream project | Main trait reused here | Where it shows up |
+|---|---|---|
+| `Clo-Author` | overall multi-phase research architecture | workflow kernel, skill naming, agent families |
+| `my_claude_skills` | explicit reusable skill surfaces | public starter design and operational helpers |
+| `claudeblattman` | economics-facing research ergonomics | writing, review, and empirical workflow tone |
+| `idea-evaluation-pipeline` | idea screening before discovery | `$clo-ideate` |
+| `research-companion` | staged research orchestration patterns | tutorial flow and ideation support |
+| `strategic-revision` | strategic R&R decomposition and dependency logic | `$clo-revise roadmap` and validator support |
+
+The architecture rule is: upstream influence is welcome, but it should become explicit documentation, skills, agents, or scripts rather than hidden lore.
 
 # Local State And Checkpoints
 
