@@ -107,6 +107,32 @@ h1.title {
   padding-left: 1.2rem;
 }
 
+.ditto-roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.ditto-roadmap-step {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+  border: 1px solid rgba(13, 107, 97, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(24, 34, 31, 0.06);
+  padding: 1rem 1rem 0.9rem 1rem;
+}
+
+.ditto-roadmap-step h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.ditto-roadmap-step p:last-child {
+  margin-bottom: 0;
+}
+
 .callout {
   border-radius: 14px;
 }

@@ -3,6 +3,8 @@ title: "User Guide"
 subtitle: "How to run Dittonomics day to day"
 ---
 
+This page is the real tutorial for the system. If someone on the team asks how to use Dittonomics properly, this is the page to send first.
+
 # The Core Mental Model
 
 Most of the time, you do **not** call agents directly.
@@ -305,7 +307,7 @@ Use it after:
 
 # A Good Team Workflow
 
-For a shared research team:
+For a shared research team, the safest default is:
 
 1. keep the public starter generic
 2. keep private voice files out of the public repo

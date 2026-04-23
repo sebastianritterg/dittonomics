@@ -1,6 +1,6 @@
 ---
 title: "Dittonomics"
-subtitle: "A Ditto-style Codex research system and public operating manual for economics"
+subtitle: "Sebastian Ritter's public operating manual for a Ditto-style Codex economics workflow"
 ---
 
 ::: {.columns .ditto-hero-grid}
@@ -9,9 +9,9 @@ subtitle: "A Ditto-style Codex research system and public operating manual for e
 :::
 
 ::: {.column .ditto-hero-copy width="70%"}
-Dittonomics is a Codex-native research operating system for empirical work.
+Dittonomics is my public operating manual for doing economics research with Codex.
 
-The Ditto idea is intentional: this system keeps copying useful traits from upstream workflows, then reorganizes them into one portable setup you can keep extending over time. The website is the public manual. The repo is the starter kit. Your local install is the live working system.
+The Ditto idea is intentional: this system keeps copying useful traits from upstream workflows, then reorganizes them into one portable setup that I can keep extending over time and that colleagues can learn without digging through every starter file. The website is the public manual. The repo is the starter kit. Your local install is the live working system.
 :::
 :::
 
@@ -33,7 +33,7 @@ Start here if you want to use Dittonomics yourself or roll it out for coauthors:
 This site is written for two audiences:
 
 - Me (Sebastian Ritter), as the person actively evolving the system and publishing the public manual
-- colleagues, coauthors, and future users who need a practical guide without reading every starter file by hand
+- colleagues, coauthors, and future users who need a practical guide they can actually work from
 :::
 
 ## What Dittonomics Gives You
@@ -50,7 +50,7 @@ This site is written for two audiences:
 
 ## Use This Site Like A Roadmap
 
-The site now matters less as a static architecture description and more as a working map for economic research.
+This site is meant to help you use the system correctly, not just understand that it exists.
 
 Use the pages in this order:
 
@@ -63,7 +63,67 @@ Use the pages in this order:
 
 If you only keep one page open during the day, keep **Reference** open. If you only read one page before using the system properly, read **User Guide**.
 
-## Research Roadmap
+## Research Roadmap At A Glance
+
+::: {.ditto-roadmap}
+::: {.ditto-roadmap-step}
+### 1. Ideate
+Use `$clo-ideate`
+
+Turn a topic, mechanism, or dataset hunch into real research questions.
+:::
+
+::: {.ditto-roadmap-step}
+### 2. Discover
+Use `$clo-discover`
+
+Map the literature, data, and framing once a candidate question exists.
+:::
+
+::: {.ditto-roadmap-step}
+### 3. Strategize
+Use `$clo-strategize`
+
+Lock in the estimand, design, threats, and robustness logic before coding.
+:::
+
+::: {.ditto-roadmap-step}
+### 4. Analyze
+Use `$clo-analyze`
+
+Build the empirical pipeline, outputs, and handoff artifacts.
+:::
+
+::: {.ditto-roadmap-step}
+### 5. Write
+Use `$clo-write`
+
+Draft the paper once the evidence and design are stable enough to narrate.
+:::
+
+::: {.ditto-roadmap-step}
+### 6. Review
+Use `$clo-review`
+
+Pressure-test the draft before treating it as ready.
+:::
+
+::: {.ditto-roadmap-step}
+### 7. Revise
+Use `$clo-revise`
+
+When reports arrive, build the roadmap first and edit second.
+:::
+
+::: {.ditto-roadmap-step}
+### 8. Submit / Talk
+Use `$clo-submit` or `$clo-talk`
+
+Close the loop with verification or convert the paper into a presentation.
+:::
+:::
+
+## Research Roadmap In Words
 
 This is the recommended order of use for most economics projects:
 
@@ -202,7 +262,7 @@ The public website is:
 
 - [https://sebastianritterg.github.io/dittonomics/](https://sebastianritterg.github.io/dittonomics/)
 
-Keep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system.
+Keep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system, especially when you or a colleague forget which skill to call next.
 
 ## How To Fork Dittonomics
 

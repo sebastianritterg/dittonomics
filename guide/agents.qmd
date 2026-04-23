@@ -3,6 +3,8 @@ title: "Agents"
 subtitle: "Who does what, when they run, and what you should ask them for"
 ---
 
+This page is a lookup guide, not the best first page for learning the workflow. In most cases, start from a workflow skill and let Codex decide whether an agent should run.
+
 # How Agents Fit Into Daily Use
 
 Dittonomics uses agents to keep specialist work narrow.

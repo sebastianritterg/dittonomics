@@ -3,6 +3,8 @@ title: "Customization"
 subtitle: "How to install Dittonomics, set up your own voice, and adapt it for a team"
 ---
 
+This page is for the moment when the system stops being just mine and starts becoming usable for a team, a lab, or a set of recurring coauthors.
+
 # What To Customize
 
 There are four customization layers:

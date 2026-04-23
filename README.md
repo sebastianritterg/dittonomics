@@ -1,6 +1,6 @@
 # Dittonomics
 
-Dittonomics is a public manual and starter kit for a deliberately remixed Codex research workflow.
+Dittonomics is my public manual and starter kit for a deliberately remixed Codex research workflow.
 
 The name is literal: like Ditto, the project copies useful traits from multiple upstream repos and reshapes them into one portable system for empirical work in Codex.
 
