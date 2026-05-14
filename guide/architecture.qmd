@@ -51,6 +51,16 @@ That means it:
 
 This is why Dittonomics does **not** install a separate orchestrator agent.
 
+# Permission Registry And Lifecycle Checks
+
+Clo-Author 26.05 added a more explicit MAS v2 registry and handoff protocol. Dittonomics translates that into advisory Codex references:
+
+- `permissions-registry.md` says what each agent expects, produces, and escalates
+- `lifecycle-validation.md` explains pre-dispatch and post-completion checks
+- `execution-trace.md` gives a compact audit trail format for multi-step workflows
+
+These references help the main Codex session avoid bad routing. They are not hidden automation and do not replace the existing `$clo-*` skill triggers.
+
 # Worker-Critic Architecture
 
 The system keeps creation and evaluation separate.
@@ -84,6 +94,8 @@ Dittonomics converts those ideas into explicit, visible surfaces.
 | hidden hooks | explicit research tools |
 | implicit context survival | `checkpoint` and `resume-context` |
 | buried writing habits | explicit `~/voice` files |
+| automatic post-edit lint hooks | explicit `$clo-research-tools lint` or `verify-edit` |
+| upstream dashboards | explicit local `$clo-research-tools dashboard` project artifact |
 
 The rule is simple:
 
@@ -113,6 +125,7 @@ Dittonomics is intentionally assembled from multiple upstream repos, but each im
 | `idea-evaluation-pipeline` | idea screening before discovery | `$clo-ideate` |
 | `research-companion` | staged research orchestration patterns | tutorial flow and ideation support |
 | `strategic-revision` | strategic R&R decomposition and dependency logic | `$clo-revise roadmap` and validator support |
+| `Clo-Author 26.05` | dashboard, lifecycle, permission registry, lint, decision records, theory support | explicit Codex utilities and workflow references |
 
 The architecture rule is: upstream influence is welcome, but it should become explicit documentation, skills, agents, or scripts rather than hidden lore.
 
@@ -221,3 +234,9 @@ Bad additions:
 - hidden behavior nobody can explain
 - one-off hacks that bypass the skill system
 - private defaults silently turning into public starter rules
+
+# Beamer-First Talks
+
+Upstream Clo-Author 26.05 moved talks toward Quarto-first output.
+
+Dittonomics intentionally keeps Beamer as the default talk format. Use Quarto RevealJS only when a prompt includes `--quarto`.

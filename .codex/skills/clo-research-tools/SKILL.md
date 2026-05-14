@@ -25,6 +25,9 @@ It provides lightweight support commands such as:
 - `validate-bib`
 - `journal`
 - `context`
+- `dashboard [--output path]`
+- `html-report [peer-review|code-audit|strategy-review|quality-gate|literature] [source(optional)]`
+- `lint [file|dir(optional)]`
 - `checkpoint [scope(optional)]`
 - `resume-context [scope(optional)]`
 - `verify-edit [path(optional)]`
@@ -40,6 +43,12 @@ It provides lightweight support commands such as:
   reconstructs working context from the latest checkpoint plus current repo state
 - `verify-edit`
   runs an explicit advisory post-edit verification pass instead of hidden lint hooks
+- `lint`
+  runs explicit advisory checks for R, Python, Julia, and Stata-like files
+- `dashboard`
+  creates a local self-contained HTML project overview from repo state and quality reports
+- `html-report`
+  converts a selected quality report type into a local self-contained HTML report
 - `context`
   reports session health and likely relevant artifacts without mutating files
 - `upgrade`
@@ -65,6 +74,10 @@ The bundled helper scripts are:
 - `scripts/resume_context.py`
 - `scripts/snapshot_research_state.py`
 - `scripts/draft_learning_prompt.py`
+- `scripts/lint_research_code.py`
+- `scripts/generate_project_dashboard.py`
+- `scripts/generate_html_report.py`
+- `scripts/lifecycle_validate.py`
 
 The JSON files are the durable machine-readable layer.
 The Markdown files are the human-readable layer.
@@ -86,6 +99,57 @@ Stage changes, create commit, optionally create PR and merge.
 
 Cross-reference all `\cite{}` keys in paper and talk files against the active bibliography.
 Report missing entries, duplicate keys, or unused entries.
+
+### `$clo-research-tools lint [file|dir]` - Advisory Code Lint
+
+Run explicit mechanical checks on research code.
+
+Typical checks:
+
+- hardcoded absolute paths
+- directory-changing commands such as `setwd()`, `os.chdir()`, or Stata `cd`
+- package installation inside analysis scripts
+- missing or late seed-setting in stochastic scripts
+- wildcard imports, bare `except:`, `eval`, and related fragile patterns
+- R patterns such as `rm(list = ls())`, `T`/`F`, `attach()`, `<<-`, and `1:n`
+
+This is advisory by default. It should report findings and suggested fixes without mutating files.
+
+Recommended usage:
+
+```text
+Use $clo-research-tools lint 03_code/src
+```
+
+### `$clo-research-tools dashboard` - Local Project Dashboard
+
+Generate a self-contained HTML project dashboard from the current repo state.
+
+Default output:
+
+```text
+quality_reports/html/project_dashboard.html
+```
+
+This is a project artifact, not the public Dittonomics manual website.
+
+### `$clo-research-tools html-report [type] [source]` - Local HTML Report
+
+Generate a self-contained HTML report for one quality-report family.
+
+Supported types:
+
+- `peer-review`
+- `code-audit`
+- `strategy-review`
+- `quality-gate`
+- `literature`
+
+Default output:
+
+```text
+quality_reports/html/[type]_report.html
+```
 
 ### `$clo-research-tools journal` - Research Journal
 
@@ -134,6 +198,7 @@ Run a lightweight, explicit post-edit safety pass.
 Typical checks:
 
 - lint touched R, Python, or Julia files when applicable
+- lint Stata `.do` files when applicable
 - verify edited paths still resolve
 - run lightweight compile or syntax checks when appropriate
 - report issues advisory-first instead of mutating automatically

@@ -48,6 +48,7 @@ Unified review command that routes to the appropriate critic agents based on the
 - `--proofread` -> **Manuscript polish** (writer-critic standalone, 6 categories)
 - `--code [file]` -> **Code review** (coder-critic standalone, categories 4-12)
 - `--replicate [language]` -> **Cross-language replication** (Coder re-implements in target language + coder-critic + comparison)
+- `--theory [target]` -> **Theory audit** (theorist-critic standalone; explicit-only)
 - `--all` or no file -> **Paper excellence** (all critics in parallel + weighted score)
 
 ---

@@ -92,6 +92,19 @@ This file standardizes the intermediate artifacts shared across the `clo-*` stac
   - robustness plan
   - falsification tests
 
+### `decision_record`
+- Purpose: explicit record of why a research question, literature/data path, or identification design was chosen over alternatives
+- Typical producers: `clo-ideate`, `clo-discover`, `clo-strategize`
+- Typical consumers: user, `clo-review`, `clo-revise`, `clo-write`, future strategy updates
+- Suggested filename: `quality_reports/decisions/decision_record_[stage]_[topic_or_date].md`
+- Minimum contents:
+  - decision made
+  - options rejected
+  - rationale
+  - key assumptions
+  - evidence that would invalidate the decision
+  - next review point
+
 ### `results_summary`
 - Purpose: canonical writer handoff from analysis
 - Producer: `clo-analyze`

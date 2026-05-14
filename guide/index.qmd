@@ -45,7 +45,9 @@ This site is written for two audiences:
 - a forkable public `.codex/` starter bundle
 - optional voice files for writing-sensitive workflows
 - a strategic post-submission revision workflow with roadmap planning and DAG validation
-- explicit maintenance tools such as `checkpoint`, `resume-context`, and `verify-edit`
+- explicit maintenance tools such as `checkpoint`, `resume-context`, `lint`, `verify-edit`, `dashboard`, and `html-report`
+- optional theory support when a project truly needs formal assumptions, propositions, or proof sketches
+- Beamer-first talk creation, with Quarto RevealJS available only when explicitly requested
 - a website manual and cheat sheet you can keep open while you work
 
 ## Use This Site Like A Roadmap
@@ -255,6 +257,19 @@ The current public system draws especially from:
 - [idea-evaluation-pipeline](https://github.com/alejandroll10/idea-evaluation-pipeline) for screening seed ideas and turning them into sharper research questions
 
 The Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages.
+
+## Latest Clo-Author Sync
+
+The current Dittonomics starter selectively incorporates useful ideas from Clo-Author 26.05:
+
+- project dashboards and local HTML reports through `$clo-research-tools`
+- advisory permission registry and lifecycle validation references
+- explicit research-code linting instead of hidden post-edit hooks
+- decision records for ideation, discovery, and strategy choices
+- optional theory support through explicit theory mode
+- richer skill folders with gotchas, templates, and config
+
+One upstream change is intentionally not adopted as the default: Dittonomics keeps Beamer-first talks because that is Sebastian's preference. Quarto RevealJS remains available with `--quarto`.
 
 ## Public Home
 

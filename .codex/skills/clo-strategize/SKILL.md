@@ -169,6 +169,28 @@ Save review to `quality_reports/pre_analysis_plan_[topic]_review.md`
 
 Save PAP to `quality_reports/pre_analysis_plan_[topic].md`
 
+### `$clo-strategize theory [target]` - Optional Theory Support
+
+Use this mode only when the user explicitly requests formal theory, proof support, propositions, lemmas, assumptions, or structural/theory+empirics formalization.
+
+**Agents:** Theorist -> theorist-critic
+**Output:** Theory memo or formal manuscript block, plus theory review
+
+Workflow:
+1. Confirm the request is explicitly theory-related.
+2. Read the strategy memo, active manuscript section, repo bibliography, and notation conventions when available.
+3. Dispatch `theorist` to produce a bounded theory memo or formal block.
+4. Dispatch `theorist_critic` to review proof logic, assumptions, notation, and calibration.
+5. Save outputs only to parent-resolved target paths or `quality_reports/theory/`.
+
+Do not use this mode for standard reduced-form empirical papers unless the user explicitly asks.
+
+### Decision Records
+
+When `$clo-strategize` selects among plausible identification strategies, create or recommend a `decision_record` using `../clo-workflow/templates/decision-record.md`.
+
+The record should state why the chosen design beats rejected alternatives, the key assumptions, and what evidence would change the decision.
+
 ---
 
 ## Principles
@@ -178,6 +200,7 @@ Save PAP to `quality_reports/pre_analysis_plan_[topic].md`
 - **Catch problems before coding.** A flawed strategy caught now saves weeks of wasted analysis.
 - **Multiple strategies are OK.** Present trade-offs and let the user choose.
 - **The user decides.** If Strategist and strategist-critic disagree after 3 rounds, the user resolves it.
+- **Record real design choices.** When the design choice matters, create a decision record so future reviews and R&Rs can explain why this path was chosen.
 - **Pre-specification is the point.** Everything in a PAP is decided before seeing outcomes.
 - **Be honest about what's exploratory.** Label subgroups and secondary outcomes clearly.
 - **Power calculations require assumptions.** State every assumption. Show sensitivity.

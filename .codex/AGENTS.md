@@ -11,6 +11,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Use explicit skills, artifacts, and prompts instead of hidden hooks or slash-command assumptions.
 - Let the parent orchestrator own persistence unless it explicitly delegates a named write target.
 - Treat paper libraries, examples, and references as guidance layers. For empirical questions, current web search may be needed because the frontier moves.
+- Use the permission registry and lifecycle validation references as advisory routing contracts for multi-agent work.
 
 ## Install Locations
 
@@ -24,6 +25,7 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Ideation: `ideator`, `ideator_critic`
 - Discovery: `librarian`, `librarian_critic`, `explorer`, `explorer_critic`
 - Strategy: `strategist`, `strategist_critic`
+- Optional theory: `theorist`, `theorist_critic` for explicit theory mode only
 - Revision: `revision_planner`, `revision_planner_critic`
 - Execution: `coder`, `coder_critic`, `data_engineer`
 - Writing: `writer`, `writer_critic`
@@ -36,12 +38,15 @@ This file is part of the public starter bundle in this repository. Copy or adapt
 - Ideation should screen a seed idea, convert it into ranked research questions, and record a pursue/refine/park/kill decision before discovery when the question is still fluid.
 - Discovery should produce a research spec, literature map, and data assessment before strategy work.
 - Strategy should define the estimand, design, assumptions, robustness plan, and falsification tests before coding.
+- Formal theory support is explicit-only. Use `$clo-strategize theory` or `$clo-review --theory`; do not auto-activate theory agents for ordinary empirical papers.
 - Revision should start with a strategic roadmap that extracts atomic reviewer tasks, validates dependencies, and then routes approved work back into analysis, writing, and review.
 - Analysis defaults to Python first and Stata second unless repo guidance says otherwise. R and Julia remain supported.
 - Use a repo-level `explorations/` sandbox for experiments and prototypes. If exploratory work is needed and the folder is missing, create `explorations/README.md` and `explorations/ARCHIVE/` first.
 - Peer review should include editor-led journal calibration when you invoke the review workflow in journal mode.
 - Submission workflows should not bypass verification or replication checks.
 - Writing voice is optional and should be treated as a style layer, not as a substitute for evidence or structure.
+- Local dashboards and HTML reports are project artifacts generated through `$clo-research-tools`; they are not the public manual website.
+- Talk workflows are Beamer-first by default. Use Quarto RevealJS only when `--quarto` is explicit.
 
 ## Quality Gates
 
@@ -67,4 +72,5 @@ Keep that layer explicit, optional, and user-owned.
 - If context continuity matters, use the explicit snapshot utilities in `$clo-research-tools`.
 - Use `.codex-state/` as the default local checkpoint folder for end-of-day snapshots and resume-context files.
 - Prefer `$clo-research-tools checkpoint`, `$clo-research-tools resume-context`, and `$clo-research-tools verify-edit` over hidden background automation.
+- Prefer `$clo-research-tools lint`, `dashboard`, and `html-report` as explicit utilities rather than automatic hooks.
 - If a repository needs stricter protected-path handling, express it in repo `AGENTS.override.md` or repo-local skills.

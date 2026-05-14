@@ -36,6 +36,7 @@ If you want the shortest correct way to use Dittonomics, use this sequence:
 | the draft needs serious criticism | `$clo-review` | findings, referee-style risks, editor calibration |
 | real referee or editor reports arrive | `$clo-revise` | roadmap, validated task graph, execution blocks, response package |
 | the paper is nearly done | `$clo-submit` | verification and submission-readiness check |
+| the project needs a talk | `$clo-talk` | Beamer deck by default, Quarto only with `--quarto` |
 
 This is the main tutorial logic of the site. If a colleague asks, "What do I use now?", the answer should usually come from this table first.
 
@@ -99,6 +100,12 @@ Use $clo-discover data and assess which datasets can support this question.
 Use $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.
 ```
 
+If the project needs formal theory support, make that explicit:
+
+```text
+Use $clo-strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.
+```
+
 ### Analysis
 
 ```text
@@ -119,6 +126,12 @@ Use $clo-write results and narrate the main tables without overstating causality
 
 ```text
 Use $clo-review on this draft and give me the highest-risk findings first.
+```
+
+For formal theory sections, use explicit theory review:
+
+```text
+Use $clo-review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.
 ```
 
 ### Revision
@@ -146,6 +159,8 @@ Use $clo-revise respond on these reports and the revised draft, using the respon
 ```text
 Use $clo-talk seminar to build the deck from the current paper.
 ```
+
+This creates a Beamer-style talk by default. Use `--quarto` only when you want RevealJS.
 
 ```text
 Use $clo-submit and check whether this package is actually submission-ready.
@@ -304,6 +319,36 @@ Use it after:
 - editing Python, R, or Julia scripts
 - changing a manuscript build file
 - touching a critical config file
+
+## Lint
+
+Purpose:
+
+- catch mechanical research-code hazards before review
+- keep linting explicit instead of hidden in background hooks
+
+Typical use:
+
+```text
+Use $clo-research-tools lint 03_code/src
+```
+
+## Dashboard And HTML Reports
+
+Purpose:
+
+- create local project overviews and shareable quality-report pages
+- keep them separate from the public Dittonomics manual website
+
+Typical use:
+
+```text
+Use $clo-research-tools dashboard for this repo.
+```
+
+```text
+Use $clo-research-tools html-report strategy-review for this repo.
+```
 
 # A Good Team Workflow
 

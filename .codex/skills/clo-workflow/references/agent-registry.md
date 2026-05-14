@@ -25,6 +25,10 @@ This file is the canonical role map for the installed agents.
   Designs identification strategies and PAP-style plans.
 - `strategist_critic`
   Reviews causal design validity and inference logic.
+- `theorist`
+  Drafts formal theory support only when the parent explicitly requests theory mode.
+- `theorist_critic`
+  Reviews formal assumptions, propositions, proof logic, notation, and calibration only after explicit theory-mode dispatch.
 
 ### Revision
 - `revision_planner`

@@ -15,7 +15,11 @@ If you are unsure where to start, use this quick map:
 | "I need the empirical pipeline and outputs" | `$clo-analyze` |
 | "I need to draft or revise the paper" | `$clo-write` |
 | "I need tough criticism" | `$clo-review` |
+| "I need to audit a formal theory block" | `$clo-review --theory` |
 | "I got referee reports back" | `$clo-revise roadmap` |
+| "I need a local project dashboard" | `$clo-research-tools dashboard` |
+| "I need a local HTML report from quality reports" | `$clo-research-tools html-report [type]` |
+| "I need mechanical code checks" | `$clo-research-tools lint [file|dir]` |
 | "I am stopping for the day" | `$clo-research-tools checkpoint` |
 | "I am reopening the project" | `$clo-research-tools resume-context` |
 
@@ -51,7 +55,7 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 | `$clo-write` | manuscript drafting, revising, humanizing, style-guide work | `Use $clo-write intro with current-draft mode.` |
 | `$clo-review` | writing review, peer review, or critic workflows | `Use $clo-review --peer on the current paper draft.` |
 | `$clo-revise` | strategic post-submission roadmap planning, validation, execution routing, and response drafting | `Use $clo-revise roadmap on these reports and the submitted paper.` |
-| `$clo-talk` | deck building | `Use $clo-talk seminar from the current paper.` |
+| `$clo-talk` | Beamer-first deck building; Quarto only with `--quarto` | `Use $clo-talk seminar from the current paper.` |
 | `$clo-submit` | final submission checks | `Use $clo-submit and tell me if this is actually submission-ready.` |
 | `$clo-research-tools` | utilities and maintenance | `Use $clo-research-tools checkpoint for this repo.` |
 
@@ -62,6 +66,9 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 | `checkpoint` | saves end-of-day or handoff state | when stopping work |
 | `resume-context` | reconstructs last known working context | when reopening a project |
 | `verify-edit` | manual post-edit safety pass | after touching code or build files |
+| `lint` | advisory R/Python/Julia/Stata mechanical checks | before code review or commits |
+| `dashboard` | local self-contained project overview | after meaningful pipeline progress |
+| `html-report` | local self-contained report from quality reports | when sharing review, strategy, code, or literature outputs |
 | `context` | quick session-status summary | when you feel lost mid-session |
 | `compile` | build paper or talk outputs | after manuscript edits |
 | `validate-bib` | catch citation drift | before review or submission |
@@ -78,6 +85,8 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 | `librarian` | literature collection | `$clo-discover lit` |
 | `explorer` | data search | `$clo-discover data` |
 | `strategist` | causal design | `$clo-strategize` |
+| `theorist` | explicit formal theory support | `$clo-strategize theory` |
+| `theorist_critic` | explicit theory review | `$clo-review --theory` |
 | `revision_planner` | revision roadmap planning | `$clo-revise roadmap` |
 | `revision_planner_critic` | roadmap critique and dependency sanity checks | after `$clo-revise roadmap` |
 | `data_engineer` | cleaning and wrangling | `$clo-analyze` |
@@ -150,6 +159,16 @@ Use $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden
 Use $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan.
 ```
 
+## Theory
+
+```text
+Use $clo-strategize theory on [formal section or result]. Draft the assumptions, proposition, proof sketch, and unresolved proof obligations.
+```
+
+```text
+Use $clo-review --theory [target]. Audit the proof logic, assumptions, notation, and calibration.
+```
+
 ## Writing
 
 ```text
@@ -184,6 +203,22 @@ Use $clo-revise execute [revision roadmap] and route the approved tasks back int
 
 ```text
 Use $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step.
+```
+
+## Dashboard And HTML Reports
+
+```text
+Use $clo-research-tools dashboard for this repo.
+```
+
+```text
+Use $clo-research-tools html-report peer-review for this repo.
+```
+
+## Lint
+
+```text
+Use $clo-research-tools lint 03_code/src.
 ```
 
 ## Next morning

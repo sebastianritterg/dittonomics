@@ -1,0 +1,11 @@
+{
+  "report_types": [
+    "peer-review",
+    "code-audit",
+    "strategy-review",
+    "quality-gate",
+    "literature"
+  ],
+  "default_output_dir": "quality_reports/html",
+  "manual_website_unchanged": true
+}

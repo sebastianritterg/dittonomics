@@ -1,7 +1,7 @@
 interface:
   display_name: "Clo Research Tools"
-  short_description: "Run Dittonomics utility, checkpoint, resume, and maintenance workflows"
-  default_prompt: "Use $clo-research-tools to checkpoint work, resume context, verify an edit, compile, validate, upgrade, or maintain the research workflow."
+  short_description: "Run Dittonomics utility, checkpoint, resume, lint, dashboard, report, and maintenance workflows"
+  default_prompt: "Use $clo-research-tools to checkpoint work, resume context, lint or verify an edit, generate a local dashboard or HTML report, compile, validate, upgrade, or maintain the research workflow."
 
 policy:
   allow_implicit_invocation: false

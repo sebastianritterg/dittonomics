@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-75b947e427c150a736c37f6b8875e6de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -157,12 +157,15 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ideation" id="toc-ideation" class="nav-link" data-scroll-target="#ideation">Ideation</a></li>
   <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery">Discovery</a></li>
   <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">Strategy</a></li>
+  <li><a href="#theory" id="toc-theory" class="nav-link" data-scroll-target="#theory">Theory</a></li>
   <li><a href="#writing" id="toc-writing" class="nav-link" data-scroll-target="#writing">Writing</a></li>
   <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
   <li><a href="#revision-roadmap" id="toc-revision-roadmap" class="nav-link" data-scroll-target="#revision-roadmap">Revision Roadmap</a></li>
   <li><a href="#revision-validation" id="toc-revision-validation" class="nav-link" data-scroll-target="#revision-validation">Revision Validation</a></li>
   <li><a href="#revision-execution" id="toc-revision-execution" class="nav-link" data-scroll-target="#revision-execution">Revision Execution</a></li>
   <li><a href="#end-of-day" id="toc-end-of-day" class="nav-link" data-scroll-target="#end-of-day">End-of-day</a></li>
+  <li><a href="#dashboard-and-html-reports" id="toc-dashboard-and-html-reports" class="nav-link" data-scroll-target="#dashboard-and-html-reports">Dashboard And HTML Reports</a></li>
+  <li><a href="#lint" id="toc-lint" class="nav-link" data-scroll-target="#lint">Lint</a></li>
   <li><a href="#next-morning" id="toc-next-morning" class="nav-link" data-scroll-target="#next-morning">Next morning</a></li>
   </ul></li>
   <li><a href="#migration-cheat-sheet" id="toc-migration-cheat-sheet" class="nav-link" data-scroll-target="#migration-cheat-sheet">Migration Cheat Sheet</a></li>
@@ -233,8 +236,24 @@ ul.task-list li input[type="checkbox"] {
 <td><code>$clo-review</code></td>
 </tr>
 <tr class="odd">
+<td>“I need to audit a formal theory block”</td>
+<td><code>$clo-review --theory</code></td>
+</tr>
+<tr class="even">
 <td>“I got referee reports back”</td>
 <td><code>$clo-revise roadmap</code></td>
+</tr>
+<tr class="odd">
+<td>“I need a local project dashboard”</td>
+<td><code>$clo-research-tools dashboard</code></td>
+</tr>
+<tr class="even">
+<td>“I need a local HTML report from quality reports”</td>
+<td><code>$clo-research-tools html-report [type]</code></td>
+</tr>
+<tr class="odd">
+<td>“I need mechanical code checks”</td>
+<td><code>$clo-research-tools lint [file|dir]</code></td>
 </tr>
 <tr class="even">
 <td>“I am stopping for the day”</td>
@@ -320,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><code>$clo-talk</code></td>
-<td>deck building</td>
+<td>Beamer-first deck building; Quarto only with <code>--quarto</code></td>
 <td><code>Use $clo-talk seminar from the current paper.</code></td>
 </tr>
 <tr class="even">
@@ -368,31 +387,46 @@ ul.task-list li input[type="checkbox"] {
 <td>after touching code or build files</td>
 </tr>
 <tr class="even">
+<td><code>lint</code></td>
+<td>advisory R/Python/Julia/Stata mechanical checks</td>
+<td>before code review or commits</td>
+</tr>
+<tr class="odd">
+<td><code>dashboard</code></td>
+<td>local self-contained project overview</td>
+<td>after meaningful pipeline progress</td>
+</tr>
+<tr class="even">
+<td><code>html-report</code></td>
+<td>local self-contained report from quality reports</td>
+<td>when sharing review, strategy, code, or literature outputs</td>
+</tr>
+<tr class="odd">
 <td><code>context</code></td>
 <td>quick session-status summary</td>
 <td>when you feel lost mid-session</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>compile</code></td>
 <td>build paper or talk outputs</td>
 <td>after manuscript edits</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>validate-bib</code></td>
 <td>catch citation drift</td>
 <td>before review or submission</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>journal</code></td>
 <td>summarize research log</td>
 <td>when documenting progress</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>learn</code></td>
 <td>draft reusable learning prompts</td>
 <td>when a workflow pattern is worth saving</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>upgrade</code></td>
 <td>update infrastructure, not research content</td>
 <td>when syncing the starter or user install</td>
@@ -440,6 +474,16 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategist</code></td>
 <td>causal design</td>
 <td><code>$clo-strategize</code></td>
+</tr>
+<tr class="even">
+<td><code>theorist</code></td>
+<td>explicit formal theory support</td>
+<td><code>$clo-strategize theory</code></td>
+</tr>
+<tr class="odd">
+<td><code>theorist_critic</code></td>
+<td>explicit theory review</td>
+<td><code>$clo-review --theory</code></td>
 </tr>
 <tr class="even">
 <td><code>revision_planner</code></td>
@@ -614,6 +658,11 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="strategy">Strategy</h2>
 <pre class="text"><code>Use $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan.</code></pre>
 </section>
+<section id="theory" class="level2">
+<h2 class="anchored" data-anchor-id="theory">Theory</h2>
+<pre class="text"><code>Use $clo-strategize theory on [formal section or result]. Draft the assumptions, proposition, proof sketch, and unresolved proof obligations.</code></pre>
+<pre class="text"><code>Use $clo-review --theory [target]. Audit the proof logic, assumptions, notation, and calibration.</code></pre>
+</section>
 <section id="writing" class="level2">
 <h2 class="anchored" data-anchor-id="writing">Writing</h2>
 <pre class="text"><code>Use $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode.</code></pre>
@@ -637,6 +686,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="end-of-day" class="level2">
 <h2 class="anchored" data-anchor-id="end-of-day">End-of-day</h2>
 <pre class="text"><code>Use $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step.</code></pre>
+</section>
+<section id="dashboard-and-html-reports" class="level2">
+<h2 class="anchored" data-anchor-id="dashboard-and-html-reports">Dashboard And HTML Reports</h2>
+<pre class="text"><code>Use $clo-research-tools dashboard for this repo.</code></pre>
+<pre class="text"><code>Use $clo-research-tools html-report peer-review for this repo.</code></pre>
+</section>
+<section id="lint" class="level2">
+<h2 class="anchored" data-anchor-id="lint">Lint</h2>
+<pre class="text"><code>Use $clo-research-tools lint 03_code/src.</code></pre>
 </section>
 <section id="next-morning" class="level2">
 <h2 class="anchored" data-anchor-id="next-morning">Next morning</h2>

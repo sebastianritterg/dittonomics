@@ -42,6 +42,8 @@ The skill then decides which agent or worker-critic pair should run.
 |---|---|---|---|
 | `strategist` | proposes identification designs | strategy memo | `$clo-strategize` |
 | `strategist_critic` | pressure-tests the design | strategy review report | after strategist |
+| `theorist` | drafts formal theory support | assumptions, propositions, proof sketch | `$clo-strategize theory` only |
+| `theorist_critic` | audits formal theory support | theory review report | `$clo-review --theory` only |
 
 ## Revision
 
@@ -92,6 +94,7 @@ The skill then decides which agent or worker-critic pair should run.
 | literature work | `$clo-discover lit` |
 | data search | `$clo-discover data` |
 | research design | `$clo-strategize` |
+| explicit formal theory support | `$clo-strategize theory` or `$clo-review --theory` |
 | post-submission revision planning | `$clo-revise roadmap` |
 | coding or output pipeline | `$clo-analyze` |
 | writing | `$clo-write` |
@@ -143,6 +146,8 @@ Why this matters:
 | `librarian` | literature mapping | final identification strategy |
 | `explorer` | data source search | final causal claims |
 | `strategist` | estimand and design | code implementation |
+| `theorist` | explicit formal assumptions, propositions, proof sketches | ordinary empirical strategy work |
+| `theorist_critic` | explicit theory audit | rewriting the proof directly |
 | `revision_planner` | roadmap and task graph | final empirical execution |
 | `revision_planner_critic` | roadmap critique | writing the original plan |
 | `coder` | scripts and outputs | literature review |

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-75b947e427c150a736c37f6b8875e6de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -173,6 +173,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#checkpoint" id="toc-checkpoint" class="nav-link" data-scroll-target="#checkpoint">Checkpoint</a></li>
   <li><a href="#resume-context" id="toc-resume-context" class="nav-link" data-scroll-target="#resume-context">Resume-context</a></li>
   <li><a href="#verify-edit" id="toc-verify-edit" class="nav-link" data-scroll-target="#verify-edit">Verify-edit</a></li>
+  <li><a href="#lint" id="toc-lint" class="nav-link" data-scroll-target="#lint">Lint</a></li>
+  <li><a href="#dashboard-and-html-reports" id="toc-dashboard-and-html-reports" class="nav-link" data-scroll-target="#dashboard-and-html-reports">Dashboard And HTML Reports</a></li>
   </ul></li>
   <li><a href="#a-good-team-workflow" id="toc-a-good-team-workflow" class="nav-link" data-scroll-target="#a-good-team-workflow">A Good Team Workflow</a></li>
   <li><a href="#when-colleagues-ask-what-should-i-open" id="toc-when-colleagues-ask-what-should-i-open" class="nav-link" data-scroll-target="#when-colleagues-ask-what-should-i-open">When Colleagues Ask “What Should I Open?”</a></li>
@@ -288,6 +290,11 @@ ul.task-list li input[type="checkbox"] {
 <td><code>$clo-submit</code></td>
 <td>verification and submission-readiness check</td>
 </tr>
+<tr class="odd">
+<td>the project needs a talk</td>
+<td><code>$clo-talk</code></td>
+<td>Beamer deck by default, Quarto only with <code>--quarto</code></td>
+</tr>
 </tbody>
 </table>
 <p>This is the main tutorial logic of the site. If a colleague asks, “What do I use now?”, the answer should usually come from this table first.</p>
@@ -335,6 +342,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="strategy" class="level3">
 <h3 class="anchored" data-anchor-id="strategy">Strategy</h3>
 <pre class="text"><code>Use $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.</code></pre>
+<p>If the project needs formal theory support, make that explicit:</p>
+<pre class="text"><code>Use $clo-strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.</code></pre>
 </section>
 <section id="analysis" class="level3">
 <h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
@@ -348,6 +357,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="review" class="level3">
 <h3 class="anchored" data-anchor-id="review">Review</h3>
 <pre class="text"><code>Use $clo-review on this draft and give me the highest-risk findings first.</code></pre>
+<p>For formal theory sections, use explicit theory review:</p>
+<pre class="text"><code>Use $clo-review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.</code></pre>
 </section>
 <section id="revision" class="level3">
 <h3 class="anchored" data-anchor-id="revision">Revision</h3>
@@ -360,6 +371,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="talks-and-submission" class="level3">
 <h3 class="anchored" data-anchor-id="talks-and-submission">Talks and submission</h3>
 <pre class="text"><code>Use $clo-talk seminar to build the deck from the current paper.</code></pre>
+<p>This creates a Beamer-style talk by default. Use <code>--quarto</code> only when you want RevealJS.</p>
 <pre class="text"><code>Use $clo-submit and check whether this package is actually submission-ready.</code></pre>
 </section>
 </section>
@@ -528,6 +540,27 @@ ul.task-list li input[type="checkbox"] {
 <li>changing a manuscript build file</li>
 <li>touching a critical config file</li>
 </ul>
+</section>
+<section id="lint" class="level2">
+<h2 class="anchored" data-anchor-id="lint">Lint</h2>
+<p>Purpose:</p>
+<ul>
+<li>catch mechanical research-code hazards before review</li>
+<li>keep linting explicit instead of hidden in background hooks</li>
+</ul>
+<p>Typical use:</p>
+<pre class="text"><code>Use $clo-research-tools lint 03_code/src</code></pre>
+</section>
+<section id="dashboard-and-html-reports" class="level2">
+<h2 class="anchored" data-anchor-id="dashboard-and-html-reports">Dashboard And HTML Reports</h2>
+<p>Purpose:</p>
+<ul>
+<li>create local project overviews and shareable quality-report pages</li>
+<li>keep them separate from the public Dittonomics manual website</li>
+</ul>
+<p>Typical use:</p>
+<pre class="text"><code>Use $clo-research-tools dashboard for this repo.</code></pre>
+<pre class="text"><code>Use $clo-research-tools html-report strategy-review for this repo.</code></pre>
 </section>
 </section>
 <section id="a-good-team-workflow" class="level1">

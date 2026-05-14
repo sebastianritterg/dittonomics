@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-75b947e427c150a736c37f6b8875e6de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -142,6 +142,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#system-layers" id="toc-system-layers" class="nav-link active" data-scroll-target="#system-layers">System Layers</a></li>
   <li><a href="#why-the-website-is-organized-this-way" id="toc-why-the-website-is-organized-this-way" class="nav-link" data-scroll-target="#why-the-website-is-organized-this-way">Why The Website Is Organized This Way</a></li>
   <li><a href="#the-orchestrator-contract" id="toc-the-orchestrator-contract" class="nav-link" data-scroll-target="#the-orchestrator-contract">The Orchestrator Contract</a></li>
+  <li><a href="#permission-registry-and-lifecycle-checks" id="toc-permission-registry-and-lifecycle-checks" class="nav-link" data-scroll-target="#permission-registry-and-lifecycle-checks">Permission Registry And Lifecycle Checks</a></li>
   <li><a href="#worker-critic-architecture" id="toc-worker-critic-architecture" class="nav-link" data-scroll-target="#worker-critic-architecture">Worker-Critic Architecture</a></li>
   <li><a href="#explicit-skills-instead-of-hidden-hooks" id="toc-explicit-skills-instead-of-hidden-hooks" class="nav-link" data-scroll-target="#explicit-skills-instead-of-hidden-hooks">Explicit Skills Instead Of Hidden Hooks</a></li>
   <li><a href="#revision-as-a-loop" id="toc-revision-as-a-loop" class="nav-link" data-scroll-target="#revision-as-a-loop">Revision As A Loop</a></li>
@@ -156,6 +157,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#voice-as-a-layer" id="toc-voice-as-a-layer" class="nav-link" data-scroll-target="#voice-as-a-layer">Voice As A Layer</a></li>
   <li><a href="#public-repo-local-install-and-website" id="toc-public-repo-local-install-and-website" class="nav-link" data-scroll-target="#public-repo-local-install-and-website">Public Repo, Local Install, And Website</a></li>
   <li><a href="#the-ditto-expansion-rule" id="toc-the-ditto-expansion-rule" class="nav-link" data-scroll-target="#the-ditto-expansion-rule">The Ditto Expansion Rule</a></li>
+  <li><a href="#beamer-first-talks" id="toc-beamer-first-talks" class="nav-link" data-scroll-target="#beamer-first-talks">Beamer-First Talks</a></li>
   </ul>
 </nav>
     </div>
@@ -253,6 +255,16 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>This is why Dittonomics does <strong>not</strong> install a separate orchestrator agent.</p>
 </section>
+<section id="permission-registry-and-lifecycle-checks" class="level1">
+<h1>Permission Registry And Lifecycle Checks</h1>
+<p>Clo-Author 26.05 added a more explicit MAS v2 registry and handoff protocol. Dittonomics translates that into advisory Codex references:</p>
+<ul>
+<li><code>permissions-registry.md</code> says what each agent expects, produces, and escalates</li>
+<li><code>lifecycle-validation.md</code> explains pre-dispatch and post-completion checks</li>
+<li><code>execution-trace.md</code> gives a compact audit trail format for multi-step workflows</li>
+</ul>
+<p>These references help the main Codex session avoid bad routing. They are not hidden automation and do not replace the existing <code>$clo-*</code> skill triggers.</p>
+</section>
 <section id="worker-critic-architecture" class="level1">
 <h1>Worker-Critic Architecture</h1>
 <p>The system keeps creation and evaluation separate.</p>
@@ -314,6 +326,10 @@ ul.task-list li input[type="checkbox"] {
 <h1>Explicit Skills Instead Of Hidden Hooks</h1>
 <p>Upstream Clo-Author uses hidden Claude mechanics in some places. Dittonomics converts those ideas into explicit, visible surfaces.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Hidden upstream behavior</th>
@@ -336,6 +352,14 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>buried writing habits</td>
 <td>explicit <code>~/voice</code> files</td>
+</tr>
+<tr class="odd">
+<td>automatic post-edit lint hooks</td>
+<td>explicit <code>$clo-research-tools lint</code> or <code>verify-edit</code></td>
+</tr>
+<tr class="even">
+<td>upstream dashboards</td>
+<td>explicit local <code>$clo-research-tools dashboard</code> project artifact</td>
 </tr>
 </tbody>
 </table>
@@ -402,6 +426,11 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategic-revision</code></td>
 <td>strategic R&amp;R decomposition and dependency logic</td>
 <td><code>$clo-revise roadmap</code> and validator support</td>
+</tr>
+<tr class="odd">
+<td><code>Clo-Author 26.05</code></td>
+<td>dashboard, lifecycle, permission registry, lint, decision records, theory support</td>
+<td>explicit Codex utilities and workflow references</td>
 </tr>
 </tbody>
 </table>
@@ -505,6 +534,11 @@ ul.task-list li input[type="checkbox"] {
 <li>one-off hacks that bypass the skill system</li>
 <li>private defaults silently turning into public starter rules</li>
 </ul>
+</section>
+<section id="beamer-first-talks" class="level1">
+<h1>Beamer-First Talks</h1>
+<p>Upstream Clo-Author 26.05 moved talks toward Quarto-first output.</p>
+<p>Dittonomics intentionally keeps Beamer as the default talk format. Use Quarto RevealJS only when a prompt includes <code>--quarto</code>.</p>
 
 
 </section>

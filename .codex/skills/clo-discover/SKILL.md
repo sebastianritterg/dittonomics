@@ -78,6 +78,8 @@ After interview (5-8 exchanges), produce:
 **Output 2: Domain Profile** -> `~/.codex/skills/clo-workflow/references/domain-profile.md ` (if still template)
 Fill in field, target journals, common data sources, identification strategies, field conventions, seminal references, and referee concerns based on the interview.
 
+**Output 3: Decision Record** -> `quality_reports/decisions/decision_record_discovery_[topic].md` when the interview chooses one question, scope, or data/literature path over serious alternatives.
+
 ### `$clo-discover lit [topic]` - Literature Review
 Search and synthesize academic literature.
 
@@ -102,6 +104,8 @@ Workflow:
 6. Dispatch librarian-critic to check coverage, gaps, recency, scope
 7. If gaps found, re-dispatch Librarian for targeted search (max 1 round)
 8. Save to `quality_reports/lit_review_[topic].md`
+
+When the literature review changes the preferred positioning or rejects a plausible literature path, create or recommend a `decision_record` using `../clo-workflow/templates/decision-record.md`.
 
 **Unverified citations:** If you cannot verify a citation, mark the BibTeX entry with `% UNVERIFIED`. Do NOT fabricate or guess citation details. Note when working papers have been published - cite the published version.
 
@@ -151,6 +155,8 @@ Workflow:
    5. **Known issues** - Documented problems with this dataset in the literature
 7. Save exploration to `quality_reports/data_exploration_[topic].md`
 
+When data discovery selects one data path over plausible alternatives, create or recommend a `decision_record` using `../clo-workflow/templates/decision-record.md`.
+
 **Rejected datasets:** Include a rejection table:
 
 | Dataset | Reason for Rejection | Deal-breaker? |
@@ -173,6 +179,7 @@ Do not bury ideation inside discovery now that Dittonomics treats it as a first-
 - **Data feasibility matters:** A perfect dataset you can't access is useless. Always assign A/B/C/D grades.
 - **5-point data critique:** Measurement validity, sample selection, external validity, identification compatibility, known issues. Never skip this.
 - **Domain-profile aware:** Always read `~/.codex/skills/clo-workflow/references/domain-profile.md ` first for field calibration.
+- **Decision records:** When discovery resolves a real choice, record why this path wins over rejected alternatives.
 - **Worker-critic pairing:** Librarian + librarian-critic, Explorer + explorer-critic. Never skip the critic.
 
 ## Exploration Sandbox

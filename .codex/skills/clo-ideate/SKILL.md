@@ -126,6 +126,10 @@ Mode-specific:
 - `session`
   `idea_brief`, `rq_shortlist`, `idea_screen`
 
+When the phase produces a pursue/refine/park/kill verdict, also create or recommend a `decision_record` using `../clo-workflow/templates/decision-record.md`.
+
+The decision record should explain why this question is moving forward, being refined, being parked, or being killed.
+
 The parent orchestrator chooses the exact save locations using the artifact contract.
 
 ## Ideation Rules
@@ -135,6 +139,7 @@ The parent orchestrator chooses the exact save locations using the artifact cont
 3. For empirical ideas, every serious question needs at least a provisional identification sketch and data sketch.
 4. Current web or working-paper searching can supplement the ideation pass when the frontier is moving, but papers and libraries remain guidance layers rather than sole truth.
 5. Include at least one fast-fail test that could kill or rescue the idea quickly.
-6. Separate ideation from discovery: do not pretend this phase replaces a real literature review or data assessment.
-7. Creator/critic pairing is mandatory in `session`, `evaluate`, and `decide` unless the user explicitly asks for a lighter creator-only pass.
-8. `clo-discover ideate` is treated as a legacy alias; route it here rather than burying ideation inside discovery.
+6. Record the key go/no-go decision when the user chooses one research question over plausible alternatives.
+7. Separate ideation from discovery: do not pretend this phase replaces a real literature review or data assessment.
+8. Creator/critic pairing is mandatory in `session`, `evaluate`, and `decide` unless the user explicitly asks for a lighter creator-only pass.
+9. `clo-discover ideate` is treated as a legacy alias; route it here rather than burying ideation inside discovery.

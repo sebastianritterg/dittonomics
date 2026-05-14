@@ -23,10 +23,13 @@ Use this skill as the canonical operating contract for the `clo-*` stack.
 2. `references/artifact-contracts.md`
 3. `references/agent-registry.md`
 4. `references/routing-rules.md`
-5. `references/domain-profile.md` only for field calibration
-6. `references/journal-profiles.md` only for journal calibration
-7. `references/explorations.md` only when exploratory sandbox work is needed
-8. `references/translation-map.md` and `references/source-*` only when upstream provenance matters
+5. `references/permissions-registry.md` when dispatch requirements, produced artifacts, or escalation targets matter
+6. `references/lifecycle-validation.md` when a workflow is about to dispatch or advance an artifact
+7. `references/execution-trace.md` when a multi-step workflow needs a handoff or audit trail
+8. `references/domain-profile.md` only for field calibration
+9. `references/journal-profiles.md` only for journal calibration
+10. `references/explorations.md` only when exploratory sandbox work is needed
+11. `references/translation-map.md` and `references/source-*` only when upstream provenance matters
 
 ## Global Rules
 
@@ -38,3 +41,4 @@ Use this skill as the canonical operating contract for the `clo-*` stack.
 6. Use a shared task packet rather than ad hoc per-agent routing language.
 7. Prefer the active bibliography and closest cited papers in the repo before any global reference library.
 8. Hidden hooks are not ported. Use explicit skills, artifacts, and review steps instead.
+9. Lifecycle and permission checks are advisory contracts in Codex. They should stop bad routing when inputs are missing, but they are never hidden hook automation.

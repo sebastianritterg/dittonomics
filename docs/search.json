@@ -1,101 +1,143 @@
 [
   {
-    "objectID": "reference.html",
-    "href": "reference.html",
-    "title": "Reference",
+    "objectID": "user-guide.html",
+    "href": "user-guide.html",
+    "title": "User Guide",
     "section": "",
-    "text": "If you are unsure where to start, use this quick map:\n\n\n\n\n\n\n\nIf you are here\nUse this\n\n\n\n\n“I only have a rough idea”\n$clo-ideate\n\n\n“I think the question is real, but I need the literature or data map”\n$clo-discover\n\n\n“I need the design before I code”\n$clo-strategize\n\n\n“I need the empirical pipeline and outputs”\n$clo-analyze\n\n\n“I need to draft or revise the paper”\n$clo-write\n\n\n“I need tough criticism”\n$clo-review\n\n\n“I got referee reports back”\n$clo-revise roadmap\n\n\n“I am stopping for the day”\n$clo-research-tools checkpoint\n\n\n“I am reopening the project”\n$clo-research-tools resume-context"
+    "text": "This page is the real tutorial for the system. If someone on the team asks how to use Dittonomics properly, this is the page to send first."
   },
   {
-    "objectID": "reference.html#start-the-day",
-    "href": "reference.html#start-the-day",
-    "title": "Reference",
-    "section": "Start the day",
-    "text": "Start the day\nUse $clo-research-tools resume-context for this repo."
+    "objectID": "user-guide.html#morning-resume-cleanly",
+    "href": "user-guide.html#morning-resume-cleanly",
+    "title": "User Guide",
+    "section": "Morning: resume cleanly",
+    "text": "Morning: resume cleanly\nStart with:\nUse $clo-research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.\nWhat this is meant to do:\n\nread the latest checkpoint in .codex-state/\ncompare it to current git state\nremind you what mattered yesterday\nsuggest the next action instead of making you rebuild context manually"
   },
   {
-    "objectID": "reference.html#end-the-day",
-    "href": "reference.html#end-the-day",
-    "title": "Reference",
-    "section": "End the day",
-    "text": "End the day\nUse $clo-research-tools checkpoint for this repo."
+    "objectID": "user-guide.html#during-the-day-use-the-workflow-skills",
+    "href": "user-guide.html#during-the-day-use-the-workflow-skills",
+    "title": "User Guide",
+    "section": "During the day: use the workflow skills",
+    "text": "During the day: use the workflow skills\nUse the skill that matches the real task.\nThe easiest rule is:\n\nif the question is still fuzzy, go left in the pipeline and use ideation\nif you are already coding, writing, or revising, do not jump backward unless a real flaw forces it\nif reports arrive from a journal, stop ad hoc edits and move into revision-roadmap mode first\n\n\nIdeation\nUse this before discovery when the project is still just:\n\na topic\na cool dataset\na mechanism hunch\na policy area without a sharp question yet\n\nUse $clo-ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.\nUse $clo-ideate rq from this dataset idea and give me the best candidate empirical questions.\n\n\nDiscovery\nUse $clo-discover lit on this topic and build the literature map first.\nUse $clo-discover data and assess which datasets can support this question.\n\n\nStrategy\nUse $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.\nIf the project needs formal theory support, make that explicit:\nUse $clo-strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.\n\n\nAnalysis\nUse $clo-analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.\n\n\nWriting\nUse $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.\nUse $clo-write results and narrate the main tables without overstating causality.\n\n\nReview\nUse $clo-review on this draft and give me the highest-risk findings first.\nFor formal theory sections, use explicit theory review:\nUse $clo-review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.\n\n\nRevision\nUse this when real editor or referee reports already exist.\nUse $clo-revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.\nUse $clo-revise validate quality_reports/revision_tasks_rr1.json\nUse $clo-revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.\nUse $clo-revise respond on these reports and the revised draft, using the response matrix and decision log.\n\n\nTalks and submission\nUse $clo-talk seminar to build the deck from the current paper.\nThis creates a Beamer-style talk by default. Use --quarto only when you want RevealJS.\nUse $clo-submit and check whether this package is actually submission-ready."
   },
   {
-    "objectID": "reference.html#after-a-risky-edit",
-    "href": "reference.html#after-a-risky-edit",
-    "title": "Reference",
-    "section": "After a risky edit",
-    "text": "After a risky edit\nUse $clo-research-tools verify-edit 03_code/src/estimate.py"
+    "objectID": "user-guide.html#end-of-day-checkpoint-intentionally",
+    "href": "user-guide.html#end-of-day-checkpoint-intentionally",
+    "title": "User Guide",
+    "section": "End of day: checkpoint intentionally",
+    "text": "End of day: checkpoint intentionally\nUse:\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.\nThis is the recommended end-of-day ritual."
   },
   {
-    "objectID": "reference.html#ideation",
-    "href": "reference.html#ideation",
-    "title": "Reference",
-    "section": "Ideation",
-    "text": "Ideation\nUse $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it."
+    "objectID": "user-guide.html#explicit-style",
+    "href": "user-guide.html#explicit-style",
+    "title": "User Guide",
+    "section": "Explicit style",
+    "text": "Explicit style\nBest when:\n\nyou want predictable routing\nyou are teaching a colleague\nyou want the website or starter kit to stay easy to follow\n\nExample:\nUse $clo-review --peer on the latest draft."
   },
   {
-    "objectID": "reference.html#discovery",
-    "href": "reference.html#discovery",
-    "title": "Reference",
-    "section": "Discovery",
-    "text": "Discovery\nUse $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving."
+    "objectID": "user-guide.html#natural-language-style",
+    "href": "user-guide.html#natural-language-style",
+    "title": "User Guide",
+    "section": "Natural-language style",
+    "text": "Natural-language style\nBest when:\n\nthe task is obvious\nyou want a conversational workflow\nyou do not care about naming the exact skill\n\nExample:\nPlease review the current paper draft like a journal referee and focus on identification and contribution."
   },
   {
-    "objectID": "reference.html#strategy",
-    "href": "reference.html#strategy",
-    "title": "Reference",
-    "section": "Strategy",
-    "text": "Strategy\nUse $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan."
+    "objectID": "user-guide.html#recommendation",
+    "href": "user-guide.html#recommendation",
+    "title": "User Guide",
+    "section": "Recommendation",
+    "text": "Recommendation\nFor daily work with colleagues, prefer explicit $clo-* names.\nIt makes:\n\nthe system easier to learn\nthe website cheat sheet easier to use\nrouting behavior easier to remember"
   },
   {
-    "objectID": "reference.html#writing",
-    "href": "reference.html#writing",
-    "title": "Reference",
-    "section": "Writing",
-    "text": "Writing\nUse $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode."
+    "objectID": "user-guide.html#what-usually-activates-agents",
+    "href": "user-guide.html#what-usually-activates-agents",
+    "title": "User Guide",
+    "section": "What usually activates agents",
+    "text": "What usually activates agents\n\n\n\n\n\n\n\nWhat you ask for\nTypical system response\n\n\n\n\nidea screening or research-question generation\nideator then ideator_critic\n\n\nliterature review\nlibrarian then librarian_critic\n\n\ndata search\nexplorer then explorer_critic\n\n\nidentification design\nstrategist then strategist_critic\n\n\nstrategic revision roadmap\nrevision_planner then revision_planner_critic\n\n\ncoding or data pipeline work\ncoder or data_engineer, then coder_critic\n\n\npaper drafting\nwriter\n\n\nfront-end writing\necon-intro-writing governs structure, then writing follows that contract\n\n\nproofreading or writing review\nwriter_critic\n\n\npeer review\neditor, domain_referee, methods_referee"
   },
   {
-    "objectID": "reference.html#review",
-    "href": "reference.html#review",
-    "title": "Reference",
-    "section": "Review",
-    "text": "Review\nUse $clo-review on the latest draft and give findings first."
+    "objectID": "user-guide.html#when-to-mention-an-agent-directly",
+    "href": "user-guide.html#when-to-mention-an-agent-directly",
+    "title": "User Guide",
+    "section": "When to mention an agent directly",
+    "text": "When to mention an agent directly\nDo it when you want to steer the posture.\nExamples:\nUse $clo-discover lit, but keep it repo-bibliography-first.\nUse $clo-review --peer and make the methods_referee especially tough on the event-study design.\nUsually you still call the skill, not the raw agent."
   },
   {
-    "objectID": "reference.html#revision-roadmap",
-    "href": "reference.html#revision-roadmap",
-    "title": "Reference",
-    "section": "Revision Roadmap",
-    "text": "Revision Roadmap\nUse $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks."
+    "objectID": "user-guide.html#checkpoint",
+    "href": "user-guide.html#checkpoint",
+    "title": "User Guide",
+    "section": "Checkpoint",
+    "text": "Checkpoint\nPurpose:\n\nsave the state of a workday\nleave structured notes for future you or a colleague\n\nDefault location:\n.codex-state/\nDefault files:\n.codex-state/\n  checkpoints/\n  latest.json\n  latest.md\nWhat gets stored:\n\ngoal\nsummary\nblockers\nopen questions\nimportant files\nnext step\ngit branch and recent commits\ndirectory snapshot"
   },
   {
-    "objectID": "reference.html#revision-validation",
-    "href": "reference.html#revision-validation",
-    "title": "Reference",
-    "section": "Revision Validation",
-    "text": "Revision Validation\nUse $clo-revise validate [revision_task_graph.json]"
+    "objectID": "user-guide.html#resume-context",
+    "href": "user-guide.html#resume-context",
+    "title": "User Guide",
+    "section": "Resume-context",
+    "text": "Resume-context\nPurpose:\n\npick back up quickly the next day\navoid spending the first 10 to 20 minutes reconstructing context\n\nTypical use:\nUse $clo-research-tools resume-context for this repo and tell me what I most likely need to do next."
   },
   {
-    "objectID": "reference.html#revision-execution",
-    "href": "reference.html#revision-execution",
-    "title": "Reference",
-    "section": "Revision Execution",
-    "text": "Revision Execution\nUse $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review."
+    "objectID": "user-guide.html#verify-edit",
+    "href": "user-guide.html#verify-edit",
+    "title": "User Guide",
+    "section": "Verify-edit",
+    "text": "Verify-edit\nPurpose:\n\nrun a manual post-edit safety pass\nuse this instead of hidden background lint hooks\n\nTypical use:\nUse $clo-research-tools verify-edit 03_code/src/estimate.py\nUse it after:\n\nediting Python, R, or Julia scripts\nchanging a manuscript build file\ntouching a critical config file"
   },
   {
-    "objectID": "reference.html#end-of-day",
-    "href": "reference.html#end-of-day",
-    "title": "Reference",
-    "section": "End-of-day",
-    "text": "End-of-day\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step."
+    "objectID": "user-guide.html#lint",
+    "href": "user-guide.html#lint",
+    "title": "User Guide",
+    "section": "Lint",
+    "text": "Lint\nPurpose:\n\ncatch mechanical research-code hazards before review\nkeep linting explicit instead of hidden in background hooks\n\nTypical use:\nUse $clo-research-tools lint 03_code/src"
   },
   {
-    "objectID": "reference.html#next-morning",
-    "href": "reference.html#next-morning",
-    "title": "Reference",
-    "section": "Next morning",
-    "text": "Next morning\nUse $clo-research-tools resume-context for this repo and tell me where we left off and what to do next."
+    "objectID": "user-guide.html#dashboard-and-html-reports",
+    "href": "user-guide.html#dashboard-and-html-reports",
+    "title": "User Guide",
+    "section": "Dashboard And HTML Reports",
+    "text": "Dashboard And HTML Reports\nPurpose:\n\ncreate local project overviews and shareable quality-report pages\nkeep them separate from the public Dittonomics manual website\n\nTypical use:\nUse $clo-research-tools dashboard for this repo.\nUse $clo-research-tools html-report strategy-review for this repo."
+  },
+  {
+    "objectID": "user-guide.html#calling-the-wrong-layer",
+    "href": "user-guide.html#calling-the-wrong-layer",
+    "title": "User Guide",
+    "section": "Calling the wrong layer",
+    "text": "Calling the wrong layer\nDo not call writer directly unless you have a very specific reason. Usually call $clo-write."
+  },
+  {
+    "objectID": "user-guide.html#treating-voice-as-structure",
+    "href": "user-guide.html#treating-voice-as-structure",
+    "title": "User Guide",
+    "section": "Treating voice as structure",
+    "text": "Treating voice as structure\nVoice files shape prose. They do not replace identification logic, evidence discipline, or intro architecture."
+  },
+  {
+    "objectID": "user-guide.html#forgetting-the-checkpoint",
+    "href": "user-guide.html#forgetting-the-checkpoint",
+    "title": "User Guide",
+    "section": "Forgetting the checkpoint",
+    "text": "Forgetting the checkpoint\nIf you stop work without one, the next session becomes unnecessarily expensive."
+  },
+  {
+    "objectID": "user-guide.html#treating-references-as-sole-truth",
+    "href": "user-guide.html#treating-references-as-sole-truth",
+    "title": "User Guide",
+    "section": "Treating references as sole truth",
+    "text": "Treating references as sole truth\nRepo bibliography comes first. Current web or working-paper checks can supplement fast-moving empirical frontiers. Neither should be treated as the only truth source."
+  },
+  {
+    "objectID": "user-guide.html#skipping-ideation-when-the-question-is-still-vague",
+    "href": "user-guide.html#skipping-ideation-when-the-question-is-still-vague",
+    "title": "User Guide",
+    "section": "Skipping ideation when the question is still vague",
+    "text": "Skipping ideation when the question is still vague\nDiscovery is for formalizing and searching. Ideation is for deciding whether the question deserves that investment.\nIf the project still sounds more like a direction than a question, start with $clo-ideate."
+  },
+  {
+    "objectID": "user-guide.html#jumping-into-edits-before-building-the-revision-roadmap",
+    "href": "user-guide.html#jumping-into-edits-before-building-the-revision-roadmap",
+    "title": "User Guide",
+    "section": "Jumping into edits before building the revision roadmap",
+    "text": "Jumping into edits before building the revision roadmap\nWhen real referee reports arrive, start with $clo-revise roadmap before rewriting sections or running ad hoc analyses.\nThat step is what:\n\nextracts atomic reviewer tasks\nshows which requests actually block others\nflags disagreement and go/no-go decisions early"
   },
   {
     "objectID": "index.html",
@@ -116,7 +158,7 @@
     "href": "index.html#what-dittonomics-gives-you",
     "title": "Dittonomics",
     "section": "What Dittonomics Gives You",
-    "text": "What Dittonomics Gives You\n\nan explicit ideation phase before discovery\na research pipeline with explicit phases\nworker-critic separation across the stack\nCodex-native skills instead of Claude slash-command assumptions\na forkable public .codex/ starter bundle\noptional voice files for writing-sensitive workflows\na strategic post-submission revision workflow with roadmap planning and DAG validation\nexplicit maintenance tools such as checkpoint, resume-context, and verify-edit\na website manual and cheat sheet you can keep open while you work"
+    "text": "What Dittonomics Gives You\n\nan explicit ideation phase before discovery\na research pipeline with explicit phases\nworker-critic separation across the stack\nCodex-native skills instead of Claude slash-command assumptions\na forkable public .codex/ starter bundle\noptional voice files for writing-sensitive workflows\na strategic post-submission revision workflow with roadmap planning and DAG validation\nexplicit maintenance tools such as checkpoint, resume-context, lint, verify-edit, dashboard, and html-report\noptional theory support when a project truly needs formal assumptions, propositions, or proof sketches\nBeamer-first talk creation, with Quarto RevealJS available only when explicitly requested\na website manual and cheat sheet you can keep open while you work"
   },
   {
     "objectID": "index.html#use-this-site-like-a-roadmap",
@@ -168,6 +210,13 @@
     "text": "What Dittonomics Builds On\nDittonomics is a remix, not a one-source clone.\nThe current public system draws especially from:\n\nClo-Author for the overall research-workflow architecture\nmy_claude_skills for explicit skill patterns and reusable operational helpers\nclaudeblattman for economics-facing workflow instincts and practical researcher ergonomics\nstrategic-revision for post-submission revision planning, task decomposition, and dependency logic\nresearch-companion for research-stage orchestration ideas that fit both Codex and Claude Code settings\nidea-evaluation-pipeline for screening seed ideas and turning them into sharper research questions\n\nThe Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages."
   },
   {
+    "objectID": "index.html#latest-clo-author-sync",
+    "href": "index.html#latest-clo-author-sync",
+    "title": "Dittonomics",
+    "section": "Latest Clo-Author Sync",
+    "text": "Latest Clo-Author Sync\nThe current Dittonomics starter selectively incorporates useful ideas from Clo-Author 26.05:\n\nproject dashboards and local HTML reports through $clo-research-tools\nadvisory permission registry and lifecycle validation references\nexplicit research-code linting instead of hidden post-edit hooks\ndecision records for ideation, discovery, and strategy choices\noptional theory support through explicit theory mode\nricher skill folders with gotchas, templates, and config\n\nOne upstream change is intentionally not adopted as the default: Dittonomics keeps Beamer-first talks because that is Sebastian’s preference. Quarto RevealJS remains available with --quarto."
+  },
+  {
     "objectID": "index.html#public-home",
     "href": "index.html#public-home",
     "title": "Dittonomics",
@@ -194,6 +243,104 @@
     "title": "Dittonomics",
     "section": "The Ditto Rule",
     "text": "The Ditto Rule\nKeep the system open to future additions.\nThat means:\n\ndo not freeze the workflow as if this is the final shape\ndocument new traits as they get added\nkeep the public starter generic\nkeep private voice and machine-specific behavior separate\nlet the website become the shared memory for the team"
+  },
+  {
+    "objectID": "architecture.html",
+    "href": "architecture.html",
+    "title": "Architecture",
+    "section": "",
+    "text": "Dittonomics has four layers that matter in practice.\n\n\n\n\n\n\n\n\nLayer\nWhere it lives\nWhat it does\n\n\n\n\nWebsite manual\nguide/ and docs/\nteaches humans how the system works\n\n\nPublic starter bundle\n.codex/ in this repo\ngives a generic forkable install\n\n\nLive local install\n~/.codex/, ~/.agents/skills, ~/voice/\nruns your actual working system\n\n\nProject repo overlay\nAGENTS.md, AGENTS.override.md, .agents/skills/\nmakes behavior repo-specific\n\n\n\nThe public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real."
+  },
+  {
+    "objectID": "architecture.html#default-structure",
+    "href": "architecture.html#default-structure",
+    "title": "Architecture",
+    "section": "Default structure",
+    "text": "Default structure\n.codex-state/\n  checkpoints/\n    2026-04-22T18-30-00Z_end-of-day.json\n    2026-04-22T18-30-00Z_end-of-day.md\n  latest.json\n  latest.md\n  resume-context.md"
+  },
+  {
+    "objectID": "architecture.html#why-both-json-and-markdown-exist",
+    "href": "architecture.html#why-both-json-and-markdown-exist",
+    "title": "Architecture",
+    "section": "Why both JSON and Markdown exist",
+    "text": "Why both JSON and Markdown exist\nThe JSON files are:\n\nstable\nmachine-readable\ngood for scripted recovery later\n\nThe Markdown files are:\n\neasy to read\neasy to share with a colleague\ngood for quick manual inspection"
+  },
+  {
+    "objectID": "architecture.html#recommended-policy",
+    "href": "architecture.html#recommended-policy",
+    "title": "Architecture",
+    "section": "Recommended policy",
+    "text": "Recommended policy\nFor working research repos:\n\nkeep .codex-state/ local\nadd it to .gitignore unless you explicitly want to share checkpoints\ntreat it as operational memory"
+  },
+  {
+    "objectID": "agents.html",
+    "href": "agents.html",
+    "title": "Agents",
+    "section": "",
+    "text": "This page is a lookup guide, not the best first page for learning the workflow. In most cases, start from a workflow skill and let Codex decide whether an agent should run."
+  },
+  {
+    "objectID": "agents.html#ideation",
+    "href": "agents.html#ideation",
+    "title": "Agents",
+    "section": "Ideation",
+    "text": "Ideation\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nideator\nturns rough ideas into candidate research questions\nidea brief, ranked question shortlist\n$clo-ideate\n\n\nideator_critic\npressure-tests early-stage ideas\npursue/refine/park/kill screen\nafter ideator"
+  },
+  {
+    "objectID": "agents.html#discovery",
+    "href": "agents.html#discovery",
+    "title": "Agents",
+    "section": "Discovery",
+    "text": "Discovery\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nlibrarian\nfinds and organizes literature\nliterature map, annotated bibliography\n$clo-discover lit\n\n\nlibrarian_critic\nchecks literature quality\ncoverage and recency critique\nafter librarian\n\n\nexplorer\nfinds and assesses data\ndata source list, feasibility memo\n$clo-discover data\n\n\nexplorer_critic\nchecks data fit\nmeasurement and validity critique\nafter explorer"
+  },
+  {
+    "objectID": "agents.html#strategy",
+    "href": "agents.html#strategy",
+    "title": "Agents",
+    "section": "Strategy",
+    "text": "Strategy\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstrategist\nproposes identification designs\nstrategy memo\n$clo-strategize\n\n\nstrategist_critic\npressure-tests the design\nstrategy review report\nafter strategist\n\n\ntheorist\ndrafts formal theory support\nassumptions, propositions, proof sketch\n$clo-strategize theory only\n\n\ntheorist_critic\naudits formal theory support\ntheory review report\n$clo-review --theory only"
+  },
+  {
+    "objectID": "agents.html#revision",
+    "href": "agents.html#revision",
+    "title": "Agents",
+    "section": "Revision",
+    "text": "Revision\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nrevision_planner\nturns real review reports into a strategic roadmap\ntask graph, roadmap, decision log\n$clo-revise roadmap\n\n\nrevision_planner_critic\nchecks roadmap completeness and sequencing\nrevision-planning critique\nafter revision_planner"
+  },
+  {
+    "objectID": "agents.html#execution",
+    "href": "agents.html#execution",
+    "title": "Agents",
+    "section": "Execution",
+    "text": "Execution\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\ndata_engineer\ncleans, wrangles, prepares figures\ncleaned data products, figure inputs\n$clo-analyze\n\n\ncoder\nimplements analysis scripts\nestimation pipeline, outputs\n$clo-analyze\n\n\ncoder_critic\nchecks execution quality\ncode review, strategy alignment\nafter coder or data_engineer"
+  },
+  {
+    "objectID": "agents.html#writing",
+    "href": "agents.html#writing",
+    "title": "Agents",
+    "section": "Writing",
+    "text": "Writing\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nwriter\ndrafts or revises sections\noutline, paragraph plan, draft\n$clo-write\n\n\nwriter_critic\ncritiques writing quality\nwriting review findings\nproofread or writing review\n\n\necon-intro-writing\ngoverns front-end structure\nintro architecture guidance\nintro, context, literature, opening stack"
+  },
+  {
+    "objectID": "agents.html#review-and-submission",
+    "href": "agents.html#review-and-submission",
+    "title": "Agents",
+    "section": "Review And Submission",
+    "text": "Review And Submission\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\neditor\ncalibrates journal posture\neditorial synthesis\npeer review mode\n\n\ndomain_referee\nchecks contribution and literature positioning\ndomain report\npeer review mode\n\n\nmethods_referee\nchecks design and inference\nmethods report\npeer review mode\n\n\nverifier\nchecks mechanics and package readiness\nverification pass or fail\nsubmission or compile checks"
+  },
+  {
+    "objectID": "agents.html#talks",
+    "href": "agents.html#talks",
+    "title": "Agents",
+    "section": "Talks",
+    "text": "Talks\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstoryteller\nbuilds presentations\ntalk deck\n$clo-talk\n\n\nstoryteller_critic\nchecks talk quality\ntalk review report\nafter storyteller"
+  },
+  {
+    "objectID": "agents.html#instead-of-calling-agents-directly-call-skills",
+    "href": "agents.html#instead-of-calling-agents-directly-call-skills",
+    "title": "Agents",
+    "section": "Instead of calling agents directly, call skills",
+    "text": "Instead of calling agents directly, call skills\n\n\n\n\n\n\n\nIf you want\nUse\n\n\n\n\nearly idea screening or question generation\n$clo-ideate\n\n\nliterature work\n$clo-discover lit\n\n\ndata search\n$clo-discover data\n\n\nresearch design\n$clo-strategize\n\n\nexplicit formal theory support\n$clo-strategize theory or $clo-review --theory\n\n\npost-submission revision planning\n$clo-revise roadmap\n\n\ncoding or output pipeline\n$clo-analyze\n\n\nwriting\n$clo-write\n\n\nreview\n$clo-review\n\n\nutilities and state management\n$clo-research-tools"
   },
   {
     "objectID": "customization.html",
@@ -280,227 +427,122 @@
     "text": "Project-specific but shared\n\nrepo-local overlays\nproject terminology rules\nteam conventions for directories and outputs"
   },
   {
-    "objectID": "architecture.html",
-    "href": "architecture.html",
-    "title": "Architecture",
+    "objectID": "reference.html",
+    "href": "reference.html",
+    "title": "Reference",
     "section": "",
-    "text": "Dittonomics has four layers that matter in practice.\n\n\n\n\n\n\n\n\nLayer\nWhere it lives\nWhat it does\n\n\n\n\nWebsite manual\nguide/ and docs/\nteaches humans how the system works\n\n\nPublic starter bundle\n.codex/ in this repo\ngives a generic forkable install\n\n\nLive local install\n~/.codex/, ~/.agents/skills, ~/voice/\nruns your actual working system\n\n\nProject repo overlay\nAGENTS.md, AGENTS.override.md, .agents/skills/\nmakes behavior repo-specific\n\n\n\nThe public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real."
+    "text": "If you are unsure where to start, use this quick map:\n\n\n\n\n\n\n\nIf you are here\nUse this\n\n\n\n\n“I only have a rough idea”\n$clo-ideate\n\n\n“I think the question is real, but I need the literature or data map”\n$clo-discover\n\n\n“I need the design before I code”\n$clo-strategize\n\n\n“I need the empirical pipeline and outputs”\n$clo-analyze\n\n\n“I need to draft or revise the paper”\n$clo-write\n\n\n“I need tough criticism”\n$clo-review\n\n\n“I need to audit a formal theory block”\n$clo-review --theory\n\n\n“I got referee reports back”\n$clo-revise roadmap\n\n\n“I need a local project dashboard”\n$clo-research-tools dashboard\n\n\n“I need a local HTML report from quality reports”\n$clo-research-tools html-report [type]\n\n\n“I need mechanical code checks”\n$clo-research-tools lint [file|dir]\n\n\n“I am stopping for the day”\n$clo-research-tools checkpoint\n\n\n“I am reopening the project”\n$clo-research-tools resume-context"
   },
   {
-    "objectID": "architecture.html#default-structure",
-    "href": "architecture.html#default-structure",
-    "title": "Architecture",
-    "section": "Default structure",
-    "text": "Default structure\n.codex-state/\n  checkpoints/\n    2026-04-22T18-30-00Z_end-of-day.json\n    2026-04-22T18-30-00Z_end-of-day.md\n  latest.json\n  latest.md\n  resume-context.md"
+    "objectID": "reference.html#start-the-day",
+    "href": "reference.html#start-the-day",
+    "title": "Reference",
+    "section": "Start the day",
+    "text": "Start the day\nUse $clo-research-tools resume-context for this repo."
   },
   {
-    "objectID": "architecture.html#why-both-json-and-markdown-exist",
-    "href": "architecture.html#why-both-json-and-markdown-exist",
-    "title": "Architecture",
-    "section": "Why both JSON and Markdown exist",
-    "text": "Why both JSON and Markdown exist\nThe JSON files are:\n\nstable\nmachine-readable\ngood for scripted recovery later\n\nThe Markdown files are:\n\neasy to read\neasy to share with a colleague\ngood for quick manual inspection"
+    "objectID": "reference.html#end-the-day",
+    "href": "reference.html#end-the-day",
+    "title": "Reference",
+    "section": "End the day",
+    "text": "End the day\nUse $clo-research-tools checkpoint for this repo."
   },
   {
-    "objectID": "architecture.html#recommended-policy",
-    "href": "architecture.html#recommended-policy",
-    "title": "Architecture",
-    "section": "Recommended policy",
-    "text": "Recommended policy\nFor working research repos:\n\nkeep .codex-state/ local\nadd it to .gitignore unless you explicitly want to share checkpoints\ntreat it as operational memory"
+    "objectID": "reference.html#after-a-risky-edit",
+    "href": "reference.html#after-a-risky-edit",
+    "title": "Reference",
+    "section": "After a risky edit",
+    "text": "After a risky edit\nUse $clo-research-tools verify-edit 03_code/src/estimate.py"
   },
   {
-    "objectID": "agents.html",
-    "href": "agents.html",
-    "title": "Agents",
-    "section": "",
-    "text": "This page is a lookup guide, not the best first page for learning the workflow. In most cases, start from a workflow skill and let Codex decide whether an agent should run."
-  },
-  {
-    "objectID": "agents.html#ideation",
-    "href": "agents.html#ideation",
-    "title": "Agents",
+    "objectID": "reference.html#ideation",
+    "href": "reference.html#ideation",
+    "title": "Reference",
     "section": "Ideation",
-    "text": "Ideation\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nideator\nturns rough ideas into candidate research questions\nidea brief, ranked question shortlist\n$clo-ideate\n\n\nideator_critic\npressure-tests early-stage ideas\npursue/refine/park/kill screen\nafter ideator"
+    "text": "Ideation\nUse $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it."
   },
   {
-    "objectID": "agents.html#discovery",
-    "href": "agents.html#discovery",
-    "title": "Agents",
+    "objectID": "reference.html#discovery",
+    "href": "reference.html#discovery",
+    "title": "Reference",
     "section": "Discovery",
-    "text": "Discovery\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nlibrarian\nfinds and organizes literature\nliterature map, annotated bibliography\n$clo-discover lit\n\n\nlibrarian_critic\nchecks literature quality\ncoverage and recency critique\nafter librarian\n\n\nexplorer\nfinds and assesses data\ndata source list, feasibility memo\n$clo-discover data\n\n\nexplorer_critic\nchecks data fit\nmeasurement and validity critique\nafter explorer"
+    "text": "Discovery\nUse $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving."
   },
   {
-    "objectID": "agents.html#strategy",
-    "href": "agents.html#strategy",
-    "title": "Agents",
+    "objectID": "reference.html#strategy",
+    "href": "reference.html#strategy",
+    "title": "Reference",
     "section": "Strategy",
-    "text": "Strategy\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstrategist\nproposes identification designs\nstrategy memo\n$clo-strategize\n\n\nstrategist_critic\npressure-tests the design\nstrategy review report\nafter strategist"
+    "text": "Strategy\nUse $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan."
   },
   {
-    "objectID": "agents.html#revision",
-    "href": "agents.html#revision",
-    "title": "Agents",
-    "section": "Revision",
-    "text": "Revision\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nrevision_planner\nturns real review reports into a strategic roadmap\ntask graph, roadmap, decision log\n$clo-revise roadmap\n\n\nrevision_planner_critic\nchecks roadmap completeness and sequencing\nrevision-planning critique\nafter revision_planner"
+    "objectID": "reference.html#theory",
+    "href": "reference.html#theory",
+    "title": "Reference",
+    "section": "Theory",
+    "text": "Theory\nUse $clo-strategize theory on [formal section or result]. Draft the assumptions, proposition, proof sketch, and unresolved proof obligations.\nUse $clo-review --theory [target]. Audit the proof logic, assumptions, notation, and calibration."
   },
   {
-    "objectID": "agents.html#execution",
-    "href": "agents.html#execution",
-    "title": "Agents",
-    "section": "Execution",
-    "text": "Execution\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\ndata_engineer\ncleans, wrangles, prepares figures\ncleaned data products, figure inputs\n$clo-analyze\n\n\ncoder\nimplements analysis scripts\nestimation pipeline, outputs\n$clo-analyze\n\n\ncoder_critic\nchecks execution quality\ncode review, strategy alignment\nafter coder or data_engineer"
-  },
-  {
-    "objectID": "agents.html#writing",
-    "href": "agents.html#writing",
-    "title": "Agents",
+    "objectID": "reference.html#writing",
+    "href": "reference.html#writing",
+    "title": "Reference",
     "section": "Writing",
-    "text": "Writing\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nwriter\ndrafts or revises sections\noutline, paragraph plan, draft\n$clo-write\n\n\nwriter_critic\ncritiques writing quality\nwriting review findings\nproofread or writing review\n\n\necon-intro-writing\ngoverns front-end structure\nintro architecture guidance\nintro, context, literature, opening stack"
+    "text": "Writing\nUse $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode."
   },
   {
-    "objectID": "agents.html#review-and-submission",
-    "href": "agents.html#review-and-submission",
-    "title": "Agents",
-    "section": "Review And Submission",
-    "text": "Review And Submission\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\neditor\ncalibrates journal posture\neditorial synthesis\npeer review mode\n\n\ndomain_referee\nchecks contribution and literature positioning\ndomain report\npeer review mode\n\n\nmethods_referee\nchecks design and inference\nmethods report\npeer review mode\n\n\nverifier\nchecks mechanics and package readiness\nverification pass or fail\nsubmission or compile checks"
+    "objectID": "reference.html#review",
+    "href": "reference.html#review",
+    "title": "Reference",
+    "section": "Review",
+    "text": "Review\nUse $clo-review on the latest draft and give findings first."
   },
   {
-    "objectID": "agents.html#talks",
-    "href": "agents.html#talks",
-    "title": "Agents",
-    "section": "Talks",
-    "text": "Talks\n\n\n\n\n\n\n\n\n\nAgent\nRole\nTypical output\nWhen it runs\n\n\n\n\nstoryteller\nbuilds presentations\ntalk deck\n$clo-talk\n\n\nstoryteller_critic\nchecks talk quality\ntalk review report\nafter storyteller"
+    "objectID": "reference.html#revision-roadmap",
+    "href": "reference.html#revision-roadmap",
+    "title": "Reference",
+    "section": "Revision Roadmap",
+    "text": "Revision Roadmap\nUse $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks."
   },
   {
-    "objectID": "agents.html#instead-of-calling-agents-directly-call-skills",
-    "href": "agents.html#instead-of-calling-agents-directly-call-skills",
-    "title": "Agents",
-    "section": "Instead of calling agents directly, call skills",
-    "text": "Instead of calling agents directly, call skills\n\n\n\nIf you want\nUse\n\n\n\n\nearly idea screening or question generation\n$clo-ideate\n\n\nliterature work\n$clo-discover lit\n\n\ndata search\n$clo-discover data\n\n\nresearch design\n$clo-strategize\n\n\npost-submission revision planning\n$clo-revise roadmap\n\n\ncoding or output pipeline\n$clo-analyze\n\n\nwriting\n$clo-write\n\n\nreview\n$clo-review\n\n\nutilities and state management\n$clo-research-tools"
+    "objectID": "reference.html#revision-validation",
+    "href": "reference.html#revision-validation",
+    "title": "Reference",
+    "section": "Revision Validation",
+    "text": "Revision Validation\nUse $clo-revise validate [revision_task_graph.json]"
   },
   {
-    "objectID": "user-guide.html",
-    "href": "user-guide.html",
-    "title": "User Guide",
-    "section": "",
-    "text": "This page is the real tutorial for the system. If someone on the team asks how to use Dittonomics properly, this is the page to send first."
+    "objectID": "reference.html#revision-execution",
+    "href": "reference.html#revision-execution",
+    "title": "Reference",
+    "section": "Revision Execution",
+    "text": "Revision Execution\nUse $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review."
   },
   {
-    "objectID": "user-guide.html#morning-resume-cleanly",
-    "href": "user-guide.html#morning-resume-cleanly",
-    "title": "User Guide",
-    "section": "Morning: resume cleanly",
-    "text": "Morning: resume cleanly\nStart with:\nUse $clo-research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.\nWhat this is meant to do:\n\nread the latest checkpoint in .codex-state/\ncompare it to current git state\nremind you what mattered yesterday\nsuggest the next action instead of making you rebuild context manually"
+    "objectID": "reference.html#end-of-day",
+    "href": "reference.html#end-of-day",
+    "title": "Reference",
+    "section": "End-of-day",
+    "text": "End-of-day\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step."
   },
   {
-    "objectID": "user-guide.html#during-the-day-use-the-workflow-skills",
-    "href": "user-guide.html#during-the-day-use-the-workflow-skills",
-    "title": "User Guide",
-    "section": "During the day: use the workflow skills",
-    "text": "During the day: use the workflow skills\nUse the skill that matches the real task.\nThe easiest rule is:\n\nif the question is still fuzzy, go left in the pipeline and use ideation\nif you are already coding, writing, or revising, do not jump backward unless a real flaw forces it\nif reports arrive from a journal, stop ad hoc edits and move into revision-roadmap mode first\n\n\nIdeation\nUse this before discovery when the project is still just:\n\na topic\na cool dataset\na mechanism hunch\na policy area without a sharp question yet\n\nUse $clo-ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.\nUse $clo-ideate rq from this dataset idea and give me the best candidate empirical questions.\n\n\nDiscovery\nUse $clo-discover lit on this topic and build the literature map first.\nUse $clo-discover data and assess which datasets can support this question.\n\n\nStrategy\nUse $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.\n\n\nAnalysis\nUse $clo-analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.\n\n\nWriting\nUse $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.\nUse $clo-write results and narrate the main tables without overstating causality.\n\n\nReview\nUse $clo-review on this draft and give me the highest-risk findings first.\n\n\nRevision\nUse this when real editor or referee reports already exist.\nUse $clo-revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.\nUse $clo-revise validate quality_reports/revision_tasks_rr1.json\nUse $clo-revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.\nUse $clo-revise respond on these reports and the revised draft, using the response matrix and decision log.\n\n\nTalks and submission\nUse $clo-talk seminar to build the deck from the current paper.\nUse $clo-submit and check whether this package is actually submission-ready."
+    "objectID": "reference.html#dashboard-and-html-reports",
+    "href": "reference.html#dashboard-and-html-reports",
+    "title": "Reference",
+    "section": "Dashboard And HTML Reports",
+    "text": "Dashboard And HTML Reports\nUse $clo-research-tools dashboard for this repo.\nUse $clo-research-tools html-report peer-review for this repo."
   },
   {
-    "objectID": "user-guide.html#end-of-day-checkpoint-intentionally",
-    "href": "user-guide.html#end-of-day-checkpoint-intentionally",
-    "title": "User Guide",
-    "section": "End of day: checkpoint intentionally",
-    "text": "End of day: checkpoint intentionally\nUse:\nUse $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.\nThis is the recommended end-of-day ritual."
+    "objectID": "reference.html#lint",
+    "href": "reference.html#lint",
+    "title": "Reference",
+    "section": "Lint",
+    "text": "Lint\nUse $clo-research-tools lint 03_code/src."
   },
   {
-    "objectID": "user-guide.html#explicit-style",
-    "href": "user-guide.html#explicit-style",
-    "title": "User Guide",
-    "section": "Explicit style",
-    "text": "Explicit style\nBest when:\n\nyou want predictable routing\nyou are teaching a colleague\nyou want the website or starter kit to stay easy to follow\n\nExample:\nUse $clo-review --peer on the latest draft."
-  },
-  {
-    "objectID": "user-guide.html#natural-language-style",
-    "href": "user-guide.html#natural-language-style",
-    "title": "User Guide",
-    "section": "Natural-language style",
-    "text": "Natural-language style\nBest when:\n\nthe task is obvious\nyou want a conversational workflow\nyou do not care about naming the exact skill\n\nExample:\nPlease review the current paper draft like a journal referee and focus on identification and contribution."
-  },
-  {
-    "objectID": "user-guide.html#recommendation",
-    "href": "user-guide.html#recommendation",
-    "title": "User Guide",
-    "section": "Recommendation",
-    "text": "Recommendation\nFor daily work with colleagues, prefer explicit $clo-* names.\nIt makes:\n\nthe system easier to learn\nthe website cheat sheet easier to use\nrouting behavior easier to remember"
-  },
-  {
-    "objectID": "user-guide.html#what-usually-activates-agents",
-    "href": "user-guide.html#what-usually-activates-agents",
-    "title": "User Guide",
-    "section": "What usually activates agents",
-    "text": "What usually activates agents\n\n\n\n\n\n\n\nWhat you ask for\nTypical system response\n\n\n\n\nidea screening or research-question generation\nideator then ideator_critic\n\n\nliterature review\nlibrarian then librarian_critic\n\n\ndata search\nexplorer then explorer_critic\n\n\nidentification design\nstrategist then strategist_critic\n\n\nstrategic revision roadmap\nrevision_planner then revision_planner_critic\n\n\ncoding or data pipeline work\ncoder or data_engineer, then coder_critic\n\n\npaper drafting\nwriter\n\n\nfront-end writing\necon-intro-writing governs structure, then writing follows that contract\n\n\nproofreading or writing review\nwriter_critic\n\n\npeer review\neditor, domain_referee, methods_referee"
-  },
-  {
-    "objectID": "user-guide.html#when-to-mention-an-agent-directly",
-    "href": "user-guide.html#when-to-mention-an-agent-directly",
-    "title": "User Guide",
-    "section": "When to mention an agent directly",
-    "text": "When to mention an agent directly\nDo it when you want to steer the posture.\nExamples:\nUse $clo-discover lit, but keep it repo-bibliography-first.\nUse $clo-review --peer and make the methods_referee especially tough on the event-study design.\nUsually you still call the skill, not the raw agent."
-  },
-  {
-    "objectID": "user-guide.html#checkpoint",
-    "href": "user-guide.html#checkpoint",
-    "title": "User Guide",
-    "section": "Checkpoint",
-    "text": "Checkpoint\nPurpose:\n\nsave the state of a workday\nleave structured notes for future you or a colleague\n\nDefault location:\n.codex-state/\nDefault files:\n.codex-state/\n  checkpoints/\n  latest.json\n  latest.md\nWhat gets stored:\n\ngoal\nsummary\nblockers\nopen questions\nimportant files\nnext step\ngit branch and recent commits\ndirectory snapshot"
-  },
-  {
-    "objectID": "user-guide.html#resume-context",
-    "href": "user-guide.html#resume-context",
-    "title": "User Guide",
-    "section": "Resume-context",
-    "text": "Resume-context\nPurpose:\n\npick back up quickly the next day\navoid spending the first 10 to 20 minutes reconstructing context\n\nTypical use:\nUse $clo-research-tools resume-context for this repo and tell me what I most likely need to do next."
-  },
-  {
-    "objectID": "user-guide.html#verify-edit",
-    "href": "user-guide.html#verify-edit",
-    "title": "User Guide",
-    "section": "Verify-edit",
-    "text": "Verify-edit\nPurpose:\n\nrun a manual post-edit safety pass\nuse this instead of hidden background lint hooks\n\nTypical use:\nUse $clo-research-tools verify-edit 03_code/src/estimate.py\nUse it after:\n\nediting Python, R, or Julia scripts\nchanging a manuscript build file\ntouching a critical config file"
-  },
-  {
-    "objectID": "user-guide.html#calling-the-wrong-layer",
-    "href": "user-guide.html#calling-the-wrong-layer",
-    "title": "User Guide",
-    "section": "Calling the wrong layer",
-    "text": "Calling the wrong layer\nDo not call writer directly unless you have a very specific reason. Usually call $clo-write."
-  },
-  {
-    "objectID": "user-guide.html#treating-voice-as-structure",
-    "href": "user-guide.html#treating-voice-as-structure",
-    "title": "User Guide",
-    "section": "Treating voice as structure",
-    "text": "Treating voice as structure\nVoice files shape prose. They do not replace identification logic, evidence discipline, or intro architecture."
-  },
-  {
-    "objectID": "user-guide.html#forgetting-the-checkpoint",
-    "href": "user-guide.html#forgetting-the-checkpoint",
-    "title": "User Guide",
-    "section": "Forgetting the checkpoint",
-    "text": "Forgetting the checkpoint\nIf you stop work without one, the next session becomes unnecessarily expensive."
-  },
-  {
-    "objectID": "user-guide.html#treating-references-as-sole-truth",
-    "href": "user-guide.html#treating-references-as-sole-truth",
-    "title": "User Guide",
-    "section": "Treating references as sole truth",
-    "text": "Treating references as sole truth\nRepo bibliography comes first. Current web or working-paper checks can supplement fast-moving empirical frontiers. Neither should be treated as the only truth source."
-  },
-  {
-    "objectID": "user-guide.html#skipping-ideation-when-the-question-is-still-vague",
-    "href": "user-guide.html#skipping-ideation-when-the-question-is-still-vague",
-    "title": "User Guide",
-    "section": "Skipping ideation when the question is still vague",
-    "text": "Skipping ideation when the question is still vague\nDiscovery is for formalizing and searching. Ideation is for deciding whether the question deserves that investment.\nIf the project still sounds more like a direction than a question, start with $clo-ideate."
-  },
-  {
-    "objectID": "user-guide.html#jumping-into-edits-before-building-the-revision-roadmap",
-    "href": "user-guide.html#jumping-into-edits-before-building-the-revision-roadmap",
-    "title": "User Guide",
-    "section": "Jumping into edits before building the revision roadmap",
-    "text": "Jumping into edits before building the revision roadmap\nWhen real referee reports arrive, start with $clo-revise roadmap before rewriting sections or running ad hoc analyses.\nThat step is what:\n\nextracts atomic reviewer tasks\nshows which requests actually block others\nflags disagreement and go/no-go decisions early"
+    "objectID": "reference.html#next-morning",
+    "href": "reference.html#next-morning",
+    "title": "Reference",
+    "section": "Next morning",
+    "text": "Next morning\nUse $clo-research-tools resume-context for this repo and tell me where we left off and what to do next."
   }
 ]

@@ -1,7 +1,7 @@
 ﻿interface:
   display_name: "Clo Talk"
   short_description: "Build and audit presentation decks"
-  default_prompt: "Use $clo-talk to create or audit a research talk from the current paper."
+  default_prompt: "Use $clo-talk to create or audit a research talk from the current paper. Beamer is the default; use Quarto only with --quarto."
 
 policy:
   allow_implicit_invocation: true

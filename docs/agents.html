@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-75b947e427c150a736c37f6b8875e6de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -310,6 +310,18 @@ ul.task-list li input[type="checkbox"] {
 <td>strategy review report</td>
 <td>after strategist</td>
 </tr>
+<tr class="odd">
+<td><code>theorist</code></td>
+<td>drafts formal theory support</td>
+<td>assumptions, propositions, proof sketch</td>
+<td><code>$clo-strategize theory</code> only</td>
+</tr>
+<tr class="even">
+<td><code>theorist_critic</code></td>
+<td>audits formal theory support</td>
+<td>theory review report</td>
+<td><code>$clo-review --theory</code> only</td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -508,6 +520,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="instead-of-calling-agents-directly-call-skills" class="level2">
 <h2 class="anchored" data-anchor-id="instead-of-calling-agents-directly-call-skills">Instead of calling agents directly, call skills</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>If you want</th>
@@ -532,22 +548,26 @@ ul.task-list li input[type="checkbox"] {
 <td><code>$clo-strategize</code></td>
 </tr>
 <tr class="odd">
+<td>explicit formal theory support</td>
+<td><code>$clo-strategize theory</code> or <code>$clo-review --theory</code></td>
+</tr>
+<tr class="even">
 <td>post-submission revision planning</td>
 <td><code>$clo-revise roadmap</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>coding or output pipeline</td>
 <td><code>$clo-analyze</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>writing</td>
 <td><code>$clo-write</code></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>review</td>
 <td><code>$clo-review</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>utilities and state management</td>
 <td><code>$clo-research-tools</code></td>
 </tr>
@@ -629,6 +649,16 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategist</code></td>
 <td>estimand and design</td>
 <td>code implementation</td>
+</tr>
+<tr class="even">
+<td><code>theorist</code></td>
+<td>explicit formal assumptions, propositions, proof sketches</td>
+<td>ordinary empirical strategy work</td>
+</tr>
+<tr class="odd">
+<td><code>theorist_critic</code></td>
+<td>explicit theory audit</td>
+<td>rewriting the proof directly</td>
 </tr>
 <tr class="even">
 <td><code>revision_planner</code></td>

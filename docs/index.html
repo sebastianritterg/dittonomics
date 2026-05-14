@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-75b947e427c150a736c37f6b8875e6de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -156,6 +156,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#first-prompts-to-try" id="toc-first-prompts-to-try" class="nav-link" data-scroll-target="#first-prompts-to-try">First Prompts To Try</a></li>
   <li><a href="#how-the-site-is-organized" id="toc-how-the-site-is-organized" class="nav-link" data-scroll-target="#how-the-site-is-organized">How The Site Is Organized</a></li>
   <li><a href="#what-dittonomics-builds-on" id="toc-what-dittonomics-builds-on" class="nav-link" data-scroll-target="#what-dittonomics-builds-on">What Dittonomics Builds On</a></li>
+  <li><a href="#latest-clo-author-sync" id="toc-latest-clo-author-sync" class="nav-link" data-scroll-target="#latest-clo-author-sync">Latest Clo-Author Sync</a></li>
   <li><a href="#public-home" id="toc-public-home" class="nav-link" data-scroll-target="#public-home">Public Home</a></li>
   <li><a href="#how-to-fork-dittonomics" id="toc-how-to-fork-dittonomics" class="nav-link" data-scroll-target="#how-to-fork-dittonomics">How To Fork Dittonomics</a></li>
   <li><a href="#public-repo-vs-local-install" id="toc-public-repo-vs-local-install" class="nav-link" data-scroll-target="#public-repo-vs-local-install">Public Repo vs Local Install</a></li>
@@ -232,7 +233,9 @@ ul.task-list li input[type="checkbox"] {
 <li>a forkable public <code>.codex/</code> starter bundle</li>
 <li>optional voice files for writing-sensitive workflows</li>
 <li>a strategic post-submission revision workflow with roadmap planning and DAG validation</li>
-<li>explicit maintenance tools such as <code>checkpoint</code>, <code>resume-context</code>, and <code>verify-edit</code></li>
+<li>explicit maintenance tools such as <code>checkpoint</code>, <code>resume-context</code>, <code>lint</code>, <code>verify-edit</code>, <code>dashboard</code>, and <code>html-report</code></li>
+<li>optional theory support when a project truly needs formal assumptions, propositions, or proof sketches</li>
+<li>Beamer-first talk creation, with Quarto RevealJS available only when explicitly requested</li>
 <li>a website manual and cheat sheet you can keep open while you work</li>
 </ul>
 </section>
@@ -412,6 +415,19 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/alejandroll10/idea-evaluation-pipeline">idea-evaluation-pipeline</a> for screening seed ideas and turning them into sharper research questions</li>
 </ul>
 <p>The Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages.</p>
+</section>
+<section id="latest-clo-author-sync" class="level2">
+<h2 class="anchored" data-anchor-id="latest-clo-author-sync">Latest Clo-Author Sync</h2>
+<p>The current Dittonomics starter selectively incorporates useful ideas from Clo-Author 26.05:</p>
+<ul>
+<li>project dashboards and local HTML reports through <code>$clo-research-tools</code></li>
+<li>advisory permission registry and lifecycle validation references</li>
+<li>explicit research-code linting instead of hidden post-edit hooks</li>
+<li>decision records for ideation, discovery, and strategy choices</li>
+<li>optional theory support through explicit theory mode</li>
+<li>richer skill folders with gotchas, templates, and config</li>
+</ul>
+<p>One upstream change is intentionally not adopted as the default: Dittonomics keeps Beamer-first talks because that is Sebastian’s preference. Quarto RevealJS remains available with <code>--quarto</code>.</p>
 </section>
 <section id="public-home" class="level2">
 <h2 class="anchored" data-anchor-id="public-home">Public Home</h2>

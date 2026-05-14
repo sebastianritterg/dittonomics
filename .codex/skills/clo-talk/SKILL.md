@@ -29,6 +29,8 @@ Adapt the Clo-Author workflow to Codex.
 
 Create, audit, or compile presentations (Beamer or Quarto RevealJS).
 
+Dittonomics default: Beamer. Upstream Clo-Author 26.05 moved Quarto-first, but this Codex setup intentionally keeps Beamer-first by Sebastian's preference. Use Quarto RevealJS only when `--quarto` is explicit.
+
 **Input:** `$ARGUMENTS` - mode and format/path.
 
 ---
@@ -73,7 +75,7 @@ The Storyteller follows these design principles:
 
 Compile with XeLaTeX (Beamer) or `quarto render` (Quarto).
 
-Save to `paper$clo-talks/[format]_talk.tex` (Beamer) or `paper/quarto/[format]_talk.qmd` (Quarto).
+Save to the repo-resolved talk folder, typically `paper/talks/[format]_talk.tex` (Beamer) or `paper/quarto/[format]_talk.qmd` (Quarto).
 
 **Step 3: Dispatch Storyteller-Critic**
 
@@ -123,7 +125,7 @@ Run visual quality checks:
 
 3-pass XeLaTeX compilation for Beamer:
 ```bash
-cd paper$clo-talks && TEXINPUTS=../preambles:$TEXINPUTS xelatex -interaction=nonstopmode [file]
+cd paper/talks && TEXINPUTS=../preambles:$TEXINPUTS xelatex -interaction=nonstopmode [file]
 ```
 
 For Quarto:
@@ -136,6 +138,7 @@ cd paper/quarto && quarto render [file]
 ## Principles
 
 - **Paper is authoritative.** Every claim must appear in the paper.
+- **Beamer-first.** Beamer is the default; Quarto RevealJS is opt-in with `--quarto`.
 - **Figures over tables.** Audiences absorb figures instantly. Put regression tables in backup slides for Q&A.
 - **Less is more.** Especially for short and lightning formats - ruthlessly cut.
 - **One idea per slide.** If you need a second point, make a second slide.

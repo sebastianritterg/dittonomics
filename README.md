@@ -21,6 +21,8 @@ The public repo keeps the upstream workflow architecture, but rewrites the activ
 - writing voice becomes an explicit optional layer instead of an undocumented personal habit
 - end-of-day state and next-day recovery now use explicit `checkpoint` and `resume-context` utilities instead of hidden session hooks
 - post-submission revision now includes a strategic roadmap layer inside `$clo-revise`, with task graphs, dependency validation, and execution blocks
+- Clo-Author 26.05 dashboard, lint, lifecycle, permission-registry, decision-record, and theory ideas are translated into explicit Codex utilities and references
+- talks remain Beamer-first by default, with Quarto RevealJS only when explicitly requested
 
 This repository is documentation-first, but it also includes a forkable `.codex/` starter layer. It explains the architecture, customization patterns, migration layer, optional voice setup, and ships a reusable Codex-facing template bundle.
 
@@ -59,6 +61,8 @@ The website is intended to stay open while you work. It now functions as:
 - R and Julia remain supported
 - repo-local rules beat generic defaults
 - voice is optional, explicit, and layered rather than hardcoded into every workflow
+- `econ-intro-writing`, abstract writing, and the private voice hierarchy remain protected parts of the writing stack
+- local dashboards and HTML reports are project artifacts, not replacements for the public manual website
 
 ## Forking This Repo
 

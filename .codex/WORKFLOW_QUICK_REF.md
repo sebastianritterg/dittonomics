@@ -5,6 +5,8 @@ Model: you direct, Codex orchestrates through skills and custom subagents.
 ## Main Pipeline
 
 ```text
+$clo-ideate -> idea brief + research question screen
+    ->
 $clo-discover interview -> research spec + domain profile
     ->
 $clo-discover lit -> literature synthesis
@@ -29,6 +31,7 @@ Enter at any stage. Use `$clo-new-project` when you want the full pipeline.
 - `$clo-new-project`
 - `$clo-discover`
 - `$clo-strategize`
+- `$clo-strategize theory` (explicit-only)
 - `$clo-analyze`
 - `$clo-write`
 - `$clo-review`
@@ -37,6 +40,14 @@ Enter at any stage. Use `$clo-new-project` when you want the full pipeline.
 - `$clo-submit`
 - `$clo-research-tools`
 
+Useful utilities:
+
+- `$clo-research-tools checkpoint`
+- `$clo-research-tools resume-context`
+- `$clo-research-tools lint`
+- `$clo-research-tools dashboard`
+- `$clo-research-tools html-report`
+
 ## Kernel Rules
 
 - the main Codex session is the orchestrator
@@ -44,6 +55,8 @@ Enter at any stage. Use `$clo-new-project` when you want the full pipeline.
 - creator agents write only to named targets
 - critics, referees, editor, and verifier return reports to the parent orchestrator
 - the parent orchestrator owns persistence unless it explicitly delegates a named write target
+- permission registry and lifecycle validation are advisory routing contracts
+- Beamer is the default talk format; Quarto requires `--quarto`
 
 ## Quality Gates
 
