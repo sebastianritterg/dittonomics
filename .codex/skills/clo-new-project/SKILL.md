@@ -23,6 +23,14 @@ Adapt the Clo-Author workflow to Codex.
 - Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
 - For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
 
+## Natural-Language Routing
+
+Use this skill when the user asks for an end-to-end research pipeline rather than a single phase.
+
+- `start a new project`, `new empirical project`, `take this idea through the pipeline`, `from idea to paper`, `set up a research project`, or `run clo-author on this topic` -> full orchestrated pipeline
+- `interactive start`, `interview me first`, or `help me scope a new project` -> begin with `clo-ideate session` or `clo-discover interview` depending on how fluid the idea is
+- if the user asks only for literature, data, strategy, analysis, writing, review, or submission, route to that narrower `clo-*` skill instead
+
 ## Source Workflow
 
 # New Project
@@ -85,41 +93,41 @@ Phase 6: Submission (depends on Phase 5, score >= 95)
    - Domain profile (`~/.codex/skills/clo-workflow/references/domain-profile.md `) - if still template
 
 3. **Run `$clo-discover lit`** with the research topic:
-   - Librarian collects literature
-   - librarian-critic reviews coverage
+   - `librarian` collects literature
+   - `librarian_critic` reviews coverage
    - Output: literature synthesis + BibTeX entries
 
 4. **Run `$clo-discover data`** to find datasets:
-   - Explorer searches for data sources
-   - explorer-critic assesses data quality
+   - `explorer` searches for data sources
+   - `explorer_critic` assesses data quality
 
 **Gate:** Research spec and literature review must exist before proceeding.
 
 ### Step 3: Strategy Phase
 
 5. **Run `$clo-strategize`** to design the empirical strategy:
-   - Strategist proposes identification strategy
-   - strategist-critic validates the design
+   - `strategist` proposes identification strategy
+   - `strategist_critic` validates the design
 
-**Gate:** Strategy memo must pass strategist-critic review (score >= 80).
+**Gate:** Strategy memo must pass `strategist_critic` review (score >= 80).
 
 ### Step 4: Execution Phase
 
 6. **Run `$clo-analyze`** to implement the strategy:
-   - Data-engineer cleans data and creates figures
-   - Coder writes analysis scripts
-   - coder-critic reviews code
+   - `data_engineer` cleans data and creates figures
+   - `coder` writes analysis scripts
+   - `coder_critic` reviews code
 
 7. **Run `$clo-write`** to draft the paper:
-   - Writer drafts sections
+   - `writer` drafts sections
    - Humanizer pass strips AI patterns
 
-**Gate:** Code must pass coder-critic review. Paper sections must exist.
+**Gate:** Code must pass `coder_critic` review. Paper sections must exist.
 
 ### Step 5: Peer Review Phase
 
 8. **Run `$clo-review --all`** for comprehensive review:
-   - strategist-critic + coder-critic + writer-critic + Verifier in parallel
+   - `strategist_critic` + `coder_critic` + `writer_critic` + `verifier` in parallel
    - Weighted aggregate score computed
 
 9. **Run `$clo-review --peer`** for simulated peer review:

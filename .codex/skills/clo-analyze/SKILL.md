@@ -23,11 +23,30 @@ Adapt the Clo-Author workflow to Codex.
 - Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
 - For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
 
+## Delegation Rule
+
+Invoking this skill through `$clo-analyze` or a natural-language analysis request counts as explicit permission to dispatch the named agents for the resolved work.
+
+- data cleaning, construction, codebooks, and descriptive figures route to `data_engineer`
+- estimation scripts, tables, robustness checks, and results summaries route to `coder`
+- review of produced or touched code routes to `coder_critic`
+- if subagent dispatch is unavailable, fall back to the main session only with an explicit note
+
+## Natural-Language Routing
+
+Resolve ordinary analysis requests before asking for clarification:
+
+- `clean the data`, `construct variables`, `make a codebook`, `summary stats`, or `descriptive figure` -> `data_engineer`, then `coder_critic` when code is produced
+- `run the analysis`, `estimate the regression`, `implement the spec`, `make table [N]`, `produce figure [N]`, `robustness check`, or `event study` -> `coder -> coder_critic`
+- `reproduce tables`, `replicate results`, `rerun scripts`, or `verify outputs match paper` -> `coder` plus `verifier` or route to `clo-submit audit` when this is a submission package
+- `dual language`, `cross-language`, `R and Python`, `Python and Stata`, or `two implementations` -> `--dual`
+- `code check`, `review script`, or `lint this analysis` -> prefer `clo-review --code` for judgment review or `clo-research-tools lint` for mechanical lint only
+
 ## Source Workflow
 
 # Analyze
 
-Run end-to-end data analysis by dispatching the **Coder** (analysis), **Data-engineer** (cleaning + figures), and **coder-critic** (code review).
+Run end-to-end data analysis by dispatching `coder` (analysis), `data_engineer` (cleaning + figures), and `coder_critic` (code review).
 
 **Input:** `$ARGUMENTS` - dataset path or description of analysis goal.
 
@@ -42,7 +61,7 @@ Run end-to-end data analysis by dispatching the **Coder** (analysis), **Data-eng
 4. Scan existing scripts in `scripts/` for project patterns
 
 ### Step 2: Data Preparation (if needed)
-If raw data provided, dispatch **Data-engineer** first:
+If raw data is provided, dispatch `data_engineer` first:
 - Clean and wrangle raw data
 - Handle missing values, construct variables per strategy memo
 - Generate summary statistics table
@@ -50,7 +69,7 @@ If raw data provided, dispatch **Data-engineer** first:
 - Save cleaned data, codebook, and figures
 
 ### Step 3: Main Analysis
-Dispatch **Coder** agent:
+Dispatch `coder` agent:
 - Stage 0: Data loading (from cleaned data or raw)
 - Stage 1: Main specification (from strategy memo or user description)
 - Stage 2: Robustness checks
@@ -58,7 +77,7 @@ Dispatch **Coder** agent:
 - Produce `results_summary.md` with all estimates, SEs, and key statistics (MANDATORY)
 - Save scripts to `scripts/python/` by default, `scripts/stata/` when the repo centers Stata, and `scripts/R/` or `scripts/julia/` only when explicitly chosen
 
-The Coder follows these principles:
+The `coder` follows these principles:
 - **Script structure:** Use the Script Structure Template below
 - **Default stack:** Python first (`pandas`, `statsmodels` or `linearmodels`, `matplotlib` or `seaborn`), then Stata when the repo centers Stata. R and Julia remain supported when explicitly requested.
 - **Standard errors:** Cluster at appropriate level (match treatment assignment)
@@ -67,7 +86,7 @@ The Coder follows these principles:
 - **Persist reusable intermediates.** Every computed object should be saved in a language-appropriate serialized format for downstream use by the writer and other agents.
 
 ### Step 4: Code Review
-Dispatch **coder-critic** agent - run the full 12-category checklist:
+Dispatch `coder_critic` agent - run the full 12-category checklist:
 
 **Strategic (categories 1-3):**
 1. **Code-strategy alignment** - Does the code implement the strategy memo faithfully? Correct dependent variable, treatment, controls, fixed effects, sample restrictions?
@@ -89,15 +108,15 @@ If strategy memo exists, cross-reference code against stated design.
 Save report to `quality_reports/[script]_code_review.md`.
 
 ### Step 5: Fix Issues
-If coder-critic finds Critical or Major issues:
-1. Re-dispatch Coder with specific fixes (max 3 rounds)
-2. Re-run coder-critic to verify fixes
+If `coder_critic` finds Critical or Major issues:
+1. Re-dispatch `coder` with specific fixes (max 3 rounds)
+2. Re-run `coder_critic` to verify fixes
 
 ### Step 6: Present Results
 1. **Results summary** - key estimates with SEs and interpretation (from `results_summary.md`)
 2. **Scripts created** - paths and descriptions
 3. **Output files** - tables in `paper/tables/`, figures in `paper/figures/`
-4. **Code review score** - from coder-critic
+4. **Code review score** - from `coder_critic`
 5. **TODO items** - missing data, additional specifications needed
 
 ---
@@ -144,9 +163,9 @@ This file is the primary handoff artifact to the writer agent. Without it, the w
 
 When `--dual [lang1,lang2]` is provided (e.g., `--dual r,python`, `--dual r,stata`):
 
-1. **Data-engineer** runs once - language-agnostic cleaning, saves to `data/cleaned/`
-2. **Two Coder agents** dispatched in parallel - same strategy memo, different languages
-3. **coder-critic** reviews each implementation independently (max 3 rounds each)
+1. `data_engineer` runs once - language-agnostic cleaning, saves to `data/cleaned/`
+2. Two `coder` agents dispatch in parallel - same strategy memo, different languages
+3. `coder_critic` reviews each implementation independently (max 3 rounds each)
 4. **Comparison step** - verify numerical alignment per `~/.codex/skills/clo-workflow/references/domain-profile.md ` tolerances:
    - Point estimates must match within declared tolerance
    - Standard errors must match within declared tolerance
@@ -165,7 +184,7 @@ Inspired by Scott Cunningham's replication methodology: **if two independent imp
 - **Sample sizes:** Must match exactly. Any discrepancy indicates a data handling difference that must be resolved.
 
 **When results diverge beyond tolerance:**
-1. Both Coder agents are re-dispatched to investigate
+1. Both `coder` agents are re-dispatched to investigate
 2. Check: different default options (e.g., na.rm handling, convergence criteria)
 3. Check: different variable coding or factor ordering
 4. The comparison report includes a side-by-side table of all estimates
@@ -177,7 +196,7 @@ Inspired by Scott Cunningham's replication methodology: **if two independent imp
 - **Reproduce, don't guess.** If the user specifies a regression, run exactly that.
 - **Show your work.** Print summary statistics before jumping to regressions.
 - **Strategy alignment.** If strategy memo exists, code MUST implement it faithfully.
-- **Worker-critic pairing.** Coder creates, coder-critic critiques. Never skip review.
+- **Worker-critic pairing.** `coder` creates, `coder_critic` critiques. Never skip review.
 - **saveRDS everything.** Every computed object gets saved via `saveRDS()` for downstream use - model fits, cleaned data frames, summary statistics, not just final tables.
 - **Publication-ready output.** Tables and figures directly includable in the paper.
 - **Cross-language convergence.** When `--dual` is used, divergence is a bug until proven otherwise.

@@ -11,7 +11,7 @@ subtitle: "Sebastian Ritter's public operating manual for a Ditto-style Codex ec
 ::: {.column .ditto-hero-copy width="70%"}
 Dittonomics is my public operating manual for doing economics research with Codex.
 
-The Ditto idea is intentional: this system keeps copying useful traits from upstream workflows, then reorganizes them into one portable setup that I can keep extending over time and that colleagues can learn without digging through every starter file. The website is the public manual. The repo is the starter kit. Your local install is the live working system.
+The Ditto idea is intentional: the system keeps absorbing useful research-workflow traits, then reorganizes them into one portable Codex setup. In practice, Dittonomics is a set of natural-language skills, specialist agents, writing and review rules, and maintenance tools that help move an economics project from a vague idea to analysis, paper, revision, submission, and talks. The website is the public manual. The repo is the starter kit. Your local install is the live working system.
 :::
 :::
 
@@ -38,13 +38,14 @@ This site is written for two audiences:
 
 ## What Dittonomics Gives You
 
-- an explicit ideation phase before discovery
-- a research pipeline with explicit phases
-- worker-critic separation across the stack
-- Codex-native skills instead of Claude slash-command assumptions
-- a forkable public `.codex/` starter bundle
-- optional voice files for writing-sensitive workflows
-- a strategic post-submission revision workflow with roadmap planning and DAG validation
+- natural-language routing across the `clo-*` skills, so ordinary requests like "check section 5" resolve to the right workflow
+- explicit research phases: ideation, discovery, strategy, analysis, writing, review, revision, submission, and talks
+- worker-critic separation across the stack, with creators producing artifacts and critics/referees/verifiers evaluating them
+- callable specialist agents such as `writer`, `writer_critic`, `strategist`, `strategist_critic`, `coder`, `coder_critic`, `librarian`, `explorer`, `editor`, and `verifier`
+- `$clo-review` routes writing checks to `writer_critic`, methods checks to `strategist_critic`, code checks to `coder_critic`, and full paper checks to the critic/verifier stack
+- a forkable public `.codex/` starter bundle plus a user-level install that can be mirrored into `~/.codex/`
+- optional voice files for writing-sensitive workflows, kept private in `~/voice/`
+- strategic post-submission revision with roadmap planning, task graphs, response matrices, and DAG validation
 - explicit maintenance tools such as `checkpoint`, `resume-context`, `lint`, `verify-edit`, `dashboard`, and `html-report`
 - optional theory support when a project truly needs formal assumptions, propositions, or proof sketches
 - Beamer-first talk creation, with Quarto RevealJS available only when explicitly requested
@@ -198,7 +199,7 @@ Morning:
 
 During work:
 
-- call the workflow skill that matches the task
+- say the task naturally or call the workflow skill directly; the system should normalize the request to the right `clo-*` mode
 
 End of day:
 
@@ -207,31 +208,35 @@ End of day:
 ## First Prompts To Try
 
 ```text
-Use $clo-ideate session on this policy idea and turn it into ranked research questions before discovery.
+Help me shape this policy idea into ranked research questions before discovery.
 ```
 
 ```text
-Use $clo-discover lit to map the literature on teacher value-added and school assignment.
+Map the literature on teacher value-added and school assignment.
 ```
 
 ```text
-Use $clo-strategize on this research question and propose the main design plus the referee-proof robustness plan.
+Design the identification strategy and referee-proof robustness plan for this research question.
 ```
 
 ```text
-Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.
+Revise the introduction using the current draft for calibration, but keep econ-intro-writing in charge of structure.
 ```
 
 ```text
-Use $clo-review --peer on the current draft and tell me the highest-risk issues first.
+Check section 5 for writing, claims-evidence alignment, and causal-language problems.
 ```
 
 ```text
-Use $clo-revise roadmap on these referee reports and the submitted paper. Build the execution blocks before we start editing.
+Run a peer review on the current draft and tell me the highest-risk issues first.
 ```
 
 ```text
-Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step.
+Turn these referee reports into a revision roadmap and execution blocks before we start editing.
+```
+
+```text
+Checkpoint this repo. Capture today's goal, what we finished, blockers, important files, and the best next step.
 ```
 
 ## How The Site Is Organized
@@ -247,7 +252,7 @@ Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we 
 
 Dittonomics is a remix, not a one-source clone.
 
-The current public system draws especially from:
+The system draws especially from:
 
 - [Clo-Author](https://hsantanna.org/clo-author/) for the overall research-workflow architecture
 - [my_claude_skills](https://github.com/dariia-m/my_claude_skills) for explicit skill patterns and reusable operational helpers
@@ -257,19 +262,6 @@ The current public system draws especially from:
 - [idea-evaluation-pipeline](https://github.com/alejandroll10/idea-evaluation-pipeline) for screening seed ideas and turning them into sharper research questions
 
 The Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages.
-
-## Latest Clo-Author Sync
-
-The current Dittonomics starter selectively incorporates useful ideas from Clo-Author 26.05:
-
-- project dashboards and local HTML reports through `$clo-research-tools`
-- advisory permission registry and lifecycle validation references
-- explicit research-code linting instead of hidden post-edit hooks
-- decision records for ideation, discovery, and strategy choices
-- optional theory support through explicit theory mode
-- richer skill folders with gotchas, templates, and config
-
-One upstream change is intentionally not adopted as the default: Dittonomics keeps Beamer-first talks because that is Sebastian's preference. Quarto RevealJS remains available with `--quarto`.
 
 ## Public Home
 

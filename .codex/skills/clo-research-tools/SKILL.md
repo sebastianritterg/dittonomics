@@ -35,6 +35,21 @@ It provides lightweight support commands such as:
 - `learn`
 - `upgrade`
 
+## Natural-Language Routing
+
+Resolve ordinary maintenance requests before asking for clarification:
+
+- `save where we are`, `checkpoint this`, `end-of-day snapshot`, or `handoff note` -> `checkpoint`
+- `where were we`, `resume`, `reconstruct context`, or `catch me up` -> `resume-context`
+- `compile the paper`, `build PDF`, `render TeX`, or `does this compile` -> `compile`
+- `validate bibliography`, `check citations`, `missing bib entries`, or `unused cites` -> `validate-bib`
+- `lint code`, `mechanical code check`, `hardcoded paths`, or `setwd check` -> `lint`
+- `make dashboard`, `project dashboard`, or `HTML overview` -> `dashboard`
+- `HTML report`, `pretty report`, or `convert quality report` -> `html-report`
+- `verify edits`, `post-edit check`, or `did this edit break anything` -> `verify-edit`
+- `upgrade Clo`, `update workflow`, or `sync starter kit` -> `upgrade`
+- `commit this`, `make a commit`, or `prepare git commit` -> `commit`
+
 ## Subcommand Notes
 
 - `checkpoint`

@@ -43,6 +43,8 @@ $clo-write [section-or-mode] [--mode draft|revise|humanize|style-guide] [--desig
 
 Natural-language equivalents are also valid in the parent task packet:
 
+- `write/draft/revise/tighten/humanize/polish [section name or section number]`
+- `work on section [N]`, `fix the intro`, `rewrite the conclusion`, `make the results clearer`
 - `use joint-paper mode`
 - `tighten toward JDE benchmark`
 - `use the current draft state as calibration`
@@ -69,13 +71,19 @@ Supported sections and special modes:
 Accepted aliases:
 
 - `intro`, `introduction` -> `intro`
+- `front end`, `opening`, `opening stack`, `motivation`, `contribution paragraph` -> `intro`
 - `context`, `background` -> `context`
 - `literature`, `lit review`, `literature review` -> `literature`
+- `section 2` with background/context wording -> `context`; otherwise resolve by manuscript structure
+- `section 5`, `section VI`, numbered sections, or named manuscript headings -> resolve to the matching live manuscript section before dispatch
 - `strategy`, `empirical strategy`, `methods` -> `strategy`
 - `results`, `main results` -> `results`
 - `mechanisms`, `channels` -> `mechanisms`
 - `robustness`, `checks` -> `robustness`
 - `conclusion`, `closing` -> `conclusion`
+- `rewrite`, `revise`, `tighten`, `edit` -> `--mode revise`
+- `draft`, `write`, `create` -> `--mode draft`
+- `humanize`, `de-AI`, `make it sound like me` -> `humanize`
 - `style guide`, `personal style guide`, `voice guide` -> `style-guide`
 
 ## Routing

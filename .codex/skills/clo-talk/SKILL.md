@@ -23,6 +23,17 @@ Adapt the Clo-Author workflow to Codex.
 - Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
 - For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
 
+## Natural-Language Routing
+
+Resolve ordinary talk requests before asking for clarification:
+
+- `make slides`, `build a deck`, `create a talk`, `seminar slides`, `job market talk`, `short talk`, `lightning talk`, or `conference presentation` -> `create`
+- `check slides`, `audit deck`, `review talk`, `visual audit`, `overflow`, or `does this compile` -> `audit` when the artifact already exists
+- `compile slides`, `render talk`, `build PDF`, or `quarto render` -> `compile`
+- `Quarto`, `RevealJS`, or `web slides` -> use Quarto only when explicitly requested; otherwise Beamer remains default
+
+If the user asks for slides but gives no format, infer from duration when stated; otherwise ask one short format question.
+
 ## Source Workflow
 
 # Talk
@@ -42,7 +53,7 @@ Dittonomics default: Beamer. Upstream Clo-Author 26.05 moved Quarto-first, but t
 
 Generate a presentation from the paper.
 
-**Agents:** Storyteller (creator) -> storyteller-critic (reviewer)
+**Agents:** `storyteller` (creator) -> `storyteller_critic` (reviewer)
 
 #### Format Constraints
 
@@ -62,11 +73,11 @@ Generate a presentation from the paper.
 - **Engine**: Beamer (default) or Quarto RevealJS (`--quarto`)
 - If no format specified, ask the user.
 
-**Step 2: Dispatch Storyteller**
+**Step 2: Dispatch `storyteller`**
 
 Read the paper and extract: research question, identification strategy, main result, secondary results, robustness checks, key figures/tables, institutional background. Design narrative arc for the chosen format. Build the slide file with shared preamble if available.
 
-The Storyteller follows these design principles:
+The `storyteller` follows these design principles:
 - **One idea per slide** - never cram two concepts onto one frame
 - **Figures over tables; tables in backup** - audiences absorb figures instantly; regression tables belong in backup slides where referees can inspect them during Q&A
 - **Build tension** - motivation -> question -> method -> findings -> implications
@@ -77,9 +88,9 @@ Compile with XeLaTeX (Beamer) or `quarto render` (Quarto).
 
 Save to the repo-resolved talk folder, typically `paper/talks/[format]_talk.tex` (Beamer) or `paper/quarto/[format]_talk.qmd` (Quarto).
 
-**Step 3: Dispatch Storyteller-Critic**
+**Step 3: Dispatch `storyteller_critic`**
 
-After the Storyteller returns, dispatch the storyteller-critic to review across 5 categories:
+After `storyteller` returns, dispatch `storyteller_critic` to review across 5 categories:
 
 | Category | What It Checks |
 |----------|---------------|
@@ -93,16 +104,16 @@ Score as advisory (non-blocking). Save report to `quality_reports/[format]_talk_
 
 **Step 4: Fix Critical Issues**
 
-If the storyteller-critic finds Critical issues (compilation failures, content not in paper):
-1. Re-dispatch Storyteller with specific fixes (max 3 rounds per three-strikes rule)
-2. Re-run storyteller-critic to verify
+If `storyteller_critic` finds Critical issues (compilation failures, content not in paper):
+1. Re-dispatch `storyteller` with specific fixes (max 3 rounds per three-strikes rule)
+2. Re-run `storyteller_critic` to verify
 
 **Step 5: Present Results**
 
 Report to the user:
 1. Generated file path
 2. Slide count and format compliance
-3. Storyteller-critic score (advisory, non-blocking)
+3. `storyteller_critic` score (advisory, non-blocking)
 4. TODO items (missing figures, tables not yet generated)
 
 ---
@@ -144,7 +155,7 @@ cd paper/quarto && quarto render [file]
 - **One idea per slide.** If you need a second point, make a second slide.
 - **Audience calibration.** Job market = demonstrate rigor and command of the literature. Seminar = sell the interesting result. Short = method and key finding. Lightning = sell the idea in one breath.
 - **Advisory scoring.** Talk scores don't block commits.
-- **Worker-critic pairing.** Storyteller creates, storyteller-critic critiques. Never skip the review.
+- **Worker-critic pairing.** `storyteller` creates, `storyteller_critic` critiques. Never skip the review.
 
 
 

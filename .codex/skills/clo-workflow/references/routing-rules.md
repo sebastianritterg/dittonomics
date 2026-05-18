@@ -23,6 +23,40 @@ Skills should resolve intent in this order:
 
 Natural-language routing is part of the contract, not a convenience feature.
 
+## Natural-Language Contract
+
+Every `clo-*` skill must treat ordinary user phrasing as a routable command. Resolve the intended phase, mode, target, and agent route before deciding whether to ask a question.
+
+- Generic verbs such as `check`, `look at`, `review`, `fix`, `draft`, `write`, `run`, `build`, `prepare`, `summarize`, `audit`, `validate`, `make`, and `help with` are valid intent signals when paired with a research artifact.
+- Artifact words disambiguate the mode: `section`, `paragraph`, `intro`, `conclusion`, or `prose` usually mean writing or proofread; `identification`, `strategy`, `estimand`, or `assumptions` mean strategy/methods; `script`, `regression`, `table`, `figure`, or `data` mean analysis/code; `journal`, `submission`, `replication package`, or `cover letter` mean submission; `slides`, `seminar`, `talk`, or `deck` mean talk.
+- If a request names a specific Clo skill and uses natural language after it, stay inside that skill and normalize the phrase to that skill's closest canonical mode.
+- If no skill is named, choose the closest `clo-*` phase from the artifact and verb. Do not require slash-command syntax.
+- Prefer a reasonable route over a clarification question when the target and likely artifact type are clear.
+- Ask one short clarification question only when two materially different routes would cause different agents to edit or review different artifacts.
+
+## Natural-Language Phase Matrix
+
+| User phrasing | Canonical route |
+|---|---|
+| "I have a vague idea", "help me shape this topic", "is this idea worth pursuing" | `clo-ideate session` or `clo-ideate evaluate` |
+| "turn this into a research question", "give me candidate questions" | `clo-ideate rq` |
+| "find the literature", "map related papers", "what papers am I missing" | `clo-discover lit` |
+| "find data", "what dataset could identify this", "assess data feasibility" | `clo-discover data` |
+| "interview me", "help formalize the project", "build a research spec" | `clo-discover interview` |
+| "design the empirical strategy", "what is the identification", "choose estimand" | `clo-strategize strategy` |
+| "write a PAP", "pre-analysis plan", "registration plan" | `clo-strategize pap` |
+| "formal model", "proposition", "proof", "theory section" | `clo-strategize theory` only when explicitly theory-related |
+| "run the analysis", "make the table", "clean the data", "estimate this regression" | `clo-analyze` |
+| "write the intro", "draft section 5", "revise the conclusion", "humanize this paragraph" | `clo-write` |
+| "check section 5", "proofread this", "writing check", "polish this paragraph" | `clo-review --proofread` |
+| "methods check", "audit the ID", "is the causal design valid" | `clo-review --methods` |
+| "code check", "review this script", "lint the analysis" | `clo-review --code` or `clo-research-tools lint` when mechanical only |
+| "referee this", "simulate peer review", "desk review for QJE" | `clo-review --peer` |
+| "make slides", "build a seminar deck", "audit this talk" | `clo-talk create` or `clo-talk audit` |
+| "journal target", "prepare submission", "replication package", "final gate" | `clo-submit target`, `package`, `audit`, or `final` |
+| "plan the R&R", "extract reviewer tasks", "draft response letter" | `clo-revise roadmap` or `respond` |
+| "checkpoint", "resume context", "compile", "dashboard", "validate bibliography" | `clo-research-tools` |
+
 ## Path Resolution Policy
 
 The skill, not the agent, resolves working paths first.
@@ -95,3 +129,21 @@ When a phase skill names a creator/critic or referee pairing, that routing is no
   schedules the phase graph; it does not redefine phase internals
 - `clo-research-tools`
   is a utility toolbox and not a phase
+
+## Review Routing Matrix
+
+`clo-review` uses exact Codex agent type names when dispatching:
+
+| Review mode | Agent route |
+|---|---|
+| `.tex` paper target | `writer_critic`, `strategist_critic`, and `verifier` in parallel |
+| `.R`, `.py`, `.do`, `.jl` target or `--code` | `coder_critic` standalone |
+| `.tex` talk target under a talk directory | `storyteller_critic` standalone |
+| `--proofread` | `writer_critic` standalone |
+| `--methods` | `strategist_critic` standalone |
+| `--peer`, `--stress`, `--peer --r2` | `editor`, then `domain_referee` and `methods_referee`, then `editor` synthesis |
+| `--theory` | `theorist_critic` standalone; explicit-only |
+| `--replicate` | `coder`, then `coder_critic`, then comparison and verification as needed |
+| `--all` or paper excellence | all resolved direct critics plus `verifier`, with an aggregate summary |
+
+Generic manuscript-section checks are proofreads. When the user says `clo-review check section 5`, `review section 5`, `check this section`, `polish this paragraph`, or similar prose-targeted language, resolve the mode to `--proofread` and dispatch `writer_critic`. Only override this default when the user explicitly asks for methods, code, peer review, theory, or a comprehensive full-paper review.

@@ -23,6 +23,17 @@ Adapt the Clo-Author workflow to Codex.
 - Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
 - For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
 
+## Natural-Language Routing
+
+Resolve ordinary discovery requests before asking for clarification:
+
+- `interview me`, `help me formalize this`, `build a research spec`, `scope this project`, or no clear mode -> `interview`
+- `find papers`, `map the literature`, `related work`, `what papers am I missing`, `frontier`, `citations`, or `bibliography` -> `lit`
+- `find data`, `data sources`, `dataset feasibility`, `measurement options`, `where can I get data`, or `assess datasets` -> `data`
+- `ideate`, `brainstorm questions`, or `is this idea worth pursuing` -> redirect to `clo-ideate`
+
+If the request includes both literature and data discovery, run both creator/critic lanes unless the user asks for only one.
+
 ## Source Workflow
 
 # Discover
@@ -83,14 +94,14 @@ Fill in field, target journals, common data sources, identification strategies, 
 ### `$clo-discover lit [topic]` - Literature Review
 Search and synthesize academic literature.
 
-**Agents:** Librarian (collector) -> librarian-critic (reviewer)
+**Agents:** `librarian` (collector) -> `librarian_critic` (reviewer)
 **Output:** Annotated bibliography + BibTeX entries + frontier map
 
 Workflow:
 1. Read `~/.codex/skills/clo-workflow/references/domain-profile.md ` for field journals and seminal references
 2. Check `master_supporting_docs/` for uploaded papers
 3. Read `bibliography_base.bib` for papers already in the project
-4. Dispatch Librarian to search:
+4. Dispatch `librarian` to search:
    - Top-5 journals (AER, Econometrica, QJE, JPE, REStud)
    - Field journals from domain-profile.md
    - NBER/SSRN/IZA working papers
@@ -101,8 +112,8 @@ Workflow:
    - **3** - Related (overlapping topic, different angle)
    - **4** - Background (provides theory, method, or context)
    - **5** - Tangentially related (useful framing only)
-6. Dispatch librarian-critic to check coverage, gaps, recency, scope
-7. If gaps found, re-dispatch Librarian for targeted search (max 1 round)
+6. Dispatch `librarian_critic` to check coverage, gaps, recency, scope
+7. If gaps found, re-dispatch `librarian` for targeted search (max 1 round)
 8. Save to `quality_reports/lit_review_[topic].md`
 
 When the literature review changes the preferred positioning or rejects a plausible literature path, create or recommend a `decision_record` using `../clo-workflow/templates/decision-record.md`.
@@ -124,14 +135,14 @@ Output format for each paper:
 ### `$clo-discover data [requirements]` - Data Discovery
 Find and assess datasets for the research question.
 
-**Agents:** Explorer (finder) -> explorer-critic (assessor)
+**Agents:** `explorer` (finder) -> `explorer_critic` (assessor)
 **Output:** Ranked data sources with feasibility grades
 
 Workflow:
 1. Read research spec and strategy memo if they exist
 2. Read `~/.codex/skills/clo-workflow/references/domain-profile.md ` for common data sources in the field
 3. Understand what variables are needed: treatment, outcome, controls, time period, geography
-4. Dispatch Explorer to search across source categories:
+4. Dispatch `explorer` to search across source categories:
    - Public microdata (CPS, ACS, NHIS, MEPS, etc.)
    - Administrative data (Medicare claims, tax records, court records)
    - Survey data (RAND HRS, PSID, Add Health, NLSY)
@@ -147,7 +158,7 @@ Workflow:
      - **C** - Restricted but obtainable (FSRDC, data use agreement, IRB approval)
      - **D** - Very difficult (proprietary, requires partnership, rare access)
    - Strengths and limitations
-6. Dispatch explorer-critic to critique each proposed dataset using the **5-point assessment:**
+6. Dispatch `explorer_critic` to critique each proposed dataset using the **5-point assessment:**
    1. **Measurement validity** - Does the variable actually measure what we need?
    2. **Sample selection** - Who is in the data? Who is missing?
    3. **External validity** - Can we generalize from this sample?
@@ -161,7 +172,7 @@ When data discovery selects one data path over plausible alternatives, create or
 
 | Dataset | Reason for Rejection | Deal-breaker? |
 |---------|---------------------|---------------|
-| [Name]  | [explorer-critic's finding] | [Yes/No] |
+| [Name]  | [`explorer_critic` finding] | [Yes/No] |
 
 ### Legacy ideation alias
 If the user asks for `$clo-discover ideate`, treat it as a backward-compatible redirect to `$clo-ideate`.
@@ -180,7 +191,7 @@ Do not bury ideation inside discovery now that Dittonomics treats it as a first-
 - **5-point data critique:** Measurement validity, sample selection, external validity, identification compatibility, known issues. Never skip this.
 - **Domain-profile aware:** Always read `~/.codex/skills/clo-workflow/references/domain-profile.md ` first for field calibration.
 - **Decision records:** When discovery resolves a real choice, record why this path wins over rejected alternatives.
-- **Worker-critic pairing:** Librarian + librarian-critic, Explorer + explorer-critic. Never skip the critic.
+- **Worker-critic pairing:** `librarian` + `librarian_critic`, `explorer` + `explorer_critic`. Never skip the critic.
 
 ## Exploration Sandbox
 

@@ -23,11 +23,29 @@ Adapt the Clo-Author workflow to Codex.
 - Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
 - For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
 
+## Delegation Rule
+
+Invoking this skill through `$clo-strategize` or a natural-language strategy request counts as explicit permission to dispatch the named agents for the resolved mode.
+
+- `strategy` routes `strategist -> strategist_critic`
+- `pap` routes to `strategist` in PAP mode and usually `strategist_critic`
+- `theory` routes `theorist -> theorist_critic` only when the request explicitly asks for formal theory, propositions, proofs, assumptions, or a theory section
+- if subagent dispatch is unavailable, fall back to the main session only with an explicit note
+
+## Natural-Language Routing
+
+Resolve ordinary strategy requests before asking for clarification:
+
+- `design the empirical strategy`, `identification strategy`, `what is the estimand`, `assumptions`, `comparison group`, `robustness plan`, `falsification tests`, or `how should I identify this` -> `strategy`
+- `pre-analysis plan`, `PAP`, `pre-registration`, `registration plan`, `AEA registry`, `OSF registration`, or `EGAP registration` -> `pap`
+- `formal model`, `theory section`, `proposition`, `lemma`, `proof`, `assumptions for a model`, or `structural/theory support` -> `theory`
+- `methods check`, `audit the identification`, or `is this design valid` -> prefer `clo-review --methods` unless the user is asking to design or revise the strategy itself
+
 ## Source Workflow
 
 # Strategize
 
-Design an identification strategy or pre-analysis plan by dispatching the **Strategist** (proposer) and **strategist-critic** (validator).
+Design an identification strategy or pre-analysis plan by dispatching `strategist` (proposer) and `strategist_critic` (validator).
 
 **Input:** `$ARGUMENTS` - mode keyword followed by research question or path to research spec.
 
@@ -38,19 +56,19 @@ Design an identification strategy or pre-analysis plan by dispatching the **Stra
 ### `$clo-strategize [question]` or `$clo-strategize strategy [question]` - Identification Strategy
 Design the causal identification strategy.
 
-**Agents:** Strategist -> strategist-critic
+**Agents:** `strategist` -> `strategist_critic`
 **Output:** Strategy memo + robustness plan + falsification tests
 
 Workflow:
 1. Read research spec, literature review, and data assessment if they exist
 2. Read ~/.codex/skills/clo-workflow/references/domain-profile.md  for common identification strategies in the field
-3. Dispatch Strategist to produce:
+3. Dispatch `strategist` to produce:
    - Strategy memo: design choice, estimand, assumptions, comparison group
    - Pseudo-code: implementation sketch
    - Robustness plan: ordered list of checks with rationale
    - Falsification tests: what SHOULD NOT show effects
    - Referee objection anticipation: top 5 objections with responses
-4. Dispatch strategist-critic to review through 4 phases:
+4. Dispatch `strategist_critic` to review through 4 phases:
    - Phase 1: Claim identification (design, estimand, treatment, control)
    - Phase 2: Core design validity (assumption checks, sanity checks)
    - Phase 3: Inference soundness (clustering, multiple testing)
@@ -68,7 +86,7 @@ Draft a pre-analysis plan following AEA/OSF/EGAP standards.
 - If `$ARGUMENTS` includes `interactive`: conduct the guided PAP interview (see below)
 - Otherwise: treat as topic and draft with ASSUMED placeholders marked clearly
 
-**Agents:** Strategist (in PAP mode), optionally strategist-critic
+**Agents:** `strategist` (in PAP mode), optionally `strategist_critic`
 **Output:** Pre-analysis plan document
 
 #### Interactive PAP Interview (6-Question Guided Flow)
@@ -86,7 +104,7 @@ After all 6 answers are collected, proceed to PAP drafting.
 
 #### PAP Sections
 
-Dispatch Strategist in PAP mode to produce all standard sections:
+Dispatch `strategist` in PAP mode to produce all standard sections:
 
 1. **Study overview** - research question, design, treatment, control
 2. **Outcomes** - primary, secondary, mechanism variables with measurement details
@@ -155,9 +173,9 @@ A registered PAP with unchecked assumptions is worse than no PAP. The final sect
 **Do not register until all items are reviewed and confirmed or corrected.**
 ```
 
-#### Optional strategist-critic Review
+#### Optional `strategist_critic` Review
 
-After PAP creation, optionally dispatch the strategist-critic to review:
+After PAP creation, optionally dispatch `strategist_critic` to review:
 - Are identification assumptions clearly stated and defensible?
 - Is the estimator choice appropriate for the design?
 - Are power calculation assumptions reasonable? Show sensitivity.
@@ -195,11 +213,11 @@ The record should state why the chosen design beats rejected alternatives, the k
 
 ## Principles
 
-- **Strategist proposes, strategist-critic critiques.** Adversarial pairing catches design flaws early.
+- **`strategist` proposes, `strategist_critic` critiques.** Adversarial pairing catches design flaws early.
 - **Strategy memo is the contract.** Once approved, the Coder implements it faithfully.
 - **Catch problems before coding.** A flawed strategy caught now saves weeks of wasted analysis.
 - **Multiple strategies are OK.** Present trade-offs and let the user choose.
-- **The user decides.** If Strategist and strategist-critic disagree after 3 rounds, the user resolves it.
+- **The user decides.** If `strategist` and `strategist_critic` disagree after 3 rounds, the user resolves it.
 - **Record real design choices.** When the design choice matters, create a decision record so future reviews and R&Rs can explain why this path was chosen.
 - **Pre-specification is the point.** Everything in a PAP is decided before seeing outcomes.
 - **Be honest about what's exploratory.** Label subgroups and secondary outcomes clearly.

@@ -53,9 +53,11 @@ Canonical modes:
 Accepted aliases:
 
 - `revise`, `revision`, `rr`, `r&r`, `plan revision`, `reviewer roadmap` -> `roadmap`
+- `extract reviewer tasks`, `what do the referees want`, `turn reviews into tasks`, `revision plan`, `make a response matrix` -> `roadmap`
 - `validate`, `dag`, `check graph`, `validate dependencies` -> `validate`
-- `execute`, `run roadmap`, `route tasks`, `start revision work` -> `execute`
-- `respond`, `response`, `response letter`, `draft response` -> `respond`
+- `check dependencies`, `is the roadmap coherent`, `validate task graph` -> `validate`
+- `execute`, `run roadmap`, `route tasks`, `start revision work`, `do the approved revisions` -> `execute`
+- `respond`, `response`, `response letter`, `draft response`, `letter to the editor`, `point-by-point response` -> `respond`
 
 If no recognized token is present:
 

@@ -16,6 +16,16 @@ Adapt the Clo-Author workflow to Codex.
 5. If a repo already has paper-specific rules or skills, treat them as higher-priority than the generic Clo-Author defaults.
 6. Read `references/source-skill.md` only when you need the original upstream command details or argument structure.
 
+## Delegation Rule
+
+Invoking this skill through `$clo-review`, a recognized review flag, or a natural-language Clo review request counts as explicit permission to dispatch the named review agents for the resolved mode.
+
+- Use exact Codex agent type names when dispatching: `writer_critic`, `strategist_critic`, `coder_critic`, `storyteller_critic`, `domain_referee`, `methods_referee`, `editor`, `theorist_critic`, and `verifier`.
+- Hyphenated upstream names such as `writer-critic` are documentation aliases only; do not pass them as Codex agent type names.
+- For `--proofread`, dispatch `writer_critic` standalone unless subagent dispatch is unavailable.
+- For a `.tex` paper review or `--all`, dispatch the resolved critic/verifier stack rather than doing the critique only in the parent session.
+- If subagent dispatch is unavailable, fall back to the main session only with an explicit note in the response and any saved report.
+
 ## Codex Notes
 
 - Original slash commands are exposed here as explicit `$clo-*` skills.
@@ -38,20 +48,28 @@ Unified review command that routes to the appropriate critic agents based on the
 ## Routing Logic
 
 ### Auto-detect by file type
-- `.tex` paper file -> **Comprehensive review** (writer-critic + strategist-critic + Verifier)
-- `.R`, `.py`, `.do`, `.jl` file -> **Code review** (coder-critic standalone, categories 4-12)
-- `.tex` talk file (in talks/) -> **Talk review** (storyteller-critic)
+- `.tex` paper file -> **Comprehensive review** (`writer_critic` + `strategist_critic` + `verifier`)
+- `.R`, `.py`, `.do`, `.jl` file -> **Code review** (`coder_critic` standalone, categories 4-12)
+- `.tex` talk file (in talks/) -> **Talk review** (`storyteller_critic`)
 
 ### Explicit flags (override auto-detect)
 - `--peer [journal]` -> **Full peer review** (editor desk review -> referee dispatch -> editorial decision)
 - `--peer --r2 [journal]` -> **R&R second round** (same referees, same dispositions, memory of prior review)
 - `--stress [journal]` -> **Hostile stress test** (same flow, adversarial referee dispositions)
-- `--methods` -> **Causal audit** (strategist-critic standalone, 4-phase review)
-- `--proofread` -> **Manuscript polish** (writer-critic standalone, 6 categories)
-- `--code [file]` -> **Code review** (coder-critic standalone, categories 4-12)
-- `--replicate [language]` -> **Cross-language replication** (Coder re-implements in target language + coder-critic + comparison)
-- `--theory [target]` -> **Theory audit** (theorist-critic standalone; explicit-only)
+- `--methods` -> **Causal audit** (`strategist_critic` standalone, 4-phase review)
+- `--proofread` -> **Manuscript polish** (`writer_critic` standalone, 6 categories)
+- `--code [file]` -> **Code review** (`coder_critic` standalone, categories 4-12)
+- `--replicate [language]` -> **Cross-language replication** (`coder` re-implements in target language + `coder_critic` + comparison)
+- `--theory [target]` -> **Theory audit** (`theorist_critic` standalone; explicit-only)
 - `--all` or no file -> **Paper excellence** (all critics in parallel + weighted score)
+
+### Natural-language review aliases
+- `clo-review check section [N]`, `clo-review review section [N]`, `check section [N]`, `review this section`, `writing check`, `polish check`, `prose check`, `grammar check`, or `proofread section [N]` -> **Manuscript polish** (`--proofread`, dispatch `writer_critic`)
+- `clo-review check paper`, `review my paper`, `full paper review`, or `comprehensive review` -> **Comprehensive review** unless the user narrows the target to a section
+- `methods check`, `identification check`, `causal check`, or `strategy check` -> **Causal audit** (`--methods`, dispatch `strategist_critic`)
+- `code check`, `script review`, or `replication code check` -> **Code review** (`--code`, dispatch `coder_critic`)
+
+If the request names a manuscript section, subsection, page range, paragraph, or prose file and uses a generic verb like `check`, `review`, `polish`, or `look at`, treat it as `--proofread` unless the user explicitly asks for methods, code, peer review, or a full comprehensive paper review.
 
 ---
 
@@ -59,9 +77,9 @@ Unified review command that routes to the appropriate critic agents based on the
 
 ### Comprehensive Review (default for.tex paper)
 Dispatch in parallel:
-1. **strategist-critic** - causal design audit (4 phases)
-2. **writer-critic** - manuscript polish (6 categories)
-3. **Verifier** - compilation check
+1. `strategist_critic` - causal design audit (4 phases)
+2. `writer_critic` - manuscript polish (6 categories)
+3. `verifier` - compilation check
 Compute weighted aggregate score.
 
 ### Full Peer Review (`--peer [journal]`)
@@ -162,7 +180,7 @@ This is for pre-submission stress testing. If the paper survives two hostile ref
 
 ### Code Review (`--code` or auto-detect.R/.py/.do/.jl)
 
-Dispatch **coder-critic** in standalone mode.
+Dispatch `coder_critic` in standalone mode.
 
 #### Full 12-Category Code Review Checklist
 
@@ -208,7 +226,7 @@ Save report to `quality_reports/[file]_code_review.md`
 
 ### Causal Audit (`--methods`)
 
-Dispatch **strategist-critic** standalone for a full 4-phase causal inference review.
+Dispatch `strategist_critic` standalone for a full 4-phase causal inference review.
 
 #### 4-Phase Econometrics Review Protocol
 
@@ -249,22 +267,22 @@ Dispatch **strategist-critic** standalone for a full 4-phase causal inference re
 Save report to `quality_reports/[file]_strategy_review.md`
 
 ### Manuscript Polish (`--proofread`)
-Dispatch **writer-critic** standalone:
+Dispatch `writer_critic` standalone:
 - 6 categories: structure, claims-evidence, ID fidelity, writing, grammar, compilation
 - Save report to `quality_reports/[file]_proofread_report.md`
 
 ### Cross-Language Replication (`--replicate [language]`)
 1. Auto-detect source language from file extension
-2. Dispatch **Coder** in replication mode - re-implement in target language
-3. **coder-critic** reviews both implementations
+2. Dispatch `coder` in replication mode - re-implement in target language
+3. `coder_critic` reviews both implementations
 4. Compare numerical outputs per `~/.codex/skills/clo-workflow/references/domain-profile.md ` Quality Tolerance Thresholds
 5. Save replicated script and comparison report
 
 ---
 
-## Verifier Pass/Fail Definition
+## `verifier` Pass/Fail Definition
 
-The Verifier produces a binary PASS/FAIL result:
+The `verifier` produces a binary PASS/FAIL result:
 
 **For papers (`.tex`):**
 - LaTeX compiles error-free (warnings acceptable, errors not)
@@ -285,7 +303,7 @@ The Verifier produces a binary PASS/FAIL result:
 - Outputs match paper tables/figures within tolerance
 - README accurately describes the pipeline
 
-Verifier score maps to 0 (FAIL) or 100 (PASS) for weighted aggregation.
+`verifier` score maps to 0 (FAIL) or 100 (PASS) for weighted aggregation.
 
 ---
 

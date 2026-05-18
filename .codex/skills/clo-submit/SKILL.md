@@ -23,6 +23,17 @@ Adapt the Clo-Author workflow to Codex.
 - Read source mirrors only when provenance matters: ~/.codex/skills/clo-workflow/references/source-rules and ~/.codex/skills/clo-workflow/references/source-references.
 - For repo-specific path conventions and field rules, prefer local `.agents/skills` and `AGENTS.override.md`.
 
+## Natural-Language Routing
+
+Resolve ordinary submission requests before asking for clarification:
+
+- `where should I submit`, `journal target`, `rank journals`, `fit for [journal]`, or `submission strategy` -> `target`
+- `build replication package`, `AEA package`, `prepare replication files`, `make README`, or `package the code/data` -> `package`
+- `audit replication`, `check package`, `verify reproducibility`, `does the package run`, or `submission audit` -> `audit`
+- `final submission`, `submission gate`, `ready to submit`, `cover letter`, `checklist`, or `final verification` -> `final`
+
+When the request says `check before submitting` without a narrower object, resolve to `final`.
+
 ## Source Workflow
 
 # Submit
@@ -48,7 +59,7 @@ Save to `quality_reports/journal_recommendations_[date].md`
 ### `$clo-submit package` - Build Replication Package
 Assemble AEA-compliant replication package.
 
-**Agents:** Coder + Verifier
+**Agents:** `coder` + `verifier`
 
 Produces:
 - Master script that runs all analyses end-to-end
@@ -60,7 +71,7 @@ Save to `Replication/`
 ### `$clo-submit audit` - Audit Replication Package
 Verify replication package completeness.
 
-**Agent:** Verifier (submission mode - 10 checks)
+**Agent:** `verifier` (submission mode - 10 checks)
 
 Checks:
 1. Master script exists and runs
