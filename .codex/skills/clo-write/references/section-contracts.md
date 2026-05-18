@@ -23,7 +23,7 @@ Use this file as the source of truth for section-level inputs, restrictions, and
 | `mechanisms` | mechanism evidence already produced | notes on interpretation | distinguish mechanism evidence from speculation | `paper/sections/07_mechanisms.tex` |
 | `robustness` | checks already run or placeholders marked pending | threats-to-validity memo | do not claim robustness that has not been run | `paper/sections/08_robustness.tex` |
 | `policy` | supported interpretation, scope limits | policy relevance notes | keep policy claims proportional to evidence | `paper/sections/09_policy.tex` |
-| `conclusion` | stable headline results, limitations, contribution | policy and future-work angle | no new findings | `paper/sections/10_conclusion.tex` |
+| `conclusion` | stable headline results with magnitudes, design summary, limitations, contribution target | supported policy/literature implication, one meaningful forward-looking line | no new findings; do not recap every section; inspect closest cited-paper conclusions as calibration, not templates | `paper/sections/10_conclusion.tex` |
 
 ## Design Metadata
 

@@ -47,12 +47,15 @@ Expected input packet:
 - Paragraphs carry a clear main claim?
 - For intro/front-end review: is the architecture governed by `econ-intro-writing` rather than a generic topic-based opening?
 - For intro/front-end review: are question, stakes, gap, setting, contribution, and roadmap properly separated?
+- For conclusion review: does the section close the contribution rather than recap the paper section-by-section?
+- For conclusion review: does it restate question, approach, headline magnitude, supported interpretation, scope limit, and specific implication?
 
 ### 2. Claims-Evidence Alignment
 - Numbers in text match the tables EXACTLY?
 - Effect sizes stated with correct units?
 - Statistical significance claims match reported stars/p-values?
 - Any placeholders left unresolved without being flagged?
+- For conclusion review: are all magnitudes, mechanisms, welfare claims, and policy implications already supported by the manuscript?
 
 ### 3. Identification Fidelity
 - Paper matches the strategy memo?
@@ -65,6 +68,7 @@ Expected input packet:
 - Notation consistent?
 - Terminology consistent across sections?
 - Results paragraphs follow a usable structure rather than table-dumping?
+- Conclusion avoids generic future-research endings and unsupported policy slogans?
 - For front-end work: does the prose avoid generic but polished-sounding filler?
 - Does the prose preserve the user's recognizable voice under the active hierarchy?
 - In current-draft mode, does the revision align with the live manuscript without inheriting its weak sentences?

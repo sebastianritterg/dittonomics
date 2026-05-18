@@ -127,7 +127,14 @@ Unless the parent explicitly requests a lighter pass, follow this order:
 - Do not imply a check was run if it is still pending
 
 ### Conclusion
-- Restate the question, design, and main finding compactly
+- Load `clo-write/references/examples/sections/conclusion.md` when available
+- Inspect conclusions or final discussion sections of the closest already-cited papers when available; use them as calibration for contribution, implication, and restraint, not as templates
+- Restate the question and approach in one sentence
+- Re-state the main result with magnitude, units, and benchmark when available
+- Interpret mechanisms, welfare, or incidence only if supported by the paper
+- Include one short, honest limitation or scope condition
+- End with a restrained, specific implication for the literature or policy debate
+- Use one forward-looking line only if meaningful
 - No new evidence
 
 ## Output

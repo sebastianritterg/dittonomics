@@ -20,7 +20,8 @@ Then load the local references for writing:
 
 5. `references/section-contracts.md`
 6. `references/writing-workflow.md`
-7. `references/style-guide-mode.md` only when `style-guide` or `--use-style-guide` is explicitly requested
+7. `references/examples/sections/conclusion.md` when the target is `conclusion` or `closing`
+8. `references/style-guide-mode.md` only when `style-guide` or `--use-style-guide` is explicitly requested
 
 ## Delegation Rule
 
@@ -103,6 +104,8 @@ Section-specific inputs:
   fresh `strategy_memo`
 - `results`, `mechanisms`, `robustness`, `policy`
   fresh `results_summary` plus existing tables or figures
+- `conclusion`
+  stable headline result with magnitude, design summary, scope limits, contribution target, and any supported policy or literature implication
 - `abstract`
   enough completed manuscript structure to state question, design, and findings
 - `style-guide`
@@ -130,12 +133,13 @@ Unless the user explicitly asks for a lighter pass:
 3. inspect active bibliography and closest cited papers first
 4. if the empirical frontier appears to be moving, supplement repo sources with current web or working-paper checks, but never let those outrank repo context
 5. load section, method, and paper-model references only as needed
-6. if `style-guide` or `--use-style-guide` is active, load `references/style-guide-mode.md` after the voice hierarchy and use it only as a tertiary helper
-7. create outline
-8. create paragraph plan
-9. draft, revise, or extract the style guide
-10. apply `humanizer` to prose outputs only
-11. optionally hand off to proofread
+6. for conclusion work, load `references/examples/sections/conclusion.md` and inspect conclusions of the closest already-cited papers when available; use them as calibration, not templates
+7. if `style-guide` or `--use-style-guide` is active, load `references/style-guide-mode.md` after the voice hierarchy and use it only as a tertiary helper
+8. create outline
+9. create paragraph plan
+10. draft, revise, or extract the style guide
+11. apply `humanizer` to prose outputs only
+12. optionally hand off to proofread
 
 ## Style Hierarchy
 
