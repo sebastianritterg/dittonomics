@@ -1,11 +1,7 @@
-﻿interface:
+interface:
   display_name: "Clo Review"
-  short_description: "Run critic and referee review workflows"
-  default_prompt: "Use $clo-review to run the appropriate critic, editor, referee, or explicit theory review for this artifact."
+  short_description: "Run $clo-review peer, referee, critic, methods, code, proofread, theory, or editor workflows"
+  default_prompt: "Use $clo-review to review a paper, run peer/referee review, audit methods or code, proofread writing, stress-test a draft, or run explicit theory review."
 
 policy:
   allow_implicit_invocation: true
-
-
-
-

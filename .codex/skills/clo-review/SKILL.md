@@ -1,9 +1,11 @@
-﻿---
+---
 name: clo-review
-description: Run critic and referee review workflows. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Use clo-review for Dittonomics critic, referee, peer-review, methods-review, proofread, code-review, replication-review, theory-review, and editor-calibration workflows. Trigger this skill when the user asks to review a paper, audit empirical strategy, stress-test a draft, run referees, proofread, inspect code quality, or call $clo-review.
 ---
 
 # Clo Review
+
+Also searchable as: `clo-review`, `$clo-review`, review my paper, peer review, referee report, editor review, methods review, causal audit, proofread, code review, replication review, theory review, stress test.
 
 Adapt the Clo-Author workflow to Codex.
 
@@ -114,7 +116,7 @@ The editor:
 4. Lists MUST address, SHOULD address, and MAY push back items
 
 #### Save Reports
-Save all outputs to `quality_reports$clo-reviews/`:
+Save all outputs to `quality_reports/clo-reviews/`:
 - `YYYY-MM-DD_desk_review.md` (Phase 1)
 - `YYYY-MM-DD_referee_domain.md` (Phase 2)
 - `YYYY-MM-DD_referee_methods.md` (Phase 2)
@@ -126,7 +128,7 @@ Log the referee assignments (dispositions + pet peeves) in the editorial decisio
 
 Continues the review cycle after the author has revised the paper.
 
-1. **Load prior review state** - read previous referee reports and editorial decision from `quality_reports$clo-reviews/`
+1. **Load prior review state** - read previous referee reports and editorial decision from `quality_reports/clo-reviews/`
 2. **Skip desk review** - the paper was already accepted for review
 3. **Same referees** - reload the same dispositions and pet peeves from round 1
 4. **Referee R&R mode** - each referee receives their previous report alongside the revised manuscript:
@@ -141,7 +143,7 @@ the original - improvement matters.
 They check whether each concern was: Resolved / Partially resolved / Not addressed. They may flag new concerns from the revisions.
 
 5. **Editor R&R decision** - Round 2 allows Accept/Minor/Major/Reject. Round 3 allows Accept/Minor/Reject only. Max 3 rounds total - editor's patience runs out, just like real life.
-6. **Save reports** with `_r2` or `_r3` suffix to `quality_reports$clo-reviews/`
+6. **Save reports** with `_r2` or `_r3` suffix to `quality_reports/clo-reviews/`
 
 ### Hostile Stress Test (`--stress [journal]`)
 
