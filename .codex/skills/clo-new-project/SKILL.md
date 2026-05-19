@@ -1,6 +1,6 @@
-﻿---
+---
 name: clo-new-project
-description: Run the full clo-author research pipeline. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Start or orchestrate a full Clo/Dittonomics research project. Use when the user asks to start a new empirical project, take an idea from topic to paper, run the full research pipeline, set up end-to-end Clo workflow, or call $clo-new-project. Routes across ideation, discovery, strategy, analysis, writing, review, revision, submission, and talks.
 ---
 
 # Clo New Project
@@ -47,28 +47,28 @@ This skill orchestrates the full dependency graph. Each phase activates when its
 
 ```
 Phase 1: Ideation
-  â””â”€â”€ $clo-ideate session -> Idea Brief + RQ Shortlist + Idea Screen
+  -> $clo-ideate session -> Idea Brief + RQ Shortlist + Idea Screen
 
 Phase 2: Discovery (depends on Phase 1 when the question is still fluid)
-  â”œâ”€â”€ $clo-discover interview -> Research Spec + Domain Profile
-  â”œâ”€â”€ $clo-discover lit -> Literature Synthesis + BibTeX
-  â””â”€â”€ $clo-discover data -> Data Assessment
+  -> $clo-discover interview -> Research Spec + Domain Profile
+  -> $clo-discover lit -> Literature Synthesis + BibTeX
+  -> $clo-discover data -> Data Assessment
 
 Phase 3: Strategy (depends on Phase 2)
-  â””â”€â”€ $clo-strategize -> Strategy Memo + Robustness Plan
+  -> $clo-strategize -> Strategy Memo + Robustness Plan
 
 Phase 4: Execution (depends on Phase 3)
-  â”œâ”€â”€ $clo-analyze -> Scripts + Tables + Figures
-  â””â”€â”€ $clo-write -> Paper Sections
+  -> $clo-analyze -> Scripts + Tables + Figures
+  -> $clo-write -> Paper Sections
 
 Phase 5: Peer Review (depends on Phase 4)
-  â”œâ”€â”€ $clo-review --all -> Comprehensive Quality Score
-  â””â”€â”€ $clo-review --peer -> domain-referee + methods-referee Reports
+  -> $clo-review --all -> Comprehensive Quality Score
+  -> $clo-review --peer -> domain-referee + methods-referee Reports
 
 Phase 6: Submission (depends on Phase 5, score >= 95)
-  â”œâ”€â”€ $clo-submit target -> Journal Recommendations
-  â”œâ”€â”€ $clo-submit package -> Replication Package
-  â””â”€â”€ $clo-submit final -> Final Verification
+  -> $clo-submit target -> Journal Recommendations
+  -> $clo-submit package -> Replication Package
+  -> $clo-submit final -> Final Verification
 ```
 
 ---
@@ -170,7 +170,6 @@ Between pauses, the orchestrator runs autonomously per `workflow.md`.
 
 - If this repo needs a prototype sandbox and `explorations/` is missing, create it before dispatching exploratory work.
 - Use `explorations/` for early tests, side calculations, or speculative branches that are not yet part of the canonical pipeline.
-
 
 
 

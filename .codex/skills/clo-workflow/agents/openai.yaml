@@ -1,4 +1,4 @@
-﻿interface:
+interface:
   display_name: "Clo Workflow"
   short_description: "Reference the Codex clo-author workflow map"
   default_prompt: "Use $clo-workflow to map a Clo-Author workflow step into Codex agents, skills, references, and checks."

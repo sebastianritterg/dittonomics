@@ -1,6 +1,6 @@
-﻿---
+---
 name: clo-strategize
-description: Design an identification strategy or PAP. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Strategize the identification design for a Clo/Dittonomics project. Use when the user asks for empirical strategy, causal identification, estimand, treatment/control definition, assumptions, robustness plan, falsification tests, pre-analysis plan, PAP, registration, explicit theory support, or calls $clo-strategize. Routes to strategist, strategist_critic, and explicit theory agents when requested.
 ---
 
 # Clo Strategize

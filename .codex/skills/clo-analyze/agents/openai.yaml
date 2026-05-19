@@ -1,7 +1,7 @@
-﻿interface:
+interface:
   display_name: "Clo Analyze"
-  short_description: "Implement analysis with worker-critic review"
-  default_prompt: "Use $clo-analyze to implement the empirical workflow and review the resulting code."
+  short_description: "Run analysis, clean data, estimate models, and review code"
+  default_prompt: "Use $clo-analyze to clean data, construct variables, estimate regressions, build tables or figures, run robustness checks, and dispatch data_engineer, coder, and coder_critic as needed."
 
 policy:
   allow_implicit_invocation: true

@@ -1,6 +1,6 @@
-﻿---
+---
 name: clo-talk
-description: Build and audit presentation decks. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Create or audit research talks for a Clo/Dittonomics project. Use when the user asks for slides, Beamer, Quarto RevealJS, job-market talk, seminar deck, short presentation, lightning talk, visual audit, talk compilation, or calls $clo-talk. Routes to storyteller and storyteller_critic.
 ---
 
 # Clo Talk

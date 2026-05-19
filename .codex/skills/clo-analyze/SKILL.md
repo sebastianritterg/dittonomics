@@ -1,6 +1,6 @@
-﻿---
+---
 name: clo-analyze
-description: Implement analysis with worker-critic review. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Analyze data and implement empirical work in the Clo/Dittonomics pipeline. Use when the user asks to run analysis, clean data, construct variables, estimate regressions, make tables or figures, run robustness checks, reproduce outputs, compare implementations, or call $clo-analyze. Routes to data_engineer, coder, and coder_critic.
 ---
 
 # Clo Analyze

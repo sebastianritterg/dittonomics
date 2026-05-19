@@ -1,6 +1,6 @@
-﻿---
+---
 name: clo-discover
-description: Interview, search literature, and assess data. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Discover the research base for a Clo/Dittonomics project. Use when the user asks for a research interview, research specification, literature search, related papers, bibliography, citation map, data discovery, dataset feasibility, measurement options, or calls $clo-discover. Routes to librarian/librarian_critic or explorer/explorer_critic when needed.
 ---
 
 # Clo Discover

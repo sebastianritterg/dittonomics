@@ -1,6 +1,6 @@
-﻿---
+---
 name: clo-submit
-description: Prepare journal targeting and submission checks. Adapted from the Clo-Author workflow for Codex. Use when this specific phase of the research pipeline is the main task.
+description: Prepare submission work for a Clo/Dittonomics project. Use when the user asks for journal targeting, submission strategy, replication package, AEA package, final verification, submission checklist, cover letter, replication audit, or calls $clo-submit. Routes to verifier and coder where needed.
 ---
 
 # Clo Submit
