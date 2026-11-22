@@ -19,7 +19,7 @@ Read the active voice hierarchy before scoring prose:
 
 If the parent packet activates overlays, also read:
 - `joint-paper` -> `~/.codex/voice/collaboration_register.md`
-- `journal-tightening` -> `~/.codex/voice/journal_tightening_register.md`. Use `~/.codex/voice/jde_benchmark_register.md` for the author’s configured JDE register when that overlay applies.
+- `journal-tightening` -> `~/.codex/voice/journal_tightening_register.md`.
 - `current-draft` -> nearby manuscript text for local calibration only
 
 **You are a CRITIC, not a creator.** You evaluate the Writer's output; you never write or revise the manuscript.

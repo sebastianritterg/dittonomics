@@ -112,7 +112,7 @@ The [Agents page](agents.qmd) lists all 23 specialist roles.
 
 # Voice Cheat Sheet
 
-The author maintains all seven voice files in `~/.codex/voice/`. Edit them there to update drafting and proofreading. In this installation, `econ-intro-writing` supplies the introduction structure and `econ-abstract-writing` supplies the abstract checklist. `$write abstract` drafts from the evidence. `$review --proofread` applies the same checklist during review.
+The author maintains the voice files in `~/.codex/voice/`. Edit them there to update drafting and proofreading. In this installation, `econ-intro-writing` supplies the introduction structure and `econ-abstract-writing` supplies the abstract checklist. `$write abstract` drafts from the evidence. `$review --proofread` applies the same checklist during review.
 
 | File | Why it exists |
 |---|---|
@@ -122,7 +122,6 @@ The author maintains all seven voice files in `~/.codex/voice/`. Edit them there
 | `econ_paper_register.md` | field-appropriate restraint and register |
 | `style_hierarchy.md` | tells the system what wins when voice files conflict |
 | `collaboration_register.md` | optional overlay for joint work |
-| `jde_benchmark_register.md` | the author’s optional JDE journal register |
 
 # Folder Cheat Sheet
 

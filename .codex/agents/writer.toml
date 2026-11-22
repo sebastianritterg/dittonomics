@@ -45,12 +45,12 @@ Load prose guidance in this order:
 
 Optional overlays from the parent packet:
 - `joint-paper` -> load `~/.codex/voice/collaboration_register.md`
-- `journal-tightening` -> load `~/.codex/voice/journal_tightening_register.md`. Use `~/.codex/voice/jde_benchmark_register.md` for the author’s configured JDE register when that overlay applies.
+- `journal-tightening` -> load `~/.codex/voice/journal_tightening_register.md`.
 - `current-draft` -> inspect surrounding manuscript text for local calibration
 
 Rules:
 - treat `core_voice.md` as the top prose authority
-- treat collaboration and JDE materials as overlays, never as replacement voices or literal templates
+- treat collaboration materials as overlays, never as replacement voices or literal templates
 - inspect surrounding text only when `current-draft` is explicitly requested
 - use the live draft only for local consistency, terminology, notation, compression level, and rhythm
 - do not inherit redundancy, weak transitions, stale phrasing, or padded abstractions from the live draft

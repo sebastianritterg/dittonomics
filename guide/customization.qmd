@@ -116,7 +116,7 @@ Then rename them without `.template`.
 | `econ_paper_register.md` | field-appropriate restraint and evidence norms |
 | `style_hierarchy.md` | precedence rules when files conflict |
 | `collaboration_register.md` | optional overlay for joint-paper mode |
-| `journal_tightening_register.md` | generic starter filename for a journal overlay. The author uses `jde_benchmark_register.md` in the same private directory. |
+| `journal_tightening_register.md` | optional generic starter template for a journal overlay |
 
 ## The voice rule
 

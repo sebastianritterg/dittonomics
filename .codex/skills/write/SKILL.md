@@ -47,7 +47,6 @@ Natural-language equivalents are also valid in the parent task packet:
 - `write/draft/revise/tighten/humanize/polish [section name or section number]`
 - `work on section [N]`, `fix the intro`, `rewrite the conclusion`, `make the results clearer`
 - `use joint-paper mode`
-- `tighten toward JDE benchmark`
 - `use the current draft state as calibration`
 - `extract a style guide from these papers`
 - `use the optional style guide as a helper`
@@ -168,7 +167,7 @@ For `intro`, `context`, `literature`, and opening-stack work:
 Optional overlays:
 
 - load `~/.codex/voice/collaboration_register.md` only in `--joint-paper` mode
-- load `~/.codex/voice/journal_tightening_register.md` only in `--journal-tightening` mode. Use `~/.codex/voice/jde_benchmark_register.md` for the author’s configured JDE register when that overlay applies.
+- load `~/.codex/voice/journal_tightening_register.md` only in `--journal-tightening` mode.
 - inspect nearby manuscript sections only in `--current-draft` mode
 - load the optional extracted style guide only when `style-guide` or `--use-style-guide` is explicitly requested
 
@@ -183,7 +182,7 @@ Current-draft calibration rules:
 
 - preserve `econ-intro-writing` as the authority for front-end work
 - use examples and paper models as scaffolding, never as copy-paste templates
-- treat co-author and JDE materials as overlays, never as replacement voices or literal templates
+- treat co-author materials as overlays, never as replacement voices or literal templates
 - treat the optional style guide as a helper, never as a replacement for repo-local guidance, `econ-intro-writing`, or the core voice hierarchy
 - inspect repo bibliography and closest cited papers before any global library
 - in empirical literatures that evolve quickly, current web search can supplement references, but no paper library or search result is the sole source of truth
