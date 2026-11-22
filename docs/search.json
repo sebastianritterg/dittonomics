@@ -46,7 +46,7 @@
     "href": "customization.html#what-each-file-does",
     "title": "Customization",
     "section": "What each file does",
-    "text": "What each file does\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\ncore_voice.md\nyour non-negotiable prose traits\n\n\nbad_writing_examples.md\nthe author’s examples of rejected prose, used in drafting and review\n\n\nvoice_examples.md\nexamples of sentences, paragraph moves, cadence\n\n\necon_paper_register.md\nfield-appropriate restraint and evidence norms\n\n\nstyle_hierarchy.md\nprecedence rules when files conflict\n\n\ncollaboration_register.md\noptional overlay for joint-paper mode\n\n\njournal_tightening_register.md\ngeneric starter filename for a journal overlay. The author uses jde_benchmark_register.md in the same private directory."
+    "text": "What each file does\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\ncore_voice.md\nyour non-negotiable prose traits\n\n\nbad_writing_examples.md\nthe author’s examples of rejected prose, used in drafting and review\n\n\nvoice_examples.md\nexamples of sentences, paragraph moves, cadence\n\n\necon_paper_register.md\nfield-appropriate restraint and evidence norms\n\n\nstyle_hierarchy.md\nprecedence rules when files conflict\n\n\ncollaboration_register.md\noptional overlay for joint-paper mode\n\n\njournal_tightening_register.md\noptional generic starter template for a journal overlay"
   },
   {
     "objectID": "customization.html#the-voice-rule",
