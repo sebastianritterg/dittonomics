@@ -1,101 +1,87 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Dittonomics",
+    "objectID": "customization.html",
+    "href": "customization.html",
+    "title": "Customization",
     "section": "",
-    "text": "Dittonomics is my public operating manual for doing economics research with Codex.\nThe Ditto idea is intentional: the system keeps absorbing useful research-workflow traits, then reorganizes them into one portable Codex setup. In practice, Dittonomics is a set of natural-language skills, specialist agents, writing and review rules, and maintenance tools that help move an economics project from a vague idea to analysis, paper, revision, submission, and talks. The website is the public manual. The repo is the starter kit. Your local install is the live working system."
+    "text": "This page is for the moment when the system stops being just mine and starts becoming usable for a team, a lab, or a set of recurring coauthors."
   },
   {
-    "objectID": "index.html#fork-install-customize",
-    "href": "index.html#fork-install-customize",
-    "title": "Dittonomics",
-    "section": "Fork / Install / Customize",
-    "text": "Fork / Install / Customize\nStart here if you want to use Dittonomics yourself or roll it out for coauthors:\n\nOpen the public manual: sebastianritterg.github.io/dittonomics\nFork the GitHub repo: github.com/sebastianritterg/dittonomics\nInstall the starter locally: copy the repo’s .codex/ into your own ~/.codex/\nAdd your own writing voice: copy the voice/ templates into ~/.codex/voice/ and adapt them privately\nCustomize per project: keep paper-specific rules in each repo’s AGENTS.md, AGENTS.override.md, and .codex/skills/"
+    "objectID": "customization.html#fork-first-option",
+    "href": "customization.html#fork-first-option",
+    "title": "Customization",
+    "section": "Fork-first option",
+    "text": "Fork-first option\nIf you want your own maintained version of Dittonomics for yourself or your team, start by forking the public repo:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nThen:\n\nfork the GitHub repository\nclone your fork\nadapt the public .codex/ starter bundle\npublish your own docs site if you want a team-specific manual\n\nUse this route when you want to:\n\nkeep extending the system over time\ndocument your team’s conventions\nmaintain your own website or starter defaults\n\nIf you only want the local tooling and do not need your own public variant, you can skip the fork and just copy the starter bundle into ~/.codex/."
   },
   {
-    "objectID": "index.html#what-dittonomics-gives-you",
-    "href": "index.html#what-dittonomics-gives-you",
-    "title": "Dittonomics",
-    "section": "What Dittonomics Gives You",
-    "text": "What Dittonomics Gives You\n\nnatural-language routing across the Dittonomics skills, so ordinary requests like “check section 5” resolve to the right workflow\nexplicit research phases: ideation, discovery, strategy, analysis, writing, review, revision, submission, and talks\nworker-critic separation across the stack, with creators producing artifacts and critics/referees/verifiers evaluating them\ncallable specialist agents such as writer, writer_critic, strategist, strategist_critic, coder, coder_critic, librarian, explorer, editor, and verifier\n$review routes writing checks to writer_critic, methods checks to strategist_critic, code checks to coder_critic, and full paper checks to the critic/verifier stack\na forkable public .codex/ starter bundle plus a user-level install that can be mirrored into ~/.codex/\noptional voice files for writing-sensitive workflows, kept private in ~/.codex/voice/\nstrategic post-submission revision with roadmap planning, task graphs, response matrices, and DAG validation\nexplicit maintenance tools such as checkpoint, resume-context, lint, verify-edit, dashboard, and html-report\noptional theory support when a project truly needs formal assumptions, propositions, or proof sketches\nBeamer-first talk creation, with Quarto RevealJS available only when explicitly requested\na website manual and cheat sheet you can keep open while you work"
+    "objectID": "customization.html#start-from-the-public-starter",
+    "href": "customization.html#start-from-the-public-starter",
+    "title": "Customization",
+    "section": "1. Start from the public starter",
+    "text": "1. Start from the public starter\nCopy or adapt:\n.codex/\ninto:\n~/.codex/\nMinimum pieces:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts"
   },
   {
-    "objectID": "index.html#use-this-site-like-a-roadmap",
-    "href": "index.html#use-this-site-like-a-roadmap",
-    "title": "Dittonomics",
-    "section": "Use This Site Like A Roadmap",
-    "text": "Use This Site Like A Roadmap\nThis site is meant to help you use the system correctly, not just understand that it exists.\nUse the pages in this order:\n\nQuick Start when you need the big picture and the install split\nUser Guide when you want the practical step-by-step workflow from idea to submission\nReference when you just need the right skill, utility, or prompt quickly\nAgents when you want to know who gets activated and why\nCustomization when you want to fork the system, add voice, or onboard colleagues\nArchitecture when you want to understand how the layers fit together under the hood\n\nIf you only keep one page open during the day, keep Reference open. If you only read one page before using the system properly, read User Guide."
+    "objectID": "customization.html#keep-machine-specific-config-local",
+    "href": "customization.html#keep-machine-specific-config-local",
+    "title": "Customization",
+    "section": "2. Keep machine-specific config local",
+    "text": "2. Keep machine-specific config local\nYour own local machine settings belong in:\n~/.codex/config.toml\nExamples:\n\nMCP servers\nplugin preferences\ntrust settings\nsandbox preferences"
   },
   {
-    "objectID": "index.html#research-roadmap-at-a-glance",
-    "href": "index.html#research-roadmap-at-a-glance",
-    "title": "Dittonomics",
-    "section": "Research Roadmap At A Glance",
-    "text": "Research Roadmap At A Glance\n\n\n1. Ideate\nUse $ideate\nTurn a topic, mechanism, or dataset hunch into real research questions.\n\n\n2. Discover\nUse $discover\nMap the literature, data, and framing once a candidate question exists.\n\n\n3. Strategize\nUse $strategize\nLock in the estimand, design, threats, and robustness logic before coding.\n\n\n4. Analyze\nUse $analyze\nBuild the empirical pipeline, outputs, and handoff artifacts.\n\n\n5. Write\nUse $write\nDraft the paper once the evidence and design are stable enough to narrate.\n\n\n6. Review\nUse $review\nPressure-test the draft before treating it as ready.\n\n\n7. Revise\nUse $revise\nWhen reports arrive, build the roadmap first and edit second.\n\n\n8. Submit / Talk\nUse $submit or $talk\nClose the loop with verification or convert the paper into a presentation."
+    "objectID": "customization.html#keep-project-specific-rules-in-the-repo",
+    "href": "customization.html#keep-project-specific-rules-in-the-repo",
+    "title": "Customization",
+    "section": "3. Keep project-specific rules in the repo",
+    "text": "3. Keep project-specific rules in the repo\nUse:\n\nAGENTS.md\nAGENTS.override.md\n.codex/skills/\n\nDo not overload the user-level install with rules that only belong to one paper."
   },
   {
-    "objectID": "index.html#research-roadmap-in-words",
-    "href": "index.html#research-roadmap-in-words",
-    "title": "Dittonomics",
-    "section": "Research Roadmap In Words",
-    "text": "Research Roadmap In Words\nThis is the recommended order of use for most economics projects:\n\nIdeate with $ideate when the idea is still vague\nDiscover with $discover once you have a candidate question\nStrategize with $strategize before writing serious code\nAnalyze with $analyze to build the empirical pipeline\nWrite with $write once the outputs and design are stable enough\nReview with $review before treating the draft as real\nRevise with $revise when editor or referee reports arrive\nSubmit with $submit when the package is close to done\nTalk with $talk when the paper needs a presentation version\n\nThat is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it."
+    "objectID": "customization.html#copy-the-templates-privately",
+    "href": "customization.html#copy-the-templates-privately",
+    "title": "Customization",
+    "section": "Copy the templates privately",
+    "text": "Copy the templates privately\nUse these templates to initialize missing files in a new ~/.codex/voice/ directory. If you already maintain your voice there, edit those files directly.\n\ncore_voice.template.md\nvoice_examples.template.md\necon_paper_register.template.md\nstyle_hierarchy.template.md\n\nOptional:\n\ncollaboration_register.template.md\njournal_tightening_register.template.md\n\nThen rename them without .template."
   },
   {
-    "objectID": "index.html#start-in-20-minutes",
-    "href": "index.html#start-in-20-minutes",
-    "title": "Dittonomics",
-    "section": "Start In 20 Minutes",
-    "text": "Start In 20 Minutes\n\n1. Fork or clone the repo\nThe public repo contains three things you will reuse repeatedly:\n\nthe website manual in guide/ and docs/\nthe public starter bundle in .codex/\nthe public voice templates in voice/\n\n\n\n2. Install the starter bundle locally\nCopy or adapt the repo’s .codex/ into your own ~/.codex/.\nThat gives you:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts\n\n\n\n3. Add an optional voice layer\nIf you want writing to preserve your own prose register, copy the files in voice/ into ~/.codex/voice/ and fill them in privately.\nIf you do not need a voice layer, skip it.\n\n\n4. Open a research repo with Codex\nIn a working project repo, add:\n\nAGENTS.md\noptional AGENTS.override.md\noptional repo-local skills in .codex/skills/\nexplorations/ when you need a prototype sandbox\n\n\n\n5. Start with ideation when the question is still fuzzy\nBefore discovery, use:\n\nuse $ideate session\n\nThat step helps you:\n\nturn a topic or dataset hunch into candidate research questions\ncheck the closest-paper threat early\ndecide whether to pursue, refine, park, or kill the idea\n\n\n\n6. Use the daily loop\nMorning:\n\nuse $research-tools resume-context\n\nDuring work:\n\nsay the task naturally or call the workflow skill directly; the system should normalize the request to the right Dittonomics mode\n\nEnd of day:\n\nuse $research-tools checkpoint"
+    "objectID": "customization.html#what-each-file-does",
+    "href": "customization.html#what-each-file-does",
+    "title": "Customization",
+    "section": "What each file does",
+    "text": "What each file does\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\ncore_voice.md\nyour non-negotiable prose traits\n\n\nbad_writing_examples.md\nthe author’s examples of rejected prose, used in drafting and review\n\n\nvoice_examples.md\nexamples of sentences, paragraph moves, cadence\n\n\necon_paper_register.md\nfield-appropriate restraint and evidence norms\n\n\nstyle_hierarchy.md\nprecedence rules when files conflict\n\n\ncollaboration_register.md\noptional overlay for joint-paper mode\n\n\njournal_tightening_register.md\ngeneric starter filename for a journal overlay. The author uses jde_benchmark_register.md in the same private directory."
   },
   {
-    "objectID": "index.html#first-prompts-to-try",
-    "href": "index.html#first-prompts-to-try",
-    "title": "Dittonomics",
-    "section": "First Prompts To Try",
-    "text": "First Prompts To Try\nHelp me shape this policy idea into ranked research questions before discovery.\nMap the literature on teacher value-added and school assignment.\nDesign the identification strategy and referee-proof robustness plan for this research question.\nRevise the introduction using the current draft for calibration, but keep econ-intro-writing in charge of structure.\nCheck section 5 for writing, claims-evidence alignment, and causal-language problems.\nRun a peer review on the current draft and tell me the highest-risk issues first.\nTurn these referee reports into a revision roadmap and execution blocks before we start editing.\nCheckpoint this repo. Capture today's goal, what we finished, blockers, important files, and the best next step."
+    "objectID": "customization.html#the-voice-rule",
+    "href": "customization.html#the-voice-rule",
+    "title": "Customization",
+    "section": "The voice rule",
+    "text": "The voice rule\nYour voice layer should shape:\n\ndiction\ncadence\nparagraph texture\ncompression level\n\nIt should not override:\n\nevidence discipline\ncausal restraint\nintro architecture\nrepo-local terminology rules"
   },
   {
-    "objectID": "index.html#how-the-site-is-organized",
-    "href": "index.html#how-the-site-is-organized",
-    "title": "Dittonomics",
-    "section": "How The Site Is Organized",
-    "text": "How The Site Is Organized\n\nQuick Start: what Dittonomics is and how to get running quickly\nUser Guide: the practical roadmap for how to use the system of skills and agents properly for economics research\nAgents: who does what and when the system dispatches each role\nArchitecture: how the website, starter bundle, local install, repo overlays, and state files fit together\nCustomization: how to install your own stack, set up voice, and onboard colleagues\nReference: the cheat sheet for skills, utilities, agents, folders, and recurring prompts"
+    "objectID": "customization.html#a-good-minimal-voice-setup",
+    "href": "customization.html#a-good-minimal-voice-setup",
+    "title": "Customization",
+    "section": "A good minimal voice setup",
+    "text": "A good minimal voice setup\nIf you want the smallest useful version, start with:\n\ncore_voice.md\nvoice_examples.md\nstyle_hierarchy.md\n\nYou can add the others later."
   },
   {
-    "objectID": "index.html#what-dittonomics-builds-on",
-    "href": "index.html#what-dittonomics-builds-on",
-    "title": "Dittonomics",
-    "section": "What Dittonomics Builds On",
-    "text": "What Dittonomics Builds On\nDittonomics is a remix, not a one-source clone.\nThe system draws especially from:\n\nClo-Author for the overall research-workflow architecture\nmy_claude_skills for explicit skill patterns and reusable operational helpers\nclaudeblattman for economics-facing workflow instincts and practical researcher ergonomics\nstrategic-revision for post-submission revision planning, task decomposition, and dependency logic\nresearch-companion for research-stage orchestration ideas that fit both Codex and Claude Code settings\nidea-evaluation-pipeline for screening seed ideas and turning them into sharper research questions\n\nThe Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages."
+    "objectID": "customization.html#public-or-shared",
+    "href": "customization.html#public-or-shared",
+    "title": "Customization",
+    "section": "Public or shared",
+    "text": "Public or shared\n\nwebsite manual\npublic starter bundle\nproject AGENTS.md\ngeneric workflow rules"
   },
   {
-    "objectID": "index.html#public-home",
-    "href": "index.html#public-home",
-    "title": "Dittonomics",
-    "section": "Public Home",
-    "text": "Public Home\nThe public website is:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nKeep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system, especially when you or a colleague forget which skill to call next."
+    "objectID": "customization.html#private",
+    "href": "customization.html#private",
+    "title": "Customization",
+    "section": "Private",
+    "text": "Private\n\npersonal voice files\nmachine-specific config\nprivate examples you do not want to publish"
   },
   {
-    "objectID": "index.html#how-to-fork-dittonomics",
-    "href": "index.html#how-to-fork-dittonomics",
-    "title": "Dittonomics",
-    "section": "How To Fork Dittonomics",
-    "text": "How To Fork Dittonomics\nIf you want your own version of the system:\n\nfork the repo on GitHub\nclone your fork locally\ncopy or adapt the repo’s .codex/ starter bundle into your own ~/.codex/\noptionally copy the voice/ templates into your private ~/.codex/voice/\nkeep repo-specific rules in each project’s AGENTS.md, AGENTS.override.md, and .codex/skills/\nuse this website as the shared manual for your own adaptation\n\nThe practical split is:\n\nfork the repo when you want your own public or shared Dittonomics variant\ncopy the starter bundle when you want the user-level install on your machine\nuse repo overlays when a specific paper or project needs local rules"
-  },
-  {
-    "objectID": "index.html#public-repo-vs-local-install",
-    "href": "index.html#public-repo-vs-local-install",
-    "title": "Dittonomics",
-    "section": "Public Repo vs Local Install",
-    "text": "Public Repo vs Local Install\n\n\n\nLayer\nRole\n\n\n\n\nguide/\nsource for the website manual\n\n\ndocs/\nrendered site for GitHub Pages\n\n\n.codex/ in this repo\npublic starter bundle\n\n\n~/.codex/\nyour live local user-level install\n\n\n~/.codex/voice/\nyour private voice layer\n\n\nproject repo AGENTS.md\nrepo constitution and working rules\n\n\nproject repo .codex-state/\nlocal checkpoint and resume files"
-  },
-  {
-    "objectID": "index.html#the-ditto-rule",
-    "href": "index.html#the-ditto-rule",
-    "title": "Dittonomics",
-    "section": "The Ditto Rule",
-    "text": "The Ditto Rule\nKeep the system open to future additions.\nThat means:\n\ndo not freeze the workflow as if this is the final shape\ndocument new traits as they get added\nkeep the public starter generic\nkeep private voice and machine-specific behavior separate\nlet the website become the shared memory for the team"
+    "objectID": "customization.html#project-specific-but-shared",
+    "href": "customization.html#project-specific-but-shared",
+    "title": "Customization",
+    "section": "Project-specific but shared",
+    "text": "Project-specific but shared\n\nrepo-local overlays\nproject terminology rules\nteam conventions for directories and outputs"
   },
   {
     "objectID": "agents.html",
@@ -166,34 +152,6 @@
     "title": "Agents",
     "section": "Instead of calling agents directly, call skills",
     "text": "Instead of calling agents directly, call skills\n\n\n\n\n\n\n\nIf you want\nUse\n\n\n\n\nearly idea screening or question generation\n$ideate\n\n\nliterature work\n$discover lit\n\n\ndata search\n$discover data\n\n\nresearch design\n$strategize\n\n\nexplicit formal theory support\n$strategize theory or $review --theory\n\n\npost-submission revision planning\n$revise roadmap\n\n\ncoding or output pipeline\n$analyze\n\n\nwriting\n$write\n\n\nreview\n$review\n\n\nutilities and state management\n$research-tools"
-  },
-  {
-    "objectID": "architecture.html",
-    "href": "architecture.html",
-    "title": "Architecture",
-    "section": "",
-    "text": "Dittonomics has four layers that matter in practice.\n\n\n\n\n\n\n\n\nLayer\nWhere it lives\nWhat it does\n\n\n\n\nWebsite manual\nguide/ and docs/\nteaches humans how the system works\n\n\nPublic starter bundle\n.codex/ in this repo\ngives a generic forkable install\n\n\nLive local install\n~/.codex/, ~/.codex/skills, ~/.codex/voice/\nruns your actual working system\n\n\nProject repo overlay\nAGENTS.md, AGENTS.override.md, .codex/skills/\nmakes behavior repo-specific\n\n\n\nThe public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real."
-  },
-  {
-    "objectID": "architecture.html#default-structure",
-    "href": "architecture.html#default-structure",
-    "title": "Architecture",
-    "section": "Default structure",
-    "text": "Default structure\n.codex-state/\n  checkpoints/\n    2026-04-22T18-30-00Z_end-of-day.json\n    2026-04-22T18-30-00Z_end-of-day.md\n  latest.json\n  latest.md\n  resume-context.md"
-  },
-  {
-    "objectID": "architecture.html#why-both-json-and-markdown-exist",
-    "href": "architecture.html#why-both-json-and-markdown-exist",
-    "title": "Architecture",
-    "section": "Why both JSON and Markdown exist",
-    "text": "Why both JSON and Markdown exist\nThe JSON files are:\n\nstable\nmachine-readable\ngood for scripted recovery later\n\nThe Markdown files are:\n\neasy to read\neasy to share with a colleague\ngood for quick manual inspection"
-  },
-  {
-    "objectID": "architecture.html#recommended-policy",
-    "href": "architecture.html#recommended-policy",
-    "title": "Architecture",
-    "section": "Recommended policy",
-    "text": "Recommended policy\nFor working research repos:\n\nkeep .codex-state/ local\nadd it to .gitignore unless you explicitly want to share checkpoints\ntreat it as operational memory"
   },
   {
     "objectID": "user-guide.html",
@@ -455,87 +413,129 @@
     "text": "Next morning\nUse $research-tools resume-context for this repo and tell me where we left off and what to do next."
   },
   {
-    "objectID": "customization.html",
-    "href": "customization.html",
-    "title": "Customization",
+    "objectID": "architecture.html",
+    "href": "architecture.html",
+    "title": "Architecture",
     "section": "",
-    "text": "This page is for the moment when the system stops being just mine and starts becoming usable for a team, a lab, or a set of recurring coauthors."
+    "text": "Dittonomics has four layers that matter in practice.\n\n\n\n\n\n\n\n\nLayer\nWhere it lives\nWhat it does\n\n\n\n\nWebsite manual\nguide/ and docs/\nteaches humans how the system works\n\n\nPublic starter bundle\n.codex/ in this repo\ngives a generic forkable install\n\n\nLive local install\n~/.codex/, ~/.codex/skills, ~/.codex/voice/\nruns your actual working system\n\n\nProject repo overlay\nAGENTS.md, AGENTS.override.md, .codex/skills/\nmakes behavior repo-specific\n\n\n\nThe public website explains the system. The starter bundle ships the generic version. Your local install is the live machine. The repo overlay makes each project real."
   },
   {
-    "objectID": "customization.html#fork-first-option",
-    "href": "customization.html#fork-first-option",
-    "title": "Customization",
-    "section": "Fork-first option",
-    "text": "Fork-first option\nIf you want your own maintained version of Dittonomics for yourself or your team, start by forking the public repo:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nThen:\n\nfork the GitHub repository\nclone your fork\nadapt the public .codex/ starter bundle\npublish your own docs site if you want a team-specific manual\n\nUse this route when you want to:\n\nkeep extending the system over time\ndocument your team’s conventions\nmaintain your own website or starter defaults\n\nIf you only want the local tooling and do not need your own public variant, you can skip the fork and just copy the starter bundle into ~/.codex/."
+    "objectID": "architecture.html#default-structure",
+    "href": "architecture.html#default-structure",
+    "title": "Architecture",
+    "section": "Default structure",
+    "text": "Default structure\n.codex-state/\n  checkpoints/\n    2026-04-22T18-30-00Z_end-of-day.json\n    2026-04-22T18-30-00Z_end-of-day.md\n  latest.json\n  latest.md\n  resume-context.md"
   },
   {
-    "objectID": "customization.html#start-from-the-public-starter",
-    "href": "customization.html#start-from-the-public-starter",
-    "title": "Customization",
-    "section": "1. Start from the public starter",
-    "text": "1. Start from the public starter\nCopy or adapt:\n.codex/\ninto:\n~/.codex/\nMinimum pieces:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts"
+    "objectID": "architecture.html#why-both-json-and-markdown-exist",
+    "href": "architecture.html#why-both-json-and-markdown-exist",
+    "title": "Architecture",
+    "section": "Why both JSON and Markdown exist",
+    "text": "Why both JSON and Markdown exist\nThe JSON files are:\n\nstable\nmachine-readable\ngood for scripted recovery later\n\nThe Markdown files are:\n\neasy to read\neasy to share with a colleague\ngood for quick manual inspection"
   },
   {
-    "objectID": "customization.html#keep-machine-specific-config-local",
-    "href": "customization.html#keep-machine-specific-config-local",
-    "title": "Customization",
-    "section": "2. Keep machine-specific config local",
-    "text": "2. Keep machine-specific config local\nYour own local machine settings belong in:\n~/.codex/config.toml\nExamples:\n\nMCP servers\nplugin preferences\ntrust settings\nsandbox preferences"
+    "objectID": "architecture.html#recommended-policy",
+    "href": "architecture.html#recommended-policy",
+    "title": "Architecture",
+    "section": "Recommended policy",
+    "text": "Recommended policy\nFor working research repos:\n\nkeep .codex-state/ local\nadd it to .gitignore unless you explicitly want to share checkpoints\ntreat it as operational memory"
   },
   {
-    "objectID": "customization.html#keep-project-specific-rules-in-the-repo",
-    "href": "customization.html#keep-project-specific-rules-in-the-repo",
-    "title": "Customization",
-    "section": "3. Keep project-specific rules in the repo",
-    "text": "3. Keep project-specific rules in the repo\nUse:\n\nAGENTS.md\nAGENTS.override.md\n.codex/skills/\n\nDo not overload the user-level install with rules that only belong to one paper."
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dittonomics",
+    "section": "",
+    "text": "Dittonomics is my public operating manual for doing economics research with Codex.\nThe Ditto idea is intentional: the system keeps absorbing useful research-workflow traits, then reorganizes them into one portable Codex setup. In practice, Dittonomics is a set of natural-language skills, specialist agents, writing and review rules, and maintenance tools that help move an economics project from a vague idea to analysis, paper, revision, submission, and talks. The website is the public manual. The repo is the starter kit. Your local install is the live working system."
   },
   {
-    "objectID": "customization.html#copy-the-templates-privately",
-    "href": "customization.html#copy-the-templates-privately",
-    "title": "Customization",
-    "section": "Copy the templates privately",
-    "text": "Copy the templates privately\nCopy these into ~/.codex/voice/:\n\ncore_voice.template.md\nvoice_examples.template.md\necon_paper_register.template.md\nstyle_hierarchy.template.md\n\nOptional:\n\ncollaboration_register.template.md\njournal_tightening_register.template.md\n\nThen rename them without .template."
+    "objectID": "index.html#fork-install-customize",
+    "href": "index.html#fork-install-customize",
+    "title": "Dittonomics",
+    "section": "Fork / Install / Customize",
+    "text": "Fork / Install / Customize\nStart here if you want to use Dittonomics yourself or roll it out for coauthors:\n\nOpen the public manual: sebastianritterg.github.io/dittonomics\nFork the GitHub repo: github.com/sebastianritterg/dittonomics\nInstall the starter locally: copy the repo’s .codex/ into your own ~/.codex/\nAdd your own writing voice: copy the voice/ templates into ~/.codex/voice/ and adapt them privately\nCustomize per project: keep paper-specific rules in each repo’s AGENTS.md, AGENTS.override.md, and .codex/skills/"
   },
   {
-    "objectID": "customization.html#what-each-file-does",
-    "href": "customization.html#what-each-file-does",
-    "title": "Customization",
-    "section": "What each file does",
-    "text": "What each file does\n\n\n\n\n\n\n\nFile\nPurpose\n\n\n\n\ncore_voice.md\nyour non-negotiable prose traits\n\n\nvoice_examples.md\nexamples of sentences, paragraph moves, cadence\n\n\necon_paper_register.md\nfield-appropriate restraint and evidence norms\n\n\nstyle_hierarchy.md\nprecedence rules when files conflict\n\n\ncollaboration_register.md\noptional overlay for joint-paper mode\n\n\njournal_tightening_register.md\noptional overlay for tighter journal-facing prose"
+    "objectID": "index.html#what-dittonomics-gives-you",
+    "href": "index.html#what-dittonomics-gives-you",
+    "title": "Dittonomics",
+    "section": "What Dittonomics Gives You",
+    "text": "What Dittonomics Gives You\n\nnatural-language routing across the Dittonomics skills, so ordinary requests like “check section 5” resolve to the right workflow\nexplicit research phases: ideation, discovery, strategy, analysis, writing, review, revision, submission, and talks\nworker-critic separation across the stack, with creators producing artifacts and critics/referees/verifiers evaluating them\ncallable specialist agents such as writer, writer_critic, strategist, strategist_critic, coder, coder_critic, librarian, explorer, editor, and verifier\n$review routes writing checks to writer_critic, methods checks to strategist_critic, code checks to coder_critic, and full paper checks to the critic/verifier stack\na forkable public .codex/ starter bundle plus a user-level install that can be mirrored into ~/.codex/\noptional voice files for writing-sensitive workflows, kept private in ~/.codex/voice/\nstrategic post-submission revision with roadmap planning, task graphs, response matrices, and DAG validation\nexplicit maintenance tools such as checkpoint, resume-context, lint, verify-edit, dashboard, and html-report\noptional theory support when a project truly needs formal assumptions, propositions, or proof sketches\nBeamer-first talk creation, with Quarto RevealJS available only when explicitly requested\na website manual and cheat sheet you can keep open while you work"
   },
   {
-    "objectID": "customization.html#the-voice-rule",
-    "href": "customization.html#the-voice-rule",
-    "title": "Customization",
-    "section": "The voice rule",
-    "text": "The voice rule\nYour voice layer should shape:\n\ndiction\ncadence\nparagraph texture\ncompression level\n\nIt should not override:\n\nevidence discipline\ncausal restraint\nintro architecture\nrepo-local terminology rules"
+    "objectID": "index.html#use-this-site-like-a-roadmap",
+    "href": "index.html#use-this-site-like-a-roadmap",
+    "title": "Dittonomics",
+    "section": "Use This Site Like A Roadmap",
+    "text": "Use This Site Like A Roadmap\nThis site is meant to help you use the system correctly, not just understand that it exists.\nUse the pages in this order:\n\nQuick Start when you need the big picture and the install split\nUser Guide when you want the practical step-by-step workflow from idea to submission\nReference when you just need the right skill, utility, or prompt quickly\nAgents when you want to know who gets activated and why\nCustomization when you want to fork the system, add voice, or onboard colleagues\nArchitecture when you want to understand how the layers fit together under the hood\n\nIf you only keep one page open during the day, keep Reference open. If you only read one page before using the system properly, read User Guide."
   },
   {
-    "objectID": "customization.html#a-good-minimal-voice-setup",
-    "href": "customization.html#a-good-minimal-voice-setup",
-    "title": "Customization",
-    "section": "A good minimal voice setup",
-    "text": "A good minimal voice setup\nIf you want the smallest useful version, start with:\n\ncore_voice.md\nvoice_examples.md\nstyle_hierarchy.md\n\nYou can add the others later."
+    "objectID": "index.html#research-roadmap-at-a-glance",
+    "href": "index.html#research-roadmap-at-a-glance",
+    "title": "Dittonomics",
+    "section": "Research Roadmap At A Glance",
+    "text": "Research Roadmap At A Glance\n\n\n1. Ideate\nUse $ideate\nTurn a topic, mechanism, or dataset hunch into real research questions.\n\n\n2. Discover\nUse $discover\nMap the literature, data, and framing once a candidate question exists.\n\n\n3. Strategize\nUse $strategize\nLock in the estimand, design, threats, and robustness logic before coding.\n\n\n4. Analyze\nUse $analyze\nBuild the empirical pipeline, outputs, and handoff artifacts.\n\n\n5. Write\nUse $write\nDraft the paper once the evidence and design are stable enough to narrate.\n\n\n6. Review\nUse $review\nPressure-test the draft before treating it as ready.\n\n\n7. Revise\nUse $revise\nWhen reports arrive, build the roadmap first and edit second.\n\n\n8. Submit / Talk\nUse $submit or $talk\nClose the loop with verification or convert the paper into a presentation."
   },
   {
-    "objectID": "customization.html#public-or-shared",
-    "href": "customization.html#public-or-shared",
-    "title": "Customization",
-    "section": "Public or shared",
-    "text": "Public or shared\n\nwebsite manual\npublic starter bundle\nproject AGENTS.md\ngeneric workflow rules"
+    "objectID": "index.html#research-roadmap-in-words",
+    "href": "index.html#research-roadmap-in-words",
+    "title": "Dittonomics",
+    "section": "Research Roadmap In Words",
+    "text": "Research Roadmap In Words\nThis is the recommended order of use for most economics projects:\n\nIdeate with $ideate when the idea is still vague\nDiscover with $discover once you have a candidate question\nStrategize with $strategize before writing serious code\nAnalyze with $analyze to build the empirical pipeline\nWrite with $write once the outputs and design are stable enough\nReview with $review before treating the draft as real\nRevise with $revise when editor or referee reports arrive\nSubmit with $submit when the package is close to done\nTalk with $talk when the paper needs a presentation version\n\nThat is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it."
   },
   {
-    "objectID": "customization.html#private",
-    "href": "customization.html#private",
-    "title": "Customization",
-    "section": "Private",
-    "text": "Private\n\npersonal voice files\nmachine-specific config\nprivate examples you do not want to publish"
+    "objectID": "index.html#start-in-20-minutes",
+    "href": "index.html#start-in-20-minutes",
+    "title": "Dittonomics",
+    "section": "Start In 20 Minutes",
+    "text": "Start In 20 Minutes\n\n1. Fork or clone the repo\nThe public repo contains three things you will reuse repeatedly:\n\nthe website manual in guide/ and docs/\nthe public starter bundle in .codex/\nthe public voice templates in voice/\n\n\n\n2. Install the starter bundle locally\nCopy or adapt the repo’s .codex/ into your own ~/.codex/.\nThat gives you:\n\nAGENTS.md\nskills/\nagents/\nworkflow references\nutility scripts\n\n\n\n3. Add an optional voice layer\nIf you want writing to preserve your own prose register, copy the files in voice/ into ~/.codex/voice/ and fill them in privately.\nIf you do not need a voice layer, skip it.\n\n\n4. Open a research repo with Codex\nIn a working project repo, add:\n\nAGENTS.md\noptional AGENTS.override.md\noptional repo-local skills in .codex/skills/\nexplorations/ when you need a prototype sandbox\n\n\n\n5. Start with ideation when the question is still fuzzy\nBefore discovery, use:\n\nuse $ideate session\n\nThat step helps you:\n\nturn a topic or dataset hunch into candidate research questions\ncheck the closest-paper threat early\ndecide whether to pursue, refine, park, or kill the idea\n\n\n\n6. Use the daily loop\nMorning:\n\nuse $research-tools resume-context\n\nDuring work:\n\nsay the task naturally or call the workflow skill directly; the system should normalize the request to the right Dittonomics mode\n\nEnd of day:\n\nuse $research-tools checkpoint"
   },
   {
-    "objectID": "customization.html#project-specific-but-shared",
-    "href": "customization.html#project-specific-but-shared",
-    "title": "Customization",
-    "section": "Project-specific but shared",
-    "text": "Project-specific but shared\n\nrepo-local overlays\nproject terminology rules\nteam conventions for directories and outputs"
+    "objectID": "index.html#first-prompts-to-try",
+    "href": "index.html#first-prompts-to-try",
+    "title": "Dittonomics",
+    "section": "First Prompts To Try",
+    "text": "First Prompts To Try\nHelp me shape this policy idea into ranked research questions before discovery.\nMap the literature on teacher value-added and school assignment.\nDesign the identification strategy and referee-proof robustness plan for this research question.\nRevise the introduction using the current draft for calibration, but keep econ-intro-writing in charge of structure.\nCheck section 5 for writing, claims-evidence alignment, and causal-language problems.\nRun a peer review on the current draft and tell me the highest-risk issues first.\nTurn these referee reports into a revision roadmap and execution blocks before we start editing.\nCheckpoint this repo. Capture today's goal, what we finished, blockers, important files, and the best next step."
+  },
+  {
+    "objectID": "index.html#how-the-site-is-organized",
+    "href": "index.html#how-the-site-is-organized",
+    "title": "Dittonomics",
+    "section": "How The Site Is Organized",
+    "text": "How The Site Is Organized\n\nQuick Start: what Dittonomics is and how to get running quickly\nUser Guide: the practical roadmap for how to use the system of skills and agents properly for economics research\nAgents: who does what and when the system dispatches each role\nArchitecture: how the website, starter bundle, local install, repo overlays, and state files fit together\nCustomization: how to install your own stack, set up voice, and onboard colleagues\nReference: the cheat sheet for skills, utilities, agents, folders, and recurring prompts"
+  },
+  {
+    "objectID": "index.html#what-dittonomics-builds-on",
+    "href": "index.html#what-dittonomics-builds-on",
+    "title": "Dittonomics",
+    "section": "What Dittonomics Builds On",
+    "text": "What Dittonomics Builds On\nDittonomics is a remix, not a one-source clone.\nThe system draws especially from:\n\nClo-Author for the overall research-workflow architecture\nmy_claude_skills for explicit skill patterns and reusable operational helpers\nclaudeblattman for economics-facing workflow instincts and practical researcher ergonomics\nstrategic-revision for post-submission revision planning, task decomposition, and dependency logic\nresearch-companion for research-stage orchestration ideas that fit both Codex and Claude Code settings\nidea-evaluation-pipeline for screening seed ideas and turning them into sharper research questions\n\nThe Ditto rule still applies: more useful traits can be added later, but they should enter the system visibly through documented skills, agents, and tutorial pages."
+  },
+  {
+    "objectID": "index.html#public-home",
+    "href": "index.html#public-home",
+    "title": "Dittonomics",
+    "section": "Public Home",
+    "text": "Public Home\nThe public website is:\n\nhttps://sebastianritterg.github.io/dittonomics/\n\nKeep this site open while you work. It is meant to be the everyday operating manual and cheat sheet for the system, especially when you or a colleague forget which skill to call next."
+  },
+  {
+    "objectID": "index.html#how-to-fork-dittonomics",
+    "href": "index.html#how-to-fork-dittonomics",
+    "title": "Dittonomics",
+    "section": "How To Fork Dittonomics",
+    "text": "How To Fork Dittonomics\nIf you want your own version of the system:\n\nfork the repo on GitHub\nclone your fork locally\ncopy or adapt the repo’s .codex/ starter bundle into your own ~/.codex/\noptionally copy the voice/ templates into your private ~/.codex/voice/\nkeep repo-specific rules in each project’s AGENTS.md, AGENTS.override.md, and .codex/skills/\nuse this website as the shared manual for your own adaptation\n\nThe practical split is:\n\nfork the repo when you want your own public or shared Dittonomics variant\ncopy the starter bundle when you want the user-level install on your machine\nuse repo overlays when a specific paper or project needs local rules"
+  },
+  {
+    "objectID": "index.html#public-repo-vs-local-install",
+    "href": "index.html#public-repo-vs-local-install",
+    "title": "Dittonomics",
+    "section": "Public Repo vs Local Install",
+    "text": "Public Repo vs Local Install\n\n\n\nLayer\nRole\n\n\n\n\nguide/\nsource for the website manual\n\n\ndocs/\nrendered site for GitHub Pages\n\n\n.codex/ in this repo\npublic starter bundle\n\n\n~/.codex/\nyour live local user-level install\n\n\n~/.codex/voice/\nyour private voice layer\n\n\nproject repo AGENTS.md\nrepo constitution and working rules\n\n\nproject repo .codex-state/\nlocal checkpoint and resume files"
+  },
+  {
+    "objectID": "index.html#the-ditto-rule",
+    "href": "index.html#the-ditto-rule",
+    "title": "Dittonomics",
+    "section": "The Ditto Rule",
+    "text": "The Ditto Rule\nKeep the system open to future additions.\nThat means:\n\ndo not freeze the workflow as if this is the final shape\ndocument new traits as they get added\nkeep the public starter generic\nkeep private voice and machine-specific behavior separate\nlet the website become the shared memory for the team"
   }
 ]
