@@ -28,15 +28,15 @@ If you want the shortest correct way to use Dittonomics, use this sequence:
 
 | Research situation | Call this first | What you should get before moving on |
 |---|---|---|
-| you have a topic, mechanism, or dataset hunch | `$clo-ideate` | ranked research questions and a pursue/refine/park/kill screen |
-| you have a candidate question but need grounding | `$clo-discover` | literature map, data memo, and better framing |
-| you think the question is real | `$clo-strategize` | estimand, design, assumptions, robustness plan |
-| the design is ready to become code | `$clo-analyze` | cleaned pipeline, outputs, and reproducible handoff |
-| the evidence is ready to narrate | `$clo-write` | section drafts with proper structure and restraint |
-| the draft needs serious criticism | `$clo-review` | findings, referee-style risks, editor calibration |
-| real referee or editor reports arrive | `$clo-revise` | roadmap, validated task graph, execution blocks, response package |
-| the paper is nearly done | `$clo-submit` | verification and submission-readiness check |
-| the project needs a talk | `$clo-talk` | Beamer deck by default, Quarto only with `--quarto` |
+| you have a topic, mechanism, or dataset hunch | `$ideate` | ranked research questions and a pursue/refine/park/kill screen |
+| you have a candidate question but need grounding | `$discover` | literature map, data memo, and better framing |
+| you think the question is real | `$strategize` | estimand, design, assumptions, robustness plan |
+| the design is ready to become code | `$analyze` | cleaned pipeline, outputs, and reproducible handoff |
+| the evidence is ready to narrate | `$write` | section drafts with proper structure and restraint |
+| the draft needs serious criticism | `$review` | findings, referee-style risks, editor calibration |
+| real referee or editor reports arrive | `$revise` | roadmap, validated task graph, execution blocks, response package |
+| the paper is nearly done | `$submit` | verification and submission-readiness check |
+| the project needs a talk | `$talk` | Beamer deck by default, Quarto only with `--quarto` |
 
 This is the main tutorial logic of the site. If a colleague asks, "What do I use now?", the answer should usually come from this table first.
 
@@ -47,7 +47,7 @@ This is the main tutorial logic of the site. If a colleague asks, "What do I use
 Start with:
 
 ```text
-Use $clo-research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.
+Use $research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.
 ```
 
 What this is meant to do:
@@ -77,61 +77,61 @@ Use this before discovery when the project is still just:
 - a policy area without a sharp question yet
 
 ```text
-Use $clo-ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.
+Use $ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.
 ```
 
 ```text
-Use $clo-ideate rq from this dataset idea and give me the best candidate empirical questions.
+Use $ideate rq from this dataset idea and give me the best candidate empirical questions.
 ```
 
 ### Discovery
 
 ```text
-Use $clo-discover lit on this topic and build the literature map first.
+Use $discover lit on this topic and build the literature map first.
 ```
 
 ```text
-Use $clo-discover data and assess which datasets can support this question.
+Use $discover data and assess which datasets can support this question.
 ```
 
 ### Strategy
 
 ```text
-Use $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.
+Use $strategize on this question and propose the main design, the key assumptions, and the robustness plan.
 ```
 
 If the project needs formal theory support, make that explicit:
 
 ```text
-Use $clo-strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.
+Use $strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.
 ```
 
 ### Analysis
 
 ```text
-Use $clo-analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.
+Use $analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.
 ```
 
 ### Writing
 
 ```text
-Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.
+Use $write intro with current-draft mode and keep econ-intro-writing in charge of structure.
 ```
 
 ```text
-Use $clo-write results and narrate the main tables without overstating causality.
+Use $write results and narrate the main tables without overstating causality.
 ```
 
 ### Review
 
 ```text
-Use $clo-review on this draft and give me the highest-risk findings first.
+Use $review on this draft and give me the highest-risk findings first.
 ```
 
 For formal theory sections, use explicit theory review:
 
 ```text
-Use $clo-review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.
+Use $review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.
 ```
 
 ### Revision
@@ -139,31 +139,31 @@ Use $clo-review --theory on this formal section and audit proof logic, assumptio
 Use this when real editor or referee reports already exist.
 
 ```text
-Use $clo-revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.
+Use $revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.
 ```
 
 ```text
-Use $clo-revise validate quality_reports/revision_tasks_rr1.json
+Use $revise validate quality_reports/revision_tasks_rr1.json
 ```
 
 ```text
-Use $clo-revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.
+Use $revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.
 ```
 
 ```text
-Use $clo-revise respond on these reports and the revised draft, using the response matrix and decision log.
+Use $revise respond on these reports and the revised draft, using the response matrix and decision log.
 ```
 
 ### Talks and submission
 
 ```text
-Use $clo-talk seminar to build the deck from the current paper.
+Use $talk seminar to build the deck from the current paper.
 ```
 
 This creates a Beamer-style talk by default. Use `--quarto` only when you want RevealJS.
 
 ```text
-Use $clo-submit and check whether this package is actually submission-ready.
+Use $submit and check whether this package is actually submission-ready.
 ```
 
 ## End of day: checkpoint intentionally
@@ -171,7 +171,7 @@ Use $clo-submit and check whether this package is actually submission-ready.
 Use:
 
 ```text
-Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.
+Use $research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.
 ```
 
 This is the recommended end-of-day ritual.
@@ -191,7 +191,7 @@ Best when:
 Example:
 
 ```text
-Use $clo-review --peer on the latest draft.
+Use $review --peer on the latest draft.
 ```
 
 ## Natural-language style
@@ -210,7 +210,7 @@ Please review the current paper draft like a journal referee and focus on identi
 
 ## Recommendation
 
-For daily work with colleagues, prefer explicit `$clo-*` names.
+For daily work with colleagues, prefer names such as `$review` and `$write`.
 
 It makes:
 
@@ -220,7 +220,9 @@ It makes:
 
 # How Agent Activation Works
 
-## What usually activates agents
+## Which agents an explicit skill request activates
+
+In the author’s installation, a request in ordinary language stays in the main session. Use a named skill such as `$review --methods`, select it, or ask to use that skill to invoke its specialist route.
 
 | What you ask for | Typical system response |
 |---|---|
@@ -242,11 +244,11 @@ Do it when you want to steer the posture.
 Examples:
 
 ```text
-Use $clo-discover lit, but keep it repo-bibliography-first.
+Use $discover lit, but keep it repo-bibliography-first.
 ```
 
 ```text
-Use $clo-review --peer and make the methods_referee especially tough on the event-study design.
+Use $review --peer and make the methods_referee especially tough on the event-study design.
 ```
 
 Usually you still call the skill, not the raw agent.
@@ -298,7 +300,7 @@ Purpose:
 Typical use:
 
 ```text
-Use $clo-research-tools resume-context for this repo and tell me what I most likely need to do next.
+Use $research-tools resume-context for this repo and tell me what I most likely need to do next.
 ```
 
 ## Verify-edit
@@ -311,7 +313,7 @@ Purpose:
 Typical use:
 
 ```text
-Use $clo-research-tools verify-edit 03_code/src/estimate.py
+Use $research-tools verify-edit 03_code/src/estimate.py
 ```
 
 Use it after:
@@ -330,7 +332,7 @@ Purpose:
 Typical use:
 
 ```text
-Use $clo-research-tools lint 03_code/src
+Use $research-tools lint 03_code/src
 ```
 
 ## Dashboard And HTML Reports
@@ -343,11 +345,11 @@ Purpose:
 Typical use:
 
 ```text
-Use $clo-research-tools dashboard for this repo.
+Use $research-tools dashboard for this repo.
 ```
 
 ```text
-Use $clo-research-tools html-report strategy-review for this repo.
+Use $research-tools html-report strategy-review for this repo.
 ```
 
 # A Good Team Workflow
@@ -374,7 +376,7 @@ That order usually teaches the workflow faster than starting from architecture.
 # A Good End-Of-Day Prompt
 
 ```text
-Use $clo-research-tools checkpoint for this repo.
+Use $research-tools checkpoint for this repo.
 
 Goal: finish the event-study pipeline and prepare the writing handoff.
 Summary: built the cleaned panel, updated the estimation script, and confirmed the main figure compiles.
@@ -387,7 +389,7 @@ Next step: decide the placebo window and rerun the robustness block before writi
 # A Good Next-Morning Prompt
 
 ```text
-Use $clo-research-tools resume-context for this repo and reconstruct where we left off yesterday, the key files, blockers, and the best next step.
+Use $research-tools resume-context for this repo and reconstruct where we left off yesterday, the key files, blockers, and the best next step.
 ```
 
 # Common Mistakes
@@ -395,7 +397,7 @@ Use $clo-research-tools resume-context for this repo and reconstruct where we le
 ## Calling the wrong layer
 
 Do not call `writer` directly unless you have a very specific reason.
-Usually call `$clo-write`.
+Usually call `$write`.
 
 ## Treating voice as structure
 
@@ -417,11 +419,11 @@ Neither should be treated as the only truth source.
 Discovery is for formalizing and searching.
 Ideation is for deciding whether the question deserves that investment.
 
-If the project still sounds more like a direction than a question, start with `$clo-ideate`.
+If the project still sounds more like a direction than a question, start with `$ideate`.
 
 ## Jumping into edits before building the revision roadmap
 
-When real referee reports arrive, start with `$clo-revise roadmap` before rewriting sections or running ad hoc analyses.
+When real referee reports arrive, start with `$revise roadmap` before rewriting sections or running ad hoc analyses.
 
 That step is what:
 

@@ -9,55 +9,58 @@ If you are unsure where to start, use this quick map:
 
 | If you are here | Use this |
 |---|---|
-| "I only have a rough idea" | `$clo-ideate` |
-| "I think the question is real, but I need the literature or data map" | `$clo-discover` |
-| "I need the design before I code" | `$clo-strategize` |
-| "I need the empirical pipeline and outputs" | `$clo-analyze` |
-| "I need to draft or revise the paper" | `$clo-write` |
-| "I need tough criticism" | `$clo-review` |
-| "I need to audit a formal theory block" | `$clo-review --theory` |
-| "I got referee reports back" | `$clo-revise roadmap` |
-| "I need a local project dashboard" | `$clo-research-tools dashboard` |
-| "I need a local HTML report from quality reports" | `$clo-research-tools html-report [type]` |
-| "I need mechanical code checks" | `$clo-research-tools lint [file|dir]` |
-| "I am stopping for the day" | `$clo-research-tools checkpoint` |
-| "I am reopening the project" | `$clo-research-tools resume-context` |
+| "I only have a rough idea" | `$ideate` |
+| "I think the question is real, but I need the literature or data map" | `$discover` |
+| "I need the design before I code" | `$strategize` |
+| "I need the empirical pipeline and outputs" | `$analyze` |
+| "I need to draft or revise the paper" | `$write` |
+| "I need tough criticism" | `$review` |
+| "I need to audit a formal theory block" | `$review --theory` |
+| "I got referee reports back" | `$revise roadmap` |
+| "I need a local project dashboard" | `$research-tools dashboard` |
+| "I need a local HTML report from quality reports" | `$research-tools html-report [type]` |
+| "I need mechanical code checks" | `$research-tools lint [file|dir]` |
+| "I am stopping for the day" | `$research-tools checkpoint` |
+| "I am reopening the project" | `$research-tools resume-context` |
+
+In the author’s installation, `review this abstract` asks the main session to review it. Use `$review --proofread` to request the independent writing critic. Selecting the named skill also invokes its workflow.
 
 # Daily Cheat Sheet
 
 ## Start the day
 
 ```text
-Use $clo-research-tools resume-context for this repo.
+Use $research-tools resume-context for this repo.
 ```
 
 ## End the day
 
 ```text
-Use $clo-research-tools checkpoint for this repo.
+Use $research-tools checkpoint for this repo.
 ```
 
 ## After a risky edit
 
 ```text
-Use $clo-research-tools verify-edit 03_code/src/estimate.py
+Use $research-tools verify-edit 03_code/src/estimate.py
 ```
 
 # Workflow Skills
 
 | Skill | Use it for | Example |
 |---|---|---|
-| `$clo-ideate` | screen ideas, generate research questions, and decide what is worth pursuing | `Use $clo-ideate session on this dataset idea and rank the best research questions.` |
-| `$clo-new-project` | launch a whole project workflow | `Use $clo-new-project on this topic and scaffold the pipeline.` |
-| `$clo-discover` | interview, literature, or data discovery | `Use $clo-discover lit on school assignment and teacher quality.` |
-| `$clo-strategize` | identification design and PAPs | `Use $clo-strategize on this question and rank the causal designs.` |
-| `$clo-analyze` | coding, outputs, cleaning, estimation | `Use $clo-analyze and build the estimation pipeline plus output handoff.` |
-| `$clo-write` | manuscript drafting, revising, humanizing, style-guide work | `Use $clo-write intro with current-draft mode.` |
-| `$clo-review` | writing review, peer review, or critic workflows | `Use $clo-review --peer on the current paper draft.` |
-| `$clo-revise` | strategic post-submission roadmap planning, validation, execution routing, and response drafting | `Use $clo-revise roadmap on these reports and the submitted paper.` |
-| `$clo-talk` | Beamer-first deck building; Quarto only with `--quarto` | `Use $clo-talk seminar from the current paper.` |
-| `$clo-submit` | final submission checks | `Use $clo-submit and tell me if this is actually submission-ready.` |
-| `$clo-research-tools` | utilities and maintenance | `Use $clo-research-tools checkpoint for this repo.` |
+| `$ideate` | screen ideas, generate research questions, and decide what is worth pursuing | `Use $ideate session on this dataset idea and rank the best research questions.` |
+| `$new-project` | launch a whole project workflow | `Use $new-project on this topic and scaffold the pipeline.` |
+| `$discover` | interview, literature, or data discovery | `Use $discover lit on school assignment and teacher quality.` |
+| `$strategize` | identification design and PAPs | `Use $strategize on this question and rank the causal designs.` |
+| `$analyze` | coding, outputs, cleaning, estimation | `Use $analyze and build the estimation pipeline plus output handoff.` |
+| `$write` | manuscript drafting, revising, humanizing, style-guide work | `Use $write intro with current-draft mode.` |
+| `$review` | writing review, peer review, or critic workflows | `Use $review --peer on the current paper draft.` |
+| `$revise` | strategic post-submission roadmap planning, validation, execution routing, and response drafting | `Use $revise roadmap on these reports and the submitted paper.` |
+| `$talk` | Beamer-first deck building; Quarto only with `--quarto` | `Use $talk seminar from the current paper.` |
+| `$submit` | final submission checks | `Use $submit and tell me if this is actually submission-ready.` |
+| `$research-tools` | utilities and maintenance | `Use $research-tools checkpoint for this repo.` |
+| `$workflow` | look up the phase, role, or handoff for a task | `Use $workflow to explain the handoff from analysis to writing.` |
 
 # Research Tools Cheat Sheet
 
@@ -69,6 +72,7 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 | `lint` | advisory R/Python/Julia/Stata mechanical checks | before code review or commits |
 | `dashboard` | local self-contained project overview | after meaningful pipeline progress |
 | `html-report` | local self-contained report from quality reports | when sharing review, strategy, code, or literature outputs |
+| `doctor` | checks installed skill metadata, routes, roles, and voice files in the author’s installation | after changing the live configuration |
 | `context` | quick session-status summary | when you feel lost mid-session |
 | `compile` | build paper or talk outputs | after manuscript edits |
 | `validate-bib` | catch citation drift | before review or submission |
@@ -80,28 +84,39 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 
 | Agent | Best for | Usually triggered by |
 |---|---|---|
-| `ideator` | question generation and early screening | `$clo-ideate` |
-| `ideator_critic` | early-stage go or no-go review | after `$clo-ideate` creator pass |
-| `librarian` | literature collection | `$clo-discover lit` |
-| `explorer` | data search | `$clo-discover data` |
-| `strategist` | causal design | `$clo-strategize` |
-| `theorist` | explicit formal theory support | `$clo-strategize theory` |
-| `theorist_critic` | explicit theory review | `$clo-review --theory` |
-| `revision_planner` | revision roadmap planning | `$clo-revise roadmap` |
-| `revision_planner_critic` | roadmap critique and dependency sanity checks | after `$clo-revise roadmap` |
-| `data_engineer` | cleaning and wrangling | `$clo-analyze` |
-| `coder` | scripts and outputs | `$clo-analyze` |
-| `writer` | drafting sections | `$clo-write` |
-| `writer_critic` | writing review | `$clo-review` or proofread mode |
-| `editor` | peer review synthesis | `$clo-review --peer` |
-| `domain_referee` | contribution and literature review | `$clo-review --peer` |
-| `methods_referee` | methods review | `$clo-review --peer` |
-| `verifier` | mechanics and replication checks | `$clo-submit` |
+| `ideator` | question generation and early screening | `$ideate` |
+| `ideator_critic` | early-stage go or no-go review | after `$ideate` creator pass |
+| `librarian` | literature collection | `$discover lit` |
+| `librarian_critic` | literature coverage and positioning | after the literature search |
+| `explorer` | data search | `$discover data` |
+| `explorer_critic` | measurement and suitability of data | after the data assessment |
+| `strategist` | causal design | `$strategize` |
+| `strategist_critic` | identification assumptions and inference | `$review --methods` |
+| `theorist` | explicit formal theory support | `$strategize theory` |
+| `theorist_critic` | explicit theory review | `$review --theory` |
+| `revision_planner` | revision roadmap planning | `$revise roadmap` |
+| `revision_planner_critic` | roadmap critique and dependency sanity checks | after `$revise roadmap` |
+| `data_engineer` | cleaning and wrangling | `$analyze` |
+| `coder` | scripts and outputs | `$analyze` |
+| `coder_critic` | empirical code and reproducibility | `$review --code` |
+| `writer` | drafting sections | `$write` |
+| `writer_critic` | writing review | `$review --proofread` |
+| `editor` | peer review synthesis | `$review --peer` |
+| `domain_referee` | contribution and literature review | `$review --peer` |
+| `methods_referee` | methods review | `$review --peer` |
+| `storyteller` | Beamer or Quarto talks | `$talk create` |
+| `storyteller_critic` | slide clarity, layout, and evidence | `$talk audit` |
+| `verifier` | mechanics and replication checks | `$submit` |
+
+The [Agents page](agents.qmd) lists all 23 specialist roles.
 
 # Voice Cheat Sheet
 
+In the author’s installation, `econ-intro-writing` supplies the introduction structure and `econ-abstract-writing` supplies the abstract checklist. `$write abstract` drafts from the evidence. `$review --proofread` applies the same checklist during review.
+
 | File | Why it exists |
 |---|---|
+| `bad_writing_examples.md` | records rejected patterns used in the author’s proofreading checks |
 | `core_voice.md` | the top prose authority |
 | `voice_examples.md` | examples of your preferred sentence and paragraph behavior |
 | `econ_paper_register.md` | field-appropriate restraint and register |
@@ -115,11 +130,11 @@ Use $clo-research-tools verify-edit 03_code/src/estimate.py
 |---|---|
 | `.codex/` | public starter bundle in this repo |
 | `~/.codex/` | live local install |
-| `~/.agents/skills/` | user-level canonical skill install when you use that layer |
-| `~/voice/` | optional private voice files |
+| `~/.codex/skills/` | installed user-level skills |
+| `~/.codex/voice/` | optional private voice files |
 | `AGENTS.md` | repo constitution |
 | `AGENTS.override.md` | repo-specific overlay |
-| `.agents/skills/` | repo-local skill extensions |
+| `.codex/skills/` | repo-local skill extensions |
 | `explorations/` | sandbox for prototypes |
 | `.codex-state/` | local checkpoints and resume files |
 
@@ -144,87 +159,87 @@ Use `.json` as the durable machine-readable layer and `.md` as the readable hand
 ## Ideation
 
 ```text
-Use $clo-ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it.
+Use $ideate session on [topic or dataset]. Turn it into ranked research questions, check the closest-paper threat, and tell me whether to pursue, refine, park, or kill it.
 ```
 
 ## Discovery
 
 ```text
-Use $clo-discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving.
+Use $discover lit on [topic]. Start repo-bibliography-first and then broaden if the frontier is moving.
 ```
 
 ## Strategy
 
 ```text
-Use $clo-strategize on [question]. Give me the main design, the threats, and the robustness plan.
+Use $strategize on [question]. Give me the main design, the threats, and the robustness plan.
 ```
 
 ## Theory
 
 ```text
-Use $clo-strategize theory on [formal section or result]. Draft the assumptions, proposition, proof sketch, and unresolved proof obligations.
+Use $strategize theory on [formal section or result]. Draft the assumptions, proposition, proof sketch, and unresolved proof obligations.
 ```
 
 ```text
-Use $clo-review --theory [target]. Audit the proof logic, assumptions, notation, and calibration.
+Use $review --theory [target]. Audit the proof logic, assumptions, notation, and calibration.
 ```
 
 ## Writing
 
 ```text
-Use $clo-write [section] with [current-draft/joint-paper/journal-tightening] mode.
+Use $write [section] with [current-draft/joint-paper/journal-tightening] mode.
 ```
 
 ## Review
 
 ```text
-Use $clo-review on the latest draft and give findings first.
+Use $review on the latest draft and give findings first.
 ```
 
 ## Revision Roadmap
 
 ```text
-Use $clo-revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks.
+Use $revise roadmap on [review files] and [submitted paper]. Extract atomic tasks, build the dependency graph, flag disagreement items, and give me execution blocks.
 ```
 
 ## Revision Validation
 
 ```text
-Use $clo-revise validate [revision_task_graph.json]
+Use $revise validate [revision_task_graph.json]
 ```
 
 ## Revision Execution
 
 ```text
-Use $clo-revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review.
+Use $revise execute [revision roadmap] and route the approved tasks back into writing, analysis, and review.
 ```
 
 ## End-of-day
 
 ```text
-Use $clo-research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step.
+Use $research-tools checkpoint for this repo. Capture today's goal, completed work, blockers, important files, and next step.
 ```
 
 ## Dashboard And HTML Reports
 
 ```text
-Use $clo-research-tools dashboard for this repo.
+Use $research-tools dashboard for this repo.
 ```
 
 ```text
-Use $clo-research-tools html-report peer-review for this repo.
+Use $research-tools html-report peer-review for this repo.
 ```
 
 ## Lint
 
 ```text
-Use $clo-research-tools lint 03_code/src.
+Use $research-tools lint 03_code/src.
 ```
 
 ## Next morning
 
 ```text
-Use $clo-research-tools resume-context for this repo and tell me where we left off and what to do next.
+Use $research-tools resume-context for this repo and tell me where we left off and what to do next.
 ```
 
 # Migration Cheat Sheet
@@ -233,7 +248,7 @@ Use $clo-research-tools resume-context for this repo and tell me where we left o
 |---|---|
 | `CLAUDE.md` | `AGENTS.md` and `AGENTS.override.md` |
 | `.claude/rules` | active workflow references and repo overlays |
-| slash commands | explicit `$clo-*` skills |
+| slash commands | explicit named skills such as `$review` |
 | `.claude/agents` | Codex custom agents |
 | hidden hooks | explicit `checkpoint`, `resume-context`, and `verify-edit` |
 

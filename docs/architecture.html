@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0c45806fd083986aad683b4f9675639e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -213,12 +213,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>Live local install</td>
-<td><code>~/.codex/</code>, <code>~/.agents/skills</code>, <code>~/voice/</code></td>
+<td><code>~/.codex/</code>, <code>~/.codex/skills</code>, <code>~/.codex/voice/</code></td>
 <td>runs your actual working system</td>
 </tr>
 <tr class="even">
 <td>Project repo overlay</td>
-<td><code>AGENTS.md</code>, <code>AGENTS.override.md</code>, <code>.agents/skills/</code></td>
+<td><code>AGENTS.md</code>, <code>AGENTS.override.md</code>, <code>.codex/skills/</code></td>
 <td>makes behavior repo-specific</td>
 </tr>
 </tbody>
@@ -263,7 +263,7 @@ ul.task-list li input[type="checkbox"] {
 <li><code>lifecycle-validation.md</code> explains pre-dispatch and post-completion checks</li>
 <li><code>execution-trace.md</code> gives a compact audit trail format for multi-step workflows</li>
 </ul>
-<p>These references help the main Codex session avoid bad routing. They are not hidden automation and do not replace the existing <code>$clo-*</code> skill triggers.</p>
+<p>These references help the main Codex session avoid bad routing. They are not hidden automation and do not replace the existing named skill triggers.</p>
 </section>
 <section id="worker-critic-architecture" class="level1">
 <h1>Worker-Critic Architecture</h1>
@@ -339,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>slash commands</td>
-<td><code>$clo-*</code> skills</td>
+<td>named skills such as <code>$review</code></td>
 </tr>
 <tr class="even">
 <td>hidden hooks</td>
@@ -351,15 +351,15 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>buried writing habits</td>
-<td>explicit <code>~/voice</code> files</td>
+<td>explicit <code>~/.codex/voice</code> files</td>
 </tr>
 <tr class="odd">
 <td>automatic post-edit lint hooks</td>
-<td>explicit <code>$clo-research-tools lint</code> or <code>verify-edit</code></td>
+<td>explicit <code>$research-tools lint</code> or <code>verify-edit</code></td>
 </tr>
 <tr class="even">
 <td>upstream dashboards</td>
-<td>explicit local <code>$clo-research-tools dashboard</code> project artifact</td>
+<td>explicit local <code>$research-tools dashboard</code> project artifact</td>
 </tr>
 </tbody>
 </table>
@@ -373,10 +373,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Strategic revision is not a simple final box after submission.</p>
 <p>It is a loop that starts when real review reports arrive:</p>
 <ol type="1">
-<li>build the roadmap with <code>$clo-revise roadmap</code></li>
-<li>validate dependencies with <code>$clo-revise validate</code></li>
-<li>execute approved blocks with <code>$clo-revise execute</code></li>
-<li>draft the response package with <code>$clo-revise respond</code></li>
+<li>build the roadmap with <code>$revise roadmap</code></li>
+<li>validate dependencies with <code>$revise validate</code></li>
+<li>execute approved blocks with <code>$revise execute</code></li>
+<li>draft the response package with <code>$revise respond</code></li>
 <li>send revised outputs back into review when needed</li>
 </ol>
 </section>
@@ -415,7 +415,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><code>idea-evaluation-pipeline</code></td>
 <td>idea screening before discovery</td>
-<td><code>$clo-ideate</code></td>
+<td><code>$ideate</code></td>
 </tr>
 <tr class="odd">
 <td><code>research-companion</code></td>
@@ -425,7 +425,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><code>strategic-revision</code></td>
 <td>strategic R&amp;R decomposition and dependency logic</td>
-<td><code>$clo-revise roadmap</code> and validator support</td>
+<td><code>$revise roadmap</code> and validator support</td>
 </tr>
 <tr class="odd">
 <td><code>Clo-Author 26.05</code></td>
@@ -491,7 +491,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="voice-as-a-layer" class="level1">
 <h1>Voice As A Layer</h1>
 <p>The voice layer is modular and optional.</p>
-<p>It lives in <code>~/voice/</code> and sits <strong>below</strong> repo guidance and front-end structure rules.</p>
+<p>It lives in <code>~/.codex/voice/</code> and sits <strong>below</strong> repo guidance and front-end structure rules.</p>
 <p>That means:</p>
 <ul>
 <li>voice shapes prose</li>

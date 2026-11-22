@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0c45806fd083986aad683b4f9675639e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -201,8 +201,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Open the public manual</strong>: <a href="https://sebastianritterg.github.io/dittonomics/">sebastianritterg.github.io/dittonomics</a></li>
 <li><strong>Fork the GitHub repo</strong>: <a href="https://github.com/sebastianritterg/dittonomics">github.com/sebastianritterg/dittonomics</a></li>
 <li><strong>Install the starter locally</strong>: copy the repo’s <code>.codex/</code> into your own <code>~/.codex/</code></li>
-<li><strong>Add your own writing voice</strong>: copy the <code>voice/</code> templates into <code>~/voice/</code> and adapt them privately</li>
-<li><strong>Customize per project</strong>: keep paper-specific rules in each repo’s <code>AGENTS.md</code>, <code>AGENTS.override.md</code>, and <code>.agents/skills/</code></li>
+<li><strong>Add your own writing voice</strong>: copy the <code>voice/</code> templates into <code>~/.codex/voice/</code> and adapt them privately</li>
+<li><strong>Customize per project</strong>: keep paper-specific rules in each repo’s <code>AGENTS.md</code>, <code>AGENTS.override.md</code>, and <code>.codex/skills/</code></li>
 </ul>
 </section>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -225,13 +225,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-dittonomics-gives-you" class="level2">
 <h2 class="anchored" data-anchor-id="what-dittonomics-gives-you">What Dittonomics Gives You</h2>
 <ul>
-<li>natural-language routing across the <code>clo-*</code> skills, so ordinary requests like “check section 5” resolve to the right workflow</li>
+<li>natural-language routing across the Dittonomics skills, so ordinary requests like “check section 5” resolve to the right workflow</li>
 <li>explicit research phases: ideation, discovery, strategy, analysis, writing, review, revision, submission, and talks</li>
 <li>worker-critic separation across the stack, with creators producing artifacts and critics/referees/verifiers evaluating them</li>
 <li>callable specialist agents such as <code>writer</code>, <code>writer_critic</code>, <code>strategist</code>, <code>strategist_critic</code>, <code>coder</code>, <code>coder_critic</code>, <code>librarian</code>, <code>explorer</code>, <code>editor</code>, and <code>verifier</code></li>
-<li><code>$clo-review</code> routes writing checks to <code>writer_critic</code>, methods checks to <code>strategist_critic</code>, code checks to <code>coder_critic</code>, and full paper checks to the critic/verifier stack</li>
+<li><code>$review</code> routes writing checks to <code>writer_critic</code>, methods checks to <code>strategist_critic</code>, code checks to <code>coder_critic</code>, and full paper checks to the critic/verifier stack</li>
 <li>a forkable public <code>.codex/</code> starter bundle plus a user-level install that can be mirrored into <code>~/.codex/</code></li>
-<li>optional voice files for writing-sensitive workflows, kept private in <code>~/voice/</code></li>
+<li>optional voice files for writing-sensitive workflows, kept private in <code>~/.codex/voice/</code></li>
 <li>strategic post-submission revision with roadmap planning, task graphs, response matrices, and DAG validation</li>
 <li>explicit maintenance tools such as <code>checkpoint</code>, <code>resume-context</code>, <code>lint</code>, <code>verify-edit</code>, <code>dashboard</code>, and <code>html-report</code></li>
 <li>optional theory support when a project truly needs formal assumptions, propositions, or proof sketches</li>
@@ -258,42 +258,42 @@ ul.task-list li input[type="checkbox"] {
 <div class="ditto-roadmap">
 <section id="ideate" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="ideate">1. Ideate</h3>
-<p>Use <code>$clo-ideate</code></p>
+<p>Use <code>$ideate</code></p>
 <p>Turn a topic, mechanism, or dataset hunch into real research questions.</p>
 </section>
 <section id="discover" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="discover">2. Discover</h3>
-<p>Use <code>$clo-discover</code></p>
+<p>Use <code>$discover</code></p>
 <p>Map the literature, data, and framing once a candidate question exists.</p>
 </section>
 <section id="strategize" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="strategize">3. Strategize</h3>
-<p>Use <code>$clo-strategize</code></p>
+<p>Use <code>$strategize</code></p>
 <p>Lock in the estimand, design, threats, and robustness logic before coding.</p>
 </section>
 <section id="analyze" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="analyze">4. Analyze</h3>
-<p>Use <code>$clo-analyze</code></p>
+<p>Use <code>$analyze</code></p>
 <p>Build the empirical pipeline, outputs, and handoff artifacts.</p>
 </section>
 <section id="write" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="write">5. Write</h3>
-<p>Use <code>$clo-write</code></p>
+<p>Use <code>$write</code></p>
 <p>Draft the paper once the evidence and design are stable enough to narrate.</p>
 </section>
 <section id="review" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="review">6. Review</h3>
-<p>Use <code>$clo-review</code></p>
+<p>Use <code>$review</code></p>
 <p>Pressure-test the draft before treating it as ready.</p>
 </section>
 <section id="revise" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="revise">7. Revise</h3>
-<p>Use <code>$clo-revise</code></p>
+<p>Use <code>$revise</code></p>
 <p>When reports arrive, build the roadmap first and edit second.</p>
 </section>
 <section id="submit-talk" class="level3 ditto-roadmap-step">
 <h3 class="anchored" data-anchor-id="submit-talk">8. Submit / Talk</h3>
-<p>Use <code>$clo-submit</code> or <code>$clo-talk</code></p>
+<p>Use <code>$submit</code> or <code>$talk</code></p>
 <p>Close the loop with verification or convert the paper into a presentation.</p>
 </section>
 </div>
@@ -302,15 +302,15 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="research-roadmap-in-words">Research Roadmap In Words</h2>
 <p>This is the recommended order of use for most economics projects:</p>
 <ol type="1">
-<li><code>Ideate</code> with <code>$clo-ideate</code> when the idea is still vague</li>
-<li><code>Discover</code> with <code>$clo-discover</code> once you have a candidate question</li>
-<li><code>Strategize</code> with <code>$clo-strategize</code> before writing serious code</li>
-<li><code>Analyze</code> with <code>$clo-analyze</code> to build the empirical pipeline</li>
-<li><code>Write</code> with <code>$clo-write</code> once the outputs and design are stable enough</li>
-<li><code>Review</code> with <code>$clo-review</code> before treating the draft as real</li>
-<li><code>Revise</code> with <code>$clo-revise</code> when editor or referee reports arrive</li>
-<li><code>Submit</code> with <code>$clo-submit</code> when the package is close to done</li>
-<li><code>Talk</code> with <code>$clo-talk</code> when the paper needs a presentation version</li>
+<li><code>Ideate</code> with <code>$ideate</code> when the idea is still vague</li>
+<li><code>Discover</code> with <code>$discover</code> once you have a candidate question</li>
+<li><code>Strategize</code> with <code>$strategize</code> before writing serious code</li>
+<li><code>Analyze</code> with <code>$analyze</code> to build the empirical pipeline</li>
+<li><code>Write</code> with <code>$write</code> once the outputs and design are stable enough</li>
+<li><code>Review</code> with <code>$review</code> before treating the draft as real</li>
+<li><code>Revise</code> with <code>$revise</code> when editor or referee reports arrive</li>
+<li><code>Submit</code> with <code>$submit</code> when the package is close to done</li>
+<li><code>Talk</code> with <code>$talk</code> when the paper needs a presentation version</li>
 </ol>
 <p>That is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it.</p>
 </section>
@@ -339,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="add-an-optional-voice-layer" class="level3">
 <h3 class="anchored" data-anchor-id="add-an-optional-voice-layer">3. Add an optional voice layer</h3>
-<p>If you want writing to preserve your own prose register, copy the files in <code>voice/</code> into <code>~/voice/</code> and fill them in privately.</p>
+<p>If you want writing to preserve your own prose register, copy the files in <code>voice/</code> into <code>~/.codex/voice/</code> and fill them in privately.</p>
 <p>If you do not need a voice layer, skip it.</p>
 </section>
 <section id="open-a-research-repo-with-codex" class="level3">
@@ -348,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><code>AGENTS.md</code></li>
 <li>optional <code>AGENTS.override.md</code></li>
-<li>optional repo-local skills in <code>.agents/skills/</code></li>
+<li>optional repo-local skills in <code>.codex/skills/</code></li>
 <li><code>explorations/</code> when you need a prototype sandbox</li>
 </ul>
 </section>
@@ -356,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="start-with-ideation-when-the-question-is-still-fuzzy">5. Start with ideation when the question is still fuzzy</h3>
 <p>Before discovery, use:</p>
 <ul>
-<li><code>use $clo-ideate session</code></li>
+<li><code>use $ideate session</code></li>
 </ul>
 <p>That step helps you:</p>
 <ul>
@@ -369,15 +369,15 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="use-the-daily-loop">6. Use the daily loop</h3>
 <p>Morning:</p>
 <ul>
-<li><code>use $clo-research-tools resume-context</code></li>
+<li><code>use $research-tools resume-context</code></li>
 </ul>
 <p>During work:</p>
 <ul>
-<li>say the task naturally or call the workflow skill directly; the system should normalize the request to the right <code>clo-*</code> mode</li>
+<li>say the task naturally or call the workflow skill directly; the system should normalize the request to the right Dittonomics mode</li>
 </ul>
 <p>End of day:</p>
 <ul>
-<li><code>use $clo-research-tools checkpoint</code></li>
+<li><code>use $research-tools checkpoint</code></li>
 </ul>
 </section>
 </section>
@@ -432,8 +432,8 @@ ul.task-list li input[type="checkbox"] {
 <li>fork the repo on GitHub</li>
 <li>clone your fork locally</li>
 <li>copy or adapt the repo’s <code>.codex/</code> starter bundle into your own <code>~/.codex/</code></li>
-<li>optionally copy the <code>voice/</code> templates into your private <code>~/voice/</code></li>
-<li>keep repo-specific rules in each project’s <code>AGENTS.md</code>, <code>AGENTS.override.md</code>, and <code>.agents/skills/</code></li>
+<li>optionally copy the <code>voice/</code> templates into your private <code>~/.codex/voice/</code></li>
+<li>keep repo-specific rules in each project’s <code>AGENTS.md</code>, <code>AGENTS.override.md</code>, and <code>.codex/skills/</code></li>
 <li>use this website as the shared manual for your own adaptation</li>
 </ol>
 <p>The practical split is:</p>
@@ -470,7 +470,7 @@ ul.task-list li input[type="checkbox"] {
 <td>your live local user-level install</td>
 </tr>
 <tr class="odd">
-<td><code>~/voice/</code></td>
+<td><code>~/.codex/voice/</code></td>
 <td>your private voice layer</td>
 </tr>
 <tr class="even">

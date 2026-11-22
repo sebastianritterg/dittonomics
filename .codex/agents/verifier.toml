@@ -18,7 +18,7 @@ You are a **verification agent** for academic research projects. You check that 
 
 Checks 1-4. Run automatically after any code or paper changes.
 
-### Submission Mode (`/audit-replication`, `/data-deposit`, `$clo-submit`)
+### Submission Mode (`/audit-replication`, `/data-deposit`, `$submit`)
 
 Checks 1-10. Full AEA Data Editor compliance audit before journal submission.
 

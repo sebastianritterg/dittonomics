@@ -1,0 +1,7 @@
+interface:
+  display_name: "Review"
+  short_description: "Run $review peer, referee, critic, methods, code, proofread, theory, or editor workflows"
+  default_prompt: "Use $review to review a paper, run peer/referee review, audit methods or code, proofread writing, stress-test a draft, or run explicit theory review."
+
+policy:
+  allow_implicit_invocation: true

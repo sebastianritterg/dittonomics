@@ -15,7 +15,7 @@ The important rule is:
 - critics critique
 - the main Codex session orchestrates
 
-In normal use, you call a skill such as `$clo-discover` or `$clo-write`.
+In normal use, you call a skill such as `$discover` or `$write`.
 The skill then decides which agent or worker-critic pair should run.
 
 # The Main Agent Families
@@ -24,49 +24,50 @@ The skill then decides which agent or worker-critic pair should run.
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `ideator` | turns rough ideas into candidate research questions | idea brief, ranked question shortlist | `$clo-ideate` |
+| `ideator` | turns rough ideas into candidate research questions | idea brief, ranked question shortlist | `$ideate` |
 | `ideator_critic` | pressure-tests early-stage ideas | pursue/refine/park/kill screen | after ideator |
 
 ## Discovery
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `librarian` | finds and organizes literature | literature map, annotated bibliography | `$clo-discover lit` |
+| `librarian` | finds and organizes literature | literature map, annotated bibliography | `$discover lit` |
 | `librarian_critic` | checks literature quality | coverage and recency critique | after librarian |
-| `explorer` | finds and assesses data | data source list, feasibility memo | `$clo-discover data` |
+| `explorer` | finds and assesses data | data source list, feasibility memo | `$discover data` |
 | `explorer_critic` | checks data fit | measurement and validity critique | after explorer |
 
 ## Strategy
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `strategist` | proposes identification designs | strategy memo | `$clo-strategize` |
+| `strategist` | proposes identification designs | strategy memo | `$strategize` |
 | `strategist_critic` | pressure-tests the design | strategy review report | after strategist |
-| `theorist` | drafts formal theory support | assumptions, propositions, proof sketch | `$clo-strategize theory` only |
-| `theorist_critic` | audits formal theory support | theory review report | `$clo-review --theory` only |
+| `theorist` | drafts formal theory support | assumptions, propositions, proof sketch | `$strategize theory` only |
+| `theorist_critic` | audits formal theory support | theory review report | `$review --theory` only |
 
 ## Revision
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `revision_planner` | turns real review reports into a strategic roadmap | task graph, roadmap, decision log | `$clo-revise roadmap` |
+| `revision_planner` | turns real review reports into a strategic roadmap | task graph, roadmap, decision log | `$revise roadmap` |
 | `revision_planner_critic` | checks roadmap completeness and sequencing | revision-planning critique | after revision_planner |
 
 ## Execution
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `data_engineer` | cleans, wrangles, prepares figures | cleaned data products, figure inputs | `$clo-analyze` |
-| `coder` | implements analysis scripts | estimation pipeline, outputs | `$clo-analyze` |
+| `data_engineer` | cleans, wrangles, prepares figures | cleaned data products, figure inputs | `$analyze` |
+| `coder` | implements analysis scripts | estimation pipeline, outputs | `$analyze` |
 | `coder_critic` | checks execution quality | code review, strategy alignment | after coder or data_engineer |
 
 ## Writing
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `writer` | drafts or revises sections | outline, paragraph plan, draft | `$clo-write` |
+| `writer` | drafts or revises sections | draft or revised passage | `$write` |
 | `writer_critic` | critiques writing quality | writing review findings | proofread or writing review |
-| `econ-intro-writing` | governs front-end structure | intro architecture guidance | intro, context, literature, opening stack |
+
+In the author’s installation, `econ-intro-writing` governs the introduction and opening stack. `econ-abstract-writing` governs the abstract during drafting and proofreading. The private voice guides govern prose. The critic checks estimates at the precision reported and preserves qualifications about timing, uncertainty, and scope.
 
 ## Review And Submission
 
@@ -81,7 +82,7 @@ The skill then decides which agent or worker-critic pair should run.
 
 | Agent | Role | Typical output | When it runs |
 |---|---|---|---|
-| `storyteller` | builds presentations | talk deck | `$clo-talk` |
+| `storyteller` | builds presentations | talk deck | `$talk` |
 | `storyteller_critic` | checks talk quality | talk review report | after storyteller |
 
 # What You Should Usually Call Instead
@@ -90,16 +91,16 @@ The skill then decides which agent or worker-critic pair should run.
 
 | If you want | Use |
 |---|---|
-| early idea screening or question generation | `$clo-ideate` |
-| literature work | `$clo-discover lit` |
-| data search | `$clo-discover data` |
-| research design | `$clo-strategize` |
-| explicit formal theory support | `$clo-strategize theory` or `$clo-review --theory` |
-| post-submission revision planning | `$clo-revise roadmap` |
-| coding or output pipeline | `$clo-analyze` |
-| writing | `$clo-write` |
-| review | `$clo-review` |
-| utilities and state management | `$clo-research-tools` |
+| early idea screening or question generation | `$ideate` |
+| literature work | `$discover lit` |
+| data search | `$discover data` |
+| research design | `$strategize` |
+| explicit formal theory support | `$strategize theory` or `$review --theory` |
+| post-submission revision planning | `$revise roadmap` |
+| coding or output pipeline | `$analyze` |
+| writing | `$write` |
+| review | `$review` |
+| utilities and state management | `$research-tools` |
 
 # When To Mention An Agent Anyway
 
@@ -108,15 +109,15 @@ Direct mention is useful when you want to shape the posture.
 Examples:
 
 ```text
-Use $clo-review, but make the methods_referee especially strict on the DiD assumptions.
+Use $review, but make the methods_referee especially strict on the DiD assumptions.
 ```
 
 ```text
-Use $clo-write intro and keep econ-intro-writing firmly in charge of structure.
+Use $write intro and keep econ-intro-writing firmly in charge of structure.
 ```
 
 ```text
-Use $clo-discover lit and make the librarian repo-bibliography-first before broad search.
+Use $discover lit and make the librarian repo-bibliography-first before broad search.
 ```
 
 # Worker-Critic Logic

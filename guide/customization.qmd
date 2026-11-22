@@ -12,9 +12,9 @@ There are four customization layers:
 | Layer | Customize this when | Where |
 |---|---|---|
 | public starter | you want to change what colleagues copy by default | repo `.codex/` |
-| local install | you want your own always-on user setup | `~/.codex/`, `~/.agents/skills` |
-| project repo | one project needs special rules | `AGENTS.md`, `AGENTS.override.md`, `.agents/skills/` |
-| voice | you want prose continuity across sessions | `~/voice/` |
+| local install | you want your own always-on user setup | `~/.codex/`, `~/.codex/skills` |
+| project repo | one project needs special rules | `AGENTS.md`, `AGENTS.override.md`, `.codex/skills/` |
+| voice | you want prose continuity across sessions | `~/.codex/voice/` |
 
 # Recommended Install Pattern
 
@@ -82,17 +82,17 @@ Use:
 
 - `AGENTS.md`
 - `AGENTS.override.md`
-- `.agents/skills/`
+- `.codex/skills/`
 
 Do not overload the user-level install with rules that only belong to one paper.
 
 # How To Build Your Own Voice
 
-The public repo includes templates in [voice](C:\projects\codex-clo-author\voice).
+The public repo includes templates in [voice](https://github.com/sebastianritterg/dittonomics/tree/main/voice).
 
 ## Copy the templates privately
 
-Copy these into `~/voice/`:
+Copy these into `~/.codex/voice/`:
 
 - `core_voice.template.md`
 - `voice_examples.template.md`
@@ -173,7 +173,7 @@ For working research repos, I recommend:
 ```text
 AGENTS.md
 AGENTS.override.md            (optional)
-.agents/skills/               (optional)
+.codex/skills/               (optional)
 explorations/
 .codex-state/                 (local, usually gitignored)
 ```
@@ -209,7 +209,7 @@ Bad ways to extend it:
 2. read **User Guide**
 3. bookmark **Reference**
 4. copy the public starter into `~/.codex/`
-5. optionally set up `~/voice/`
+5. optionally set up `~/.codex/voice/`
 6. learn the daily loop:
    - `resume-context`
    - workflow skill

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0c45806fd083986aad683b4f9675639e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 <li>critics critique</li>
 <li>the main Codex session orchestrates</li>
 </ul>
-<p>In normal use, you call a skill such as <code>$clo-discover</code> or <code>$clo-write</code>. The skill then decides which agent or worker-critic pair should run.</p>
+<p>In normal use, you call a skill such as <code>$discover</code> or <code>$write</code>. The skill then decides which agent or worker-critic pair should run.</p>
 </section>
 <section id="the-main-agent-families" class="level1">
 <h1>The Main Agent Families</h1>
@@ -224,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>ideator</code></td>
 <td>turns rough ideas into candidate research questions</td>
 <td>idea brief, ranked question shortlist</td>
-<td><code>$clo-ideate</code></td>
+<td><code>$ideate</code></td>
 </tr>
 <tr class="even">
 <td><code>ideator_critic</code></td>
@@ -257,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>librarian</code></td>
 <td>finds and organizes literature</td>
 <td>literature map, annotated bibliography</td>
-<td><code>$clo-discover lit</code></td>
+<td><code>$discover lit</code></td>
 </tr>
 <tr class="even">
 <td><code>librarian_critic</code></td>
@@ -269,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>explorer</code></td>
 <td>finds and assesses data</td>
 <td>data source list, feasibility memo</td>
-<td><code>$clo-discover data</code></td>
+<td><code>$discover data</code></td>
 </tr>
 <tr class="even">
 <td><code>explorer_critic</code></td>
@@ -302,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>strategist</code></td>
 <td>proposes identification designs</td>
 <td>strategy memo</td>
-<td><code>$clo-strategize</code></td>
+<td><code>$strategize</code></td>
 </tr>
 <tr class="even">
 <td><code>strategist_critic</code></td>
@@ -314,13 +314,13 @@ ul.task-list li input[type="checkbox"] {
 <td><code>theorist</code></td>
 <td>drafts formal theory support</td>
 <td>assumptions, propositions, proof sketch</td>
-<td><code>$clo-strategize theory</code> only</td>
+<td><code>$strategize theory</code> only</td>
 </tr>
 <tr class="even">
 <td><code>theorist_critic</code></td>
 <td>audits formal theory support</td>
 <td>theory review report</td>
-<td><code>$clo-review --theory</code> only</td>
+<td><code>$review --theory</code> only</td>
 </tr>
 </tbody>
 </table>
@@ -347,7 +347,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>revision_planner</code></td>
 <td>turns real review reports into a strategic roadmap</td>
 <td>task graph, roadmap, decision log</td>
-<td><code>$clo-revise roadmap</code></td>
+<td><code>$revise roadmap</code></td>
 </tr>
 <tr class="even">
 <td><code>revision_planner_critic</code></td>
@@ -380,13 +380,13 @@ ul.task-list li input[type="checkbox"] {
 <td><code>data_engineer</code></td>
 <td>cleans, wrangles, prepares figures</td>
 <td>cleaned data products, figure inputs</td>
-<td><code>$clo-analyze</code></td>
+<td><code>$analyze</code></td>
 </tr>
 <tr class="even">
 <td><code>coder</code></td>
 <td>implements analysis scripts</td>
 <td>estimation pipeline, outputs</td>
-<td><code>$clo-analyze</code></td>
+<td><code>$analyze</code></td>
 </tr>
 <tr class="odd">
 <td><code>coder_critic</code></td>
@@ -418,8 +418,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td><code>writer</code></td>
 <td>drafts or revises sections</td>
-<td>outline, paragraph plan, draft</td>
-<td><code>$clo-write</code></td>
+<td>draft or revised passage</td>
+<td><code>$write</code></td>
 </tr>
 <tr class="even">
 <td><code>writer_critic</code></td>
@@ -427,14 +427,9 @@ ul.task-list li input[type="checkbox"] {
 <td>writing review findings</td>
 <td>proofread or writing review</td>
 </tr>
-<tr class="odd">
-<td><code>econ-intro-writing</code></td>
-<td>governs front-end structure</td>
-<td>intro architecture guidance</td>
-<td>intro, context, literature, opening stack</td>
-</tr>
 </tbody>
 </table>
+<p>In the author’s installation, <code>econ-intro-writing</code> governs the introduction and opening stack. <code>econ-abstract-writing</code> governs the abstract during drafting and proofreading. The private voice guides govern prose. The critic checks estimates at the precision reported and preserves qualifications about timing, uncertainty, and scope.</p>
 </section>
 <section id="review-and-submission" class="level2">
 <h2 class="anchored" data-anchor-id="review-and-submission">Review And Submission</h2>
@@ -503,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
 <td><code>storyteller</code></td>
 <td>builds presentations</td>
 <td>talk deck</td>
-<td><code>$clo-talk</code></td>
+<td><code>$talk</code></td>
 </tr>
 <tr class="even">
 <td><code>storyteller_critic</code></td>
@@ -533,43 +528,43 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>early idea screening or question generation</td>
-<td><code>$clo-ideate</code></td>
+<td><code>$ideate</code></td>
 </tr>
 <tr class="even">
 <td>literature work</td>
-<td><code>$clo-discover lit</code></td>
+<td><code>$discover lit</code></td>
 </tr>
 <tr class="odd">
 <td>data search</td>
-<td><code>$clo-discover data</code></td>
+<td><code>$discover data</code></td>
 </tr>
 <tr class="even">
 <td>research design</td>
-<td><code>$clo-strategize</code></td>
+<td><code>$strategize</code></td>
 </tr>
 <tr class="odd">
 <td>explicit formal theory support</td>
-<td><code>$clo-strategize theory</code> or <code>$clo-review --theory</code></td>
+<td><code>$strategize theory</code> or <code>$review --theory</code></td>
 </tr>
 <tr class="even">
 <td>post-submission revision planning</td>
-<td><code>$clo-revise roadmap</code></td>
+<td><code>$revise roadmap</code></td>
 </tr>
 <tr class="odd">
 <td>coding or output pipeline</td>
-<td><code>$clo-analyze</code></td>
+<td><code>$analyze</code></td>
 </tr>
 <tr class="even">
 <td>writing</td>
-<td><code>$clo-write</code></td>
+<td><code>$write</code></td>
 </tr>
 <tr class="odd">
 <td>review</td>
-<td><code>$clo-review</code></td>
+<td><code>$review</code></td>
 </tr>
 <tr class="even">
 <td>utilities and state management</td>
-<td><code>$clo-research-tools</code></td>
+<td><code>$research-tools</code></td>
 </tr>
 </tbody>
 </table>
@@ -579,9 +574,9 @@ ul.task-list li input[type="checkbox"] {
 <h1>When To Mention An Agent Anyway</h1>
 <p>Direct mention is useful when you want to shape the posture.</p>
 <p>Examples:</p>
-<pre class="text"><code>Use $clo-review, but make the methods_referee especially strict on the DiD assumptions.</code></pre>
-<pre class="text"><code>Use $clo-write intro and keep econ-intro-writing firmly in charge of structure.</code></pre>
-<pre class="text"><code>Use $clo-discover lit and make the librarian repo-bibliography-first before broad search.</code></pre>
+<pre class="text"><code>Use $review, but make the methods_referee especially strict on the DiD assumptions.</code></pre>
+<pre class="text"><code>Use $write intro and keep econ-intro-writing firmly in charge of structure.</code></pre>
+<pre class="text"><code>Use $discover lit and make the librarian repo-bibliography-first before broad search.</code></pre>
 </section>
 <section id="worker-critic-logic" class="level1">
 <h1>Worker-Critic Logic</h1>

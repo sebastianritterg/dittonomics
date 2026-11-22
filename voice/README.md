@@ -18,7 +18,7 @@ Optional overlays:
 
 ## How To Use It
 
-1. Copy the templates into your private `~/voice/` directory.
+1. Copy the templates into your private `~/.codex/voice/` directory.
 2. Rename them without the `.template` suffix.
 3. Replace the prompts with your own prose preferences and examples.
 4. Keep them private unless you explicitly want to publish your voice.

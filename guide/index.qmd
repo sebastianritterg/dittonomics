@@ -23,8 +23,8 @@ Start here if you want to use Dittonomics yourself or roll it out for coauthors:
 - **Open the public manual**: [sebastianritterg.github.io/dittonomics](https://sebastianritterg.github.io/dittonomics/)
 - **Fork the GitHub repo**: [github.com/sebastianritterg/dittonomics](https://github.com/sebastianritterg/dittonomics)
 - **Install the starter locally**: copy the repo's `.codex/` into your own `~/.codex/`
-- **Add your own writing voice**: copy the `voice/` templates into `~/voice/` and adapt them privately
-- **Customize per project**: keep paper-specific rules in each repo's `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/`
+- **Add your own writing voice**: copy the `voice/` templates into `~/.codex/voice/` and adapt them privately
+- **Customize per project**: keep paper-specific rules in each repo's `AGENTS.md`, `AGENTS.override.md`, and `.codex/skills/`
 :::
 
 ::: {.callout-important}
@@ -38,13 +38,13 @@ This site is written for two audiences:
 
 ## What Dittonomics Gives You
 
-- natural-language routing across the `clo-*` skills, so ordinary requests like "check section 5" resolve to the right workflow
+- natural-language routing across the Dittonomics skills, so ordinary requests like "check section 5" resolve to the right workflow
 - explicit research phases: ideation, discovery, strategy, analysis, writing, review, revision, submission, and talks
 - worker-critic separation across the stack, with creators producing artifacts and critics/referees/verifiers evaluating them
 - callable specialist agents such as `writer`, `writer_critic`, `strategist`, `strategist_critic`, `coder`, `coder_critic`, `librarian`, `explorer`, `editor`, and `verifier`
-- `$clo-review` routes writing checks to `writer_critic`, methods checks to `strategist_critic`, code checks to `coder_critic`, and full paper checks to the critic/verifier stack
+- `$review` routes writing checks to `writer_critic`, methods checks to `strategist_critic`, code checks to `coder_critic`, and full paper checks to the critic/verifier stack
 - a forkable public `.codex/` starter bundle plus a user-level install that can be mirrored into `~/.codex/`
-- optional voice files for writing-sensitive workflows, kept private in `~/voice/`
+- optional voice files for writing-sensitive workflows, kept private in `~/.codex/voice/`
 - strategic post-submission revision with roadmap planning, task graphs, response matrices, and DAG validation
 - explicit maintenance tools such as `checkpoint`, `resume-context`, `lint`, `verify-edit`, `dashboard`, and `html-report`
 - optional theory support when a project truly needs formal assumptions, propositions, or proof sketches
@@ -71,56 +71,56 @@ If you only keep one page open during the day, keep **Reference** open. If you o
 ::: {.ditto-roadmap}
 ::: {.ditto-roadmap-step}
 ### 1. Ideate
-Use `$clo-ideate`
+Use `$ideate`
 
 Turn a topic, mechanism, or dataset hunch into real research questions.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 2. Discover
-Use `$clo-discover`
+Use `$discover`
 
 Map the literature, data, and framing once a candidate question exists.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 3. Strategize
-Use `$clo-strategize`
+Use `$strategize`
 
 Lock in the estimand, design, threats, and robustness logic before coding.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 4. Analyze
-Use `$clo-analyze`
+Use `$analyze`
 
 Build the empirical pipeline, outputs, and handoff artifacts.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 5. Write
-Use `$clo-write`
+Use `$write`
 
 Draft the paper once the evidence and design are stable enough to narrate.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 6. Review
-Use `$clo-review`
+Use `$review`
 
 Pressure-test the draft before treating it as ready.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 7. Revise
-Use `$clo-revise`
+Use `$revise`
 
 When reports arrive, build the roadmap first and edit second.
 :::
 
 ::: {.ditto-roadmap-step}
 ### 8. Submit / Talk
-Use `$clo-submit` or `$clo-talk`
+Use `$submit` or `$talk`
 
 Close the loop with verification or convert the paper into a presentation.
 :::
@@ -130,15 +130,15 @@ Close the loop with verification or convert the paper into a presentation.
 
 This is the recommended order of use for most economics projects:
 
-1. `Ideate` with `$clo-ideate` when the idea is still vague
-2. `Discover` with `$clo-discover` once you have a candidate question
-3. `Strategize` with `$clo-strategize` before writing serious code
-4. `Analyze` with `$clo-analyze` to build the empirical pipeline
-5. `Write` with `$clo-write` once the outputs and design are stable enough
-6. `Review` with `$clo-review` before treating the draft as real
-7. `Revise` with `$clo-revise` when editor or referee reports arrive
-8. `Submit` with `$clo-submit` when the package is close to done
-9. `Talk` with `$clo-talk` when the paper needs a presentation version
+1. `Ideate` with `$ideate` when the idea is still vague
+2. `Discover` with `$discover` once you have a candidate question
+3. `Strategize` with `$strategize` before writing serious code
+4. `Analyze` with `$analyze` to build the empirical pipeline
+5. `Write` with `$write` once the outputs and design are stable enough
+6. `Review` with `$review` before treating the draft as real
+7. `Revise` with `$revise` when editor or referee reports arrive
+8. `Submit` with `$submit` when the package is close to done
+9. `Talk` with `$talk` when the paper needs a presentation version
 
 That is the main mental model for the whole system: each workflow skill owns a stage, and the agents sit underneath that stage rather than replacing it.
 
@@ -166,7 +166,7 @@ That gives you:
 
 ### 3. Add an optional voice layer
 
-If you want writing to preserve your own prose register, copy the files in `voice/` into `~/voice/` and fill them in privately.
+If you want writing to preserve your own prose register, copy the files in `voice/` into `~/.codex/voice/` and fill them in privately.
 
 If you do not need a voice layer, skip it.
 
@@ -176,14 +176,14 @@ In a working project repo, add:
 
 - `AGENTS.md`
 - optional `AGENTS.override.md`
-- optional repo-local skills in `.agents/skills/`
+- optional repo-local skills in `.codex/skills/`
 - `explorations/` when you need a prototype sandbox
 
 ### 5. Start with ideation when the question is still fuzzy
 
 Before discovery, use:
 
-- `use $clo-ideate session`
+- `use $ideate session`
 
 That step helps you:
 
@@ -195,15 +195,15 @@ That step helps you:
 
 Morning:
 
-- `use $clo-research-tools resume-context`
+- `use $research-tools resume-context`
 
 During work:
 
-- say the task naturally or call the workflow skill directly; the system should normalize the request to the right `clo-*` mode
+- say the task naturally or call the workflow skill directly; the system should normalize the request to the right Dittonomics mode
 
 End of day:
 
-- `use $clo-research-tools checkpoint`
+- `use $research-tools checkpoint`
 
 ## First Prompts To Try
 
@@ -278,8 +278,8 @@ If you want your own version of the system:
 1. fork the repo on GitHub
 2. clone your fork locally
 3. copy or adapt the repo's `.codex/` starter bundle into your own `~/.codex/`
-4. optionally copy the `voice/` templates into your private `~/voice/`
-5. keep repo-specific rules in each project's `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/`
+4. optionally copy the `voice/` templates into your private `~/.codex/voice/`
+5. keep repo-specific rules in each project's `AGENTS.md`, `AGENTS.override.md`, and `.codex/skills/`
 6. use this website as the shared manual for your own adaptation
 
 The practical split is:
@@ -296,7 +296,7 @@ The practical split is:
 | `docs/` | rendered site for GitHub Pages |
 | `.codex/` in this repo | public starter bundle |
 | `~/.codex/` | your live local user-level install |
-| `~/voice/` | your private voice layer |
+| `~/.codex/voice/` | your private voice layer |
 | project repo `AGENTS.md` | repo constitution and working rules |
 | project repo `.codex-state/` | local checkpoint and resume files |
 

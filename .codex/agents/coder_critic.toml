@@ -1,5 +1,5 @@
 ﻿name = "coder_critic"
-description = "Code critic that reviews R/Stata/Python scripts for strategic alignment, code quality, and reproducibility. Runs 12 check categories. In standalone mode ($clo-review --code), runs code quality checks only. Paired critic for the Coder and Data-engineer."
+description = "Code critic that reviews R/Stata/Python scripts for strategic alignment, code quality, and reproducibility. Runs 12 check categories. In standalone mode ($review --code), runs code quality checks only. Paired critic for the Coder and Data-engineer."
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 developer_instructions = """
@@ -121,7 +121,7 @@ Review the Coder's or Data-engineer's scripts and output. Check 12 categories. P
 
 ## Standalone Mode
 
-When invoked via `$clo-review [file.R]` or `$clo-review --code`, run categories **4-12 only** (code quality). No strategy memo comparison - just code quality and best practices.
+When invoked via `$review [file.R]` or `$review --code`, run categories **4-12 only** (code quality). No strategy memo comparison - just code quality and best practices.
 
 ## Three Strikes Escalation
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0c45806fd083986aad683b4f9675639e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -215,17 +215,17 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>local install</td>
 <td>you want your own always-on user setup</td>
-<td><code>~/.codex/</code>, <code>~/.agents/skills</code></td>
+<td><code>~/.codex/</code>, <code>~/.codex/skills</code></td>
 </tr>
 <tr class="odd">
 <td>project repo</td>
 <td>one project needs special rules</td>
-<td><code>AGENTS.md</code>, <code>AGENTS.override.md</code>, <code>.agents/skills/</code></td>
+<td><code>AGENTS.md</code>, <code>AGENTS.override.md</code>, <code>.codex/skills/</code></td>
 </tr>
 <tr class="even">
 <td>voice</td>
 <td>you want prose continuity across sessions</td>
-<td><code>~/voice/</code></td>
+<td><code>~/.codex/voice/</code></td>
 </tr>
 </tbody>
 </table>
@@ -286,17 +286,17 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><code>AGENTS.md</code></li>
 <li><code>AGENTS.override.md</code></li>
-<li><code>.agents/skills/</code></li>
+<li><code>.codex/skills/</code></li>
 </ul>
 <p>Do not overload the user-level install with rules that only belong to one paper.</p>
 </section>
 </section>
 <section id="how-to-build-your-own-voice" class="level1">
 <h1>How To Build Your Own Voice</h1>
-<p>The public repo includes templates in <a href="C:\projects\codex-clo-author\voice">voice</a>.</p>
+<p>The public repo includes templates in <a href="https://github.com/sebastianritterg/dittonomics/tree/main/voice">voice</a>.</p>
 <section id="copy-the-templates-privately" class="level2">
 <h2 class="anchored" data-anchor-id="copy-the-templates-privately">Copy the templates privately</h2>
-<p>Copy these into <code>~/voice/</code>:</p>
+<p>Copy these into <code>~/.codex/voice/</code>:</p>
 <ul>
 <li><code>core_voice.template.md</code></li>
 <li><code>voice_examples.template.md</code></li>
@@ -413,7 +413,7 @@ ul.task-list li input[type="checkbox"] {
 <p>For working research repos, I recommend:</p>
 <pre class="text"><code>AGENTS.md
 AGENTS.override.md            (optional)
-.agents/skills/               (optional)
+.codex/skills/               (optional)
 explorations/
 .codex-state/                 (local, usually gitignored)</code></pre>
 <p>Also add:</p>
@@ -444,7 +444,7 @@ explorations/
 <li>read <strong>User Guide</strong></li>
 <li>bookmark <strong>Reference</strong></li>
 <li>copy the public starter into <code>~/.codex/</code></li>
-<li>optionally set up <code>~/voice/</code></li>
+<li>optionally set up <code>~/.codex/voice/</code></li>
 <li>learn the daily loop:
 <ul>
 <li><code>resume-context</code></li>

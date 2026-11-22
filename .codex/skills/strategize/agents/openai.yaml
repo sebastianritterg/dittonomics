@@ -1,0 +1,7 @@
+interface:
+  display_name: "Strategize"
+  short_description: "Design identification, PAPs, robustness, and explicit theory"
+  default_prompt: "Use $strategize to design the estimand, treatment/control definition, identification assumptions, robustness plan, falsification tests, PAP, or explicit theory support."
+
+policy:
+  allow_implicit_invocation: true

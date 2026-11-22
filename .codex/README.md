@@ -8,7 +8,7 @@ It is included in the repo so users can fork something structurally similar to t
 
 - `AGENTS.md`: starter user-level constitution
 - `agents/`: custom subagent templates
-- `skills/`: `clo-*` workflow skills and references
+- `skills/`: Dittonomics workflow skills and references
 - `WORKFLOW_QUICK_REF.md`: short workflow summary
 - `config.example.toml`: public-safe config fragment
 
@@ -26,7 +26,7 @@ For project-specific behavior inside a research repo, still use:
 
 - `AGENTS.md`
 - `AGENTS.override.md`
-- `.agents/skills/`
+- `.codex/skills/`
 - `explorations/`
 
-For optional writing voice setup, use the public templates under `voice/` or keep your own private `~/voice` files.
+For optional writing voice setup, use the public templates under `voice/` or keep your own private `~/.codex/voice` files.

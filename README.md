@@ -14,13 +14,13 @@ The public repo keeps the upstream workflow architecture, but rewrites the activ
 
 - `CLAUDE.md` becomes `AGENTS.md`, `AGENTS.override.md`, and repo-local skills
 - `.claude/rules` and `.claude/references` become active workflow references plus source mirrors
-- slash commands become explicit `$clo-*` skills
+- slash commands become named skills such as `$review`
 - Claude agents become Codex custom subagents
 - hidden hook behavior becomes explicit utilities, references, and config guidance
 - `explorations/` stays a repo-level sandbox and should be created when missing
 - writing voice becomes an explicit optional layer instead of an undocumented personal habit
 - end-of-day state and next-day recovery now use explicit `checkpoint` and `resume-context` utilities instead of hidden session hooks
-- post-submission revision now includes a strategic roadmap layer inside `$clo-revise`, with task graphs, dependency validation, and execution blocks
+- post-submission revision now includes a strategic roadmap layer inside `$revise`, with task graphs, dependency validation, and execution blocks
 - Clo-Author 26.05 dashboard, lint, lifecycle, permission-registry, decision-record, and theory ideas are translated into explicit Codex utilities and references
 - talks remain Beamer-first by default, with Quarto RevealJS only when explicitly requested
 
@@ -30,7 +30,7 @@ This repository is documentation-first, but it also includes a forkable `.codex/
 
 ## What This Repo Contains
 
-- `.codex/`: forkable starter bundle with generic `AGENTS.md`, `clo-*` skills, custom subagents, and workflow references
+- `.codex/`: forkable starter bundle with generic `AGENTS.md`, Dittonomics skills, custom subagents, and workflow references
 - `guide/`: Quarto source for the public documentation site
 - `docs/`: rendered site output for GitHub Pages
 - `voice/`: public templates for building your own writing-voice layer
@@ -75,7 +75,7 @@ If you fork this repository, the public starter layer is:
 - `.codex/config.example.toml`
 - `voice/`
 
-Treat that folder as a distributable starter kit. Copy or adapt it into your own `~/.codex/` home when you want a user-level install, and use repo-local `AGENTS.md`, `AGENTS.override.md`, and `.agents/skills/` for project-specific behavior.
+Treat that folder as a distributable starter kit. Copy or adapt it into your own `~/.codex/` home when you want a user-level install, and use repo-local `AGENTS.md`, `AGENTS.override.md`, and `.codex/skills/` for project-specific behavior.
 
 ## Local Development
 
@@ -91,10 +91,10 @@ That renders the site into `docs/`.
 
 Recommended daily usage:
 
-1. `use $clo-research-tools resume-context`
-2. if the question is still fuzzy, start with `use $clo-ideate session`
+1. `use $research-tools resume-context`
+2. if the question is still fuzzy, start with `use $ideate session`
 3. run the workflow skill that matches the task
-4. `use $clo-research-tools checkpoint`
+4. `use $research-tools checkpoint`
 
 Checkpoint files live in `.codex-state/` inside working repos and are meant to be local operational memory rather than canonical research outputs.
 

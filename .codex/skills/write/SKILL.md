@@ -1,0 +1,194 @@
+---
+name: write
+description: Orchestrate economics-paper drafting and revision with explicit section contracts, paragraph planning, design-aware language, an optional low-priority style-guide helper, and optional proofread handoff. Preserves econ-intro-writing as the governing skill for all front-end work.
+---
+
+# Write
+
+Use this skill as the writing-phase orchestrator.
+
+## Kernel References
+
+Read first:
+
+1. `../workflow/references/pipeline-contract.md`
+2. `../workflow/references/artifact-contracts.md`
+3. `../workflow/references/agent-registry.md`
+4. `../workflow/references/routing-rules.md`
+
+Then load the local references for writing:
+
+5. `references/section-contracts.md`
+6. `references/writing-workflow.md`
+7. `references/examples/sections/conclusion.md` when the target is `conclusion` or `closing`
+8. `references/style-guide-mode.md` only when `style-guide` or `--use-style-guide` is explicitly requested
+
+## Delegation Rule
+
+Invoking this skill counts as explicit permission to dispatch the named agents for the resolved writing mode.
+
+- abstract work uses `econ-abstract-writing` when the author has installed it
+- front-end work routes through `econ-intro-writing`
+- non-front-end writing routes to `writer`
+- `style-guide` extraction and helper interpretation route to `writer`
+- optional proofread handoff routes to `review --proofread`
+- if subagent dispatch is unavailable, fall back to the main session only with an explicit note
+
+## Input
+
+Recommended invocation:
+
+```text
+$write [section-or-mode] [--mode draft|revise|humanize|style-guide] [--design did|rdd|iv|scm|generic] [--joint-paper] [--journal-tightening] [--current-draft] [--use-style-guide] [file(optional)]
+```
+
+Natural-language equivalents are also valid in the parent task packet:
+
+- `write/draft/revise/tighten/humanize/polish [section name or section number]`
+- `work on section [N]`, `fix the intro`, `rewrite the conclusion`, `make the results clearer`
+- `use joint-paper mode`
+- `tighten toward JDE benchmark`
+- `use the current draft state as calibration`
+- `extract a style guide from these papers`
+- `use the optional style guide as a helper`
+
+Supported sections and special modes:
+
+- `abstract`
+- `intro`
+- `context`
+- `literature`
+- `data`
+- `strategy`
+- `results`
+- `mechanisms`
+- `robustness`
+- `policy`
+- `conclusion`
+- `full`
+- `humanize`
+- `style-guide`
+
+Accepted aliases:
+
+- `intro`, `introduction` -> `intro`
+- `front end`, `opening`, `opening stack`, `motivation`, `contribution paragraph` -> `intro`
+- `context`, `background` -> `context`
+- `literature`, `lit review`, `literature review` -> `literature`
+- `section 2` with background/context wording -> `context`; otherwise resolve by manuscript structure
+- `section 5`, `section VI`, numbered sections, or named manuscript headings -> resolve to the matching live manuscript section before dispatch
+- `strategy`, `empirical strategy`, `methods` -> `strategy`
+- `results`, `main results` -> `results`
+- `mechanisms`, `channels` -> `mechanisms`
+- `robustness`, `checks` -> `robustness`
+- `conclusion`, `closing` -> `conclusion`
+- `rewrite`, `revise`, `tighten`, `edit` -> `--mode revise`
+- `draft`, `write`, `create` -> `--mode draft`
+- `humanize`, `de-AI`, `make it sound like me` -> `humanize`
+- `style guide`, `personal style guide`, `voice guide` -> `style-guide`
+
+## Routing
+
+- `intro`, `context`, `literature`, and opening-stack work
+  route through `econ-intro-writing` as the governing skill, with repo overlays layered on top
+- `style-guide`
+  routes to `writer` in explicit style-extraction or helper mode only
+- all other section work
+  route to `writer`
+- optional proofread handoff
+  route to `review --proofread`
+
+## Required Inputs
+
+Common inputs:
+
+- repo-local overlays and path conventions
+- active manuscript and section targets
+- active bibliography and closest cited papers in the repo
+- relevant quality reports
+
+Section-specific inputs:
+
+- `strategy`
+  fresh `strategy_memo`
+- `results`, `mechanisms`, `robustness`, `policy`
+  fresh `results_summary` plus existing tables or figures
+- `conclusion`
+  stable headline result with magnitude, design summary, scope limits, contribution target, and any supported policy or literature implication
+- `abstract`
+  enough completed manuscript structure to state question, design, and findings
+- `style-guide`
+  at least two prior papers, sections, or representative writing samples whenever possible
+
+## Reference Precedence
+
+Apply writing guidance in this order:
+
+1. repo-local guidance and manuscript conventions
+2. `econ-intro-writing` for front-end structure and paragraph roles
+3. `~/.codex/voice/*.md` hierarchy
+4. current-draft local calibration when explicitly requested
+5. optional `style-guide` helper when explicitly requested
+6. global examples and paper-model libraries
+
+If any lower-priority layer conflicts with a higher-priority layer, keep the higher-priority layer.
+
+## Drafting Workflow
+
+Unless the user explicitly asks for a lighter pass:
+
+1. resolve the target section and target file
+2. gather context from manuscript, notes, bibliography, and quality reports
+3. inspect active bibliography and closest cited papers first
+4. if the empirical frontier appears to be moving, supplement repo sources with current web or working-paper checks, but never let those outrank repo context
+5. load section, method, and paper-model references only as needed
+6. for conclusion work, load `references/examples/sections/conclusion.md` and inspect conclusions of the closest already-cited papers when available; use them as calibration, not templates
+7. if `style-guide` or `--use-style-guide` is active, load `references/style-guide-mode.md` after the voice hierarchy and use it only as a tertiary helper
+8. create outline
+9. create paragraph plan
+10. draft, revise, or extract the style guide
+11. apply `humanizer` to prose outputs only
+12. optionally hand off to proofread
+
+## Style Hierarchy
+
+Load and apply prose guidance in this order:
+
+1. `~/.codex/voice/core_voice.md`
+2. `~/.codex/voice/voice_examples.md`
+3. `~/.codex/voice/econ_paper_register.md`
+4. `~/.codex/voice/style_hierarchy.md`
+
+For `intro`, `context`, `literature`, and opening-stack work:
+
+- treat this hierarchy as a style layer only
+- keep `econ-intro-writing` in charge of structure, paragraph roles, and front-end logic
+- if there is any conflict, preserve the intro architecture and adjust wording within it
+
+Optional overlays:
+
+- load `~/.codex/voice/collaboration_register.md` only in `--joint-paper` mode
+- load `~/.codex/voice/journal_tightening_register.md` only in `--journal-tightening` mode
+- inspect nearby manuscript sections only in `--current-draft` mode
+- load the optional extracted style guide only when `style-guide` or `--use-style-guide` is explicitly requested
+
+Current-draft calibration rules:
+
+- use the live draft only for local consistency, compression level, terminology, notation, and rhythm
+- do not inherit redundancy, weak transitions, stale phrasing, or padded sentences from the live draft
+- treat the live draft as a local calibration source, not a superior authority
+- if the live draft conflicts with the core voice, preserve the core voice
+
+## Global Writing Rules
+
+- preserve `econ-intro-writing` as the authority for front-end work
+- use examples and paper models as scaffolding, never as copy-paste templates
+- treat co-author and JDE materials as overlays, never as replacement voices or literal templates
+- treat the optional style guide as a helper, never as a replacement for repo-local guidance, `econ-intro-writing`, or the core voice hierarchy
+- inspect repo bibliography and closest cited papers before any global library
+- in empirical literatures that evolve quickly, current web search can supplement references, but no paper library or search result is the sole source of truth
+- never fabricate results, citations, institutional facts, or checks
+- use explicit placeholders when evidence is missing
+- match causal language to design strength
+- use `claim -> support -> implication` paragraph architecture
+- keep the parent orchestrator responsible for proofread persistence and workflow transitions

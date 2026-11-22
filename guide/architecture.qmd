@@ -11,8 +11,8 @@ Dittonomics has four layers that matter in practice.
 |---|---|---|
 | Website manual | `guide/` and `docs/` | teaches humans how the system works |
 | Public starter bundle | `.codex/` in this repo | gives a generic forkable install |
-| Live local install | `~/.codex/`, `~/.agents/skills`, `~/voice/` | runs your actual working system |
-| Project repo overlay | `AGENTS.md`, `AGENTS.override.md`, `.agents/skills/` | makes behavior repo-specific |
+| Live local install | `~/.codex/`, `~/.codex/skills`, `~/.codex/voice/` | runs your actual working system |
+| Project repo overlay | `AGENTS.md`, `AGENTS.override.md`, `.codex/skills/` | makes behavior repo-specific |
 
 The public website explains the system.
 The starter bundle ships the generic version.
@@ -59,7 +59,7 @@ Clo-Author 26.05 added a more explicit MAS v2 registry and handoff protocol. Dit
 - `lifecycle-validation.md` explains pre-dispatch and post-completion checks
 - `execution-trace.md` gives a compact audit trail format for multi-step workflows
 
-These references help the main Codex session avoid bad routing. They are not hidden automation and do not replace the existing `$clo-*` skill triggers.
+These references help the main Codex session avoid bad routing. They are not hidden automation and do not replace the existing named skill triggers.
 
 # Worker-Critic Architecture
 
@@ -90,12 +90,12 @@ Dittonomics converts those ideas into explicit, visible surfaces.
 
 | Hidden upstream behavior | Dittonomics surface |
 |---|---|
-| slash commands | `$clo-*` skills |
+| slash commands | named skills such as `$review` |
 | hidden hooks | explicit research tools |
 | implicit context survival | `checkpoint` and `resume-context` |
-| buried writing habits | explicit `~/voice` files |
-| automatic post-edit lint hooks | explicit `$clo-research-tools lint` or `verify-edit` |
-| upstream dashboards | explicit local `$clo-research-tools dashboard` project artifact |
+| buried writing habits | explicit `~/.codex/voice` files |
+| automatic post-edit lint hooks | explicit `$research-tools lint` or `verify-edit` |
+| upstream dashboards | explicit local `$research-tools dashboard` project artifact |
 
 The rule is simple:
 
@@ -107,10 +107,10 @@ Strategic revision is not a simple final box after submission.
 
 It is a loop that starts when real review reports arrive:
 
-1. build the roadmap with `$clo-revise roadmap`
-2. validate dependencies with `$clo-revise validate`
-3. execute approved blocks with `$clo-revise execute`
-4. draft the response package with `$clo-revise respond`
+1. build the roadmap with `$revise roadmap`
+2. validate dependencies with `$revise validate`
+3. execute approved blocks with `$revise execute`
+4. draft the response package with `$revise respond`
 5. send revised outputs back into review when needed
 
 # Upstream Traits And How They Enter Dittonomics
@@ -122,9 +122,9 @@ Dittonomics is intentionally assembled from multiple upstream repos, but each im
 | `Clo-Author` | overall multi-phase research architecture | workflow kernel, skill naming, agent families |
 | `my_claude_skills` | explicit reusable skill surfaces | public starter design and operational helpers |
 | `claudeblattman` | economics-facing research ergonomics | writing, review, and empirical workflow tone |
-| `idea-evaluation-pipeline` | idea screening before discovery | `$clo-ideate` |
+| `idea-evaluation-pipeline` | idea screening before discovery | `$ideate` |
 | `research-companion` | staged research orchestration patterns | tutorial flow and ideation support |
-| `strategic-revision` | strategic R&R decomposition and dependency logic | `$clo-revise roadmap` and validator support |
+| `strategic-revision` | strategic R&R decomposition and dependency logic | `$revise roadmap` and validator support |
 | `Clo-Author 26.05` | dashboard, lifecycle, permission registry, lint, decision records, theory support | explicit Codex utilities and workflow references |
 
 The architecture rule is: upstream influence is welcome, but it should become explicit documentation, skills, agents, or scripts rather than hidden lore.
@@ -191,7 +191,7 @@ That is enough to restart a session cleanly without pretending the system has si
 
 The voice layer is modular and optional.
 
-It lives in `~/voice/` and sits **below** repo guidance and front-end structure rules.
+It lives in `~/.codex/voice/` and sits **below** repo guidance and front-end structure rules.
 
 That means:
 

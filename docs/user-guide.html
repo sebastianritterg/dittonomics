@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0c45806fd083986aad683b4f9675639e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f2544b522ae4f90207191d434467a2a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#how-agent-activation-works" id="toc-how-agent-activation-works" class="nav-link" data-scroll-target="#how-agent-activation-works">How Agent Activation Works</a>
   <ul class="collapse">
-  <li><a href="#what-usually-activates-agents" id="toc-what-usually-activates-agents" class="nav-link" data-scroll-target="#what-usually-activates-agents">What usually activates agents</a></li>
+  <li><a href="#which-agents-an-explicit-skill-request-activates" id="toc-which-agents-an-explicit-skill-request-activates" class="nav-link" data-scroll-target="#which-agents-an-explicit-skill-request-activates">Which agents an explicit skill request activates</a></li>
   <li><a href="#when-to-mention-an-agent-directly" id="toc-when-to-mention-an-agent-directly" class="nav-link" data-scroll-target="#when-to-mention-an-agent-directly">When to mention an agent directly</a></li>
   </ul></li>
   <li><a href="#checkpoint-resume-and-verify-edit" id="toc-checkpoint-resume-and-verify-edit" class="nav-link" data-scroll-target="#checkpoint-resume-and-verify-edit">Checkpoint, Resume, And Verify-Edit</a>
@@ -252,47 +252,47 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td>you have a topic, mechanism, or dataset hunch</td>
-<td><code>$clo-ideate</code></td>
+<td><code>$ideate</code></td>
 <td>ranked research questions and a pursue/refine/park/kill screen</td>
 </tr>
 <tr class="even">
 <td>you have a candidate question but need grounding</td>
-<td><code>$clo-discover</code></td>
+<td><code>$discover</code></td>
 <td>literature map, data memo, and better framing</td>
 </tr>
 <tr class="odd">
 <td>you think the question is real</td>
-<td><code>$clo-strategize</code></td>
+<td><code>$strategize</code></td>
 <td>estimand, design, assumptions, robustness plan</td>
 </tr>
 <tr class="even">
 <td>the design is ready to become code</td>
-<td><code>$clo-analyze</code></td>
+<td><code>$analyze</code></td>
 <td>cleaned pipeline, outputs, and reproducible handoff</td>
 </tr>
 <tr class="odd">
 <td>the evidence is ready to narrate</td>
-<td><code>$clo-write</code></td>
+<td><code>$write</code></td>
 <td>section drafts with proper structure and restraint</td>
 </tr>
 <tr class="even">
 <td>the draft needs serious criticism</td>
-<td><code>$clo-review</code></td>
+<td><code>$review</code></td>
 <td>findings, referee-style risks, editor calibration</td>
 </tr>
 <tr class="odd">
 <td>real referee or editor reports arrive</td>
-<td><code>$clo-revise</code></td>
+<td><code>$revise</code></td>
 <td>roadmap, validated task graph, execution blocks, response package</td>
 </tr>
 <tr class="even">
 <td>the paper is nearly done</td>
-<td><code>$clo-submit</code></td>
+<td><code>$submit</code></td>
 <td>verification and submission-readiness check</td>
 </tr>
 <tr class="odd">
 <td>the project needs a talk</td>
-<td><code>$clo-talk</code></td>
+<td><code>$talk</code></td>
 <td>Beamer deck by default, Quarto only with <code>--quarto</code></td>
 </tr>
 </tbody>
@@ -304,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="morning-resume-cleanly" class="level2">
 <h2 class="anchored" data-anchor-id="morning-resume-cleanly">Morning: resume cleanly</h2>
 <p>Start with:</p>
-<pre class="text"><code>Use $clo-research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.</code></pre>
+<pre class="text"><code>Use $research-tools resume-context for this repo and reconstruct where we left off, the important files, unresolved issues, and the best next action.</code></pre>
 <p>What this is meant to do:</p>
 <ul>
 <li>read the latest checkpoint in <code>.codex-state/</code></li>
@@ -331,54 +331,54 @@ ul.task-list li input[type="checkbox"] {
 <li>a mechanism hunch</li>
 <li>a policy area without a sharp question yet</li>
 </ul>
-<pre class="text"><code>Use $clo-ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.</code></pre>
-<pre class="text"><code>Use $clo-ideate rq from this dataset idea and give me the best candidate empirical questions.</code></pre>
+<pre class="text"><code>Use $ideate session on this topic and turn it into ranked research questions with a pursue/refine/park/kill verdict.</code></pre>
+<pre class="text"><code>Use $ideate rq from this dataset idea and give me the best candidate empirical questions.</code></pre>
 </section>
 <section id="discovery" class="level3">
 <h3 class="anchored" data-anchor-id="discovery">Discovery</h3>
-<pre class="text"><code>Use $clo-discover lit on this topic and build the literature map first.</code></pre>
-<pre class="text"><code>Use $clo-discover data and assess which datasets can support this question.</code></pre>
+<pre class="text"><code>Use $discover lit on this topic and build the literature map first.</code></pre>
+<pre class="text"><code>Use $discover data and assess which datasets can support this question.</code></pre>
 </section>
 <section id="strategy" class="level3">
 <h3 class="anchored" data-anchor-id="strategy">Strategy</h3>
-<pre class="text"><code>Use $clo-strategize on this question and propose the main design, the key assumptions, and the robustness plan.</code></pre>
+<pre class="text"><code>Use $strategize on this question and propose the main design, the key assumptions, and the robustness plan.</code></pre>
 <p>If the project needs formal theory support, make that explicit:</p>
-<pre class="text"><code>Use $clo-strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.</code></pre>
+<pre class="text"><code>Use $strategize theory on this proposition and produce assumptions, notation, a proof sketch, and open proof obligations.</code></pre>
 </section>
 <section id="analysis" class="level3">
 <h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
-<pre class="text"><code>Use $clo-analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.</code></pre>
+<pre class="text"><code>Use $analyze on this project and focus on building the clean estimation pipeline and the output handoff for writing.</code></pre>
 </section>
 <section id="writing" class="level3">
 <h3 class="anchored" data-anchor-id="writing">Writing</h3>
-<pre class="text"><code>Use $clo-write intro with current-draft mode and keep econ-intro-writing in charge of structure.</code></pre>
-<pre class="text"><code>Use $clo-write results and narrate the main tables without overstating causality.</code></pre>
+<pre class="text"><code>Use $write intro with current-draft mode and keep econ-intro-writing in charge of structure.</code></pre>
+<pre class="text"><code>Use $write results and narrate the main tables without overstating causality.</code></pre>
 </section>
 <section id="review" class="level3">
 <h3 class="anchored" data-anchor-id="review">Review</h3>
-<pre class="text"><code>Use $clo-review on this draft and give me the highest-risk findings first.</code></pre>
+<pre class="text"><code>Use $review on this draft and give me the highest-risk findings first.</code></pre>
 <p>For formal theory sections, use explicit theory review:</p>
-<pre class="text"><code>Use $clo-review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.</code></pre>
+<pre class="text"><code>Use $review --theory on this formal section and audit proof logic, assumptions, notation, and calibration.</code></pre>
 </section>
 <section id="revision" class="level3">
 <h3 class="anchored" data-anchor-id="revision">Revision</h3>
 <p>Use this when real editor or referee reports already exist.</p>
-<pre class="text"><code>Use $clo-revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.</code></pre>
-<pre class="text"><code>Use $clo-revise validate quality_reports/revision_tasks_rr1.json</code></pre>
-<pre class="text"><code>Use $clo-revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.</code></pre>
-<pre class="text"><code>Use $clo-revise respond on these reports and the revised draft, using the response matrix and decision log.</code></pre>
+<pre class="text"><code>Use $revise roadmap on these reports and the submitted paper. Extract atomic tasks, validate the dependency logic, and give me execution blocks with go/no-go points.</code></pre>
+<pre class="text"><code>Use $revise validate quality_reports/revision_tasks_rr1.json</code></pre>
+<pre class="text"><code>Use $revise execute quality_reports/revision_roadmap_rr1.md and route the approved tasks to the right agents.</code></pre>
+<pre class="text"><code>Use $revise respond on these reports and the revised draft, using the response matrix and decision log.</code></pre>
 </section>
 <section id="talks-and-submission" class="level3">
 <h3 class="anchored" data-anchor-id="talks-and-submission">Talks and submission</h3>
-<pre class="text"><code>Use $clo-talk seminar to build the deck from the current paper.</code></pre>
+<pre class="text"><code>Use $talk seminar to build the deck from the current paper.</code></pre>
 <p>This creates a Beamer-style talk by default. Use <code>--quarto</code> only when you want RevealJS.</p>
-<pre class="text"><code>Use $clo-submit and check whether this package is actually submission-ready.</code></pre>
+<pre class="text"><code>Use $submit and check whether this package is actually submission-ready.</code></pre>
 </section>
 </section>
 <section id="end-of-day-checkpoint-intentionally" class="level2">
 <h2 class="anchored" data-anchor-id="end-of-day-checkpoint-intentionally">End of day: checkpoint intentionally</h2>
 <p>Use:</p>
-<pre class="text"><code>Use $clo-research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.</code></pre>
+<pre class="text"><code>Use $research-tools checkpoint for this repo. Capture today's goal, what we finished, blockers, important files, and the best next step tomorrow.</code></pre>
 <p>This is the recommended end-of-day ritual.</p>
 </section>
 </section>
@@ -394,7 +394,7 @@ ul.task-list li input[type="checkbox"] {
 <li>you want the website or starter kit to stay easy to follow</li>
 </ul>
 <p>Example:</p>
-<pre class="text"><code>Use $clo-review --peer on the latest draft.</code></pre>
+<pre class="text"><code>Use $review --peer on the latest draft.</code></pre>
 </section>
 <section id="natural-language-style" class="level2">
 <h2 class="anchored" data-anchor-id="natural-language-style">Natural-language style</h2>
@@ -409,7 +409,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="recommendation" class="level2">
 <h2 class="anchored" data-anchor-id="recommendation">Recommendation</h2>
-<p>For daily work with colleagues, prefer explicit <code>$clo-*</code> names.</p>
+<p>For daily work with colleagues, prefer names such as <code>$review</code> and <code>$write</code>.</p>
 <p>It makes:</p>
 <ul>
 <li>the system easier to learn</li>
@@ -420,8 +420,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="how-agent-activation-works" class="level1">
 <h1>How Agent Activation Works</h1>
-<section id="what-usually-activates-agents" class="level2">
-<h2 class="anchored" data-anchor-id="what-usually-activates-agents">What usually activates agents</h2>
+<section id="which-agents-an-explicit-skill-request-activates" class="level2">
+<h2 class="anchored" data-anchor-id="which-agents-an-explicit-skill-request-activates">Which agents an explicit skill request activates</h2>
+<p>In the author’s installation, a request in ordinary language stays in the main session. Use a named skill such as <code>$review --methods</code>, select it, or ask to use that skill to invoke its specialist route.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -481,8 +482,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="when-to-mention-an-agent-directly">When to mention an agent directly</h2>
 <p>Do it when you want to steer the posture.</p>
 <p>Examples:</p>
-<pre class="text"><code>Use $clo-discover lit, but keep it repo-bibliography-first.</code></pre>
-<pre class="text"><code>Use $clo-review --peer and make the methods_referee especially tough on the event-study design.</code></pre>
+<pre class="text"><code>Use $discover lit, but keep it repo-bibliography-first.</code></pre>
+<pre class="text"><code>Use $review --peer and make the methods_referee especially tough on the event-study design.</code></pre>
 <p>Usually you still call the skill, not the raw agent.</p>
 </section>
 </section>
@@ -523,7 +524,7 @@ ul.task-list li input[type="checkbox"] {
 <li>avoid spending the first 10 to 20 minutes reconstructing context</li>
 </ul>
 <p>Typical use:</p>
-<pre class="text"><code>Use $clo-research-tools resume-context for this repo and tell me what I most likely need to do next.</code></pre>
+<pre class="text"><code>Use $research-tools resume-context for this repo and tell me what I most likely need to do next.</code></pre>
 </section>
 <section id="verify-edit" class="level2">
 <h2 class="anchored" data-anchor-id="verify-edit">Verify-edit</h2>
@@ -533,7 +534,7 @@ ul.task-list li input[type="checkbox"] {
 <li>use this instead of hidden background lint hooks</li>
 </ul>
 <p>Typical use:</p>
-<pre class="text"><code>Use $clo-research-tools verify-edit 03_code/src/estimate.py</code></pre>
+<pre class="text"><code>Use $research-tools verify-edit 03_code/src/estimate.py</code></pre>
 <p>Use it after:</p>
 <ul>
 <li>editing Python, R, or Julia scripts</li>
@@ -549,7 +550,7 @@ ul.task-list li input[type="checkbox"] {
 <li>keep linting explicit instead of hidden in background hooks</li>
 </ul>
 <p>Typical use:</p>
-<pre class="text"><code>Use $clo-research-tools lint 03_code/src</code></pre>
+<pre class="text"><code>Use $research-tools lint 03_code/src</code></pre>
 </section>
 <section id="dashboard-and-html-reports" class="level2">
 <h2 class="anchored" data-anchor-id="dashboard-and-html-reports">Dashboard And HTML Reports</h2>
@@ -559,8 +560,8 @@ ul.task-list li input[type="checkbox"] {
 <li>keep them separate from the public Dittonomics manual website</li>
 </ul>
 <p>Typical use:</p>
-<pre class="text"><code>Use $clo-research-tools dashboard for this repo.</code></pre>
-<pre class="text"><code>Use $clo-research-tools html-report strategy-review for this repo.</code></pre>
+<pre class="text"><code>Use $research-tools dashboard for this repo.</code></pre>
+<pre class="text"><code>Use $research-tools html-report strategy-review for this repo.</code></pre>
 </section>
 </section>
 <section id="a-good-team-workflow" class="level1">
@@ -587,7 +588,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="a-good-end-of-day-prompt" class="level1">
 <h1>A Good End-Of-Day Prompt</h1>
-<pre class="text"><code>Use $clo-research-tools checkpoint for this repo.
+<pre class="text"><code>Use $research-tools checkpoint for this repo.
 
 Goal: finish the event-study pipeline and prepare the writing handoff.
 Summary: built the cleaned panel, updated the estimation script, and confirmed the main figure compiles.
@@ -598,13 +599,13 @@ Next step: decide the placebo window and rerun the robustness block before writi
 </section>
 <section id="a-good-next-morning-prompt" class="level1">
 <h1>A Good Next-Morning Prompt</h1>
-<pre class="text"><code>Use $clo-research-tools resume-context for this repo and reconstruct where we left off yesterday, the key files, blockers, and the best next step.</code></pre>
+<pre class="text"><code>Use $research-tools resume-context for this repo and reconstruct where we left off yesterday, the key files, blockers, and the best next step.</code></pre>
 </section>
 <section id="common-mistakes" class="level1">
 <h1>Common Mistakes</h1>
 <section id="calling-the-wrong-layer" class="level2">
 <h2 class="anchored" data-anchor-id="calling-the-wrong-layer">Calling the wrong layer</h2>
-<p>Do not call <code>writer</code> directly unless you have a very specific reason. Usually call <code>$clo-write</code>.</p>
+<p>Do not call <code>writer</code> directly unless you have a very specific reason. Usually call <code>$write</code>.</p>
 </section>
 <section id="treating-voice-as-structure" class="level2">
 <h2 class="anchored" data-anchor-id="treating-voice-as-structure">Treating voice as structure</h2>
@@ -621,11 +622,11 @@ Next step: decide the placebo window and rerun the robustness block before writi
 <section id="skipping-ideation-when-the-question-is-still-vague" class="level2">
 <h2 class="anchored" data-anchor-id="skipping-ideation-when-the-question-is-still-vague">Skipping ideation when the question is still vague</h2>
 <p>Discovery is for formalizing and searching. Ideation is for deciding whether the question deserves that investment.</p>
-<p>If the project still sounds more like a direction than a question, start with <code>$clo-ideate</code>.</p>
+<p>If the project still sounds more like a direction than a question, start with <code>$ideate</code>.</p>
 </section>
 <section id="jumping-into-edits-before-building-the-revision-roadmap" class="level2">
 <h2 class="anchored" data-anchor-id="jumping-into-edits-before-building-the-revision-roadmap">Jumping into edits before building the revision roadmap</h2>
-<p>When real referee reports arrive, start with <code>$clo-revise roadmap</code> before rewriting sections or running ad hoc analyses.</p>
+<p>When real referee reports arrive, start with <code>$revise roadmap</code> before rewriting sections or running ad hoc analyses.</p>
 <p>That step is what:</p>
 <ul>
 <li>extracts atomic reviewer tasks</li>

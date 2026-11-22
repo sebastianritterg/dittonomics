@@ -1,0 +1,7 @@
+interface:
+  display_name: "Workflow"
+  short_description: "Reference the Codex clo-author workflow map"
+  default_prompt: "Use $workflow to map a Clo-Author workflow step into Codex agents, skills, references, and checks."
+
+policy:
+  allow_implicit_invocation: false

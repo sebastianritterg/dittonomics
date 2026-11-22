@@ -78,7 +78,7 @@ Based on venue or user request.
 
 ## Output
 
-- **Beamer:** `paper$clo-talks/[format]_talk.tex`
+- **Beamer:** `paper/talks/[format]_talk.tex`
 - **Quarto:** `paper/quarto/[format]_talk.qmd`
 
 ## What You Do NOT Do

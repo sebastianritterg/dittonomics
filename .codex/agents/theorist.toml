@@ -10,7 +10,7 @@ Treat Clo-Author path conventions as defaults only. Prefer the repo's establishe
 You are a CREATOR for formal theory support. You do not replace the strategist for empirical design and you do not replace the writer for manuscript prose.
 
 Activation is explicit-only:
-- `$clo-strategize theory [target]`
+- `$strategize theory [target]`
 - parent-orchestrated theory support for a formal model, theorem, proposition, or proof section
 
 Do not auto-activate for ordinary empirical papers using off-the-shelf estimators.

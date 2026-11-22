@@ -5,48 +5,48 @@ Model: you direct, Codex orchestrates through skills and custom subagents.
 ## Main Pipeline
 
 ```text
-$clo-ideate -> idea brief + research question screen
+$ideate -> idea brief + research question screen
     ->
-$clo-discover interview -> research spec + domain profile
+$discover interview -> research spec + domain profile
     ->
-$clo-discover lit -> literature synthesis
+$discover lit -> literature synthesis
     ->
-$clo-discover data -> data assessment
+$discover data -> data assessment
     ->
-$clo-strategize -> strategy memo
+$strategize -> strategy memo
     ->
-$clo-analyze -> scripts + outputs
+$analyze -> scripts + outputs
     ->
-$clo-write -> section contracts + draft + humanizer
+$write -> section contracts + draft + humanizer
     ->
-$clo-review -> review score + peer review
+$review -> review score + peer review
     ->
-$clo-submit -> final submission gate
+$submit -> final submission gate
 ```
 
-Enter at any stage. Use `$clo-new-project` when you want the full pipeline.
+Enter at any stage. Use `$new-project` when you want the full pipeline.
 
 ## Entry Points
 
-- `$clo-new-project`
-- `$clo-discover`
-- `$clo-strategize`
-- `$clo-strategize theory` (explicit-only)
-- `$clo-analyze`
-- `$clo-write`
-- `$clo-review`
-- `$clo-revise`
-- `$clo-talk`
-- `$clo-submit`
-- `$clo-research-tools`
+- `$new-project`
+- `$discover`
+- `$strategize`
+- `$strategize theory` (explicit-only)
+- `$analyze`
+- `$write`
+- `$review`
+- `$revise`
+- `$talk`
+- `$submit`
+- `$research-tools`
 
 Useful utilities:
 
-- `$clo-research-tools checkpoint`
-- `$clo-research-tools resume-context`
-- `$clo-research-tools lint`
-- `$clo-research-tools dashboard`
-- `$clo-research-tools html-report`
+- `$research-tools checkpoint`
+- `$research-tools resume-context`
+- `$research-tools lint`
+- `$research-tools dashboard`
+- `$research-tools html-report`
 
 ## Kernel Rules
 
@@ -77,6 +77,6 @@ For prototypes and side investigations:
 
 For writing-heavy workflows:
 
-- keep reusable prose guidance in `~/voice/`
+- keep reusable prose guidance in `~/.codex/voice/`
 - treat voice as a style layer, not as evidence
 - use overlays only when needed
