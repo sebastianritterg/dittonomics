@@ -168,7 +168,7 @@ For `intro`, `context`, `literature`, and opening-stack work:
 Optional overlays:
 
 - load `~/.codex/voice/collaboration_register.md` only in `--joint-paper` mode
-- load `~/.codex/voice/journal_tightening_register.md` only in `--journal-tightening` mode
+- load `~/.codex/voice/journal_tightening_register.md` only in `--journal-tightening` mode. Use `~/.codex/voice/jde_benchmark_register.md` for the author’s configured JDE register when that overlay applies.
 - inspect nearby manuscript sections only in `--current-draft` mode
 - load the optional extracted style guide only when `style-guide` or `--use-style-guide` is explicitly requested
 

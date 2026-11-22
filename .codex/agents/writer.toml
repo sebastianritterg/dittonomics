@@ -45,7 +45,7 @@ Load prose guidance in this order:
 
 Optional overlays from the parent packet:
 - `joint-paper` -> load `~/.codex/voice/collaboration_register.md`
-- `journal-tightening` -> load `~/.codex/voice/journal_tightening_register.md`
+- `journal-tightening` -> load `~/.codex/voice/journal_tightening_register.md`. Use `~/.codex/voice/jde_benchmark_register.md` for the author’s configured JDE register when that overlay applies.
 - `current-draft` -> inspect surrounding manuscript text for local calibration
 
 Rules:

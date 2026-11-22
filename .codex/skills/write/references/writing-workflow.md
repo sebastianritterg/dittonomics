@@ -7,7 +7,7 @@ Use this sequence for default drafting unless the user explicitly asks for a lig
 3. Load the active style hierarchy:
    - always read `~/.codex/voice/core_voice.md`, `~/.codex/voice/voice_examples.md`, `~/.codex/voice/econ_paper_register.md`, and `~/.codex/voice/style_hierarchy.md` when the user has them
    - read `~/.codex/voice/collaboration_register.md` only in joint-paper mode
-   - read `~/.codex/voice/journal_tightening_register.md` only in journal-tightening mode
+   - read `~/.codex/voice/journal_tightening_register.md` only in journal-tightening mode. Use `~/.codex/voice/jde_benchmark_register.md` for the author’s configured JDE register when that overlay applies.
    - read nearby manuscript sections only in current-draft mode
    - read `style-guide-mode.md` only when `style-guide` or `--use-style-guide` is explicitly enabled
 4. Gather manuscript context, repo overlays, bibliography, quality reports, and outputs.

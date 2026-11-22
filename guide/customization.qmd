@@ -92,7 +92,7 @@ The public repo includes templates in [voice](https://github.com/sebastianritter
 
 ## Copy the templates privately
 
-Copy these into `~/.codex/voice/`:
+Use these templates to initialize missing files in a new `~/.codex/voice/` directory. If you already maintain your voice there, edit those files directly.
 
 - `core_voice.template.md`
 - `voice_examples.template.md`
@@ -111,11 +111,12 @@ Then rename them without `.template`.
 | File | Purpose |
 |---|---|
 | `core_voice.md` | your non-negotiable prose traits |
+| `bad_writing_examples.md` | the author’s examples of rejected prose, used in drafting and review |
 | `voice_examples.md` | examples of sentences, paragraph moves, cadence |
 | `econ_paper_register.md` | field-appropriate restraint and evidence norms |
 | `style_hierarchy.md` | precedence rules when files conflict |
 | `collaboration_register.md` | optional overlay for joint-paper mode |
-| `journal_tightening_register.md` | optional overlay for tighter journal-facing prose |
+| `journal_tightening_register.md` | generic starter filename for a journal overlay. The author uses `jde_benchmark_register.md` in the same private directory. |
 
 ## The voice rule
 
